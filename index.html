@@ -190,6 +190,69 @@ footer{background:#111827;padding:48px;display:flex;justify-content:space-betwee
 #chat-input:focus{border-color:var(--oranje);}
 #chat-send{background:var(--oranje);color:white;border:none;border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
 #chat-send:hover{background:var(--oranje2);}
+
+/* ── MOBILE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Nav */
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .nav-cta{padding:8px 14px;font-size:13px;}
+
+  /* Hero */
+  .hero{padding:48px 20px;flex-direction:column;gap:36px;min-height:auto;}
+  .hero h1{font-size:30px;}
+  .hero-sub{font-size:15px;}
+  .hero-stats{gap:20px;}
+  .stat-val{font-size:22px;}
+  .hero-visual{width:100%;}
+  .hero-card{width:100%;}
+
+  /* Features */
+  .features{padding:48px 20px;}
+  .features-grid{grid-template-columns:1fr;}
+  .section-title{font-size:26px;}
+
+  /* Quickbond */
+  .quickbond{padding:48px 20px;flex-direction:column;gap:32px;}
+  .qb-content h2{font-size:26px;}
+  .qb-props{grid-template-columns:1fr;}
+  .qb-visual{width:100%;}
+
+  /* Products */
+  .products{padding:48px 20px;}
+  .products-grid{grid-template-columns:1fr 1fr;}
+
+  /* ZZP */
+  .zzp{padding:48px 20px;}
+  .zzp-inner{flex-direction:column;padding:28px 20px;gap:28px;}
+  .zzp-visual{display:none;}
+
+  /* Projecten */
+  .projecten{padding:48px 20px;}
+  .proj-grid{grid-template-columns:1fr;}
+
+  /* Contact */
+  .contact{padding:48px 20px;}
+  .contact-inner{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+
+  /* Footer */
+  footer{padding:32px 20px;flex-direction:column;text-align:center;}
+  .footer-info{text-align:center;}
+
+  /* Chat */
+  #chat-window{width:calc(100vw - 32px);right:16px;bottom:90px;}
+  #chat-btn{bottom:20px;right:20px;}
+  #chat-hint{right:16px;bottom:92px;}
+}
+
+@media (max-width: 480px) {
+  .hero h1{font-size:26px;}
+  .products-grid{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+  .btn-primary,.btn-secondary{text-align:center;}
+}
 </style>
 </head>
 <body>
