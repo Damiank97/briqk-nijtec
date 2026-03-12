@@ -473,7 +473,7 @@ footer{background:#111827;padding:48px;display:flex;justify-content:space-betwee
 </div>
 
 <script>
-const GROQ_API_KEY = "PLAK_HIER_JE_GROQ_KEY";
+const GROQ_API_KEY = "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";
 
 const SYSTEM_PROMPT = `Je bent de vriendelijke en deskundige AI-assistent van Nijtec B.V. Je helpt klanten met vragen over producten, technisch advies en bestellingen. Antwoord altijd in het Nederlands. Wees kort, concreet en behulpzaam.
 
@@ -571,7 +571,7 @@ async function sendMsg() {
   messages.push({role:'user', content:text});
   showTyping();
 
-  if(GROQ_API_KEY === 'PLAK_HIER_JE_GROQ_KEY') {
+  if(GROQ_API_KEY === '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') {
     setTimeout(() => {
       removeTyping();
       const demo = getDemoResponse(text);
