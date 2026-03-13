@@ -309,14 +309,14 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   <div class="section-label">Assortiment</div>
   <div class="section-title">Volledig productenpakket</div>
   <div class="products-grid">
-    <div class="product-card" onclick="openModal('lijmen')"><div class="product-card-icon">🔗</div><h3>Lijmen</h3><p>Voor diverse materialen en ondergronden. Professionele kwaliteit.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('kitten')"><div class="product-card-icon">🔩</div><h3>Kitten</h3><p>Afdichtingskitten voor bouw en industrie, diverse typen.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('pu')"><div class="product-card-icon">💨</div><h3>PU-schuimen</h3><p>Vullende en lijmende PU-schuimen, ook gecertificeerd flexibel.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('coatings')"><div class="product-card-icon">🎨</div><h3>Coatings</h3><p>Wand-, vloer- en dakcoatings. Ook op tegels toepasbaar.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('2comp')"><div class="product-card-icon">🧪</div><h3>2-component lijmen</h3><p>Voor veeleisende toepassingen met hoge sterktevereisten.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('steenstrips')"><div class="product-card-icon">🪨</div><h3>Steenstrips</h3><p>Decoratieve steenstrips voor gevel en interieur toepassingen.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('luchtdicht')"><div class="product-card-icon">🏠</div><h3>Luchtdicht bouwen</h3><p>Producten voor luchtdichte bouwoplossingen.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" onclick="openModal('acrylaten')"><div class="product-card-icon">⚗️</div><h3>Acrylaten</h3><p>Diverse acrylaat producten voor professioneel gebruik.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="lijmen"><div class="product-card-icon">🔗</div><h3>Lijmen</h3><p>Voor diverse materialen en ondergronden. Professionele kwaliteit.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="kitten"><div class="product-card-icon">🔩</div><h3>Kitten</h3><p>Afdichtingskitten voor bouw en industrie, diverse typen.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="pu"><div class="product-card-icon">💨</div><h3>PU-schuimen</h3><p>Vullende en lijmende PU-schuimen, ook gecertificeerd flexibel.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="coatings"><div class="product-card-icon">🎨</div><h3>Coatings</h3><p>Wand-, vloer- en dakcoatings. Ook op tegels toepasbaar.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="2comp"><div class="product-card-icon">🧪</div><h3>2-component lijmen</h3><p>Voor veeleisende toepassingen met hoge sterktevereisten.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="steenstrips"><div class="product-card-icon">🪨</div><h3>Steenstrips</h3><p>Decoratieve steenstrips voor gevel en interieur toepassingen.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="luchtdicht"><div class="product-card-icon">🏠</div><h3>Luchtdicht bouwen</h3><p>Producten voor luchtdichte bouwoplossingen.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="acrylaten"><div class="product-card-icon">⚗️</div><h3>Acrylaten</h3><p>Diverse acrylaat producten voor professioneel gebruik.</p><div class="product-card-link">Meer info →</div></div>
   </div>
 </section>
 
@@ -382,7 +382,7 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
           <select><option>Productinformatie</option><option>Offerte aanvragen</option><option>Technisch advies</option><option>ZZP-pakket</option><option>Montage opdracht</option></select>
         </div>
         <div class="form-group" style="margin-bottom:16px"><label>Bericht</label><textarea placeholder="Uw vraag of bericht..."></textarea></div>
-        <button class="form-submit" onclick="submitForm()">Verstuur bericht →</button>
+        <button class="form-submit" id="form-submit-btn">Verstuur bericht →</button>
       </div>
       <div class="form-success" id="form-success">
         <div class="form-success-icon">✅</div>
@@ -406,12 +406,12 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 </footer>
 
 <!-- PRODUCT MODAL -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+<div class="modal-overlay" id="modal-overlay">
   <div class="modal" id="modal">
     <div class="modal-header">
       <div class="modal-header-icon" id="modal-icon"></div>
       <div class="modal-header-info"><h2 id="modal-title"></h2><p id="modal-subtitle"></p></div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <button class="modal-close" id="modal-close-btn">✕</button>
     </div>
     <div class="modal-body">
       <div class="modal-desc" id="modal-desc"></div>
@@ -419,14 +419,14 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
       <div class="modal-props" id="modal-props"></div>
       <div class="modal-section-title">Toepassingen</div>
       <div class="modal-tags" id="modal-tags"></div>
-      <button class="modal-cta" onclick="closeModal();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Offerte of info aanvragen →</button>
+      <button class="modal-cta" id="modal-cta-btn">Offerte of info aanvragen →</button>
     </div>
   </div>
 </div>
 
 <!-- CHATBOT -->
 <div id="chat-hint">💬 Stel een vraag aan onze AI-assistent!</div>
-<button id="chat-btn" onclick="toggleChat()">💬<div id="chat-badge">1</div></button>
+<button id="chat-btn">💬<div id="chat-badge">1</div></button>
 <div id="chat-window">
   <div id="chat-header">
     <div id="chat-header-avatar">🤖</div>
@@ -434,23 +434,23 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
       <div id="chat-header-name">Nijtec AI-assistent</div>
       <div id="chat-header-status">🟢 Online — direct antwoord</div>
     </div>
-    <button id="chat-close" onclick="toggleChat()">✕</button>
+    <button id="chat-close">✕</button>
   </div>
   <div id="chat-messages">
     <div class="msg msg-bot">
       Goedendag! Ik ben de AI-assistent van Nijtec B.V. 👋<br><br>
       Ik help u graag met vragen over onze producten, de Quickbond, of een offerte aanvragen.
       <div class="quick-btns">
-        <button class="quick-btn" onclick="askQuestion('Wat is de Quickbond?')">Wat is de Quickbond?</button>
-        <button class="quick-btn" onclick="askQuestion('Wat kost het ZZP-pakket?')">ZZP-pakket prijs?</button>
-        <button class="quick-btn" onclick="askQuestion('Welke producten leveren jullie?')">Welke producten?</button>
-        <button class="quick-btn" onclick="askQuestion('Kunnen jullie ook montage doen?')">Montage service?</button>
+        <button class="quick-btn" data-q="Wat is de Quickbond?">Wat is de Quickbond?</button>
+        <button class="quick-btn" data-q="Wat kost het ZZP-pakket?">ZZP-pakket prijs?</button>
+        <button class="quick-btn" data-q="Welke producten leveren jullie?">Welke producten?</button>
+        <button class="quick-btn" data-q="Kunnen jullie ook montage doen?">Montage service?</button>
       </div>
     </div>
   </div>
   <div id="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Stel uw vraag..." onkeydown="if(event.key==='Enter')sendMsg()">
-    <button id="chat-send" onclick="sendMsg()">➤</button>
+    <input id="chat-input" type="text" placeholder="Stel uw vraag...">
+    <button id="chat-send">➤</button>
   </div>
 </div>
 
@@ -555,4 +555,58 @@ async function sendMsg(){
     removeTyping();
     if(data.error){addMsg('⚠️ '+data.error,false);return;}
     const reply=data.reply;
-    m
+    messages.push({role:'assistant',content:reply});
+    addMsg(reply,false);
+  } catch(e) {
+    removeTyping();
+    addMsg('⚠️ Verbindingsfout. Bel ons op 06-15588843.',false);
+  }
+}
+
+/* ── EVENT LISTENERS (geen inline onclick) ──────── */
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Product cards → open modal
+  document.querySelectorAll('.product-card[data-modal]').forEach(function(card) {
+    card.addEventListener('click', function() { openModal(card.dataset.modal); });
+  });
+
+  // Modal overlay → sluiten bij klik buiten modal
+  document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+  });
+
+  // Modal sluit-knop
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+
+  // Modal CTA → scroll naar contact
+  document.getElementById('modal-cta-btn').addEventListener('click', function() {
+    closeModal();
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Chat openen/sluiten
+  document.getElementById('chat-btn').addEventListener('click', toggleChat);
+  document.getElementById('chat-close').addEventListener('click', toggleChat);
+
+  // Quick questions
+  document.querySelectorAll('.quick-btn[data-q]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.getElementById('chat-input').value = btn.dataset.q;
+      sendMsg();
+    });
+  });
+
+  // Chat sturen
+  document.getElementById('chat-send').addEventListener('click', sendMsg);
+  document.getElementById('chat-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') sendMsg();
+  });
+
+  // Contactformulier
+  document.getElementById('form-submit-btn').addEventListener('click', submitForm);
+
+});
+</script>
+</body>
+</html>
