@@ -205,9 +205,12 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 }
 /* PHOTO GRID */
 .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;}
-.photo-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#f0f0f0;}
+.photo-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#f0f0f0;position:relative;cursor:pointer;}
 .photo-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
-.photo-item:hover img{transform:scale(1.05);}
+.photo-item:hover img{transform:scale(1.08);}
+.photo-caption{position:absolute;inset:0;background:linear-gradient(to top, rgba(10,20,50,0.92) 0%, rgba(10,20,50,0.4) 55%, transparent 100%);display:flex;align-items:flex-end;padding:16px;opacity:0;transition:opacity 0.3s ease;}
+.photo-item:hover .photo-caption{opacity:1;}
+.photo-caption span{color:white;font-size:13px;font-weight:500;line-height:1.5;text-shadow:0 1px 4px rgba(0,0,0,0.6);}
 /* AV ACCORDION */
 .av-section{padding:80px 80px;background:#f8f7f5;}
 .av-accordion{display:flex;flex-direction:column;gap:4px;max-width:860px;}
@@ -373,22 +376,22 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   <div class="section-title">Onze projecten</div>
   <p class="section-sub">Hieronder enkele projecten waarin wij onze medewerking hebben verleend — en daar zijn we trots op.</p>
   <div class="photo-grid">
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/16.jpg" alt="Woning rondom beplakt met Tectiva Activa — Quickbond" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/15.jpg" alt="Voorkant woning gevelbeplating met Quickbond" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/14.jpg" alt="Tectiva Activa Eternit op dakkapellen" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/13.jpg" alt="Activa Tectiva dakkapellen" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/12.jpg" alt="Cementgebonden vezelplaat gootwerk" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/11.jpg" alt="Epoxyvloer penitentiaire inrichting Veenhuizen" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/10.jpg" alt="Epoxyvloer hoogglans eindresultaat" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/09.jpg" alt="Voorbereiding epoxyvloer" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/08.jpg" alt="Gevelbeplating verlijmd met Quickbond" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/07.jpg" alt="Trespa verlijmen — geen primer nodig" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/06.jpg" alt="Steenstrip verlijming met Quickbond" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/05.jpg" alt="Steenstrips in plaats van windboeien" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/04.jpg" alt="Boven het hoofd verlijmen met Quickbond" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/03.jpg" alt="Cementgebonden vezelplaat muurvast" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/02.jpg" alt="Muurvaste verlijming Quickbond" loading="lazy"></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/01.jpg" alt="Verbouwing Sporthal Muntendam" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/16.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Woning rondom plus de nok beplakt — Tectiva Activa gemonteerd met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/15.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Voorkant woning beplakt met Tectiva Activa met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/14.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Tectiva Activa Eternit verlijmt met de Quickbond op dakkapellen. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/13.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Activa Tectiva aangebracht op dakkapellen met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/12.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Het aanbrengen van cementgebonden vezelplaat onderkant gootwerk. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/11.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Epoxyvloer aanbrengen in leslokalen penitentiaire inrichting Veenhuizen</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/10.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Eindresultaat aanbrengen epoxyvloer met hoogglans aflak</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/09.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Voorbereiding aanbrengen epoxyvloer</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/08.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Gevelbeplating verlijmd met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/07.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Trespa verlijmen met de Quickbond — geen primer of paneltape nodig</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/06.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Steenstrip verlijming met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/05.jpg" alt="" loading="lazy"><div class="photo-caption"><span>In plaats van windboeien, steenstrips geplaatst — geen onderhoud meer</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/04.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Boven het hoofd verlijmen — geen probleem met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/03.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Cementgebonden vezelplaat muurvast met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/02.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Muurvaste verlijming met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/01.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Verbouwing Sporthal Muntendam</span></div></div>
   </div>
 </section>
 
