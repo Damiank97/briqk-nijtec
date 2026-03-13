@@ -203,7 +203,29 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   footer{padding:32px 20px;flex-direction:column;text-align:center;}.footer-info{text-align:center;}
   #chat-window{width:calc(100vw - 32px);right:16px;bottom:90px;}#chat-btn{bottom:20px;right:20px;}#chat-hint{right:16px;bottom:92px;}
 }
-@media(max-width:480px){.hero h1{font-size:26px;}.products-grid{grid-template-columns:1fr;}.hero-btns{flex-direction:column;}}
+/* PHOTO GRID */
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;}
+.photo-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#f0f0f0;}
+.photo-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
+.photo-item:hover img{transform:scale(1.05);}
+/* AV ACCORDION */
+.av-section{padding:80px 80px;background:#f8f7f5;}
+.av-accordion{display:flex;flex-direction:column;gap:4px;max-width:860px;}
+.av-item{border-radius:10px;overflow:hidden;border:1px solid #e4e2dd;}
+.av-header{background:white;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:15px;color:var(--blauw);user-select:none;transition:background 0.2s;}
+.av-header:hover{background:#fafafa;}
+.av-header.open{background:var(--blauw);color:white;}
+.av-chevron{font-size:12px;transition:transform 0.3s;color:var(--oranje);}
+.av-header.open .av-chevron{transform:rotate(180deg);color:white;}
+.av-body{background:white;padding:0 24px;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.2s;}
+.av-body.open{padding:20px 24px;max-height:1200px;}
+.av-body p{font-size:14px;color:#555;line-height:1.8;margin-bottom:12px;}
+.av-body p:last-child{margin-bottom:0;}
+@media(max-width:768px){
+  .photo-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .av-section{padding:48px 20px;}
+}
+@media(max-width:480px){.photo-grid{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
 <body>
@@ -349,12 +371,33 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 <section class="projecten" id="projecten">
   <div class="section-label">Referenties</div>
   <div class="section-title">Onze projecten</div>
-  <p class="section-sub">Hieronder een selectie van projecten waar Nijtec aan heeft meegewerkt — en trots op is.</p>
-  <div class="proj-grid">
-    <div class="proj-card"><div class="proj-img">🏠</div><div class="proj-body"><h3>Woning — Tectiva Activa rondom</h3><p>Volledige gevel en nok beplakt met Tectiva Activa, gemonteerd met de Quickbond door het Nijtec Montage Team.</p><div class="proj-tag">Quickbond · Montage Team</div></div></div>
-    <div class="proj-card"><div class="proj-img">🏗️</div><div class="proj-body"><h3>Dakkapellen — Eternit verlijmd</h3><p>Tectiva Activa Eternit verlijmd met de Quickbond op meerdere dakkapellen. Vakkundig aangebracht.</p><div class="proj-tag">Quickbond · Dakkapellen</div></div></div>
-    <div class="proj-card"><div class="proj-img">🔧</div><div class="proj-body"><h3>Voorkant woning gevelbeplating</h3><p>Volledige voorgevel beplakt met Tectiva Activa met behulp van de Quickbond door het Nijtec Montage Team.</p><div class="proj-tag">Gevelbeplating · Montage</div></div></div>
+  <p class="section-sub">Hieronder enkele projecten waarin wij onze medewerking hebben verleend — en daar zijn we trots op.</p>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/16.jpg" alt="Woning rondom beplakt met Tectiva Activa — Quickbond" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/15.jpg" alt="Voorkant woning gevelbeplating met Quickbond" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/14.jpg" alt="Tectiva Activa Eternit op dakkapellen" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/13.jpg" alt="Activa Tectiva dakkapellen" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/12.jpg" alt="Cementgebonden vezelplaat gootwerk" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/11.jpg" alt="Epoxyvloer penitentiaire inrichting Veenhuizen" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/10.jpg" alt="Epoxyvloer hoogglans eindresultaat" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/09.jpg" alt="Voorbereiding epoxyvloer" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/08.jpg" alt="Gevelbeplating verlijmd met Quickbond" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/07.jpg" alt="Trespa verlijmen — geen primer nodig" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/06.jpg" alt="Steenstrip verlijming met Quickbond" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/05.jpg" alt="Steenstrips in plaats van windboeien" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/04.jpg" alt="Boven het hoofd verlijmen met Quickbond" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/03.jpg" alt="Cementgebonden vezelplaat muurvast" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/02.jpg" alt="Muurvaste verlijming Quickbond" loading="lazy"></div>
+    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/01.jpg" alt="Verbouwing Sporthal Muntendam" loading="lazy"></div>
   </div>
+</section>
+
+<!-- ALGEMENE VOORWAARDEN -->
+<section class="av-section" id="voorwaarden">
+  <div class="section-label">Juridisch</div>
+  <div class="section-title">Algemene voorwaarden</div>
+  <p class="section-sub" style="margin-bottom:36px">Nijtec B.V. · Van toepassing op alle aanbiedingen, overeenkomsten en leveringen.</p>
+  <div class="av-accordion" id="av-accordion"></div>
 </section>
 
 <section class="contact" id="contact">
@@ -372,6 +415,14 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
     </div>
     <div class="contact-form">
       <p style="color:rgba(255,255,255,0.9);font-weight:600;margin-bottom:20px;">Stuur een bericht</p>
+      <div id="product-prefill-banner" style="display:none;background:rgba(232,82,10,0.15);border:1px solid var(--oranje);border-radius:10px;padding:12px 16px;margin-bottom:16px;display:none;align-items:center;gap:10px;">
+        <span style="font-size:18px">📦</span>
+        <div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;">Offerte aanvraag voor</div>
+          <div id="prefill-product-naam" style="font-weight:700;color:white;font-size:15px;"></div>
+        </div>
+        <button id="prefill-clear-btn" style="margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.4);font-size:18px;cursor:pointer;line-height:1;" title="Wissen">×</button>
+      </div>
       <div id="contact-fields">
         <div class="form-row">
           <div class="form-group"><label>Naam</label><input type="text" id="f-naam" placeholder="Uw naam"></div>
@@ -379,9 +430,9 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
         </div>
         <div class="form-group" style="margin-bottom:16px"><label>E-mailadres</label><input type="email" id="f-email" placeholder="uw@email.nl"></div>
         <div class="form-group" style="margin-bottom:16px"><label>Onderwerp</label>
-          <select><option>Productinformatie</option><option>Offerte aanvragen</option><option>Technisch advies</option><option>ZZP-pakket</option><option>Montage opdracht</option></select>
+          <select id="f-onderwerp"><option>Productinformatie</option><option>Offerte aanvragen</option><option>Technisch advies</option><option>ZZP-pakket</option><option>Montage opdracht</option></select>
         </div>
-        <div class="form-group" style="margin-bottom:16px"><label>Bericht</label><textarea placeholder="Uw vraag of bericht..."></textarea></div>
+        <div class="form-group" style="margin-bottom:16px"><label>Bericht</label><textarea id="f-bericht" placeholder="Uw vraag of bericht..."></textarea></div>
         <button class="form-submit" id="form-submit-btn">Verstuur bericht →</button>
       </div>
       <div class="form-success" id="form-success">
@@ -401,7 +452,7 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   <div class="footer-info">
     <div>Laveringsveen 10 · 7751 DN Dalen</div>
     <div><a href="tel:0615588843">06-155 888 43</a> · info&#64;nijtec.nl</div>
-    <div style="margin-top:4px;color:rgba(255,255,255,0.25);">KvK: 95043780 · BTW: NL866979001.B01 · Demo door Launchly.nl</div>
+    <div style="margin-top:4px;color:rgba(255,255,255,0.25);">KvK: 95043780 · BTW: NL866979001.B01 · <a href="#voorwaarden" style="color:rgba(255,255,255,0.4);text-decoration:underline;">Algemene voorwaarden</a> · Demo door Launchly.nl</div>
   </div>
 </footer>
 
@@ -563,6 +614,25 @@ async function sendMsg(){
   }
 }
 
+/* ── ALGEMENE VOORWAARDEN ACCORDION ─────────────── */
+const avData = [
+  {title:'Artikel 1 — Algemeen',body:`Alle aanbiedingen, overeenkomsten en de uitvoering daarvan worden uitsluitend beheerst door de onderhavige voorwaarden. Afwijkingen dienen uitdrukkelijk schriftelijk overeengekomen te worden binnen 14 dagen.<br><br>Onder "wederpartij" wordt verstaan iedere (rechts-)persoon die door ondertekening of op andere wijze de gelding van de algemene voorwaarden heeft aanvaard.`},
+  {title:'Artikel 2 — Algemene voorwaarden van contractspartijen',body:`Verwijzing naar de toepasselijkheid van algemene voorwaarden van de wederpartij wordt beschouwd als een tweede verwijzing waaraan geen werking toekomt.<br><br>Indien de wederpartij de toepasselijkheid uitdrukkelijk van de hand wijst, behoudt Nijtec het recht het aanbod te herroepen of de overeenkomst als nietig te beschouwen.`},
+  {title:'Artikel 3 — Aanbiedingen',body:`Alle aanbiedingen zijn vrijblijvend, tenzij uitdrukkelijk anders vermeld. Verstrekte prijslijsten en brochures zijn zo nauwkeurig mogelijk samengesteld, maar hieraan kunnen geen rechten worden ontleend tenzij schriftelijk overeengekomen.<br><br>Nijtec behoudt zich het recht voor bestellingen zonder opgaaf van redenen te weigeren, dan wel onder rembours te leveren, dit binnen 14 dagen.`},
+  {title:'Artikel 4 — Overeenkomst',body:`Een overeenkomst komt tot stand nadat Nijtec een opdracht schriftelijk heeft aanvaard via een opdrachtbevestiging. De datum van de bevestiging is bepalend.<br><br>Nijtec is gerechtigd bij of na het aangaan van de overeenkomst zekerheid te eisen dat aan betalings- en overige verplichtingen voldaan zal worden.`},
+  {title:'Artikel 5 — Prijzen',body:`Tenzij anders vermeld geschieden alle prijsopgaven onder voorbehoud van prijswijziging. Prijzen zijn exclusief BTW, invoerrechten, en kosten van verpakking, vervoer en verzekering. Bij montagewerkzaamheden wordt meerwerk gemeld en berekend.`},
+  {title:'Artikel 6 — Wijziging van de opdracht',body:`Wijzigingen in de oorspronkelijke order die hogere kosten veroorzaken worden extra in rekening gebracht. Wijzigingen dienen schriftelijk en tijdig te worden doorgegeven; mondeling doorgegeven wijzigingen zijn voor rekening en risico van de wederpartij.`},
+  {title:'Artikel 7 — Annuleren',body:`Indien de wederpartij annuleert om redenen die buiten de risicosfeer van Nijtec vallen, is de wederpartij verplicht reeds aangeschafte materialen tegen kostende prijs over te nemen. Nijtec behoudt zich alle rechten voor om volledige nakoming en/of schadevergoeding te vorderen.`},
+  {title:'Artikel 8 — Levering',body:`Opgegeven levertermijnen zijn altijd bij benadering en nimmer fataal. Een bedongen termijn gaat niet eerder in dan nadat alle benodigde gegevens in bezit zijn van Nijtec.`},
+  {title:'Artikel 9 — Transport & risico',body:`De wijze van transport wordt door Nijtec naar goed koopmansgebruik bepaald zonder enige aansprakelijkheid. Verzending geschiedt steeds voor rekening en risico van de wederpartij. Transport wordt alleen verzekerd indien de wederpartij dit uitdrukkelijk voor eigen rekening heeft verzocht.`},
+  {title:'Artikel 12 — Garantie',body:`Garantie wordt schriftelijk aangegeven en reikt niet verder dan de garantie van de producent. Garantie vervalt bij onoordeelkundig gebruik, gebruik in strijd met de bestemming, of wanneer gebruiksaanwijzingen niet zijn opgevolgd.`},
+  {title:'Artikel 13 — Eigendomsvoorbehoud',body:`Geleverde goederen blijven eigendom van Nijtec tot volledige betaling van alle leveranties en werkzaamheden, inclusief eventuele rente en kosten.`},
+  {title:'Artikel 14 — Aansprakelijkheid',body:`Nijtec is niet aansprakelijk voor indirecte schade of bedrijfsschade tenzij sprake is van opzet of grove schuld. De aansprakelijkheid is te allen tijde beperkt tot het bedrag waarvoor Nijtec verzekerd is.<br><br>Montagewerkzaamheden uitbesteed aan derden: montagebedrijven en (timmer)lieden zijn verantwoordelijk voor de kwaliteit van hun uitvoering.`},
+  {title:'Artikel 17 — Betaling',body:`Betaling dient netto contant bij levering of binnen 14 dagen na factuurdatum te geschieden. Nijtec is gerechtigd een aanbetaling te verlangen. Bij annulering door wanprestatie van Nijtec heeft de wederpartij recht op terugbetaling vermeerderd met wettelijke rente.`},
+  {title:'Artikel 18 — Rente en kosten',body:`Bij niet-tijdige betaling is van rechtswege een rente van 1,5% per maand verschuldigd over het openstaande bedrag. Buitengerechtelijke incassokosten bedragen minimaal 15% van het verschuldigde bedrag, met een minimum van €100.`},
+  {title:'Artikel 19 & 20 — Toepasselijk recht & Geschillen',body:`Op alle aanbiedingen en overeenkomsten is uitsluitend Nederlands recht van toepassing. Alle geschillen worden beslecht door de binnen het vestigingsgebied van Nijtec bevoegde burgerlijke rechter.`},
+];
+
 /* ── EVENT LISTENERS (geen inline onclick) ──────── */
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -579,10 +649,38 @@ document.addEventListener('DOMContentLoaded', function() {
   // Modal sluit-knop
   document.getElementById('modal-close-btn').addEventListener('click', closeModal);
 
-  // Modal CTA → scroll naar contact
+  // Modal CTA → contactformulier met product vooringevuld
   document.getElementById('modal-cta-btn').addEventListener('click', function() {
+    const productNaam = document.getElementById('modal-title').textContent;
+    const productIcon = document.getElementById('modal-icon').textContent;
     closeModal();
+
+    // Dropdown op "Offerte aanvragen"
+    const onderwerp = document.getElementById('f-onderwerp');
+    for (let i = 0; i < onderwerp.options.length; i++) {
+      if (onderwerp.options[i].text === 'Offerte aanvragen') { onderwerp.selectedIndex = i; break; }
+    }
+
+    // Textarea voorinvullen
+    document.getElementById('f-bericht').value =
+      'Ik heb interesse in: ' + productNaam + '.\n\nKunt u mij meer informatie en een offerte sturen?';
+
+    // Banner tonen
+    const banner = document.getElementById('product-prefill-banner');
+    document.getElementById('prefill-product-naam').textContent = productIcon + ' ' + productNaam;
+    banner.style.display = 'flex';
+
+    // Scroll naar formulier + focus naam
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    setTimeout(function() { document.getElementById('f-naam').focus(); }, 600);
+  });
+
+  // Banner wis-knop
+  document.getElementById('prefill-clear-btn').addEventListener('click', function() {
+    document.getElementById('product-prefill-banner').style.display = 'none';
+    document.getElementById('f-bericht').value = '';
+    const onderwerp = document.getElementById('f-onderwerp');
+    onderwerp.selectedIndex = 0;
   });
 
   // Chat openen/sluiten
@@ -605,6 +703,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Contactformulier
   document.getElementById('form-submit-btn').addEventListener('click', submitForm);
+
+  // Algemene Voorwaarden accordion opbouwen
+  const accordion = document.getElementById('av-accordion');
+  if (accordion) {
+    avData.forEach(function(item, i) {
+      const el = document.createElement('div');
+      el.className = 'av-item';
+      el.innerHTML = `
+        <div class="av-header" id="av-h-${i}">
+          ${item.title}
+          <span class="av-chevron">▼</span>
+        </div>
+        <div class="av-body" id="av-b-${i}"><p>${item.body}</p></div>
+      `;
+      accordion.appendChild(el);
+      document.getElementById('av-h-'+i).addEventListener('click', function() {
+        const body = document.getElementById('av-b-'+i);
+        const isOpen = body.classList.contains('open');
+        // sluit alle
+        document.querySelectorAll('.av-body').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.av-header').forEach(h => h.classList.remove('open'));
+        if (!isOpen) {
+          body.classList.add('open');
+          document.getElementById('av-h-'+i).classList.add('open');
+        }
+      });
+    });
+  }
 
 });
 </script>
