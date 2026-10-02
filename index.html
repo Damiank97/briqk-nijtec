@@ -3,10 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nijtec B.V. — Lijmen, Kitten & Coatings | Dalen</title>
+<title>Nijtec B.V. | Lijmen, kitten en coatings in Dalen</title>
 <meta name="description" content="Nijtec B.V. levert professionele lijmen, kitten en coatings voor bouw en industrie. Topproduct: Quickbond met 10 jaar garantie. ISO 9001 gecertificeerd. Gevestigd in Dalen.">
+<link rel="canonical" href="https://nijtec.nl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nijtec B.V. | Lijmen, kitten en coatings">
+<meta property="og:description" content="Productadvies, levering en montage voor bouw en industrie. Vanuit Dalen.">
+<meta property="og:url" content="https://nijtec.nl/">
+<meta property="og:image" content="https://nijtec.nl/assets/hero-project.jpg">
+<link rel="icon" href="/NijTec_logo.png" type="image/png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Nijtec B.V.","url":"https://nijtec.nl/","telephone":"+31615588843","email":"info@nijtec.nl","address":{"@type":"PostalAddress","streetAddress":"Laveringsveen 10","postalCode":"7751 DN","addressLocality":"Dalen","addressCountry":"NL"}}
+</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 :root{
@@ -20,7 +29,7 @@ html{scroll-behavior:smooth;}
   --grijs:#64748b;
   --wit:#ffffff;
 }
-body{font-family:'Inter',sans-serif;color:var(--tekst);background:#fff;font-size:15px;line-height:1.6;}
+body{font-family:Verdana,Geneva,sans-serif;color:var(--tekst);background:#fff;font-size:15px;line-height:1.6;}
 a{color:inherit;text-decoration:none;}
 nav{background:var(--blauw);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:100px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
 .nav-logo{display:flex;align-items:center;}
@@ -229,37 +238,241 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   .av-section{padding:48px 20px;}
 }
 @media(max-width:480px){.photo-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* 2026 visual refresh — editorial calm, stronger imagery, less UI noise */
+:root{
+  --blauw:#10213b;
+  --blauw2:#18365f;
+  --oranje:#f05a24;
+  --oranje2:#ff7848;
+  --licht:#f3f1ec;
+  --rand:#dedbd3;
+  --tekst:#172033;
+  --grijs:#657083;
+}
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#fbfaf7;
+  -webkit-font-smoothing:antialiased;
+}
+.demo-banner{
+  background:#091321;
+  min-height:32px;
+  padding:7px 20px;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+}
+.demo-banner span{
+  color:#fff;
+  background:rgba(240,90,36,.9);
+  border-radius:999px;
+  padding:2px 8px;
+}
+nav{
+  height:78px;
+  padding-inline:max(24px,calc((100vw - 1200px)/2));
+  background:rgba(16,33,59,.92);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:none;
+  backdrop-filter:blur(18px);
+}
+.nav-logo img{height:54px;}
+.nav-links{gap:28px;}
+.nav-links a{font-size:13px;color:rgba(255,255,255,.7);}
+.nav-links a:hover{color:#fff;}
+.nav-cta{
+  padding:11px 18px;
+  border-radius:999px;
+  box-shadow:0 8px 24px rgba(240,90,36,.22);
+}
+.hero{
+  min-height:calc(100vh - 110px);
+  padding:clamp(76px,9vw,132px) max(24px,calc((100vw - 1200px)/2));
+  gap:clamp(48px,7vw,100px);
+  background:
+    radial-gradient(circle at 78% 30%,rgba(93,126,177,.22),transparent 34%),
+    linear-gradient(145deg,#0b182c 0%,#13294a 58%,#193a66 100%);
+}
+.hero::before{
+  width:720px;height:720px;right:-260px;top:-320px;
+  border:1px solid rgba(255,255,255,.09);background:transparent;
+}
+.hero::after{left:10%;bottom:-250px;width:620px;height:620px;background:rgba(240,90,36,.055);}
+.hero-logo-watermark{display:none;}
+.hero-content{max-width:650px;}
+.hero-badge{
+  margin-bottom:28px;
+  padding:7px 12px;
+  border:0;
+  background:rgba(255,255,255,.07);
+  color:#ffc3aa;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:720px;
+  font-size:clamp(48px,5.4vw,78px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  margin-bottom:30px;
+}
+.hero h1 span{color:#ff7440;}
+.hero-sub{max-width:610px;font-size:clamp(17px,1.45vw,21px);line-height:1.65;color:rgba(255,255,255,.72);}
+.hero-btns{gap:12px;}
+.btn-primary,.btn-secondary{border-radius:999px;padding:14px 22px;font-size:14px;}
+.btn-primary{box-shadow:0 12px 32px rgba(240,90,36,.24);}
+.btn-secondary{background:transparent;}
+.hero-stats{gap:0;margin-top:48px;padding-top:28px;}
+.stat-item{min-width:145px;padding-right:24px;margin-right:24px;border-right:1px solid rgba(255,255,255,.12);}
+.stat-item:last-child{border-right:0;margin-right:0;}
+.stat-val{font-size:25px;color:#fff;letter-spacing:-.04em;}
+.stat-label{max-width:120px;line-height:1.4;color:rgba(255,255,255,.5);}
+.hero-visual{width:min(38vw,470px);}
+.hero-project{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:28px;
+  background:#203655;
+  box-shadow:0 36px 90px rgba(2,9,20,.42);
+  transform:rotate(1.5deg);
+}
+.hero-project::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,18,34,.9),transparent 55%);}
+.hero-project img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);}
+.hero-project figcaption{position:absolute;left:26px;right:26px;bottom:24px;z-index:1;color:#fff;font-size:15px;line-height:1.5;}
+.hero-project figcaption span{display:block;margin-bottom:6px;color:#ff9b75;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;}
+.features,.products,.projecten,.zzp,.av-section,.contact{
+  padding-block:clamp(84px,9vw,132px);
+  padding-inline:max(24px,calc((100vw - 1200px)/2));
+}
+.features{background:#f3f1ec;}
+.section-label{font-size:10px;letter-spacing:.18em;}
+.section-title{max-width:760px;font-size:clamp(38px,4.3vw,58px);letter-spacing:-.045em;line-height:1.04;}
+.section-sub{font-size:18px;}
+.features-grid{grid-template-columns:repeat(3,1fr);gap:1px;margin-top:70px;background:#d8d5ce;border:1px solid #d8d5ce;border-radius:22px;overflow:hidden;}
+.feature-card{border:0;border-radius:0;padding:36px;background:#fbfaf7;box-shadow:none!important;}
+.feature-card:hover{background:#fff;}
+.feature-icon{
+  width:auto;height:auto;justify-content:flex-start;background:none;border-radius:0;
+  color:var(--oranje);font-size:12px;font-weight:800;letter-spacing:.14em;
+}
+.feature-card h3{font-size:19px;letter-spacing:-.02em;}
+.quickbond{
+  padding:clamp(88px,9vw,136px) max(24px,calc((100vw - 1200px)/2));
+  gap:clamp(50px,8vw,110px);
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
+    #10213b;
+  background-size:48px 48px;
+}
+.qb-content h2{font-size:clamp(40px,4.6vw,62px);letter-spacing:-.045em;}
+.qb-badge{border-radius:999px;padding:6px 12px;}
+.qb-guarantee{border-radius:18px;padding:24px;}
+.qb-box{border-radius:24px;padding:36px;background:rgba(255,255,255,.07);backdrop-filter:blur(12px);}
+.products{background:#fbfaf7;}
+.products-grid{gap:14px;margin-top:58px;}
+.product-card{min-height:205px;border-radius:18px;padding:26px;background:#fff;}
+.product-card:focus-visible{outline:3px solid rgba(240,90,36,.35);outline-offset:3px;}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(16,33,59,.09);}
+.product-card-icon{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--oranje);}
+.zzp{background:#ebe8e1;}
+.zzp-inner{border-radius:28px;padding:clamp(34px,5vw,66px);box-shadow:0 20px 70px rgba(16,33,59,.08);}
+.zzp-badge-big{border-radius:28px;transform:rotate(2deg);}
+.projecten{background:#fff;}
+.photo-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px;margin-top:58px;}
+.photo-item{aspect-ratio:auto;height:100%;border-radius:18px;}
+.photo-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.photo-item:nth-child(2),.photo-item:nth-child(5){grid-column:span 2;}
+.photo-caption{opacity:1;padding:18px;background:linear-gradient(to top,rgba(7,18,34,.8),transparent 65%);}
+.photo-caption span{font-size:12px;transform:translateY(5px);opacity:.82;transition:.25s ease;}
+.photo-item:hover .photo-caption span{transform:none;opacity:1;}
+.av-section{background:#f3f1ec;}
+.av-accordion{max-width:none;margin-top:38px;display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start;}
+.av-item{border-radius:12px;border-color:#dad6ce;}
+.contact{background:#0d1c32;}
+.contact-inner{gap:clamp(48px,8vw,112px);}
+.contact-form{border-radius:24px;padding:36px;background:rgba(255,255,255,.075);}
+.form-group input,.form-group textarea,.form-group select{border-radius:12px;padding:14px 16px;}
+.form-submit{border-radius:999px;}
+footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
+#chat-btn{width:56px;height:56px;box-shadow:0 10px 34px rgba(240,90,36,.35);}
+#chat-hint{border:1px solid var(--rand);box-shadow:0 14px 40px rgba(16,33,59,.14);}
+
+@media(max-width:900px){
+  .hero{flex-direction:column;align-items:flex-start;min-height:auto;}
+  .hero-content{max-width:760px;}
+  .hero-visual{width:100%;}
+  .hero-project{width:100%;aspect-ratio:16/9;transform:none;}
+  .features-grid{grid-template-columns:1fr 1fr;}
+  .products-grid{grid-template-columns:1fr 1fr;}
+  .av-accordion{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .demo-banner{display:none;}
+  nav{height:70px;padding-inline:18px;}
+  .nav-logo img{height:46px;}
+  .nav-cta{padding:9px 13px;}
+  .hero{padding:62px 20px 70px;gap:46px;}
+  .hero h1{font-size:clamp(43px,13vw,62px);}
+  .hero-sub{font-size:17px;}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);width:100%;}
+  .stat-item{min-width:0;margin:0;padding:0 12px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:first-child{padding-left:0;}
+  .stat-val{font-size:22px;}
+  .stat-label{font-size:10px;}
+  .hero-project{aspect-ratio:4/3;border-radius:20px;}
+  .features,.products,.projecten,.zzp,.av-section,.contact{padding:76px 20px;}
+  .features-grid{grid-template-columns:1fr;margin-top:46px;}
+  .quickbond{padding:76px 20px;}
+  .products-grid{grid-template-columns:1fr;}
+  .photo-grid{grid-template-columns:1fr 1fr;grid-auto-rows:132px;}
+  .photo-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .photo-item:nth-child(2),.photo-item:nth-child(5){grid-column:span 1;}
+  #chat-hint{display:none!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important;}
+}
 </style>
+<link rel="stylesheet" href="/redesign.css">
 </head>
 <body>
 
-<div class="demo-banner">🔧 Dit is een AI-demo gebouwd door Briqk<span>DEMO</span></div>
+<div class="scroll-progress" aria-hidden="true"></div>
 
-<nav>
-  <div class="nav-logo">
+<div class="demo-banner">Conceptwebsite gebouwd door Briqk<span>Demo</span></div>
+
+<nav aria-label="Hoofdnavigatie">
+  <a class="nav-logo" href="#top" aria-label="Nijtec home">
     <img src="/NijTec_logo.png" alt="Nijtec logo">
-  </div>
+    <span class="nav-wordmark"><strong>Nijtec B.V.</strong><small>Service &amp; Quality · Dalen</small></span>
+  </a>
   <div class="nav-links">
     <a href="#producten">Producten</a>
+    <a href="#toepassingen">Toepassingen</a>
     <a href="#quickbond">Quickbond</a>
     <a href="#projecten">Projecten</a>
     <a href="#zzp">ZZP-Pakket</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="tel:0615588843" class="nav-cta">📞 Bel direct</a>
+  <a href="tel:0615588843" class="nav-cta">Bel direct</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-logo-watermark">
     <img src="/NijTec_logo.png" alt="">
   </div>
   <div class="hero-content">
-    <div class="hero-badge">🏗️ Specialist in verlijming & gevelbeplating</div>
-    <h1>De <span>sterkste lijmen</span> voor bouw & industrie</h1>
-    <p class="hero-sub">Nijtec B.V. levert professionele lijmen, kitten en coatings — inclusief het eigen topproduct Quickbond. Met ons montage team plaatsen we ook gevelbeplating voor u.</p>
+    <div class="hero-badge"><strong>Nijtec B.V.</strong><span>Lijmen · Kitten · Coatings · Montage</span></div>
+    <h1><span>Nijtec levert</span> lijmen, kitten en coatings voor bouw en industrie.</h1>
+    <p class="hero-sub">Productadvies, levering en montage vanuit Dalen. U spreekt rechtstreeks met iemand die het materiaal en de toepassing kent.</p>
     <div class="hero-btns">
-      <a href="tel:0615588843" class="btn-primary">📞 06-155 888 43</a>
-      <a href="#producten" class="btn-secondary">Bekijk producten →</a>
+      <a href="tel:0615588843" class="btn-primary">Bel 06-155 888 43</a>
+      <a href="#producten" class="btn-secondary">Naar het assortiment →</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item"><div class="stat-val">10</div><div class="stat-label">jaar garantie Quickbond</div></div>
@@ -268,37 +481,52 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
     </div>
   </div>
   <div class="hero-visual">
-    <div class="hero-card">
-      <div class="hero-card-title">Ons assortiment</div>
-      <div class="product-tag"><div class="tag-dot"></div><div class="tag-name">Quickbond</div><div class="tag-badge">TOPPRODUCT</div></div>
-      <div class="product-tag"><div class="tag-dot"></div><div class="tag-name">Lijmen & Kitten</div></div>
-      <div class="product-tag"><div class="tag-dot"></div><div class="tag-name">PU-schuimen</div></div>
-      <div class="product-tag"><div class="tag-dot"></div><div class="tag-name">Coatings</div></div>
-      <div class="product-tag"><div class="tag-dot"></div><div class="tag-name">Steenstrips</div></div>
-      <div class="product-tag"><div class="tag-dot"></div><div class="tag-name">Luchtdicht bouwen</div></div>
-    </div>
+    <figure class="hero-project">
+      <img src="/assets/hero-project.jpg" alt="Woning met door Nijtec gemonteerde gevelbeplating">
+      <figcaption><span>Quickbond in de praktijk</span>Gevelbeplating vakkundig verlijmd door het Nijtec Montage Team.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="features">
-  <div class="section-label">Waarom Nijtec</div>
-  <div class="section-title">Kwaliteit die houdt — letterlijk</div>
-  <p class="section-sub">Al onze producten zijn ontwikkeld op basis van praktijkervaring en geproduceerd volgens ISO 9001. Van ZZP-er tot grote aannemer.</p>
+<section class="features" id="toepassingen">
+  <div class="section-label">Nijtec in de praktijk</div>
+  <div class="section-title">Begin bij de toepassing. Wij vinden het product.</div>
+  <p class="section-sub">Voor zzp'ers, aannemers en industrie. Kies waar u aan werkt en bekijk de producten, verwerking en montage die daarbij passen.</p>
+  <div class="application-grid">
+    <a class="application-card" href="#quickbond">
+      <img src="/assets/projects/16.jpg" alt="Gevelbeplating gemonteerd met Quickbond" loading="lazy">
+      <span class="application-number">01</span>
+      <strong>Gevel &amp; plaatmateriaal</strong>
+      <small>Quickbond, steenstrips en montage</small>
+    </a>
+    <a class="application-card" href="#producten">
+      <img src="/assets/projects/07.jpg" alt="Trespa verlijmd zonder primer of paneltape" loading="lazy">
+      <span class="application-number">02</span>
+      <strong>Verlijmen &amp; afdichten</strong>
+      <small>Lijmen, kitten en luchtdicht bouwen</small>
+    </a>
+    <a class="application-card" href="#projecten">
+      <img src="/assets/projects/02.jpg" alt="Epoxyvloer aangebracht in een projectruimte" loading="lazy">
+      <span class="application-number">03</span>
+      <strong>Oppervlak beschermen</strong>
+      <small>Coatings voor wand, vloer en dak</small>
+    </a>
+  </div>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">🔬</div><h3>ISO 9001 gecertificeerd</h3><p>Alle producten worden geproduceerd volgens strenge kwaliteitsnormen. Geen compromissen op kwaliteit.</p></div>
-    <div class="feature-card"><div class="feature-icon">🏗️</div><h3>Montage team beschikbaar</h3><p>Nijtec levert niet alleen producten — ons montage team brengt gevelbeplating en coatings vakkundig aan.</p></div>
-    <div class="feature-card"><div class="feature-icon">📦</div><h3>Flexibele levering</h3><p>Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote projecten. Voor elk budget een oplossing.</p></div>
-    <div class="feature-card"><div class="feature-icon">🔧</div><h3>Technisch advies</h3><p>Uitgebreide ondersteuning via technisch advies en gedetailleerde verwerkingsinstructies bij elk product.</p></div>
-    <div class="feature-card"><div class="feature-icon">⚡</div><h3>Snel leverbaar</h3><p>Groot assortiment op voorraad. Direct bereikbaar via telefoon of e-mail voor spoedbeschikbaarheid.</p></div>
-    <div class="feature-card"><div class="feature-icon">🌿</div><h3>Duurzaam assortiment</h3><p>Productontwikkeling gericht op duurzaamheid en overzichtelijkheid — minder verspilling, meer resultaat.</p></div>
+    <div class="feature-card"><div class="feature-icon">01</div><h3>ISO 9001 gecertificeerd</h3><p>De productie en kwaliteitscontrole volgen een vastgelegd ISO 9001-proces.</p></div>
+    <div class="feature-card"><div class="feature-icon">02</div><h3>Eigen montageteam</h3><p>Ons montageteam brengt gevelbeplating en coatings op locatie aan.</p></div>
+    <div class="feature-card"><div class="feature-icon">03</div><h3>Flexibele levering</h3><p>Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote projecten. Voor elk budget een oplossing.</p></div>
+    <div class="feature-card"><div class="feature-icon">04</div><h3>Technisch advies</h3><p>Uitgebreide ondersteuning via technisch advies en gedetailleerde verwerkingsinstructies bij elk product.</p></div>
+    <div class="feature-card"><div class="feature-icon">05</div><h3>Snel leverbaar</h3><p>Groot assortiment op voorraad. Direct bereikbaar via telefoon of e-mail voor spoedbeschikbaarheid.</p></div>
+    <div class="feature-card"><div class="feature-icon">06</div><h3>Gericht assortiment</h3><p>Productkeuze op basis van toepassing, ondergrond en benodigde hoeveelheid.</p></div>
   </div>
 </section>
 
 <section class="quickbond" id="quickbond">
   <div class="qb-content">
-    <div class="qb-badge">⭐ Topproduct</div>
-    <h2>Quickbond —<br><span>ijzersterke verlijming</span></h2>
-    <p>De Quickbond is een verlijmende kit met extreem hoge aanvangskleefkracht. Verlijm HDPL-beplating, steenstrips en meer — zonder primers, paneltapes of extra ondersteuning.</p>
+    <div class="qb-badge">Topproduct</div>
+    <h2>Quickbond.<br><span>Zonder primer of paneltape.</span></h2>
+    <p>Een verlijmende kit met hoge aanvangskleefkracht voor onder meer HDPL-beplating en steenstrips. De delen blijven direct op hun plaats.</p>
     <div class="qb-props">
       <div class="qb-prop">Makkelijk te verwerken</div><div class="qb-prop">Extreem krachtig</div>
       <div class="qb-prop">Geen paneltape nodig</div><div class="qb-prop">Blijvend elastisch</div>
@@ -311,14 +539,30 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
     </div>
   </div>
   <div class="qb-visual">
+    <div class="qb-model-wrap" aria-label="Interactieve 3D productweergave van de Quickbond verlijmende kit">
+      <div class="qb-render-stage">
+        <div class="qb-render-glow" aria-hidden="true"></div>
+        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Gerenderde Quickbond koker van Nijtec met witte nozzle en rood label">
+      </div>
+      <div class="qb-model" role="img" aria-label="Quickbond koker met nozzle en Nijtec-label">
+        <div class="qb-model-shadow"></div>
+        <div class="qb-cartridge">
+          <div class="qb-cartridge-top"></div>
+          <div class="qb-cartridge-label"><span>NIJTEC</span><strong>QUICKBOND</strong><em>HIGH INITIAL TACK</em><small>10 JAAR GARANTIE</small></div>
+          <div class="qb-cartridge-nozzle"></div>
+          <div class="qb-cartridge-cap"></div>
+        </div>
+      </div>
+      <div class="qb-model-caption"><span>PRODUCT 01</span><strong>Quickbond</strong><small>Verlijmende kit voor gevel, plaat en steen.</small></div>
+    </div>
     <div class="qb-box">
       <div class="qb-toepassingen">Toepassingen</div>
-      <div class="toep-item"><div class="toep-icon">🏠</div><div class="toep-text">HDPL gevelbeplating</div></div>
-      <div class="toep-item"><div class="toep-icon">🧱</div><div class="toep-text">Beton & gips</div></div>
-      <div class="toep-item"><div class="toep-icon">⚙️</div><div class="toep-text">Metaal & aluminium</div></div>
-      <div class="toep-item"><div class="toep-icon">🪨</div><div class="toep-text">Steen & natuursteen</div></div>
-      <div class="toep-item"><div class="toep-icon">🪞</div><div class="toep-text">Spiegels & kunststof</div></div>
-      <div class="toep-item"><div class="toep-icon">🔧</div><div class="toep-text">Rubber & isolatie</div></div>
+      <div class="toep-item"><div class="toep-icon">01</div><div class="toep-text">HDPL gevelbeplating</div></div>
+      <div class="toep-item"><div class="toep-icon">02</div><div class="toep-text">Beton & gips</div></div>
+      <div class="toep-item"><div class="toep-icon">03</div><div class="toep-text">Metaal & aluminium</div></div>
+      <div class="toep-item"><div class="toep-icon">04</div><div class="toep-text">Steen & natuursteen</div></div>
+      <div class="toep-item"><div class="toep-icon">05</div><div class="toep-text">Spiegels & kunststof</div></div>
+      <div class="toep-item"><div class="toep-icon">06</div><div class="toep-text">Rubber & isolatie</div></div>
       <br>
       <div style="font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Leveringsvorm</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -332,16 +576,16 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 
 <section class="products" id="producten">
   <div class="section-label">Assortiment</div>
-  <div class="section-title">Volledig productenpakket</div>
+  <div class="section-title">Producten voor werkplaats en bouwplaats.</div>
   <div class="products-grid">
-    <div class="product-card" data-modal="lijmen"><div class="product-card-icon">🔗</div><h3>Lijmen</h3><p>Voor diverse materialen en ondergronden. Professionele kwaliteit.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="kitten"><div class="product-card-icon">🔩</div><h3>Kitten</h3><p>Afdichtingskitten voor bouw en industrie, diverse typen.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="pu"><div class="product-card-icon">💨</div><h3>PU-schuimen</h3><p>Vullende en lijmende PU-schuimen, ook gecertificeerd flexibel.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="coatings"><div class="product-card-icon">🎨</div><h3>Coatings</h3><p>Wand-, vloer- en dakcoatings. Ook op tegels toepasbaar.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="2comp"><div class="product-card-icon">🧪</div><h3>2-component lijmen</h3><p>Voor veeleisende toepassingen met hoge sterktevereisten.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="steenstrips"><div class="product-card-icon">🪨</div><h3>Steenstrips</h3><p>Decoratieve steenstrips voor gevel en interieur toepassingen.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="luchtdicht"><div class="product-card-icon">🏠</div><h3>Luchtdicht bouwen</h3><p>Producten voor luchtdichte bouwoplossingen.</p><div class="product-card-link">Meer info →</div></div>
-    <div class="product-card" data-modal="acrylaten"><div class="product-card-icon">⚗️</div><h3>Acrylaten</h3><p>Diverse acrylaat producten voor professioneel gebruik.</p><div class="product-card-link">Meer info →</div></div>
+    <div class="product-card" data-modal="lijmen" role="button" tabindex="0"><div class="product-card-icon">01 / LIJMEN</div><h3>Lijmen</h3><p>Voor hout, beton, metaal, kunststof en constructiepanelen.</p><div class="product-card-link">Bekijk lijmen →</div></div>
+    <div class="product-card" data-modal="kitten" role="button" tabindex="0"><div class="product-card-icon">02 / KITTEN</div><h3>Kitten</h3><p>Voor voegen, gevels, ramen, deuren en sanitaire ruimten.</p><div class="product-card-link">Bekijk kitten →</div></div>
+    <div class="product-card" data-modal="pu" role="button" tabindex="0"><div class="product-card-icon">03 / PU</div><h3>PU-schuimen</h3><p>Vullend en lijmend. Ook flexibel gecertificeerd.</p><div class="product-card-link">Bekijk PU-schuimen →</div></div>
+    <div class="product-card" data-modal="coatings" role="button" tabindex="0"><div class="product-card-icon">04 / COATINGS</div><h3>Coatings</h3><p>Voor wand, vloer, dak en bestaande tegelondergronden.</p><div class="product-card-link">Bekijk coatings →</div></div>
+    <div class="product-card" data-modal="2comp" role="button" tabindex="0"><div class="product-card-icon">05 / 2-COMP</div><h3>2-component lijmen</h3><p>Voor zwaar belaste en chemisch bestendige verbindingen.</p><div class="product-card-link">Bekijk 2-component →</div></div>
+    <div class="product-card" data-modal="steenstrips" role="button" tabindex="0"><div class="product-card-icon">06 / STEEN</div><h3>Steenstrips</h3><p>Voor gevels, entrees, tuinmuren en binnenwanden.</p><div class="product-card-link">Bekijk steenstrips →</div></div>
+    <div class="product-card" data-modal="luchtdicht" role="button" tabindex="0"><div class="product-card-icon">07 / LUCHTDICHT</div><h3>Luchtdicht bouwen</h3><p>Voor kozijnen, leidingdoorvoeren en gevelaansluitingen.</p><div class="product-card-link">Bekijk luchtdicht bouwen →</div></div>
+    <div class="product-card" data-modal="acrylaten" role="button" tabindex="0"><div class="product-card-icon">08 / ACRYLAAT</div><h3>Acrylaten</h3><p>Voor overschilderbare kieren, voegen en binnenwerk.</p><div class="product-card-link">Bekijk acrylaten →</div></div>
   </div>
 </section>
 
@@ -349,8 +593,8 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   <div class="zzp-inner">
     <div class="zzp-content">
       <div class="section-label">ZZP-ers & eenmansbedrijven</div>
-      <h2>Speciaal ZZP-pakket</h2>
-      <p>Veel ZZP-ers vroegen om kleinere hoeveelheden. We luisterden — en ontwikkelden een pakket dat u zelf kunt samenstellen. Alles wat u dagelijks nodig heeft, in één bestelling.</p>
+      <h2>Zelf samenstellen. Vanaf €50.</h2>
+      <p>Kies de producten die u dagelijks gebruikt en bestel ze als compact zzp-pakket. Geen grote afname nodig.</p>
       <div class="zzp-items">
         <span class="zzp-tag">Overschilderbare kit</span><span class="zzp-tag">Quickbond</span>
         <span class="zzp-tag">Anticrack acryl</span><span class="zzp-tag">Flexibel PU-schuim</span>
@@ -358,9 +602,9 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
       </div>
       <div class="zzp-price">
         <div class="zzp-prijs-val">€ 50</div>
-        <div class="zzp-prijs-label">per pakket — zelf samen te stellen</div>
+        <div class="zzp-prijs-label">per pakket, zelf samen te stellen</div>
       </div>
-      <a href="tel:0615588843" class="btn-primary">📞 Direct bestellen</a>
+      <a href="tel:0615588843" class="btn-primary">Direct bestellen</a>
     </div>
     <div class="zzp-visual">
       <div class="zzp-badge-big">
@@ -373,25 +617,25 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 
 <section class="projecten" id="projecten">
   <div class="section-label">Referenties</div>
-  <div class="section-title">Onze projecten</div>
-  <p class="section-sub">Hieronder enkele projecten waarin wij onze medewerking hebben verleend — en daar zijn we trots op.</p>
+  <div class="section-title">Gemonteerd en verlijmd door Nijtec.</div>
+  <p class="section-sub">Gevelbeplating, steenstrips en coatings. Klik op een foto voor het volledige projectbeeld.</p>
   <div class="photo-grid">
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/16.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Woning rondom plus de nok beplakt — Tectiva Activa gemonteerd met de Quickbond. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/15.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Voorkant woning beplakt met Tectiva Activa met de Quickbond. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/14.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Tectiva Activa Eternit verlijmt met de Quickbond op dakkapellen. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/13.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Activa Tectiva aangebracht op dakkapellen met de Quickbond. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/12.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Het aanbrengen van cementgebonden vezelplaat onderkant gootwerk. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/11.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Epoxyvloer aanbrengen in leslokalen penitentiaire inrichting Veenhuizen</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/10.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Eindresultaat aanbrengen epoxyvloer met hoogglans aflak</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/09.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Voorbereiding aanbrengen epoxyvloer</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/08.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Gevelbeplating verlijmd met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/07.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Trespa verlijmen met de Quickbond — geen primer of paneltape nodig</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/06.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Steenstrip verlijming met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/05.jpg" alt="" loading="lazy"><div class="photo-caption"><span>In plaats van windboeien, steenstrips geplaatst — geen onderhoud meer</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/04.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Boven het hoofd verlijmen — geen probleem met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/03.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Cementgebonden vezelplaat muurvast met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/02.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Muurvaste verlijming met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="https://nijtec.nl/wp-content/uploads/2023/10/01.jpg" alt="" loading="lazy"><div class="photo-caption"><span>Verbouwing Sporthal Muntendam</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/16.jpg" alt="Woning met Tectiva Activa gevelbeplating" loading="lazy"><div class="photo-caption"><span>Woning rondom en bij de nok beplakt. Tectiva Activa gemonteerd met Quickbond door het Nijtec Montage Team.</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/15.jpg" alt="Voorkant woning met Tectiva Activa" loading="lazy"><div class="photo-caption"><span>Voorkant woning beplakt met Tectiva Activa met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/14.jpg" alt="Dakkapellen met Tectiva Activa" loading="lazy"><div class="photo-caption"><span>Tectiva Activa Eternit verlijmt met de Quickbond op dakkapellen. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/13.jpg" alt="Afgewerkte dakkapellen" loading="lazy"><div class="photo-caption"><span>Activa Tectiva aangebracht op dakkapellen met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/12.jpg" alt="Montage van cementgebonden vezelplaat" loading="lazy"><div class="photo-caption"><span>Het aanbrengen van cementgebonden vezelplaat onderkant gootwerk. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/11.jpg" alt="Aanbrengen van epoxyvloer" loading="lazy"><div class="photo-caption"><span>Epoxyvloer aanbrengen in leslokalen penitentiaire inrichting Veenhuizen</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/10.jpg" alt="Epoxyvloer met hoogglans aflak" loading="lazy"><div class="photo-caption"><span>Eindresultaat aanbrengen epoxyvloer met hoogglans aflak</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/09.jpg" alt="Voorbereiding van een epoxyvloer" loading="lazy"><div class="photo-caption"><span>Voorbereiding aanbrengen epoxyvloer</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/08.jpg" alt="Gevelbeplating verlijmd met Quickbond" loading="lazy"><div class="photo-caption"><span>Gevelbeplating verlijmd met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/07.jpg" alt="Trespa verlijmd zonder paneltape" loading="lazy"><div class="photo-caption"><span>Trespa verlijmd met Quickbond, zonder primer of paneltape.</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/06.jpg" alt="Steenstrips verlijmd met Quickbond" loading="lazy"><div class="photo-caption"><span>Steenstrip verlijming met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/05.jpg" alt="Onderhoudsarme steenstrips" loading="lazy"><div class="photo-caption"><span>Steenstrips geplaatst in plaats van windboeien, zodat schilderonderhoud vervalt.</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/04.jpg" alt="Quickbond toegepast boven het hoofd" loading="lazy"><div class="photo-caption"><span>Quickbond toegepast voor verlijming boven het hoofd.</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/03.jpg" alt="Cementgebonden vezelplaat met Quickbond" loading="lazy"><div class="photo-caption"><span>Cementgebonden vezelplaat muurvast met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/02.jpg" alt="Muurvaste gevelverlijming" loading="lazy"><div class="photo-caption"><span>Muurvaste verlijming met de Quickbond</span></div></div>
+    <div class="photo-item"><img src="/assets/projects/01.jpg" alt="Verbouwing van Sporthal Muntendam" loading="lazy"><div class="photo-caption"><span>Verbouwing Sporthal Muntendam</span></div></div>
   </div>
 </section>
 
@@ -407,13 +651,13 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   <div class="contact-inner">
     <div>
       <div class="section-label" style="color:var(--oranje2)">Contact</div>
-      <h2>Direct contact opnemen</h2>
-      <p>Vragen over producten, technisch advies of een offerte aanvragen? Wij reageren snel.</p>
+      <h2>Bel voor productadvies of montage.</h2>
+      <p>Leg de toepassing en ondergrond aan ons voor. Dan bespreken we het geschikte product, de hoeveelheid en de levering.</p>
       <div class="contact-info">
-        <div class="contact-item"><div class="contact-item-icon">📞</div><div><strong>06-155 888 43</strong><br><span style="font-size:13px;color:rgba(255,255,255,0.5)">Ma-vr bereikbaar</span></div></div>
-        <div class="contact-item"><div class="contact-item-icon">✉️</div><div>info&#64;nijtec.nl</div></div>
-        <div class="contact-item"><div class="contact-item-icon">📍</div><div>Laveringsveen 10<br>7751 DN Dalen</div></div>
-        <div class="contact-item"><div class="contact-item-icon">🏢</div><div>KvK: 95043780</div></div>
+        <div class="contact-item"><div class="contact-item-icon">Tel</div><div><strong>06-155 888 43</strong><br><span style="font-size:13px;color:#7b828d">Ma-vr bereikbaar</span></div></div>
+        <div class="contact-item"><div class="contact-item-icon">Mail</div><div>info&#64;nijtec.nl</div></div>
+        <div class="contact-item"><div class="contact-item-icon">Adres</div><div>Laveringsveen 10<br>7751 DN Dalen</div></div>
+        <div class="contact-item"><div class="contact-item-icon">KvK</div><div>95043780</div></div>
       </div>
     </div>
     <div class="contact-form">
@@ -460,12 +704,12 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 </footer>
 
 <!-- PRODUCT MODAL -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal" id="modal">
+<div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-header">
       <div class="modal-header-icon" id="modal-icon"></div>
       <div class="modal-header-info"><h2 id="modal-title"></h2><p id="modal-subtitle"></p></div>
-      <button class="modal-close" id="modal-close-btn">✕</button>
+      <button class="modal-close" id="modal-close-btn" aria-label="Productinformatie sluiten">✕</button>
     </div>
     <div class="modal-body">
       <div class="modal-desc" id="modal-desc"></div>
@@ -478,14 +722,28 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
   </div>
 </div>
 
+<!-- PROJECT VIEWER -->
+<div class="image-viewer" id="image-viewer" aria-hidden="true">
+  <div class="image-viewer-topbar">
+    <span id="image-viewer-counter">01 / 16</span>
+    <button class="image-viewer-close" id="image-viewer-close" aria-label="Fotoviewer sluiten">✕</button>
+  </div>
+  <button class="image-viewer-nav image-viewer-prev" id="image-viewer-prev" aria-label="Vorige projectfoto">←</button>
+  <figure class="image-viewer-figure" role="dialog" aria-modal="true" aria-labelledby="image-viewer-caption">
+    <img id="image-viewer-image" src="" alt="">
+    <figcaption id="image-viewer-caption"></figcaption>
+  </figure>
+  <button class="image-viewer-nav image-viewer-next" id="image-viewer-next" aria-label="Volgende projectfoto">→</button>
+</div>
+
 <!-- CHATBOT -->
-<div id="chat-hint">💬 Stel een vraag aan onze AI-assistent!</div>
-<button id="chat-btn">💬<div id="chat-badge">1</div></button>
+<div id="chat-hint">Productadvies nodig?</div>
+<button id="chat-btn" aria-label="Open productadvies">Productadvies<div id="chat-badge">1</div></button>
 <div id="chat-window">
   <div id="chat-header">
-    <div id="chat-header-avatar">🤖</div>
+    <div id="chat-header-avatar">N</div>
     <div id="chat-header-info">
-      <div id="chat-header-name">Nijtec AI-assistent</div>
+      <div id="chat-header-name">Nijtec productadvies</div>
       <div id="chat-header-status">🟢 Online — direct antwoord</div>
     </div>
     <button id="chat-close">✕</button>
@@ -511,30 +769,89 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 <script>
 /* ── PRODUCT DATA ─────────────────────────────── */
 const products = {
-  lijmen:{icon:'🔗',title:'Lijmen',subtitle:'Professionele verlijmingsoplossingen',desc:'Nijtec biedt een breed scala aan professionele lijmen voor de bouw- en industriemarkt. Van contactlijm tot constructielijm — elk product is ontwikkeld voor maximale hechtkracht op specifieke materiaalcombinaties.',props:['Hoge initiële kleefkracht voor directe bevestiging','Geschikt voor diverse ondergronden (hout, beton, metaal, kunststof)','Snelle doorharding voor korte werktijden','ISO 9001 gecertificeerde productie','Technisch advies beschikbaar bij productkeuze'],tags:['Houtverbinding','Gevelplaten','Vloerbedekkingen','Isolatiemateriaal','Constructiepanelen','Metaalbevestiging']},
-  kitten:{icon:'🔩',title:'Kitten',subtitle:'Afdichting voor bouw en industrie',desc:'Van sanitairkit tot elastische voegkit — het Nijtec kittenpakket dekt alle gangbare afdichtingstoepassingen in de bouw en industrie. Verkrijgbaar in diverse kleuren en samenstellingen.',props:['Overschilderbaar na uitharding','Elastisch en scheurbestendig','Geschikt voor natte ruimten (sanitair, keuken)','UV-bestendig voor buitentoepassingen','Voldoet aan bouwbesluit eisen'],tags:['Sanitaire ruimten','Gevelvoegen','Dilatatievoegen','Raam & deur','Dak & dakkapel','Vloer & wand']},
-  pu:{icon:'💨',title:'PU-schuimen',subtitle:'Vullend en lijmend polyurethaanschuim',desc:'Nijtec levert zowel vullende als lijmende PU-schuimen voor diverse bouwkundige toepassingen. Onze flexibele PU-schuimen zijn gecertificeerd en uitermate geschikt voor luchtdicht bouwen.',props:['Vullend én lijmend in één product','Flexibel gecertificeerd (geen scheuren bij beweging)','Goede thermische isolatiewaarde','Bestand tegen vocht na uitharding','Snel leverbaar in kleine en grote hoeveelheden'],tags:['Kozijnmontage','Luchtdicht bouwen','Thermische isolatie','Leidingdoorvoer','Vloer & wand isolatie','Bouwkundige opvulling']},
-  coatings:{icon:'🎨',title:'Coatings',subtitle:'Wand-, vloer- en dakcoatings',desc:'Het Nijtec coatingsassortiment biedt bescherming én uitstraling. Onze coatings zijn toepasbaar op bestaande tegels, betonvloeren, platte daken en gevels — zonder sloopwerk.',props:['Direct op tegels aanbrengen (geen sloop)','Waterdicht en stroef (vloertoepassingen)','UV-bestendig voor dakcoatings','Slijtvast en makkelijk te reinigen','Verkrijgbaar in diverse kleuren'],tags:['Badkamer & keuken','Garagevloer','Plat dak','Balkons','Gevels','Betonvloer']},
-  '2comp':{icon:'🧪',title:'2-component lijmen',subtitle:'Maximale hechtkracht voor zware toepassingen',desc:'Wanneer standaard lijmen niet voldoende zijn, bieden 2-component lijmen de ultieme verbindingssterkte. Ideaal voor constructieve verbindingen waarbij hoge belasting of chemische weerstand vereist is.',props:['Extreem hoge treksterkte en schuifsterkte','Bestand tegen chemicaliën en oplosmiddelen','Geschikt voor constructieve verbindingen','Instelbare verwerkingstijd (pot life)','Diverse mengverhoudingen beschikbaar'],tags:['Staalconstructies','Betonreparatie','Machine- & apparatenbouw','Marine toepassingen','Chemische industrie','Zwaar transport']},
-  steenstrips:{icon:'🪨',title:'Steenstrips',subtitle:'Decoratieve steenuitstraling voor gevel en interieur',desc:'Nijtec steenstrips geven uw gevel of interieur een authentieke steenuitstraling zonder het gewicht van echte steen. Te plaatsen met de Quickbond voor een snelle, duurzame montage.',props:['Licht van gewicht — geen extra verzwaring','Direct te verlijmen met Quickbond (geen ankers nodig)','Vorstbestendig voor buitengebruik','Verkrijgbaar in diverse kleuren en formaten','Eenvoudig op maat te snijden'],tags:['Gevelbekleding','Interieurdecoratie','Schoorsteenmantel','Tuinmuur','Accentwand','Entree & portaal']},
-  luchtdicht:{icon:'🏠',title:'Luchtdicht bouwen',subtitle:'Complete systemen voor luchtdichte constructies',desc:'Luchtdicht bouwen is de basis voor energiezuinige woningen en gebouwen. Nijtec levert een compleet pakket producten om aansluitingen, doorgangen en naden perfect af te dichten.',props:['Voldoet aan Bouwbesluit eisen voor luchtdichtheid','Geschikt voor hout-, staal- en betonconstructies','Compatibel met dampopen en dampdichte systemen','Duurzame oplossingen voor de lange termijn','Technisch advies en verwerkingsinstructies inbegrepen'],tags:['Nieuwbouw woningen','Renovatie & isolatie','Kozijnaansluitingen','Leidingdoorvoeren','Vloer-gevel aansluiting','Spouwmuurvulling']},
-  acrylaten:{icon:'⚗️',title:'Acrylaten',subtitle:'Veelzijdige acrylaat producten',desc:'Acrylaten zijn de meest veelzijdige afdichtings- en lijmproducten binnen het bouwassortiment. Makkelijk te verwerken, overschilderbaar en verkrijgbaar in diverse uitvoeringen voor zowel binnen als buiten.',props:['Overschilderbaar na uitharding','Op waterbasis — milieuvriendelijk','Eenvoudig te verwerken met kitpistool','Verkrijgbaar in wit, grijs en transparant','Makkelijk bij te werken na droging'],tags:['Voeg & naad afdichting','Overschilderbare kieren','Houtverbindingen','Plinten & lijsten','Reparatiewerk','Binnenhuiswerk']}
+  lijmen:{icon:'01',title:'Lijmen',subtitle:'Professionele verlijmingsoplossingen',desc:'Lijmen voor hout, beton, metaal, kunststof en constructiepanelen. De materiaalcombinatie, belasting en gewenste werktijd bepalen welk product geschikt is.',props:['Hoge initiële kleefkracht voor directe bevestiging','Geschikt voor diverse ondergronden (hout, beton, metaal, kunststof)','Snelle doorharding voor korte werktijden','ISO 9001 gecertificeerde productie','Technisch advies beschikbaar bij productkeuze'],tags:['Houtverbinding','Gevelplaten','Vloerbedekkingen','Isolatiemateriaal','Constructiepanelen','Metaalbevestiging']},
+  kitten:{icon:'02',title:'Kitten',subtitle:'Afdichting voor bouw en industrie',desc:'Sanitairkit en elastische voegkit voor natte ruimten, gevelaansluitingen, ramen en deuren. Leverbaar in verschillende kleuren en samenstellingen.',props:['Overschilderbaar na uitharding','Elastisch en scheurbestendig','Geschikt voor natte ruimten (sanitair, keuken)','UV-bestendig voor buitentoepassingen','Voldoet aan bouwbesluit eisen'],tags:['Sanitaire ruimten','Gevelvoegen','Dilatatievoegen','Raam & deur','Dak & dakkapel','Vloer & wand']},
+  pu:{icon:'03',title:'PU-schuimen',subtitle:'Vullend en lijmend polyurethaanschuim',desc:'Nijtec levert zowel vullende als lijmende PU-schuimen voor diverse bouwkundige toepassingen. Onze flexibele PU-schuimen zijn gecertificeerd en uitermate geschikt voor luchtdicht bouwen.',props:['Vullend én lijmend in één product','Flexibel gecertificeerd (geen scheuren bij beweging)','Goede thermische isolatiewaarde','Bestand tegen vocht na uitharding','Snel leverbaar in kleine en grote hoeveelheden'],tags:['Kozijnmontage','Luchtdicht bouwen','Thermische isolatie','Leidingdoorvoer','Vloer & wand isolatie','Bouwkundige opvulling']},
+  coatings:{icon:'04',title:'Coatings',subtitle:'Wand-, vloer- en dakcoatings',desc:'Coatings voor bestaande tegels, betonvloeren, platte daken en gevels. Bestaande tegelondergronden kunnen worden behandeld zonder eerst te slopen.',props:['Direct op tegels aanbrengen (geen sloop)','Waterdicht en stroef (vloertoepassingen)','UV-bestendig voor dakcoatings','Slijtvast en makkelijk te reinigen','Verkrijgbaar in diverse kleuren'],tags:['Badkamer & keuken','Garagevloer','Plat dak','Balkons','Gevels','Betonvloer']},
+  '2comp':{icon:'05',title:'2-component lijmen',subtitle:'Maximale hechtkracht voor zware toepassingen',desc:'Wanneer standaard lijmen niet voldoende zijn, bieden 2-component lijmen de ultieme verbindingssterkte. Ideaal voor constructieve verbindingen waarbij hoge belasting of chemische weerstand vereist is.',props:['Extreem hoge treksterkte en schuifsterkte','Bestand tegen chemicaliën en oplosmiddelen','Geschikt voor constructieve verbindingen','Instelbare verwerkingstijd (pot life)','Diverse mengverhoudingen beschikbaar'],tags:['Staalconstructies','Betonreparatie','Machine- & apparatenbouw','Marine toepassingen','Chemische industrie','Zwaar transport']},
+  steenstrips:{icon:'06',title:'Steenstrips',subtitle:'Steenuitstraling voor gevel en interieur',desc:'Lichtgewicht steenstrips voor gevels, entrees, tuinmuren en binnenwanden. De strips zijn met Quickbond te monteren zonder mechanische ankers.',props:['Licht van gewicht, zonder extra verzwaring','Direct te verlijmen met Quickbond (geen ankers nodig)','Vorstbestendig voor buitengebruik','Verkrijgbaar in diverse kleuren en formaten','Eenvoudig op maat te snijden'],tags:['Gevelbekleding','Interieurdecoratie','Schoorsteenmantel','Tuinmuur','Accentwand','Entree & portaal']},
+  luchtdicht:{icon:'07',title:'Luchtdicht bouwen',subtitle:'Complete systemen voor luchtdichte constructies',desc:'Luchtdicht bouwen is de basis voor energiezuinige woningen en gebouwen. Nijtec levert een compleet pakket producten om aansluitingen, doorgangen en naden perfect af te dichten.',props:['Voldoet aan Bouwbesluit eisen voor luchtdichtheid','Geschikt voor hout-, staal- en betonconstructies','Compatibel met dampopen en dampdichte systemen','Duurzame oplossingen voor de lange termijn','Technisch advies en verwerkingsinstructies inbegrepen'],tags:['Nieuwbouw woningen','Renovatie & isolatie','Kozijnaansluitingen','Leidingdoorvoeren','Vloer-gevel aansluiting','Spouwmuurvulling']},
+  acrylaten:{icon:'08',title:'Acrylaten',subtitle:'Overschilderbare afdichting',desc:'Acrylaten voor kieren, voegen, plinten, lijsten en reparatiewerk binnen. Ze zijn op waterbasis, eenvoudig te verwerken en na uitharding overschilderbaar.',props:['Overschilderbaar na uitharding','Op waterbasis','Eenvoudig te verwerken met kitpistool','Verkrijgbaar in wit, grijs en transparant','Makkelijk bij te werken na droging'],tags:['Voeg & naad afdichting','Overschilderbare kieren','Houtverbindingen','Plinten & lijsten','Reparatiewerk','Binnenhuiswerk']}
 };
 
-function openModal(key) {
+let modalTrigger = null;
+function openModal(key, trigger) {
   const p = products[key];
+  modalTrigger = trigger || document.activeElement;
   document.getElementById('modal-icon').textContent = p.icon;
   document.getElementById('modal-title').textContent = p.title;
   document.getElementById('modal-subtitle').textContent = p.subtitle;
   document.getElementById('modal-desc').textContent = p.desc;
   document.getElementById('modal-props').innerHTML = p.props.map(x=>`<div class="modal-prop">${x}</div>`).join('');
   document.getElementById('modal-tags').innerHTML = p.tags.map(x=>`<span class="modal-tag">${x}</span>`).join('');
+  document.getElementById('modal-cta-btn').textContent = 'Vraag informatie over ' + p.title + ' →';
   document.getElementById('modal-overlay').classList.add('open');
+  document.getElementById('modal-overlay').setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
+  setTimeout(function(){ document.getElementById('modal-close-btn').focus(); }, 0);
 }
-function closeModal(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeModal(){
+  const overlay=document.getElementById('modal-overlay');
+  if(!overlay.classList.contains('open'))return;
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  if(modalTrigger)modalTrigger.focus();
+}
 function closeModalOutside(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+/* ── PROJECT VIEWER ─────────────────────── */
+let projectImages=[];
+let activeProjectImage=0;
+let imageViewerTrigger=null;
+function renderProjectImage(){
+  const item=projectImages[activeProjectImage];
+  if(!item)return;
+  const img=item.querySelector('img');
+  const caption=item.querySelector('.photo-caption span');
+  const viewerImage=document.getElementById('image-viewer-image');
+  viewerImage.src=img.currentSrc || img.src;
+  viewerImage.alt=img.alt;
+  document.getElementById('image-viewer-caption').textContent=caption ? caption.textContent : img.alt;
+  document.getElementById('image-viewer-counter').textContent=String(activeProjectImage+1).padStart(2,'0')+' / '+String(projectImages.length).padStart(2,'0');
+}
+function openProjectViewer(index,trigger){
+  activeProjectImage=index;
+  imageViewerTrigger=trigger || document.activeElement;
+  renderProjectImage();
+  const viewer=document.getElementById('image-viewer');
+  viewer.classList.add('open');
+  viewer.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  setTimeout(function(){document.getElementById('image-viewer-close').focus();},0);
+}
+function closeProjectViewer(){
+  const viewer=document.getElementById('image-viewer');
+  if(!viewer.classList.contains('open'))return;
+  viewer.classList.remove('open');
+  viewer.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  if(imageViewerTrigger)imageViewerTrigger.focus();
+}
+function moveProjectViewer(direction){
+  activeProjectImage=(activeProjectImage+direction+projectImages.length)%projectImages.length;
+  renderProjectImage();
+}
+document.addEventListener('keydown',function(e){
+  const viewer=document.getElementById('image-viewer');
+  if(viewer.classList.contains('open')){
+    if(e.key==='Escape')closeProjectViewer();
+    if(e.key==='ArrowLeft')moveProjectViewer(-1);
+    if(e.key==='ArrowRight')moveProjectViewer(1);
+    return;
+  }
+  if(e.key==='Escape')closeModal();
+});
 
 /* ── CONTACT FORM ──────────────────────────────── */
 function submitForm(){
@@ -577,7 +894,7 @@ function addMsg(text,isUser){
   const msgs=document.getElementById('chat-messages');
   const div=document.createElement('div');
   div.className='msg '+(isUser?'msg-user':'msg-bot');
-  div.innerHTML=text;
+  div.textContent=text;
   msgs.appendChild(div);
   msgs.scrollTop=msgs.scrollHeight;
 }
@@ -641,7 +958,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Product cards → open modal
   document.querySelectorAll('.product-card[data-modal]').forEach(function(card) {
-    card.addEventListener('click', function() { openModal(card.dataset.modal); });
+    card.addEventListener('click', function() { openModal(card.dataset.modal,card); });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(card.dataset.modal,card);
+      }
+    });
+  });
+
+  // Projectfoto's → toegankelijke volledige viewer
+  projectImages=Array.from(document.querySelectorAll('.photo-item'));
+  projectImages.forEach(function(item,index){
+    const img=item.querySelector('img');
+    item.setAttribute('role','button');
+    item.setAttribute('tabindex','0');
+    item.setAttribute('aria-label','Bekijk projectfoto: '+img.alt);
+    item.addEventListener('click',function(){openProjectViewer(index,item);});
+    item.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){
+        e.preventDefault();
+        openProjectViewer(index,item);
+      }
+    });
+  });
+  document.getElementById('image-viewer-close').addEventListener('click',closeProjectViewer);
+  document.getElementById('image-viewer-prev').addEventListener('click',function(){moveProjectViewer(-1);});
+  document.getElementById('image-viewer-next').addEventListener('click',function(){moveProjectViewer(1);});
+  document.getElementById('image-viewer').addEventListener('click',function(e){
+    if(e.target===document.getElementById('image-viewer'))closeProjectViewer();
   });
 
   // Modal overlay → sluiten bij klik buiten modal
@@ -733,6 +1078,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
+  }
+
+  // Kleine scrollreveal-fallback voor browsers zonder CSS view-timelines.
+  // Dezelfde inhoud blijft volledig zichtbaar wanneer reduced motion is ingesteld.
+  const revealItems = document.querySelectorAll('.application-card, .feature-card, .product-card, .photo-item');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    revealItems.forEach(function(item) { item.classList.add('is-visible'); });
+  } else {
+    revealItems.forEach(function(item) { item.classList.add('reveal-ready'); });
+    const revealObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {rootMargin:'0px 0px 10% 0px', threshold:.04});
+    revealItems.forEach(function(item) { revealObserver.observe(item); });
   }
 
 });
