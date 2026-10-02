@@ -452,11 +452,11 @@ nav {
   .photo-item {
     animation: reveal-on-scroll linear both;
     animation-timeline: view(block 0% 100%);
-    animation-range: entry 0% cover 26%;
+    animation-range: entry 0% cover 12%;
   }
 
-  .application-card:nth-child(2) { animation-range: entry 2% cover 30%; }
-  .application-card:nth-child(3) { animation-range: entry 4% cover 34%; }
+  .application-card:nth-child(2),
+  .application-card:nth-child(3) { animation-range: entry 0% cover 14%; }
 }
 
 @keyframes reveal-on-scroll {
@@ -464,8 +464,8 @@ nav {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.reveal-ready { opacity: 0; transform: translateY(26px); }
-.reveal-ready.is-visible { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s cubic-bezier(.22,.8,.25,1); }
+.reveal-ready { opacity: .35; transform: translateY(14px); }
+.reveal-ready.is-visible { opacity: 1; transform: none; transition: opacity .42s ease, transform .42s cubic-bezier(.22,.8,.25,1); }
 
 .features-grid {
   grid-column: 1 / -1;
@@ -529,7 +529,7 @@ nav {
 
 .quickbond {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .75fr);
+  grid-template-columns: minmax(340px, .78fr) minmax(640px, 1.22fr);
   align-items: start;
   gap: clamp(60px, 8vw, 120px);
   background: var(--ink);
@@ -601,14 +601,14 @@ nav {
 
 .qb-visual {
   display: grid;
-  grid-template-columns: minmax(190px, .78fr) minmax(260px, 1fr);
+  grid-template-columns: minmax(360px, 1.2fr) minmax(260px, .8fr);
   gap: 32px;
   align-items: center;
 }
 
 .qb-model-wrap {
   position: relative;
-  min-height: 470px;
+  min-height: 690px;
   display: grid;
   align-content: center;
   justify-items: center;
@@ -617,16 +617,29 @@ nav {
 
 .qb-render-stage {
   position: relative;
-  min-height: 470px;
+  width: 100%;
+  min-height: 690px;
   display: grid;
   place-items: center;
   isolation: isolate;
+  cursor: grab;
+  touch-action: pan-y;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
+
+.qb-render-stage:focus-visible {
+  outline: 2px solid var(--nijtec-orange);
+  outline-offset: 8px;
+}
+
+.qb-render-stage.is-dragging { cursor: grabbing; }
 
 .qb-render-glow {
   position: absolute;
-  width: 230px;
-  height: 230px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   background: rgba(239, 118, 47, .13);
   filter: blur(34px);
@@ -638,23 +651,43 @@ nav {
   position: relative;
   z-index: 1;
   display: block;
-  width: min(100%, 330px);
-  max-height: 500px;
+  width: min(100%, 470px);
+  max-height: 660px;
   object-fit: contain;
   filter: drop-shadow(25px 28px 20px rgba(0, 0, 0, .28));
-  transform: translateY(18px) rotateY(-10deg) rotateZ(-1deg);
+  transform: perspective(1200px) translateY(0) rotateX(calc(var(--qb-rotate-x, 2) * 1deg)) rotateY(calc(var(--qb-rotate-y, -16) * 1deg));
   transform-origin: 50% 85%;
   will-change: transform;
-  animation: qb-render-rise linear both;
-  animation-timeline: view(block 0% 100%);
-  animation-range: entry 0% cover 42%;
+  transition: transform .16s ease-out, filter .2s ease;
 }
 
-@keyframes qb-render-rise {
-  0% { opacity: .28; transform: translateY(58px) rotateY(-24deg) rotateZ(-3deg) scale(.94); }
-  55% { opacity: 1; transform: translateY(0) rotateY(-4deg) rotateZ(-1deg) scale(1); }
-  100% { opacity: 1; transform: translateY(-12px) rotateY(8deg) rotateZ(1deg) scale(1.02); }
+.qb-render-stage.is-dragging .qb-product-render {
+  transition: filter .2s ease;
+  filter: drop-shadow(34px 36px 24px rgba(0, 0, 0, .34));
 }
+
+.qb-drag-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 11px;
+  color: #f3efe6;
+  border: 1px solid rgba(255,255,255,.24);
+  background: rgba(23, 38, 78, .74);
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.qb-drag-hint span { color: var(--nijtec-orange); font-size: 16px; }
+.qb-render-stage.is-dragging .qb-drag-hint { opacity: .35; }
 
 .qb-model {
   position: relative;
@@ -1385,7 +1418,7 @@ footer {
   .hero-project { grid-template-columns: 1fr 230px; }
   .hero-project img { height: 440px; }
   .quickbond { grid-template-columns: 1fr; }
-  .qb-visual { grid-template-columns: minmax(220px, .8fr) minmax(300px, 1fr); }
+  .qb-visual { grid-template-columns: minmax(330px, 1fr) minmax(280px, .8fr); }
   .products-grid { margin-top: 48px; }
   .product-card { grid-template-columns: 120px 220px minmax(0,1fr); }
   .product-card-link { grid-column: 2; justify-self: start; margin-top: 8px; }
@@ -1453,9 +1486,9 @@ footer {
   .qb-content h2 { font-size: 44px; }
   .qb-props { grid-template-columns: 1fr; }
   .qb-visual { grid-template-columns: 1fr; gap: 16px; }
-  .qb-model-wrap { min-height: 430px; }
-  .qb-render-stage { min-height: 430px; }
-  .qb-product-render { width: min(100%, 280px); }
+  .qb-model-wrap { min-height: 540px; }
+  .qb-render-stage { min-height: 540px; }
+  .qb-product-render { width: min(100%, 350px); max-height: 510px; }
   .qb-model { transform: scale(.82) rotateX(8deg) rotateY(-24deg) rotateZ(-3deg); }
   .qb-box { padding: 26px 20px; }
 

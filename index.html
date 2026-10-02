@@ -540,9 +540,10 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
   </div>
   <div class="qb-visual">
     <div class="qb-model-wrap" aria-label="Interactieve 3D productweergave van de Quickbond verlijmende kit">
-      <div class="qb-render-stage">
+      <div class="qb-render-stage" role="group" tabindex="0" aria-label="Quickbond productviewer. Sleep horizontaal of gebruik de pijltjestoetsen om de koker te draaien." aria-describedby="qb-drag-hint">
         <div class="qb-render-glow" aria-hidden="true"></div>
-        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Gerenderde Quickbond koker van Nijtec met witte nozzle en rood label">
+        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Gerenderde Quickbond koker van Nijtec met witte nozzle en rood label" draggable="false">
+        <span class="qb-drag-hint" id="qb-drag-hint"><span aria-hidden="true">↔</span> Sleep om te draaien</span>
       </div>
       <div class="qb-model" role="img" aria-label="Quickbond koker met nozzle en Nijtec-label">
         <div class="qb-model-shadow"></div>
@@ -1095,8 +1096,93 @@ document.addEventListener('DOMContentLoaded', function() {
           observer.unobserve(entry.target);
         }
       });
-    }, {rootMargin:'0px 0px 10% 0px', threshold:.04});
+    }, {rootMargin:'0px 0px 28% 0px', threshold:.01});
     revealItems.forEach(function(item) { revealObserver.observe(item); });
+  }
+
+  // Quickbond productviewer: scrollgestuurd zolang de bezoeker niet zelf draait.
+  // Pointer capture houdt slepen betrouwbaar op muis, pen en touch.
+  const productViewer = document.querySelector('.qb-render-stage');
+  const productRender = document.querySelector('.qb-product-render');
+  if (productViewer && productRender) {
+    const clamp = function(value, min, max) { return Math.min(max, Math.max(min, value)); };
+    let rotation = -16;
+    let tilt = 2;
+    let dragging = false;
+    let userControlled = false;
+    let startX = 0;
+    let startY = 0;
+    let startRotation = 0;
+    let startTilt = 0;
+    let frame = 0;
+
+    const drawProduct = function() {
+      productRender.style.setProperty('--qb-rotate-y', rotation.toFixed(2));
+      productRender.style.setProperty('--qb-rotate-x', tilt.toFixed(2));
+      frame = 0;
+    };
+
+    const scheduleDraw = function() {
+      if (!frame) frame = requestAnimationFrame(drawProduct);
+    };
+
+    const updateFromScroll = function() {
+      if (dragging || userControlled || reducedMotion) return;
+      const rect = productViewer.getBoundingClientRect();
+      const progress = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0, 1);
+      rotation = -22 + progress * 44;
+      tilt = 4 - Math.abs(progress - .5) * 5;
+      scheduleDraw();
+    };
+
+    productViewer.addEventListener('pointerdown', function(event) {
+      if (event.button !== undefined && event.button !== 0) return;
+      dragging = true;
+      userControlled = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      startRotation = rotation;
+      startTilt = tilt;
+      productViewer.classList.add('is-dragging');
+      productViewer.setPointerCapture(event.pointerId);
+    });
+
+    productViewer.addEventListener('pointermove', function(event) {
+      if (!dragging) return;
+      rotation = clamp(startRotation + (event.clientX - startX) * .24, -38, 38);
+      tilt = clamp(startTilt - (event.clientY - startY) * .08, -7, 7);
+      scheduleDraw();
+    });
+
+    const stopProductDrag = function(event) {
+      if (!dragging) return;
+      dragging = false;
+      productViewer.classList.remove('is-dragging');
+      if (event && productViewer.hasPointerCapture(event.pointerId)) productViewer.releasePointerCapture(event.pointerId);
+    };
+
+    productViewer.addEventListener('pointerup', stopProductDrag);
+    productViewer.addEventListener('pointercancel', stopProductDrag);
+    productViewer.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        userControlled = true;
+        rotation = clamp(rotation + (event.key === 'ArrowRight' ? 6 : -6), -38, 38);
+        scheduleDraw();
+      }
+      if (event.key === 'Home' || event.key.toLowerCase() === 'r') {
+        event.preventDefault();
+        userControlled = false;
+        updateFromScroll();
+      }
+    });
+    productViewer.addEventListener('dblclick', function() {
+      userControlled = false;
+      updateFromScroll();
+    });
+    window.addEventListener('scroll', updateFromScroll, {passive:true});
+    window.addEventListener('resize', updateFromScroll);
+    updateFromScroll();
   }
 
 });
