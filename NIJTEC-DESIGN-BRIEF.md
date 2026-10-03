@@ -57,6 +57,14 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 - Animatie mag de productuitleg ondersteunen: gebruik scroll-progress voor
   voortgang, subtiele reveal voor echte content en één interactieve 3D-visual
   voor Quickbond. Geen animatie op iedere losse tekstregel.
+- De lokale True You-referentie gebruikt geen live 3D maar vooraf gerenderde
+  WebM/MP4-productfilms. De relevante les is de cinematografische presentatie:
+  grote media, weinig gelijktijdige boodschappen en `clip-path`-reveals die bij
+  `entry` beginnen. Nijtec gebruikt voor Quickbond wél echte WebGL-geometrie en
+  houdt gewone productinformatie standaard zichtbaar.
+- Verberg nooit alle kaarten of lopende tekst tot een scrolltrigger afgaat.
+  Alleen sectiekoppen en media krijgen een korte reveal (`entry 0%` tot circa
+  `entry 38%`); technische inhoud is direct leesbaar.
 - Alle animatie heeft een `prefers-reduced-motion`-variant waarin inhoud direct
   zichtbaar en volledig leesbaar blijft.
 
@@ -225,6 +233,12 @@ Een versie mag pas worden opgeleverd als op alle vragen “ja” volgt:
   https://developer.apple.com/design/tips/
 - MDN, “Scroll-driven animations”
   https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations
+- MDN, scroll timeline range names
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timeline_range_names
+- Khronos, glTF 2.0 runtime asset specification
+  https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html
+- Google / web.dev, “3D on the web” product case study
+  https://web.dev/case-studies/3d-on-the-web
 - Chrome for Developers, “Scroll-driven animations”
   https://developer.chrome.com/docs/css-ui/scroll-driven-animations
 - W3C, “C39: Using the CSS prefers-reduced-motion media feature”

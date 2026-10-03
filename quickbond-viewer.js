@@ -1,11 +1,14 @@
-import * as THREE from 'three';
-import { OrbitControls } from '/assets/vendor/OrbitControls.js';
+import * as THREE from '/assets/vendor/three.module.min.js';
+import { OrbitControls } from '/assets/vendor/OrbitControls.js?v=9';
 
 const stage = document.querySelector('.qb-render-stage');
 const canvas = document.querySelector('.qb-webgl-canvas');
 
 if (stage && canvas) {
+  stage.dataset.viewerState = 'loading';
   initQuickbondViewer().catch((error) => {
+    stage.dataset.viewerState = 'fallback';
+    stage.dataset.viewerError = error instanceof Error ? error.message : String(error);
     console.error('Quickbond 3D-viewer kon niet worden gestart.', error);
   });
 }
@@ -17,10 +20,11 @@ async function initQuickbondViewer() {
     antialias: true,
     powerPreference: 'high-performance'
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  const maximumPixelRatio = window.matchMedia('(max-width: 760px)').matches ? 1.25 : 1.5;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, maximumPixelRatio));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.12;
+  renderer.toneMapping = THREE.NeutralToneMapping;
+  renderer.toneMappingExposure = 1.04;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -28,8 +32,10 @@ async function initQuickbondViewer() {
   const camera = new THREE.PerspectiveCamera(32, 1, .1, 100);
   camera.position.set(0, .55, 14.3);
 
-  const logo = await loadImage('/NijTec_logo.png').catch(() => null);
-  const labelTexture = createLabelTexture(logo, renderer.capabilities.getMaxAnisotropy());
+  if (document.fonts) {
+    await document.fonts.load('500 100px "Instrument Sans"').catch(() => undefined);
+  }
+  const labelTexture = createLabelTexture(renderer.capabilities.getMaxAnisotropy());
   const product = createQuickbondModel(labelTexture);
   scene.add(product);
 
@@ -62,14 +68,18 @@ async function initQuickbondViewer() {
   controls.maxPolarAngle = Math.PI * .72;
   controls.saveState();
 
-  let userControlled = false;
   let pointerActive = false;
-  let scrollRotation = -.7;
+  let scrollRotation = 0;
+  let manualOffset = 0;
+  let viewerVisible = true;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const quickbondSection = stage.closest('.quickbond');
+  const storySteps = Array.from(stage.querySelectorAll('[data-qb-step]'));
+  const turnButtons = Array.from(stage.querySelectorAll('[data-qb-turn]'));
+  const resetButton = stage.querySelector('[data-qb-reset]');
 
   controls.addEventListener('start', () => {
     pointerActive = true;
-    userControlled = true;
     stage.classList.add('is-dragging');
   });
   controls.addEventListener('end', () => {
@@ -80,32 +90,38 @@ async function initQuickbondViewer() {
   stage.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
-      userControlled = true;
-      product.rotation.y += event.key === 'ArrowRight' ? .18 : -.18;
+      manualOffset += event.key === 'ArrowRight' ? .28 : -.28;
     }
     if (event.key === 'Home' || event.key.toLowerCase() === 'r') {
       event.preventDefault();
-      userControlled = false;
-      controls.reset();
-      updateScrollRotation();
+      resetViewer();
     }
   });
 
-  stage.addEventListener('dblclick', () => {
-    userControlled = false;
-    controls.reset();
-    updateScrollRotation();
+  turnButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      manualOffset += Number(button.dataset.qbTurn || 0) * .34;
+    });
   });
 
+  function resetViewer() {
+    manualOffset = 0;
+    controls.reset();
+    updateScrollRotation();
+  }
+
+  resetButton?.addEventListener('click', resetViewer);
+  stage.addEventListener('dblclick', resetViewer);
+
   function updateScrollRotation() {
-    if (userControlled || pointerActive || reducedMotion) return;
-    const rect = stage.getBoundingClientRect();
-    const progress = THREE.MathUtils.clamp(
-      (window.innerHeight - rect.top) / (window.innerHeight + rect.height),
-      0,
-      1
-    );
-    scrollRotation = -.8 + progress * 4.7;
+    if (!quickbondSection || reducedMotion) return;
+    const rect = quickbondSection.getBoundingClientRect();
+    const scrollDistance = Math.max(1, rect.height - window.innerHeight);
+    const progress = THREE.MathUtils.clamp(-rect.top / scrollDistance, 0, 1);
+    scrollRotation = progress * Math.PI * 2 * 1.15;
+    const activeStep = Math.min(storySteps.length - 1, Math.floor(progress * storySteps.length));
+    storySteps.forEach((step, index) => step.classList.toggle('is-active', index === activeStep));
+    stage.style.setProperty('--qb-progress', progress.toFixed(3));
   }
 
   function resizeRenderer() {
@@ -123,6 +139,10 @@ async function initQuickbondViewer() {
 
   const resizeObserver = new ResizeObserver(resizeRenderer);
   resizeObserver.observe(stage);
+  const visibilityObserver = new IntersectionObserver((entries) => {
+    viewerVisible = entries.some((entry) => entry.isIntersecting);
+  }, { rootMargin: '35% 0px' });
+  visibilityObserver.observe(stage);
   window.addEventListener('scroll', updateScrollRotation, { passive: true });
   window.addEventListener('resize', updateScrollRotation);
   updateScrollRotation();
@@ -132,21 +152,22 @@ async function initQuickbondViewer() {
   function render() {
     requestAnimationFrame(render);
     const delta = Math.min(clock.getDelta(), .05);
-    if (!userControlled && !pointerActive && !reducedMotion) {
-      product.rotation.y = THREE.MathUtils.damp(product.rotation.y, scrollRotation, 5.8, delta);
+    if (!pointerActive && !reducedMotion) {
+      product.rotation.y = THREE.MathUtils.damp(product.rotation.y, scrollRotation + manualOffset, 7.2, delta);
     }
     controls.update();
-    renderer.render(scene, camera);
+    if (viewerVisible && !document.hidden) renderer.render(scene, camera);
   }
 
   renderer.render(scene, camera);
   stage.classList.add('webgl-ready');
+  stage.dataset.viewerState = 'active';
   render();
 }
 
 function createQuickbondModel(labelTexture) {
   const product = new THREE.Group();
-  product.rotation.set(.025, -.7, -.015);
+  product.rotation.set(.025, 0, -.015);
 
   const whitePlastic = new THREE.MeshPhysicalMaterial({
     color: 0xf6f7fa,
@@ -263,10 +284,10 @@ function createQuickbondModel(labelTexture) {
   return product;
 }
 
-function createLabelTexture(logo, anisotropy) {
+function createLabelTexture(anisotropy) {
   const label = document.createElement('canvas');
-  label.width = 1536;
-  label.height = 3072;
+  label.width = 2048;
+  label.height = 4096;
   const context = label.getContext('2d');
   const width = label.width;
   const height = label.height;
@@ -302,16 +323,9 @@ function createLabelTexture(logo, anisotropy) {
   }
   context.restore();
 
-  if (logo) {
-    drawContainedImage(context, logo, width * .08, 70, width * .34, redLabelTop - 130);
-    drawContainedImage(context, logo, width * .58, 70, width * .34, redLabelTop - 130);
-  } else {
-    context.fillStyle = '#23468c';
-    context.font = '700 118px Arial';
-    context.textAlign = 'center';
-    context.fillText('NijTec', width * .25, redLabelTop * .56);
-    context.fillText('NijTec', width * .75, redLabelTop * .56);
-  }
+  drawNijtecMark(context, width * .50, redLabelTop * .51, .92);
+  drawNijtecMark(context, 0, redLabelTop * .51, .88);
+  drawNijtecMark(context, width, redLabelTop * .51, .88);
 
   context.save();
   context.translate(width * .5, redLabelTop + (redLabelBottom - redLabelTop) * .54);
@@ -319,13 +333,12 @@ function createLabelTexture(logo, anisotropy) {
   context.fillStyle = '#10131b';
   context.textAlign = 'center';
   context.textBaseline = 'middle';
-  context.font = '500 215px Arial, sans-serif';
-  context.letterSpacing = '8px';
+  context.font = '500 292px "Instrument Sans", Arial, sans-serif';
   context.fillText('QUICK BOND', 0, 0);
   context.restore();
 
   context.fillStyle = 'rgba(20,20,24,.72)';
-  context.font = '31px Arial, sans-serif';
+  context.font = '38px "Instrument Sans", Arial, sans-serif';
   context.textAlign = 'left';
   const details = [
     'HIGH INITIAL TACK',
@@ -342,7 +355,7 @@ function createLabelTexture(logo, anisotropy) {
   }
 
   context.fillStyle = '#182547';
-  context.font = '700 76px Arial, sans-serif';
+  context.font = '650 94px "Instrument Sans", Arial, sans-serif';
   context.textAlign = 'center';
   context.fillText('info@nijtec.nl', width * .5, height * .962);
 
@@ -361,27 +374,30 @@ function createLabelTexture(logo, anisotropy) {
   return texture;
 }
 
-function drawContainedImage(context, image, x, y, width, height) {
-  const imageRatio = image.naturalWidth / image.naturalHeight;
-  const boxRatio = width / height;
-  let drawWidth = width;
-  let drawHeight = height;
-  if (imageRatio > boxRatio) drawHeight = width / imageRatio;
-  else drawWidth = height * imageRatio;
-  context.drawImage(
-    image,
-    x + (width - drawWidth) / 2,
-    y + (height - drawHeight) / 2,
-    drawWidth,
-    drawHeight
-  );
-}
+function drawNijtecMark(context, centerX, centerY, scale) {
+  context.save();
+  context.translate(centerX, centerY);
+  context.scale(scale, scale);
+  context.lineCap = 'round';
 
-function loadImage(source) {
-  return new Promise((resolve, reject) => {
-    const image = new Image();
-    image.onload = () => resolve(image);
-    image.onerror = reject;
-    image.src = source;
-  });
+  context.strokeStyle = '#233f8d';
+  context.lineWidth = 18;
+  context.beginPath();
+  context.ellipse(0, 0, 205, 146, -.18, .35, Math.PI * 1.86);
+  context.stroke();
+
+  context.strokeStyle = '#ef762f';
+  context.lineWidth = 13;
+  context.beginPath();
+  context.ellipse(8, 3, 166, 120, -.18, Math.PI * 1.05, Math.PI * 2.43);
+  context.stroke();
+
+  context.textAlign = 'center';
+  context.textBaseline = 'middle';
+  context.font = '650 116px "Instrument Sans", Arial, sans-serif';
+  context.fillStyle = '#ef762f';
+  context.fillText('Nij', -43, 5);
+  context.fillStyle = '#233f8d';
+  context.fillText('Tec', 68, 5);
+  context.restore();
 }
