@@ -46,7 +46,7 @@
     "gallery": "Natuurlijk beeldformaat in kolommen; captions onder de foto",
     "imageViewer": "Volledig zwart beeldvlak met teller en pijlnavigatie",
     "form": "Donker technisch formulier met rechte velden en zichtbare labels",
-    "motion": "Subtiele view-timeline reveals, een scroll-progresslijn en één productgerichte 3D-scrollanimatie"
+    "motion": "Vroege view-timeline reveals, een scroll-progresslijn en één echte WebGL-productviewer met scrollrotatie en 360-graden dragbediening"
   },
   "banned": [
     "gradient",

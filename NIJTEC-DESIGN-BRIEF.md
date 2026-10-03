@@ -50,8 +50,10 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   marketingtaal te vinden zijn.
 - Maak een visueel systeem uit Nijtec-eigen bewijs. Geen abstracte 3D-vormen,
   stockfoto's, verzonnen resultaten of algemene SaaS-kaarten. Een productrender
-  mag alleen wanneer die het echte product nauwkeurig volgt: de Quickbond-render
-  gebruikt de aangeleverde koker als vorm-, label- en kleurreferentie.
+  mag alleen wanneer die het echte product nauwkeurig volgt. Quickbond gebruikt
+  een echte WebGL-productmesh met cilindrische geometrie, nozzle, schroefdraad,
+  PBR-materiaal en een rondom gemapte labeltexture op basis van de aangeleverde
+  koker. Een platte afbeelding is uitsluitend de technische fallback.
 - Animatie mag de productuitleg ondersteunen: gebruik scroll-progress voor
   voortgang, subtiele reveal voor echte content en één interactieve 3D-visual
   voor Quickbond. Geen animatie op iedere losse tekstregel.
