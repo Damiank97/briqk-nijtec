@@ -1621,24 +1621,33 @@ body {
 
 nav {
   height: 78px;
-  background: color-mix(in srgb, var(--nijtec-blue-deep) 92%, transparent);
-  backdrop-filter: blur(14px) saturate(1.15);
+  background: var(--nijtec-blue-deep);
+  backdrop-filter: none;
 }
 
+.nav-logo { gap: 14px; }
+.nav-logo img {
+  width: 124px;
+  height: 66px;
+  object-fit: contain;
+  mix-blend-mode: normal;
+  filter: none;
+}
+.nav-wordmark { padding-left: 14px; }
 .nav-links a { font-size: 13px; letter-spacing: .015em; }
 .nav-cta { min-height: 44px; display: inline-flex; align-items: center; }
 
 .hero {
-  min-height: calc(100svh - 78px);
-  padding-top: clamp(72px, 10vh, 128px);
+  min-height: min(760px, calc(100svh - 78px));
+  padding-top: clamp(52px, 7vh, 84px);
 }
 
 .hero h1 {
-  max-width: 12.5ch;
-  font-size: clamp(58px, 7.5vw, 118px);
+  max-width: 14ch;
+  font-size: clamp(50px, 5.15vw, 80px);
   font-weight: 520;
-  line-height: .93;
-  letter-spacing: -.06em;
+  line-height: .96;
+  letter-spacing: -.055em;
 }
 
 .hero h1 span { font-weight: 520; }
@@ -1844,8 +1853,11 @@ nav {
 @media (max-width: 620px) {
   body { font-size: 17px; }
   nav { height: 66px; }
+  .nav-logo { gap: 8px; }
+  .nav-logo img { width: 76px; height: 52px; }
+  .nav-wordmark { padding-left: 9px; }
   .hero { min-height: auto; }
-  .hero h1 { font-size: clamp(46px, 13vw, 64px); }
+  .hero h1 { font-size: clamp(42px, 11.5vw, 54px); }
   .section-title { font-size: clamp(42px, 12vw, 58px); }
   .quickbond { padding-block: 48px 72px; gap: 34px; }
   .qb-render-stage { min-height: 460px; height: 68svh; border-inline: 0; }
