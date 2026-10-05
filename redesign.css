@@ -37,7 +37,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -468,7 +468,13 @@ nav {
   .photo-item img {
     animation: media-reveal linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 30%;
+    animation-range: entry 0% entry 34%;
+  }
+
+  .photo-item img {
+    animation: media-reveal linear both, photo-drift linear both;
+    animation-timeline: view(block), view(block);
+    animation-range: entry 0% entry 34%, cover 0% cover 100%;
   }
 
   .application-card,
@@ -483,7 +489,7 @@ nav {
   .contact-form {
     animation: content-entry linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 24%;
+    animation-range: entry 0% entry 26%;
   }
 }
 
@@ -493,17 +499,51 @@ nav {
 }
 
 @keyframes media-reveal {
-  from { clip-path: inset(4%); opacity: .78; }
-  to { clip-path: inset(0); opacity: 1; }
+  from { clip-path: inset(100% 0 0); opacity: .12; scale: 1.06; }
+  to { clip-path: inset(0); opacity: 1; scale: 1; }
 }
 
 @keyframes content-entry {
-  from { opacity: .25; translate: var(--entry-x, 0px) 18px; }
+  from { opacity: 0; translate: var(--entry-x, 0px) 38px; }
   to { opacity: 1; translate: 0 0; }
 }
 
-.feature-card:nth-child(odd) { --entry-x: -14px; }
-.product-card:nth-child(even) { --entry-x: 14px; }
+.feature-card:nth-child(odd),
+.product-card:nth-child(odd),
+.av-item:nth-child(odd) { --entry-x: -42px; }
+.feature-card:nth-child(even),
+.product-card:nth-child(even),
+.av-item:nth-child(even) { --entry-x: 42px; }
+.application-card:nth-child(odd) { --entry-x: -26px; }
+.application-card:nth-child(even) { --entry-x: 26px; }
+.zzp-visual,
+.qb-box,
+.contact-form { --entry-x: 34px; }
+.contact-inner > div:first-child { --entry-x: -34px; }
+
+@keyframes photo-drift {
+  from { translate: 0 5%; scale: 1.1; }
+  to { translate: 0 -5%; scale: 1.02; }
+}
+
+/* The opening arrives in a short editorial sequence when the page loads. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-badge { animation: hero-arrive .58s cubic-bezier(.2,.7,.2,1) .02s both; }
+  .hero h1 { animation: hero-arrive .72s cubic-bezier(.2,.7,.2,1) .09s both; }
+  .hero-sub { animation: hero-arrive .68s cubic-bezier(.2,.7,.2,1) .18s both; }
+  .hero-btns { animation: hero-arrive .62s cubic-bezier(.2,.7,.2,1) .26s both; }
+  .hero-project { animation: hero-image-arrive .92s cubic-bezier(.2,.7,.2,1) .14s both; }
+}
+
+@keyframes hero-arrive {
+  from { opacity: 0; translate: 0 26px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes hero-image-arrive {
+  from { opacity: .25; clip-path: inset(0 0 100%); scale: 1.025; }
+  to { opacity: 1; clip-path: inset(0); scale: 1; }
+}
 
 .features-grid {
   grid-column: 1 / -1;
