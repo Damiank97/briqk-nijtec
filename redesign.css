@@ -461,14 +461,29 @@ nav {
   .contact-copy > h2 {
     animation: reveal-on-scroll linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 38%;
+    animation-range: entry 0% entry 26%;
   }
 
   .application-card img,
   .photo-item img {
     animation: media-reveal linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 45%;
+    animation-range: entry 0% entry 30%;
+  }
+
+  .application-card,
+  .feature-card,
+  .product-card,
+  .photo-item,
+  .av-item,
+  .zzp-content,
+  .zzp-visual,
+  .qb-box,
+  .contact-inner > div:first-child,
+  .contact-form {
+    animation: content-entry linear both;
+    animation-timeline: view(block);
+    animation-range: entry 0% entry 24%;
   }
 }
 
@@ -478,9 +493,17 @@ nav {
 }
 
 @keyframes media-reveal {
-  from { clip-path: inset(5%); transform: scale(.985); }
-  to { clip-path: inset(0); transform: scale(1); }
+  from { clip-path: inset(4%); opacity: .78; }
+  to { clip-path: inset(0); opacity: 1; }
 }
+
+@keyframes content-entry {
+  from { opacity: .25; translate: var(--entry-x, 0px) 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.feature-card:nth-child(odd) { --entry-x: -14px; }
+.product-card:nth-child(even) { --entry-x: 14px; }
 
 .features-grid {
   grid-column: 1 / -1;
