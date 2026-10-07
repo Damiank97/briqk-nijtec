@@ -47,6 +47,8 @@ body {
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1, h2, h3, .section-title {
@@ -95,6 +97,8 @@ nav {
   border: 0;
   border-bottom: 4px solid var(--nijtec-orange);
   box-shadow: none;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .nav-logo {
@@ -350,6 +354,8 @@ nav {
 .contact,
 .quickbond {
   padding: 96px max(22px, calc((100vw - 1220px) / 2));
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .features,
@@ -461,20 +467,20 @@ nav {
   .contact-copy > h2 {
     animation: reveal-on-scroll linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 26%;
+    animation-range: entry 12% entry 38%;
   }
 
   .application-card img,
   .photo-item img {
     animation: media-reveal linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 34%;
+    animation-range: entry 10% entry 36%;
   }
 
   .photo-item img {
     animation: media-reveal linear both, photo-drift linear both;
     animation-timeline: view(block), view(block);
-    animation-range: entry 0% entry 34%, cover 0% cover 100%;
+    animation-range: entry 10% entry 36%, cover 0% cover 100%;
   }
 
   .application-card,
@@ -489,7 +495,7 @@ nav {
   .contact-form {
     animation: content-entry linear both;
     animation-timeline: view(block);
-    animation-range: entry 0% entry 26%;
+    animation-range: entry 12% entry 38%;
   }
 }
 
