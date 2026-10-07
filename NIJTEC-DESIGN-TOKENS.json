@@ -1,0 +1,63 @@
+{
+  "name": "Nijtec Werkboek",
+  "intent": "Technische productcatalogus en projectregister voor bouw en industrie",
+  "typography": {
+    "display": "Georgia, 'Times New Roman', serif",
+    "body": "Verdana, Geneva, sans-serif",
+    "technical": "'Courier New', monospace",
+    "weights": [400, 700],
+    "rules": [
+      "Geen Inter, Roboto, Arial, Open Sans of Helvetica als hoofdlettertype",
+      "Serif alleen voor grote titels en productnamen",
+      "Technische labels in monospace en hoofdletters",
+      "Maximaal drie zichtbare tekstmaten per compositie"
+    ]
+  },
+  "color": {
+    "paper": "#f4f1e9",
+    "paperLight": "#fbf9f4",
+    "ink": "#17264e",
+    "inkSoft": "#465069",
+    "muted": "#697187",
+    "rule": "#c7cddd",
+    "nijtecBlue": "#2e4d9a",
+    "nijtecBlueDeep": "#17264e",
+    "nijtecBlueSoft": "#e9edf7",
+    "nijtecOrange": "#ef762f",
+    "nijtecOrangeDark": "#c95018"
+  },
+  "shape": {
+    "primaryRadius": "0px",
+    "border": "1px solid #c7cddd",
+    "shadow": "none"
+  },
+  "layout": {
+    "contentWidth": "1220px",
+    "desktopColumns": 12,
+    "sectionPaddingDesktop": "96px",
+    "sectionPaddingMobile": "72px 18px",
+    "breakpoints": [1440, 900, 768, 390]
+  },
+  "components": {
+    "hero": "Beschrijvende serifkop met een feitelijke introductie en een projectfoto met dossiercaption",
+    "features": "Genummerde horizontale registerregels",
+    "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie",
+    "productDetail": "Vierkant dossierpaneel vanaf rechts",
+    "gallery": "Natuurlijk beeldformaat in kolommen; captions onder de foto",
+    "imageViewer": "Volledig zwart beeldvlak met teller en pijlnavigatie",
+    "form": "Donker technisch formulier met rechte velden en zichtbare labels",
+    "motion": "Vroege view-timeline reveals, een scroll-progresslijn en één echte WebGL-productviewer met scrollrotatie en 360-graden dragbediening"
+  },
+  "banned": [
+    "gradient",
+    "glassmorphism",
+    "pill button",
+    "rounded card grid",
+    "emoji icon",
+    "generic centered hero",
+    "invented social proof",
+    "floating AI assistant",
+    "generic 'meer info' link",
+    "decorative motion"
+  ]
+}
