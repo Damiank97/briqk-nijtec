@@ -1,5 +1,19 @@
 # Nijtec design contract — anti-generic / anti-AI
 
+## Vindbaarheid en livegang
+
+- Volg `SEO-GEO-MIGRATIE.md` bij iedere publicatie of wijziging van pagina-adressen.
+- Bouw altijd de complete site naar `dist/`; losse bron-HTML publiceren laat de
+  bestaande Google-landingspagina’s en volledige voorwaarden weg.
+- Bestaande pagina- en foto-URL’s, canonical, sitemap en bedrijfsgegevens blijven
+  onderdeel van de controle. Voeg geen verzonnen reviews of SEO-claims toe.
+- `npm test` moet slagen. Test animaties en overlap daarnaast in de browser;
+  een statische codecheck bewijst niet dat de weergave klopt.
+- Een contactactie mag uitsluitend bevestigen wat werkelijk gebeurd is. Zonder
+  verzendkoppeling opent de bezoeker zelf een mailconcept; geen “bericht ontvangen”.
+- Geen domein-, DNS/mail- of Google-profielwijziging zonder de benodigde toegang
+  en expliciete afstemming. Zie de migratiechecklist voor de resterende stappen.
+
 ## Merkherkenning bij openen
 
 - De eerste viewport moet zonder zoeken duidelijk maken dat dit de website van
@@ -25,7 +39,8 @@ dit document. Gebruik `NIJTEC-DESIGN-TOKENS.json` als enige bron voor kleuren,
 lettertypes, vorm en componentpatronen. Verzin geen lokale kleur, radius,
 letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 
-- Displaytekst: Georgia. Bodytekst: Verdana. Technische labels: Courier New.
+- Display- en bodytekst: de lokaal geladen Instrument Sans voor de gevraagde
+  leesbaarheid. Arial is alleen een laadfallback. Technische labels: Courier New.
 - Palet: warm papier, Nijtec-blauw en Nijtec-oranje, afgeleid van het logo en
   bestaande Nijtec-fotografie. Blauw is dragend; oranje markeert acties en bewijs.
 - De homepage is geen marketingtemplate. Zij leest als productcatalogus:
@@ -63,8 +78,18 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   `entry` beginnen. Nijtec gebruikt voor Quickbond wél echte WebGL-geometrie en
   houdt gewone productinformatie standaard zichtbaar.
 - Verberg nooit alle kaarten of lopende tekst tot een scrolltrigger afgaat.
-  Alleen sectiekoppen en media krijgen een korte reveal (`entry 0%` tot circa
-  `entry 38%`); technische inhoud is direct leesbaar.
+  Alleen sectiekoppen en aparte beeldvlakken krijgen een eenmalige reveal.
+  De trigger ligt op 88% van de viewporthoogte en de animatie duurt 550–650 ms.
+  Een onderdeel blijft daarna zichtbaar, ook bij terugscrollen. Gebruik geen
+  tweede view-timeline, parallax of translate op dezelfde kaart of caption.
+- Elke foto heeft een eigen clipping-container. Captions staan in de normale
+  documentflow onder dat beeldvlak, buiten de geanimeerde container. Reserveer
+  de oorspronkelijke afbeeldingsruimte vooraf met correcte width/height-attributen.
+- De tijdelijke contactroute opent een ingevulde mail naar info@nijtec.nl in de
+  mailapp van de bezoeker. De bezoeker verstuurt zelf. Houd alle invoer zichtbaar,
+  bied een kopieerfallback en toon nooit een onbevestigde ontvangstmelding.
+  Rechtstreekse serververzending volgt pas na configuratie en een ontvangsttest
+  van de Nijtec-mailbox. Sla daarvoor geen wachtwoorden in de browser of Git op.
 - Alle animatie heeft een `prefers-reduced-motion`-variant waarin inhoud direct
   zichtbaar en volledig leesbaar blijft.
 

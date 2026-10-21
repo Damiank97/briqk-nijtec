@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="nl"><meta charset="utf-8"><title>Nijtec releasecontrole</title>
+<style>
+body { margin:0; font:16px/1.5 Arial,sans-serif; color:#17264e; background:#f4f1e9; }
+header { position:sticky; top:0; z-index:10; padding:12px 20px; background:white; border-bottom:1px solid #c7cddd; }
+button { font:inherit; padding:7px 12px; margin:3px; }
+#results { padding:8px 20px; max-height:260px; overflow:auto; }
+.pass { color:#166534; } .fail { color:#a31111; }
+#preview { overflow:auto; padding:16px; border-top:1px solid #c7cddd; }
+iframe { border:0; background:white; display:block; }
+</style>
+<header><strong>Nijtec browsercontrole</strong> <span id="status">Starten…</span><br>
+<button id="run">Tests opnieuw</button><button data-width="1440">1440 px</button><button data-width="768">768 px</button><button data-width="390">390 px</button><button data-width="320">320 px</button>
+<button data-jump="top">Intro</button><button data-jump="toepassingen">Toepassingen</button><button data-jump="quickbond">3D-viewer</button><button data-jump="producten">Producten</button><button data-jump="projecten">Foto's</button><button data-jump="contact">Contact</button>
+</header><main><div id="results" role="log"></div><div id="preview"><iframe id="site" title="Nijtec testweergave" width="390" height="844" src="/"></iframe></div></main>
+<script>
+const frame = document.getElementById('site');
+const status = document.getElementById('status');
+const results = document.getElementById('results');
+let checks = [];
+let runtimeErrors = [];
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+const settle = async () => { await pause(70); await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))); };
+const record = (name, ok, detail='') => {
+  checks.push({name, ok, detail});
+  const line=document.createElement('div'); line.className=ok?'pass':'fail'; line.textContent=(ok?'PASS ':'FAIL ')+name+(detail?' | '+detail:''); results.append(line);
+  status.textContent=checks.filter(x=>x.ok).length+' geslaagd / '+checks.filter(x=>!x.ok).length+' mislukt';
+};
+const overlaps = (a,b) => a.left < b.right-1 && a.right > b.left+1 && a.top < b.bottom-1 && a.bottom > b.top+1;
+const visibleRect = (el, win) => {
+  let rect=el.getBoundingClientRect(); const r={left:rect.left,right:rect.right,top:rect.top,bottom:rect.bottom};
+  for(let p=el.parentElement;p && p!==el.ownerDocument.body;p=p.parentElement){ const s=win.getComputedStyle(p); const pr=p.getBoundingClientRect(); if(/hidden|clip/.test(s.overflowX)){ r.left=Math.max(r.left,pr.left); r.right=Math.min(r.right,pr.right); } if(/hidden|clip/.test(s.overflowY)){ r.top=Math.max(r.top,pr.top); r.bottom=Math.min(r.bottom,pr.bottom); } }
+  return r;
+};
+async function load(width){
+ frame.width=width; frame.height=width>=1000?900:844;
+ await new Promise(resolve=>{frame.onload=resolve;frame.src='/?qa='+Date.now();});
+ const w=frame.contentWindow,d=w.document;
+ runtimeErrors=[]; w.addEventListener('error',e=>runtimeErrors.push(e.message)); w.addEventListener('unhandledrejection',e=>runtimeErrors.push(String(e.reason)));
+ const style=d.createElement('style');style.textContent='html{scroll-behavior:auto!important}';d.head.append(style);
+ await d.fonts.ready;
+ await Promise.all([...d.images].map(async img=>{img.loading='eager';try{await img.decode();}catch{}})); await pause(1100);
+ return {w,d};
+}
+async function audit(width){
+ const {w,d}=await load(width); const $=s=>d.querySelector(s); const all=s=>[...d.querySelectorAll(s)];
+ record(width+' px: alle afbeeldingen laden',all('img').filter(i=>!i.closest('#image-viewer')).every(i=>i.complete&&i.naturalWidth>0));
+ record(width+' px: stabiele layout bij laden', w.__qaCLS<.1, String(w.__qaCLS));
+ record(width+' px: ankerlinks bestaan',all('a[href^="#"]').every(a=>d.getElementById(a.hash.slice(1))));
+ record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
+ const nav=$('nav').getBoundingClientRect(); const logo=$('.nav-logo').getBoundingClientRect(); const call=$('.nav-cta').getBoundingClientRect();
+ record(width+' px: navigatie valt binnen scherm',logo.left>=-1&&call.right<=w.innerWidth+1&&logo.right<call.left);
+ const reveal=$('#projecten .section-title'); const revealTop=reveal.getBoundingClientRect().top+w.scrollY; const initialRevealed=reveal.classList.contains('is-revealed');const initialScroll=w.scrollY;
+ w.scrollTo(0,revealTop-w.innerHeight*.94);await pause(250);const before=reveal.classList.contains('is-revealed');const beforeY=reveal.getBoundingClientRect().top;
+ w.scrollTo(0,revealTop-w.innerHeight*.84);await pause(250);const after=reveal.classList.contains('is-revealed');
+ record(width+' px: reveal start op 88% viewport',!before&&after,JSON.stringify({initialRevealed,initialScroll,before,after,beforeY,afterY:reveal.getBoundingClientRect().top,height:w.innerHeight}));
+ let badOverflow=[],imageText=[],cardCollisions=[];
+ for(const id of ['top','toepassingen','quickbond','producten','zzp','projecten','voorwaarden','contact']){
+  $('#'+id).scrollIntoView();await settle();
+  if(d.documentElement.scrollWidth>w.innerWidth+1)badOverflow.push(id+':'+d.documentElement.scrollWidth);
+ }
+ const cards=all('.photo-item');
+ for(let idx=0;idx<cards.length;idx++){
+  const card=cards[idx];
+  for(const entry of [.1,.3,.6,1]){
+   const top=card.getBoundingClientRect().top+w.scrollY;
+   w.scrollTo(0,top-w.innerHeight+card.offsetHeight*entry);await settle();
+   const img=card.querySelector('img'); const cap=card.querySelector('.photo-caption');
+   if(overlaps(visibleRect(img,w),cap.getBoundingClientRect()))imageText.push((idx+1)+'@'+entry);
+   for(let next=idx+1;next<cards.length;next++)if(overlaps(card.getBoundingClientRect(),cards[next].getBoundingClientRect()))cardCollisions.push((idx+1)+'/'+(next+1));
+  }
+ }
+ for(const card of all('.application-card')){
+  card.scrollIntoView();await settle();
+  if(overlaps(visibleRect(card.querySelector('img'),w),card.querySelector('strong').getBoundingClientRect()))imageText.push('toepassing');
+ }
+ record(width+' px: geen horizontale pagina-overflow',!badOverflow.length,badOverflow.join(', '));
+ record(width+' px: beelden overlappen geen bijschrift',!imageText.length,imageText.slice(0,8).join(', '));
+ record(width+' px: projectkaarten overlappen elkaar niet',!cardCollisions.length,cardCollisions.slice(0,8).join(', '));
+ const hero=$('.hero-project'); record(width+' px: introfoto naast/voor eigen tekst',!overlaps(visibleRect(hero.querySelector('img'),w),hero.querySelector('figcaption').getBoundingClientRect()));
+ for(const card of all('.product-card')){
+  card.focus();card.click();await settle();
+  const opened=$('#modal-overlay').classList.contains('open')&&$('#modal-title').textContent.trim()===card.querySelector('h3').textContent.trim();
+  const focusInside=$('#modal').contains(d.activeElement);
+  const y=w.scrollY;
+  const cta=$('#modal-cta-btn');cta.focus();
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Tab',bubbles:true,cancelable:true}));
+  const trapped=d.activeElement===$('#modal-close-btn');
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await settle();
+  record(width+' px: product '+card.dataset.modal,opened&&focusInside&&trapped&&!$('#modal-overlay').classList.contains('open')&&d.activeElement===card&&Math.abs(w.scrollY-y)<2);
+ }
+ cards[0].focus();cards[0].click();await settle();
+ let viewerOK=$('#image-viewer').classList.contains('open')&&d.activeElement===$('#image-viewer-close');
+ d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true}));await settle();viewerOK&&=$('#image-viewer-counter').textContent.startsWith('16');
+ d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));await settle();viewerOK&&=$('#image-viewer-counter').textContent.startsWith('01');
+ d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await settle();viewerOK&&=!$('#image-viewer').classList.contains('open')&&d.activeElement===cards[0];
+ record(width+' px: fotoviewer navigatie/Escape/focusterugkeer',viewerOK);
+ all('.product-card')[0].click();await settle();$('#modal-cta-btn').click();await pause(650);
+ record(width+' px: productaanvraag vult contact correct', $('#f-bericht').value.includes('Lijmen')&&$('#f-onderwerp').value==='Offerte aanvragen'&&d.activeElement===$('#f-naam'));
+ $('#prefill-clear-btn').click();record(width+' px: aanvraag wissen',!$('#f-bericht').value&&$('#product-prefill-banner').style.display==='none');
+ const accordion=$('.av-header');accordion.click();record(width+' px: voorwaarden openen/sluiten',$('.av-body').classList.contains('open'));accordion.click();
+ record(width+' px: formulierlabels gekoppeld',all('#contact-fields input,#contact-fields textarea,#contact-fields select').every(e=>e.labels?.length));
+ const form=$('#contact-fields'); form.reset();
+ record(width+' px: leeg formulier wordt geweigerd',!form.checkValidity());
+ $('#f-naam').value='QA & Nijtec';$('#f-email').value='geen-email';$('#f-bericht').value='Testvraag';
+ record(width+' px: onjuist e-mailadres wordt geweigerd',!form.checkValidity());
+ $('#f-email').value='qa@example.invalid';$('#f-bedrijf').value='Testbedrijf';
+ record(width+' px: geldig formulier geaccepteerd',form.checkValidity());
+ $('#f-bericht').value='Lange vraag met é, &, ? en #. '.repeat(100);
+ form.requestSubmit();await settle();
+ record(width+' px: lang bericht behouden in veilige kopieerfallback',!$('#contact-copy-fallback').hidden&&$('#contact-copy-text').value.includes('qa@example.invalid')&&$('#contact-copy-text').value.includes('Lange vraag met é, &, ? en #.')&&$('#contact-copy-text').value.includes('Testbedrijf'));
+ record(width+' px: geen misleidende ontvangstbevestiging',!$('#form-success')&&$('#contact-handoff').textContent.includes('niet verzonden'));
+ const header=$('#projecten .section-title'); const marker=header.classList.contains('is-revealed'); w.scrollTo(0,0);await settle();
+ record(width+' px: reveal blijft zichtbaar bij terugscrollen',marker&&header.classList.contains('is-revealed'));
+ record(width+' px: kaarten schuiven niet met scroll',all('.photo-item,.product-card,.feature-card,.contact-form,.zzp-content').every(e=>{const s=w.getComputedStyle(e);return s.translate==='none'&&s.transform==='none'&&s.animationName==='none';}));
+ record(width+' px: actieve 3D-canvas',$('.qb-render-stage').dataset.viewerState==='active',$('.qb-render-stage').dataset.viewerState);
+ const notes=$('.qb-story-notes').getBoundingClientRect(),canvas=$('.qb-webgl-canvas').getBoundingClientRect();
+ record(width+' px: 3D-uitleg staat buiten het model',!overlaps(notes,canvas));
+ record(width+' px: geen runtimefouten',w.__qaErrors.length===0,w.__qaErrors.join('; '));
+}
+async function auditRoutes(){
+ const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/2-componenten-lijmen/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/producten/luchtdicht-bouwen/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/'];
+ frame.width=390;frame.height=844;
+ for(const route of routes){
+  await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa='+Date.now();});
+  const w=frame.contentWindow,d=w.document;await d.fonts.ready;await pause(100);
+  const header=d.querySelector('h1'),canonical=d.querySelector('[rel="canonical"]');
+  record(route+' mobiele pagina',!!header&&canonical.href==='https://nijtec.nl'+route&&d.documentElement.scrollWidth<=w.innerWidth+1&&w.__qaErrors.length===0,w.__qaErrors.join('; '));
+ }
+ const missing=await fetch('/dit-bestaat-niet/');record('Onbekende pagina geeft echte 404',missing.status===404);
+ const old=await fetch('/wp-sitemap.xml');record('Oude sitemap verwijst door naar nieuwe sitemap',old.ok&&old.url.endsWith('/sitemap.xml'));
+}
+async function run(){
+ document.getElementById('run').disabled=true;checks=[];results.replaceChildren();
+ try{for(const width of [390,768,1440,320])await audit(width);await auditRoutes();}catch(e){record('Testuitvoering',false,String(e.stack||e));}
+ document.getElementById('run').disabled=false;frame.width=390;frame.height=844;
+ const report=document.createElement('pre');report.id='json-report';report.textContent=JSON.stringify({date:new Date().toISOString(),checks},null,2);results.append(report);
+ await fetch('/__qa/report',{method:'POST',headers:{'Content-Type':'application/json'},body:report.textContent});
+ await load(390);frame.contentWindow.document.getElementById('quickbond').scrollIntoView();
+}
+document.getElementById('run').onclick=run;
+document.querySelectorAll('[data-width]').forEach(b=>b.onclick=async()=>{frame.width=b.dataset.width;frame.height=844;await settle();});
+document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>frame.contentWindow.document.getElementById(b.dataset.jump).scrollIntoView());
+if(!new URLSearchParams(location.search).has('manual'))frame.onload=()=>{frame.onload=null;run();};
+else status.textContent='Visuele controle';
+</script></html>

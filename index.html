@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nijtec B.V. | Lijmen, kitten en coatings in Dalen</title>
-<meta name="description" content="Nijtec B.V. levert professionele lijmen, kitten en coatings voor bouw en industrie. Topproduct: Quickbond met 10 jaar garantie. ISO 9001 gecertificeerd. Gevestigd in Dalen.">
+<title>Nijtec &amp; Montage Team | Lijmen, kitten en coatings</title>
+<meta name="description" content="Nijtec & Montage Team in Dalen: lijmen, afdichtingskitten, Quickbond en coatings voor bouw en industrie. Productadvies, levering en montage.">
 <link rel="canonical" href="https://nijtec.nl/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nijtec B.V. | Lijmen, kitten en coatings">
@@ -230,7 +230,7 @@ footer{background:#111827;padding:60px 80px;display:flex;justify-content:space-b
 .av-chevron{font-size:12px;transition:transform 0.3s;color:var(--oranje);}
 .av-header.open .av-chevron{transform:rotate(180deg);color:white;}
 .av-body{background:white;padding:0 24px;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.2s;}
-.av-body.open{padding:20px 24px;max-height:1200px;}
+.av-body.open{padding:20px 24px;max-height:none;}
 .av-body p{font-size:14px;color:#555;line-height:1.8;margin-bottom:12px;}
 .av-body p:last-child{margin-bottom:0;}
 @media(max-width:768px){
@@ -438,7 +438,10 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important;}
 }
 </style>
-<link rel="stylesheet" href="/redesign.css?v=14">
+<link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/redesign.css?v=15">
+<script src="/motion.js?v=1" defer></script>
+<script src="/contact.js?v=1" defer></script>
 </head>
 <body>
 
@@ -448,7 +451,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 
 <nav aria-label="Hoofdnavigatie">
   <a class="nav-logo" href="#top" aria-label="Nijtec home">
-    <img src="/assets/nijtec-logo-nav.png" alt="Nijtec logo">
+    <img src="/assets/nijtec-logo-nav.png" alt="Nijtec logo" width="512" height="341">
     <span class="nav-wordmark"><strong>Nijtec B.V.</strong><small>Service &amp; Quality · Dalen</small></span>
   </a>
   <div class="nav-links">
@@ -462,6 +465,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
   <a href="tel:0615588843" class="nav-cta">Bel direct</a>
 </nav>
 
+<main>
 <section class="hero" id="top">
   <div class="hero-logo-watermark">
     <img src="/NijTec_logo.png" alt="">
@@ -482,7 +486,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
   </div>
   <div class="hero-visual">
     <figure class="hero-project">
-      <img src="/assets/hero-project.jpg" alt="Woning met door Nijtec gemonteerde gevelbeplating">
+      <div class="hero-media"><img src="/assets/hero-project.jpg" alt="Woning met door Nijtec gemonteerde gevelbeplating" width="1600" height="1200" fetchpriority="high"></div>
       <figcaption><span>Quickbond in de praktijk</span>Gevelbeplating vakkundig verlijmd door het Nijtec Montage Team.</figcaption>
     </figure>
   </div>
@@ -490,23 +494,23 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 
 <section class="features" id="toepassingen">
   <div class="section-label">Nijtec in de praktijk</div>
-  <div class="section-title">Begin bij de toepassing. Wij vinden het product.</div>
+  <h2 class="section-title">Begin bij de toepassing. Wij vinden het product.</h2>
   <p class="section-sub">Voor zzp'ers, aannemers en industrie. Kies waar u aan werkt en bekijk de producten, verwerking en montage die daarbij passen.</p>
   <div class="application-grid">
     <a class="application-card" href="#quickbond">
-      <img src="/assets/projects/16.jpg" alt="Gevelbeplating gemonteerd met Quickbond" loading="lazy">
+      <span class="application-media"><img src="/assets/projects/16.jpg" alt="Gevelbeplating gemonteerd met Quickbond" width="1200" height="1600" loading="lazy"></span>
       <span class="application-number">01</span>
       <strong>Gevel &amp; plaatmateriaal</strong>
       <small>Quickbond, steenstrips en montage</small>
     </a>
     <a class="application-card" href="#producten">
-      <img src="/assets/projects/07.jpg" alt="Trespa verlijmd zonder primer of paneltape" loading="lazy">
+      <span class="application-media"><img src="/assets/projects/07.jpg" alt="Trespa verlijmd zonder primer of paneltape" width="900" height="1600" loading="lazy"></span>
       <span class="application-number">02</span>
       <strong>Verlijmen &amp; afdichten</strong>
       <small>Lijmen, kitten en luchtdicht bouwen</small>
     </a>
     <a class="application-card" href="#projecten">
-      <img src="/assets/projects/02.jpg" alt="Epoxyvloer aangebracht in een projectruimte" loading="lazy">
+      <span class="application-media"><img src="/assets/projects/10.jpg" alt="Epoxyvloer met hoogglans aflak" width="900" height="1600" loading="lazy"></span>
       <span class="application-number">03</span>
       <strong>Oppervlak beschermen</strong>
       <small>Coatings voor wand, vloer en dak</small>
@@ -539,15 +543,15 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
     </div>
   </div>
   <div class="qb-model-wrap" aria-label="Interactieve 3D productweergave van de Quickbond verlijmende kit">
+      <div class="qb-story-notes" aria-hidden="true">
+        <p class="is-active" data-qb-step="0"><span>01</span><strong>Directe grip</strong><small>Hoge aanvangskleefkracht.</small></p>
+        <p data-qb-step="1"><span>02</span><strong>Zonder primer</strong><small>Geen paneltape nodig.</small></p>
+        <p data-qb-step="2"><span>03</span><strong>Blijvend sterk</strong><small>Elastisch, UV- en waterbestendig.</small></p>
+      </div>
       <div class="qb-render-stage" role="group" tabindex="0" aria-label="Quickbond productviewer. Sleep horizontaal of gebruik de pijltjestoetsen om de koker te draaien." aria-describedby="qb-drag-hint">
         <div class="qb-render-glow" aria-hidden="true"></div>
         <canvas class="qb-webgl-canvas" aria-hidden="true"></canvas>
-        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Quickbond koker van Nijtec met witte nozzle en rood label" draggable="false">
-        <div class="qb-story-notes" aria-hidden="true">
-          <p class="is-active" data-qb-step="0"><span>01</span><strong>Directe grip</strong><small>Hoge aanvangskleefkracht.</small></p>
-          <p data-qb-step="1"><span>02</span><strong>Zonder primer</strong><small>Geen paneltape nodig.</small></p>
-          <p data-qb-step="2"><span>03</span><strong>Blijvend sterk</strong><small>Elastisch, UV- en waterbestendig.</small></p>
-        </div>
+        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Quickbond koker van Nijtec met witte nozzle en rood label" width="1175" height="1339" draggable="false">
         <span class="qb-drag-hint" id="qb-drag-hint"><span aria-hidden="true">↔</span> Sleep voor 360°</span>
         <div class="qb-viewer-controls" aria-label="3D-weergave bedienen">
           <button type="button" data-qb-turn="-1" aria-label="Draai Quickbond naar links">←</button>
@@ -586,7 +590,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 
 <section class="products" id="producten">
   <div class="section-label">Assortiment</div>
-  <div class="section-title">Producten voor werkplaats en bouwplaats.</div>
+  <h2 class="section-title">Producten voor werkplaats en bouwplaats.</h2>
   <div class="products-grid">
     <div class="product-card" data-modal="lijmen" role="button" tabindex="0"><div class="product-card-icon">01 / LIJMEN</div><h3>Lijmen</h3><p>Voor hout, beton, metaal, kunststof en constructiepanelen.</p><div class="product-card-link">Bekijk lijmen →</div></div>
     <div class="product-card" data-modal="kitten" role="button" tabindex="0"><div class="product-card-icon">02 / KITTEN</div><h3>Kitten</h3><p>Voor voegen, gevels, ramen, deuren en sanitaire ruimten.</p><div class="product-card-link">Bekijk kitten →</div></div>
@@ -627,32 +631,32 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 
 <section class="projecten" id="projecten">
   <div class="section-label">Referenties</div>
-  <div class="section-title">Gemonteerd en verlijmd door Nijtec.</div>
+  <h2 class="section-title">Gemonteerd en verlijmd door Nijtec.</h2>
   <p class="section-sub">Gevelbeplating, steenstrips en coatings. Klik op een foto voor het volledige projectbeeld.</p>
   <div class="photo-grid">
-    <div class="photo-item"><img src="/assets/projects/16.jpg" alt="Woning met Tectiva Activa gevelbeplating" loading="lazy"><div class="photo-caption"><span>Woning rondom en bij de nok beplakt. Tectiva Activa gemonteerd met Quickbond door het Nijtec Montage Team.</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/15.jpg" alt="Voorkant woning met Tectiva Activa" loading="lazy"><div class="photo-caption"><span>Voorkant woning beplakt met Tectiva Activa met de Quickbond. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/14.jpg" alt="Dakkapellen met Tectiva Activa" loading="lazy"><div class="photo-caption"><span>Tectiva Activa Eternit verlijmt met de Quickbond op dakkapellen. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/13.jpg" alt="Afgewerkte dakkapellen" loading="lazy"><div class="photo-caption"><span>Activa Tectiva aangebracht op dakkapellen met de Quickbond. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/12.jpg" alt="Montage van cementgebonden vezelplaat" loading="lazy"><div class="photo-caption"><span>Het aanbrengen van cementgebonden vezelplaat onderkant gootwerk. Nijtec Montage Team</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/11.jpg" alt="Aanbrengen van epoxyvloer" loading="lazy"><div class="photo-caption"><span>Epoxyvloer aanbrengen in leslokalen penitentiaire inrichting Veenhuizen</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/10.jpg" alt="Epoxyvloer met hoogglans aflak" loading="lazy"><div class="photo-caption"><span>Eindresultaat aanbrengen epoxyvloer met hoogglans aflak</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/09.jpg" alt="Voorbereiding van een epoxyvloer" loading="lazy"><div class="photo-caption"><span>Voorbereiding aanbrengen epoxyvloer</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/08.jpg" alt="Gevelbeplating verlijmd met Quickbond" loading="lazy"><div class="photo-caption"><span>Gevelbeplating verlijmd met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/07.jpg" alt="Trespa verlijmd zonder paneltape" loading="lazy"><div class="photo-caption"><span>Trespa verlijmd met Quickbond, zonder primer of paneltape.</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/06.jpg" alt="Steenstrips verlijmd met Quickbond" loading="lazy"><div class="photo-caption"><span>Steenstrip verlijming met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/05.jpg" alt="Onderhoudsarme steenstrips" loading="lazy"><div class="photo-caption"><span>Steenstrips geplaatst in plaats van windboeien, zodat schilderonderhoud vervalt.</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/04.jpg" alt="Quickbond toegepast boven het hoofd" loading="lazy"><div class="photo-caption"><span>Quickbond toegepast voor verlijming boven het hoofd.</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/03.jpg" alt="Cementgebonden vezelplaat met Quickbond" loading="lazy"><div class="photo-caption"><span>Cementgebonden vezelplaat muurvast met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/02.jpg" alt="Muurvaste gevelverlijming" loading="lazy"><div class="photo-caption"><span>Muurvaste verlijming met de Quickbond</span></div></div>
-    <div class="photo-item"><img src="/assets/projects/01.jpg" alt="Verbouwing van Sporthal Muntendam" loading="lazy"><div class="photo-caption"><span>Verbouwing Sporthal Muntendam</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/16.jpg" alt="Woning met Tectiva Activa gevelbeplating" width="1200" height="1600" loading="lazy"></div><div class="photo-caption"><span>Woning rondom en bij de nok beplakt. Tectiva Activa gemonteerd met Quickbond door het Nijtec Montage Team.</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/15.jpg" alt="Voorkant woning met Tectiva Activa" width="1600" height="1200" loading="lazy"></div><div class="photo-caption"><span>Voorkant woning beplakt met Tectiva Activa met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/14.jpg" alt="Dakkapellen met Tectiva Activa" width="900" height="1600" loading="lazy"></div><div class="photo-caption"><span>Tectiva Activa Eternit verlijmt met de Quickbond op dakkapellen. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/13.jpg" alt="Afgewerkte dakkapellen" width="1600" height="1200" loading="lazy"></div><div class="photo-caption"><span>Activa Tectiva aangebracht op dakkapellen met de Quickbond. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/12.jpg" alt="Montage van cementgebonden vezelplaat" width="900" height="1600" loading="lazy"></div><div class="photo-caption"><span>Het aanbrengen van cementgebonden vezelplaat onderkant gootwerk. Nijtec Montage Team</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/11.jpg" alt="Aanbrengen van epoxyvloer" width="900" height="1600" loading="lazy"></div><div class="photo-caption"><span>Epoxyvloer aanbrengen in leslokalen penitentiaire inrichting Veenhuizen</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/10.jpg" alt="Epoxyvloer met hoogglans aflak" width="900" height="1600" loading="lazy"></div><div class="photo-caption"><span>Eindresultaat aanbrengen epoxyvloer met hoogglans aflak</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/09.jpg" alt="Voorbereiding van een epoxyvloer" width="1600" height="900" loading="lazy"></div><div class="photo-caption"><span>Voorbereiding aanbrengen epoxyvloer</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/08.jpg" alt="Gevelbeplating verlijmd met Quickbond" width="1600" height="900" loading="lazy"></div><div class="photo-caption"><span>Gevelbeplating verlijmd met de Quickbond</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/07.jpg" alt="Trespa verlijmd zonder paneltape" width="900" height="1600" loading="lazy"></div><div class="photo-caption"><span>Trespa verlijmd met Quickbond, zonder primer of paneltape.</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/06.jpg" alt="Steenstrips verlijmd met Quickbond" width="1000" height="1000" loading="lazy"></div><div class="photo-caption"><span>Steenstrip verlijming met de Quickbond</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/05.jpg" alt="Onderhoudsarme steenstrips" width="1600" height="1200" loading="lazy"></div><div class="photo-caption"><span>Steenstrips geplaatst in plaats van windboeien, zodat schilderonderhoud vervalt.</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/04.jpg" alt="Quickbond toegepast boven het hoofd" width="1600" height="900" loading="lazy"></div><div class="photo-caption"><span>Quickbond toegepast voor verlijming boven het hoofd.</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/03.jpg" alt="Cementgebonden vezelplaat met Quickbond" width="1600" height="900" loading="lazy"></div><div class="photo-caption"><span>Cementgebonden vezelplaat muurvast met de Quickbond</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/02.jpg" alt="Muurvaste gevelverlijming" width="900" height="1600" loading="lazy"></div><div class="photo-caption"><span>Muurvaste verlijming met de Quickbond</span></div></div>
+    <div class="photo-item"><div class="photo-media"><img src="/assets/projects/01.jpg" alt="Verbouwing van Sporthal Muntendam" width="1600" height="900" loading="lazy"></div><div class="photo-caption"><span>Verbouwing Sporthal Muntendam</span></div></div>
   </div>
 </section>
 
 <!-- ALGEMENE VOORWAARDEN -->
 <section class="av-section" id="voorwaarden">
   <div class="section-label">Juridisch</div>
-  <div class="section-title">Algemene voorwaarden</div>
+  <h2 class="section-title">Algemene voorwaarden</h2>
   <p class="section-sub" style="margin-bottom:36px">Nijtec B.V. · Van toepassing op alle aanbiedingen, overeenkomsten en leveringen.</p>
   <div class="av-accordion" id="av-accordion"></div>
 </section>
@@ -664,8 +668,8 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
       <h2>Bel voor productadvies of montage.</h2>
       <p>Leg de toepassing en ondergrond aan ons voor. Dan bespreken we het geschikte product, de hoeveelheid en de levering.</p>
       <div class="contact-info">
-        <div class="contact-item"><div class="contact-item-icon">Tel</div><div><strong>06-155 888 43</strong><br><span style="font-size:13px;color:#7b828d">Ma-vr bereikbaar</span></div></div>
-        <div class="contact-item"><div class="contact-item-icon">Mail</div><div>info&#64;nijtec.nl</div></div>
+        <div class="contact-item"><div class="contact-item-icon">Tel</div><div><a href="tel:0615588843"><strong>06-155 888 43</strong></a><br><span style="font-size:13px;color:#adb7ce">Ma-vr bereikbaar</span></div></div>
+        <div class="contact-item"><div class="contact-item-icon">Mail</div><div><a href="mailto:info@nijtec.nl">info&#64;nijtec.nl</a></div></div>
         <div class="contact-item"><div class="contact-item-icon">Adres</div><div>Laveringsveen 10<br>7751 DN Dalen</div></div>
         <div class="contact-item"><div class="contact-item-icon">KvK</div><div>95043780</div></div>
       </div>
@@ -680,27 +684,33 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
         </div>
         <button id="prefill-clear-btn" style="margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.4);font-size:18px;cursor:pointer;line-height:1;" title="Wissen">×</button>
       </div>
-      <div id="contact-fields">
+      <p class="form-helper" id="contact-help">Stel hieronder uw bericht op. Uw e-mailprogramma opent met de gegevens ingevuld. U verstuurt de e-mail daar zelf naar <a href="mailto:info@nijtec.nl">info@nijtec.nl</a>.</p>
+      <form id="contact-fields" aria-describedby="contact-help">
         <div class="form-row">
-          <div class="form-group"><label>Naam</label><input type="text" id="f-naam" placeholder="Uw naam"></div>
-          <div class="form-group"><label>Bedrijf</label><input type="text" placeholder="Bedrijfsnaam"></div>
+          <div class="form-group"><label for="f-naam">Naam (verplicht)</label><input type="text" id="f-naam" name="naam" autocomplete="name" maxlength="120" required placeholder="Uw naam"></div>
+          <div class="form-group"><label for="f-bedrijf">Bedrijf</label><input type="text" id="f-bedrijf" name="bedrijf" autocomplete="organization" maxlength="160" placeholder="Bedrijfsnaam"></div>
         </div>
-        <div class="form-group" style="margin-bottom:16px"><label>E-mailadres</label><input type="email" id="f-email" placeholder="uw@email.nl"></div>
-        <div class="form-group" style="margin-bottom:16px"><label>Onderwerp</label>
-          <select id="f-onderwerp"><option>Productinformatie</option><option>Offerte aanvragen</option><option>Technisch advies</option><option>ZZP-pakket</option><option>Montage opdracht</option></select>
+        <div class="form-group" style="margin-bottom:16px"><label for="f-email">E-mailadres (verplicht)</label><input type="email" id="f-email" name="email" autocomplete="email" maxlength="254" required placeholder="uw@email.nl"></div>
+        <div class="form-group" style="margin-bottom:16px"><label for="f-onderwerp">Onderwerp</label>
+          <select id="f-onderwerp" name="onderwerp"><option>Productinformatie</option><option>Offerte aanvragen</option><option>Technisch advies</option><option>ZZP-pakket</option><option>Montage opdracht</option></select>
         </div>
-        <div class="form-group" style="margin-bottom:16px"><label>Bericht</label><textarea id="f-bericht" placeholder="Uw vraag of bericht..."></textarea></div>
-        <button class="form-submit" id="form-submit-btn">Verstuur bericht →</button>
+        <div class="form-group" style="margin-bottom:16px"><label for="f-bericht">Bericht (verplicht)</label><textarea id="f-bericht" name="bericht" maxlength="6000" required placeholder="Uw vraag of bericht..."></textarea></div>
+        <div class="contact-actions">
+          <button type="submit" class="form-submit" id="form-submit-btn" disabled>Open e-mailprogramma →</button>
+          <button type="button" class="form-copy" id="contact-copy-btn" disabled>Kopieer bericht</button>
+        </div>
+      </form>
+      <div class="contact-handoff" id="contact-handoff" role="status" hidden></div>
+      <div id="contact-copy-fallback" hidden>
+        <label for="contact-copy-text">Selecteer en kopieer uw bericht:</label>
+        <textarea id="contact-copy-text" rows="8" readonly></textarea>
       </div>
-      <div class="form-success" id="form-success">
-        <div class="form-success-icon">✅</div>
-        <h4>Bericht ontvangen!</h4>
-        <p>Bedankt voor uw bericht. Wij nemen binnen 1 werkdag contact met u op via e-mail of telefoon.</p>
-      </div>
+      <noscript><p>Stuur uw vraag rechtstreeks naar <a href="mailto:info@nijtec.nl">info@nijtec.nl</a> of bel <a href="tel:0615588843">06-155 888 43</a>.</p></noscript>
     </div>
   </div>
 </section>
 
+</main>
 <footer>
   <div>
     <img src="/NijTec_logo.png" alt="Nijtec" style="height:64px;mix-blend-mode:screen;filter:brightness(1.1);display:block;margin-bottom:4px;">
@@ -709,8 +719,9 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
   <div class="footer-info">
     <div>Laveringsveen 10 · 7751 DN Dalen</div>
     <div><a href="tel:0615588843">06-155 888 43</a> · info&#64;nijtec.nl</div>
-    <div style="margin-top:4px;color:rgba(255,255,255,0.25);">KvK: 95043780 · BTW: NL866979001.B01 · <a href="#voorwaarden" style="color:rgba(255,255,255,0.4);text-decoration:underline;">Algemene voorwaarden</a> · Demo door Briqk</div>
+    <div style="margin-top:4px;color:rgba(255,255,255,0.65);">KvK: 95043780 · BTW: NL866979001.B01 · <a href="#voorwaarden" style="color:inherit;text-decoration:underline;">Algemene voorwaarden</a></div>
   </div>
+  <!-- PAGE_LINKS -->
 </footer>
 
 <!-- PRODUCT MODAL -->
@@ -733,14 +744,14 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 </div>
 
 <!-- PROJECT VIEWER -->
-<div class="image-viewer" id="image-viewer" aria-hidden="true">
+<div class="image-viewer" id="image-viewer" role="dialog" aria-modal="true" aria-labelledby="image-viewer-caption" aria-hidden="true">
   <div class="image-viewer-topbar">
     <span id="image-viewer-counter">01 / 16</span>
     <button class="image-viewer-close" id="image-viewer-close" aria-label="Fotoviewer sluiten">✕</button>
   </div>
   <button class="image-viewer-nav image-viewer-prev" id="image-viewer-prev" aria-label="Vorige projectfoto">←</button>
-  <figure class="image-viewer-figure" role="dialog" aria-modal="true" aria-labelledby="image-viewer-caption">
-    <img id="image-viewer-image" src="" alt="">
+  <figure class="image-viewer-figure">
+    <img id="image-viewer-image" alt="">
     <figcaption id="image-viewer-caption"></figcaption>
   </figure>
   <button class="image-viewer-nav image-viewer-next" id="image-viewer-next" aria-label="Volgende projectfoto">→</button>
@@ -790,6 +801,19 @@ const products = {
 };
 
 let modalTrigger = null;
+function setPageInert(inert) {
+  document.querySelectorAll('body > nav, body > main, body > section, body > footer').forEach(element => { element.inert = inert; });
+}
+function trapDialogFocus(event, dialog) {
+  if (event.key !== 'Tab') return;
+  const items = Array.from(dialog.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex="0"]')).filter(element => element.getClientRects().length);
+  const first = items[0], last = items[items.length - 1];
+  if (event.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+    event.preventDefault(); last?.focus({preventScroll:true});
+  } else if (!event.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+    event.preventDefault(); first?.focus({preventScroll:true});
+  }
+}
 function openModal(key, trigger) {
   const p = products[key];
   modalTrigger = trigger || document.activeElement;
@@ -803,7 +827,8 @@ function openModal(key, trigger) {
   document.getElementById('modal-overlay').classList.add('open');
   document.getElementById('modal-overlay').setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
-  setTimeout(function(){ document.getElementById('modal-close-btn').focus(); }, 0);
+  setPageInert(true);
+  document.getElementById('modal-close-btn').focus({preventScroll:true});
 }
 function closeModal(){
   const overlay=document.getElementById('modal-overlay');
@@ -811,7 +836,8 @@ function closeModal(){
   overlay.classList.remove('open');
   overlay.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
-  if(modalTrigger)modalTrigger.focus();
+  setPageInert(false);
+  if(modalTrigger)modalTrigger.focus({preventScroll:true});
 }
 function closeModalOutside(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
 
@@ -838,7 +864,8 @@ function openProjectViewer(index,trigger){
   viewer.classList.add('open');
   viewer.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
-  setTimeout(function(){document.getElementById('image-viewer-close').focus();},0);
+  setPageInert(true);
+  document.getElementById('image-viewer-close').focus({preventScroll:true});
 }
 function closeProjectViewer(){
   const viewer=document.getElementById('image-viewer');
@@ -846,7 +873,8 @@ function closeProjectViewer(){
   viewer.classList.remove('open');
   viewer.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
-  if(imageViewerTrigger)imageViewerTrigger.focus();
+  setPageInert(false);
+  if(imageViewerTrigger)imageViewerTrigger.focus({preventScroll:true});
 }
 function moveProjectViewer(direction){
   activeProjectImage=(activeProjectImage+direction+projectImages.length)%projectImages.length;
@@ -855,22 +883,17 @@ function moveProjectViewer(direction){
 document.addEventListener('keydown',function(e){
   const viewer=document.getElementById('image-viewer');
   if(viewer.classList.contains('open')){
-    if(e.key==='Escape')closeProjectViewer();
-    if(e.key==='ArrowLeft')moveProjectViewer(-1);
-    if(e.key==='ArrowRight')moveProjectViewer(1);
+    trapDialogFocus(e,viewer);
+    if(e.key==='Escape'){e.preventDefault();closeProjectViewer();}
+    if(e.key==='ArrowLeft'){e.preventDefault();moveProjectViewer(-1);}
+    if(e.key==='ArrowRight'){e.preventDefault();moveProjectViewer(1);}
     return;
   }
-  if(e.key==='Escape')closeModal();
+  if(document.getElementById('modal-overlay').classList.contains('open')) {
+    trapDialogFocus(e,document.getElementById('modal'));
+    if(e.key==='Escape'){e.preventDefault();closeModal();}
+  }
 });
-
-/* ── CONTACT FORM ──────────────────────────────── */
-function submitForm(){
-  const naam=document.getElementById('f-naam').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  if(!naam||!email){alert('Vul minimaal uw naam en e-mailadres in.');return;}
-  document.getElementById('contact-fields').style.display='none';
-  document.getElementById('form-success').style.display='block';
-}
 
 /* ── CHATBOT — roept /api/chat aan, geen key in HTML ── */
 const SYSTEM_PROMPT = `Je bent de vriendelijke en deskundige AI-assistent van Nijtec B.V. Je helpt klanten met vragen over producten, technisch advies en bestellingen. Antwoord altijd in het Nederlands. Wees kort, concreet en behulpzaam.
@@ -1029,8 +1052,8 @@ document.addEventListener('DOMContentLoaded', function() {
     banner.style.display = 'flex';
 
     // Scroll naar formulier + focus naam
-    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-    setTimeout(function() { document.getElementById('f-naam').focus(); }, 600);
+    document.getElementById('contact').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    document.getElementById('f-naam').focus({preventScroll:true});
   });
 
   // Banner wis-knop
@@ -1059,9 +1082,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Enter') sendMsg();
   });
 
-  // Contactformulier
-  document.getElementById('form-submit-btn').addEventListener('click', submitForm);
-
   // Algemene Voorwaarden accordion opbouwen
   const accordion = document.getElementById('av-accordion');
   if (accordion) {
@@ -1069,11 +1089,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const el = document.createElement('div');
       el.className = 'av-item';
       el.innerHTML = `
-        <div class="av-header" id="av-h-${i}">
+        <button type="button" class="av-header" id="av-h-${i}" aria-expanded="false" aria-controls="av-b-${i}">
           ${item.title}
-          <span class="av-chevron">▼</span>
-        </div>
-        <div class="av-body" id="av-b-${i}"><p>${item.body}</p></div>
+          <span class="av-chevron" aria-hidden="true">▼</span>
+        </button>
+        <div class="av-body" id="av-b-${i}">${item.body.startsWith('<') ? item.body : '<p>'+item.body+'</p>'}</div>
       `;
       accordion.appendChild(el);
       document.getElementById('av-h-'+i).addEventListener('click', function() {
@@ -1081,10 +1101,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const isOpen = body.classList.contains('open');
         // sluit alle
         document.querySelectorAll('.av-body').forEach(b => b.classList.remove('open'));
-        document.querySelectorAll('.av-header').forEach(h => h.classList.remove('open'));
+        document.querySelectorAll('.av-header').forEach(h => { h.classList.remove('open'); h.setAttribute('aria-expanded','false'); });
         if (!isOpen) {
           body.classList.add('open');
           document.getElementById('av-h-'+i).classList.add('open');
+          document.getElementById('av-h-'+i).setAttribute('aria-expanded','true');
         }
       });
     });
@@ -1092,6 +1113,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 </script>
-<script type="module" src="/quickbond-viewer.js?v=9"></script>
+<script type="module" src="/quickbond-viewer.js?v=10"></script>
 </body>
 </html>

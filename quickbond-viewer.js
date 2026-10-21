@@ -74,7 +74,7 @@ async function initQuickbondViewer() {
   let viewerVisible = true;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const quickbondSection = stage.closest('.quickbond');
-  const storySteps = Array.from(stage.querySelectorAll('[data-qb-step]'));
+  const storySteps = Array.from(stage.parentElement.querySelectorAll('[data-qb-step]'));
   const turnButtons = Array.from(stage.querySelectorAll('[data-qb-turn]'));
   const resetButton = stage.querySelector('[data-qb-reset]');
 
@@ -125,8 +125,8 @@ async function initQuickbondViewer() {
   }
 
   function resizeRenderer() {
-    const width = Math.max(1, stage.clientWidth);
-    const height = Math.max(1, stage.clientHeight);
+    const width = Math.max(1, canvas.clientWidth);
+    const height = Math.max(1, canvas.clientHeight);
     const pixelRatio = renderer.getPixelRatio();
     const targetWidth = Math.floor(width * pixelRatio);
     const targetHeight = Math.floor(height * pixelRatio);
@@ -152,8 +152,8 @@ async function initQuickbondViewer() {
   function render() {
     requestAnimationFrame(render);
     const delta = Math.min(clock.getDelta(), .05);
-    if (!pointerActive && !reducedMotion) {
-      product.rotation.y = THREE.MathUtils.damp(product.rotation.y, scrollRotation + manualOffset, 7.2, delta);
+    if (!pointerActive) {
+      product.rotation.y = reducedMotion ? manualOffset : THREE.MathUtils.damp(product.rotation.y, scrollRotation + manualOffset, 7.2, delta);
     }
     controls.update();
     if (viewerVisible && !document.hidden) renderer.render(scene, camera);

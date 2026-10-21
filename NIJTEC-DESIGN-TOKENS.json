@@ -2,13 +2,13 @@
   "name": "Nijtec Werkboek",
   "intent": "Technische productcatalogus en projectregister voor bouw en industrie",
   "typography": {
-    "display": "Georgia, 'Times New Roman', serif",
-    "body": "Verdana, Geneva, sans-serif",
+    "display": "'Instrument Sans', Arial, sans-serif",
+    "body": "'Instrument Sans', Arial, sans-serif",
     "technical": "'Courier New', monospace",
-    "weights": [400, 700],
+    "weights": [400, 520, 700],
     "rules": [
-      "Geen Inter, Roboto, Arial, Open Sans of Helvetica als hoofdlettertype",
-      "Serif alleen voor grote titels en productnamen",
+      "Instrument Sans wordt lokaal geladen; Arial is uitsluitend een laadfallback",
+      "Grote titels in Instrument Sans 520, lopende tekst in 400",
       "Technische labels in monospace en hoofdletters",
       "Maximaal drie zichtbare tekstmaten per compositie"
     ]
@@ -39,14 +39,14 @@
     "breakpoints": [1440, 900, 768, 390]
   },
   "components": {
-    "hero": "Beschrijvende serifkop met een feitelijke introductie en een projectfoto met dossiercaption",
+    "hero": "Beschrijvende leesbare kop met een feitelijke introductie en een projectfoto met dossiercaption",
     "features": "Genummerde horizontale registerregels",
     "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie",
     "productDetail": "Vierkant dossierpaneel vanaf rechts",
-    "gallery": "Natuurlijk beeldformaat in kolommen; captions onder de foto",
+    "gallery": "Natuurlijk beeldformaat met vaste HTML-dimensies in kolommen; elke foto heeft een eigen clipping-container en een stilstaand bijschrift eronder",
     "imageViewer": "Volledig zwart beeldvlak met teller en pijlnavigatie",
-    "form": "Donker technisch formulier met rechte velden en zichtbare labels",
-    "motion": "Vroege view-timeline reveals, een scroll-progresslijn en één echte WebGL-productviewer met scrollrotatie en 360-graden dragbediening"
+    "form": "Gelabelde velden met native validatie; opent een ingevulde e-mail naar info@nijtec.nl, met kopieerfallback. Nooit ontvangst claimen zonder echte verzending",
+    "motion": "Eenmalige reveals bij 88% van de viewport, 550–650 ms. Alleen koppen en begrensde beeldvlakken; kaarten en captions blijven stil. Scroll-progress en één echte WebGL-viewer met scrollrotatie en dragbediening blijven behouden"
   },
   "banned": [
     "gradient",

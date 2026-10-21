@@ -1,0 +1,1814 @@
+{
+  "checkedAt": "2026-10-21T11:57:59.093Z",
+  "origin": "https://nijtec.nl",
+  "pages": [
+    {
+      "id": 231,
+      "path": "/producten/luchtdicht-bouwen/",
+      "title": "Luchtdicht bouwen"
+    },
+    {
+      "id": 229,
+      "path": "/producten/steenstrips/",
+      "title": "Steenstrips"
+    },
+    {
+      "id": 227,
+      "path": "/producten/coatings/",
+      "title": "Coatings"
+    },
+    {
+      "id": 225,
+      "path": "/producten/acrylaten/",
+      "title": "Acrylaten"
+    },
+    {
+      "id": 223,
+      "path": "/producten/diversen/",
+      "title": "Diversen"
+    },
+    {
+      "id": 221,
+      "path": "/producten/2-componenten-lijmen/",
+      "title": "2-componenten lijmen"
+    },
+    {
+      "id": 219,
+      "path": "/producten/vullende-lijmende-pu-schuimen/",
+      "title": "Vullende & Lijmende pu-schuimen"
+    },
+    {
+      "id": 217,
+      "path": "/producten/kitten/",
+      "title": "Kitten"
+    },
+    {
+      "id": 213,
+      "path": "/producten/lijmen/",
+      "title": "Lijmen"
+    },
+    {
+      "id": 211,
+      "path": "/producten/quickbond/",
+      "title": "Quickbond"
+    },
+    {
+      "id": 208,
+      "path": "/producten/",
+      "title": "Producten"
+    },
+    {
+      "id": 180,
+      "path": "/algemene-voorwaarden/",
+      "title": "Algemene voorwaarden Nijtec B.V."
+    },
+    {
+      "id": 165,
+      "path": "/zzp-pakket/",
+      "title": "ZZP-Pakket"
+    },
+    {
+      "id": 150,
+      "path": "/contact/",
+      "title": "Contact"
+    },
+    {
+      "id": 117,
+      "path": "/projecten/",
+      "title": "Projecten"
+    },
+    {
+      "id": 107,
+      "path": "/over-ons/",
+      "title": "Over ons"
+    },
+    {
+      "id": 7,
+      "path": "/",
+      "title": "home"
+    }
+  ],
+  "excluded": [
+    "/demopagina/",
+    "/voorbeeld-pagina/"
+  ],
+  "media": [
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/11/Silicon-ep-217.png",
+      "path": "/wp-content/uploads/2023/11/Silicon-ep-217.png",
+      "attachment": "/silicon-ep-217/",
+      "width": 121,
+      "height": 569,
+      "variants": [
+        "/wp-content/uploads/2023/11/Silicon-ep-217-121x150.png"
+      ],
+      "usedOn": [
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
+      "path": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
+      "attachment": "/producten/luchtdicht-bouwen/attachment/elastic-gunfoam-b2/",
+      "width": 67,
+      "height": 280,
+      "variants": [
+        "/wp-content/uploads/2023/10/elastic-gunfoam-b2-67x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-67x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dr01dye200guw6l04hdvmi8ojqloja2e3i3do.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqy7lslbvsaqmwimnyuwdv3lqvsr2n28szny8.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dr01tr20kooeehp5929w4xdudx3478kiyo62g.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqz5t8vh56s54p1fi2dm6pyni46bfp7r08ywo.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqydqtx51gqhpp2c5qmsr17iy4h0ioips9p4o.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqzfgkrj1yuyjz5m9xeyjzlh6zkn2atui0q7s.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-67x150.png"
+      ],
+      "usedOn": [
+        "/producten/luchtdicht-bouwen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/compressband-2d.png",
+      "path": "/wp-content/uploads/2023/10/compressband-2d.png",
+      "attachment": "/producten/luchtdicht-bouwen/attachment/compressband-2d/",
+      "width": 114,
+      "height": 100,
+      "variants": [
+        "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d-qdzsxe4cq87xj0sdxhncfiayvgg6ygtfegbeex0u9k.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d-qdzsxe4d6w5k5yhz5roge48xx6n0kaor1t66s4iwhu.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d.png"
+      ],
+      "usedOn": [
+        "/producten/luchtdicht-bouwen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg",
+      "path": "/wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg",
+      "attachment": "/producten/luchtdicht-bouwen/attachment/butylband-fleece/",
+      "width": 105,
+      "height": 72,
+      "variants": [
+        "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg",
+        "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg",
+        "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg",
+        "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg",
+        "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg",
+        "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg"
+      ],
+      "usedOn": [
+        "/producten/luchtdicht-bouwen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/zwaluw.png",
+      "path": "/wp-content/uploads/2023/10/zwaluw.png",
+      "attachment": "/producten/luchtdicht-bouwen/attachment/zwaluw/",
+      "width": 261,
+      "height": 282,
+      "variants": [
+        "/wp-content/uploads/2023/10/zwaluw-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs45xc5d2cbbr4csqhm2lsapuuk8x4vgo3ljo.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c57hk4spvn77hhn3v21k6ty4ifhjbx83cw.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c57do6i3r6un2c8el84ynb9stgucjns934.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c572mf4zm3ypnpa76jrw5qek7s9x1v26f4.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c56wot3y21qwduahvc0vhmj49h2y2ayubk.png"
+      ],
+      "usedOn": [
+        "/producten/luchtdicht-bouwen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/xample11.png",
+      "path": "/wp-content/uploads/2023/10/xample11.png",
+      "attachment": "/xample11/",
+      "width": 740,
+      "height": 407,
+      "variants": [
+        "/wp-content/uploads/2023/10/xample11-720x396.png",
+        "/wp-content/uploads/2023/10/xample11-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example10.png",
+      "path": "/wp-content/uploads/2023/10/example10.png",
+      "attachment": "/example10/",
+      "width": 703,
+      "height": 263,
+      "variants": [
+        "/wp-content/uploads/2023/10/example10-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example09.png",
+      "path": "/wp-content/uploads/2023/10/example09.png",
+      "attachment": "/example09/",
+      "width": 222,
+      "height": 223,
+      "variants": [
+        "/wp-content/uploads/2023/10/example09-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example08.jpg",
+      "path": "/wp-content/uploads/2023/10/example08.jpg",
+      "attachment": "/example08/",
+      "width": 1600,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/example08-720x540.jpg",
+        "/wp-content/uploads/2023/10/example08-1024x768.jpg",
+        "/wp-content/uploads/2023/10/example08-150x150.jpg",
+        "/wp-content/uploads/2023/10/example08-768x576.jpg",
+        "/wp-content/uploads/2023/10/example08-1536x1152.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example07.jpg",
+      "path": "/wp-content/uploads/2023/10/example07.jpg",
+      "attachment": "/example07/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/example07-720x480.jpg",
+        "/wp-content/uploads/2023/10/example07-1024x683.jpg",
+        "/wp-content/uploads/2023/10/example07-150x150.jpg",
+        "/wp-content/uploads/2023/10/example07-768x512.jpg",
+        "/wp-content/uploads/2023/10/example07-1536x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example06.jpg",
+      "path": "/wp-content/uploads/2023/10/example06.jpg",
+      "attachment": "/example06/",
+      "width": 650,
+      "height": 433,
+      "variants": [
+        "/wp-content/uploads/2023/10/example06-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example05.jpg",
+      "path": "/wp-content/uploads/2023/10/example05.jpg",
+      "attachment": "/example05/",
+      "width": 900,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/example05-540x720.jpg",
+        "/wp-content/uploads/2023/10/example05-768x1024.jpg",
+        "/wp-content/uploads/2023/10/example05-150x150.jpg",
+        "/wp-content/uploads/2023/10/example05-768x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example04.jpg",
+      "path": "/wp-content/uploads/2023/10/example04.jpg",
+      "attachment": "/example04/",
+      "width": 1200,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/example04-540x720.jpg",
+        "/wp-content/uploads/2023/10/example04-768x1024.jpg",
+        "/wp-content/uploads/2023/10/example04-150x150.jpg",
+        "/wp-content/uploads/2023/10/example04-768x1024.jpg",
+        "/wp-content/uploads/2023/10/example04-1152x1536.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example03.jpg",
+      "path": "/wp-content/uploads/2023/10/example03.jpg",
+      "attachment": "/example03/",
+      "width": 900,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/example03-540x720.jpg",
+        "/wp-content/uploads/2023/10/example03-768x1024.jpg",
+        "/wp-content/uploads/2023/10/example03-150x150.jpg",
+        "/wp-content/uploads/2023/10/example03-768x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example02.jpg",
+      "path": "/wp-content/uploads/2023/10/example02.jpg",
+      "attachment": "/example02/",
+      "width": 900,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/example02-540x720.jpg",
+        "/wp-content/uploads/2023/10/example02-768x1024.jpg",
+        "/wp-content/uploads/2023/10/example02-150x150.jpg",
+        "/wp-content/uploads/2023/10/example02-768x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/example01.jpg",
+      "path": "/wp-content/uploads/2023/10/example01.jpg",
+      "attachment": "/example01/",
+      "width": 1600,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/example01-720x720.jpg",
+        "/wp-content/uploads/2023/10/example01-1024x1024.jpg",
+        "/wp-content/uploads/2023/10/example01-150x150.jpg",
+        "/wp-content/uploads/2023/10/example01-768x768.jpg",
+        "/wp-content/uploads/2023/10/example01-1536x1536.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/23.jpg",
+      "path": "/wp-content/uploads/2023/10/23.jpg",
+      "attachment": "/23/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/23-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/22.png",
+      "path": "/wp-content/uploads/2023/10/22.png",
+      "attachment": "/22/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/22-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/21.jpg",
+      "path": "/wp-content/uploads/2023/10/21.jpg",
+      "attachment": "/21-2/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/21-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/20.jpg",
+      "path": "/wp-content/uploads/2023/10/20.jpg",
+      "attachment": "/20/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/20-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/19.jpg",
+      "path": "/wp-content/uploads/2023/10/19.jpg",
+      "attachment": "/19/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/19-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/18.jpg",
+      "path": "/wp-content/uploads/2023/10/18.jpg",
+      "attachment": "/18/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/18-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/17.jpg",
+      "path": "/wp-content/uploads/2023/10/17.jpg",
+      "attachment": "/17/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/17-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/16-1.jpg",
+      "path": "/wp-content/uploads/2023/10/16-1.jpg",
+      "attachment": "/16-2/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/16-1-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/15.png",
+      "path": "/wp-content/uploads/2023/10/15.png",
+      "attachment": "/15-3/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/15-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/15-1.jpg",
+      "path": "/wp-content/uploads/2023/10/15-1.jpg",
+      "attachment": "/15-2/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/15-1-150x150.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/14.png",
+      "path": "/wp-content/uploads/2023/10/14.png",
+      "attachment": "/14-2/",
+      "width": 600,
+      "height": 390,
+      "variants": [
+        "/wp-content/uploads/2023/10/14-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/13.png",
+      "path": "/wp-content/uploads/2023/10/13.png",
+      "attachment": "/13-2/",
+      "width": 447,
+      "height": 310,
+      "variants": [
+        "/wp-content/uploads/2023/10/13-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/12.png",
+      "path": "/wp-content/uploads/2023/10/12.png",
+      "attachment": "/12-2/",
+      "width": 441,
+      "height": 308,
+      "variants": [
+        "/wp-content/uploads/2023/10/12-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/11.png",
+      "path": "/wp-content/uploads/2023/10/11.png",
+      "attachment": "/11-2/",
+      "width": 443,
+      "height": 311,
+      "variants": [
+        "/wp-content/uploads/2023/10/11-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/10.png",
+      "path": "/wp-content/uploads/2023/10/10.png",
+      "attachment": "/10-2/",
+      "width": 442,
+      "height": 312,
+      "variants": [
+        "/wp-content/uploads/2023/10/10-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/09.png",
+      "path": "/wp-content/uploads/2023/10/09.png",
+      "attachment": "/09-2/",
+      "width": 445,
+      "height": 309,
+      "variants": [
+        "/wp-content/uploads/2023/10/09-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/08.png",
+      "path": "/wp-content/uploads/2023/10/08.png",
+      "attachment": "/08-2/",
+      "width": 446,
+      "height": 310,
+      "variants": [
+        "/wp-content/uploads/2023/10/08-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/07.png",
+      "path": "/wp-content/uploads/2023/10/07.png",
+      "attachment": "/07-2/",
+      "width": 443,
+      "height": 309,
+      "variants": [
+        "/wp-content/uploads/2023/10/07-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/06-1.jpg",
+      "path": "/wp-content/uploads/2023/10/06-1.jpg",
+      "attachment": "/06-2/",
+      "width": 1280,
+      "height": 960,
+      "variants": [
+        "/wp-content/uploads/2023/10/06-1-720x540.jpg",
+        "/wp-content/uploads/2023/10/06-1-1024x768.jpg",
+        "/wp-content/uploads/2023/10/06-1-150x150.jpg",
+        "/wp-content/uploads/2023/10/06-1-768x576.jpg"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/05.png",
+      "path": "/wp-content/uploads/2023/10/05.png",
+      "attachment": "/05-2/",
+      "width": 442,
+      "height": 308,
+      "variants": [
+        "/wp-content/uploads/2023/10/05-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/04.png",
+      "path": "/wp-content/uploads/2023/10/04.png",
+      "attachment": "/04-2/",
+      "width": 446,
+      "height": 314,
+      "variants": [
+        "/wp-content/uploads/2023/10/04-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/03.png",
+      "path": "/wp-content/uploads/2023/10/03.png",
+      "attachment": "/03-2/",
+      "width": 443,
+      "height": 312,
+      "variants": [
+        "/wp-content/uploads/2023/10/03-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/02.png",
+      "path": "/wp-content/uploads/2023/10/02.png",
+      "attachment": "/02-2/",
+      "width": 441,
+      "height": 305,
+      "variants": [
+        "/wp-content/uploads/2023/10/02-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/01.png",
+      "path": "/wp-content/uploads/2023/10/01.png",
+      "attachment": "/01-2/",
+      "width": 444,
+      "height": 306,
+      "variants": [
+        "/wp-content/uploads/2023/10/01-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/steenstrips/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/resultaat-epoxyvloer.jpg",
+      "path": "/wp-content/uploads/2023/10/resultaat-epoxyvloer.jpg",
+      "attachment": "/resultaat-epoxyvloer/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/resultaat-epoxyvloer-405x720.jpg",
+        "/wp-content/uploads/2023/10/resultaat-epoxyvloer-576x1024.jpg",
+        "/wp-content/uploads/2023/10/resultaat-epoxyvloer-150x150.jpg",
+        "/wp-content/uploads/2023/10/resultaat-epoxyvloer-768x1365.jpg",
+        "/wp-content/uploads/2023/10/resultaat-epoxyvloer-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/ral-kleuren-epoxy.png",
+      "path": "/wp-content/uploads/2023/10/ral-kleuren-epoxy.png",
+      "attachment": "/ral-kleuren-epoxy/",
+      "width": 144,
+      "height": 163,
+      "variants": [
+        "/wp-content/uploads/2023/10/ral-kleuren-epoxy-144x150.png"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/flakes.png",
+      "path": "/wp-content/uploads/2023/10/flakes.png",
+      "attachment": "/flakes/",
+      "width": 245,
+      "height": 180,
+      "variants": [
+        "/wp-content/uploads/2023/10/flakes-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/epoxy-vlokken.png",
+      "path": "/wp-content/uploads/2023/10/epoxy-vlokken.png",
+      "attachment": "/epoxy-vlokken/",
+      "width": 250,
+      "height": 448,
+      "variants": [
+        "/wp-content/uploads/2023/10/epoxy-vlokken-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/epoxy-toplaag.jpg",
+      "path": "/wp-content/uploads/2023/10/epoxy-toplaag.jpg",
+      "attachment": "/epoxy-toplaag/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/epoxy-toplaag-405x720.jpg",
+        "/wp-content/uploads/2023/10/epoxy-toplaag-576x1024.jpg",
+        "/wp-content/uploads/2023/10/epoxy-toplaag-150x150.jpg",
+        "/wp-content/uploads/2023/10/epoxy-toplaag-768x1365.jpg",
+        "/wp-content/uploads/2023/10/epoxy-toplaag-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/epoxy-op-tegelvloer.jpg",
+      "path": "/wp-content/uploads/2023/10/epoxy-op-tegelvloer.jpg",
+      "attachment": "/epoxy-op-tegelvloer/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/epoxy-op-tegelvloer-720x405.jpg",
+        "/wp-content/uploads/2023/10/epoxy-op-tegelvloer-1024x576.jpg",
+        "/wp-content/uploads/2023/10/epoxy-op-tegelvloer-150x150.jpg",
+        "/wp-content/uploads/2023/10/epoxy-op-tegelvloer-768x432.jpg",
+        "/wp-content/uploads/2023/10/epoxy-op-tegelvloer-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/epoxy-met-vlokken.png",
+      "path": "/wp-content/uploads/2023/10/epoxy-met-vlokken.png",
+      "attachment": "/epoxy-met-vlokken/",
+      "width": 296,
+      "height": 223,
+      "variants": [
+        "/wp-content/uploads/2023/10/epoxy-met-vlokken-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/epoxy-aanbrengen.jpg",
+      "path": "/wp-content/uploads/2023/10/epoxy-aanbrengen.jpg",
+      "attachment": "/epoxy-aanbrengen/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/epoxy-aanbrengen-720x405.jpg",
+        "/wp-content/uploads/2023/10/epoxy-aanbrengen-1024x576.jpg",
+        "/wp-content/uploads/2023/10/epoxy-aanbrengen-150x150.jpg",
+        "/wp-content/uploads/2023/10/epoxy-aanbrengen-768x432.jpg",
+        "/wp-content/uploads/2023/10/epoxy-aanbrengen-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/betonlook.png",
+      "path": "/wp-content/uploads/2023/10/betonlook.png",
+      "attachment": "/betonlook/",
+      "width": 196,
+      "height": 132,
+      "variants": [
+        "/wp-content/uploads/2023/10/betonlook-150x132.png"
+      ],
+      "usedOn": [
+        "/producten/coatings/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/uni-acryl110.png",
+      "path": "/wp-content/uploads/2023/10/uni-acryl110.png",
+      "attachment": "/uni-acryl110/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/uni-acryl110-720x480.png",
+        "/wp-content/uploads/2023/10/uni-acryl110-1024x683.png",
+        "/wp-content/uploads/2023/10/uni-acryl110-150x150.png",
+        "/wp-content/uploads/2023/10/uni-acryl110-768x512.png",
+        "/wp-content/uploads/2023/10/uni-acryl110-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/acrylaten/",
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/top-acryl115.png",
+      "path": "/wp-content/uploads/2023/10/top-acryl115.png",
+      "attachment": "/top-acryl115/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/top-acryl115-720x480.png",
+        "/wp-content/uploads/2023/10/top-acryl115-1024x683.png",
+        "/wp-content/uploads/2023/10/top-acryl115-150x150.png",
+        "/wp-content/uploads/2023/10/top-acryl115-768x512.png",
+        "/wp-content/uploads/2023/10/top-acryl115-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/acrylaten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/spaster-fill125.png",
+      "path": "/wp-content/uploads/2023/10/spaster-fill125.png",
+      "attachment": "/spaster-fill125/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/spaster-fill125-720x480.png",
+        "/wp-content/uploads/2023/10/spaster-fill125-1024x683.png",
+        "/wp-content/uploads/2023/10/spaster-fill125-150x150.png",
+        "/wp-content/uploads/2023/10/spaster-fill125-768x512.png",
+        "/wp-content/uploads/2023/10/spaster-fill125-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/acrylaten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/spac-cryl120.png",
+      "path": "/wp-content/uploads/2023/10/spac-cryl120.png",
+      "attachment": "/spac-cryl120/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/spac-cryl120-720x480.png",
+        "/wp-content/uploads/2023/10/spac-cryl120-1024x683.png",
+        "/wp-content/uploads/2023/10/spac-cryl120-150x150.png",
+        "/wp-content/uploads/2023/10/spac-cryl120-768x512.png",
+        "/wp-content/uploads/2023/10/spac-cryl120-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/acrylaten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/cement-fix130.png",
+      "path": "/wp-content/uploads/2023/10/cement-fix130.png",
+      "attachment": "/cement-fix130/",
+      "width": 1067,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/cement-fix130-480x720.png",
+        "/wp-content/uploads/2023/10/cement-fix130-683x1024.png",
+        "/wp-content/uploads/2023/10/cement-fix130-150x150.png",
+        "/wp-content/uploads/2023/10/cement-fix130-768x1152.png",
+        "/wp-content/uploads/2023/10/cement-fix130-1024x1536.png"
+      ],
+      "usedOn": [
+        "/producten/acrylaten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/tape.png",
+      "path": "/wp-content/uploads/2023/10/tape.png",
+      "attachment": "/tape/",
+      "width": 430,
+      "height": 420,
+      "variants": [
+        "/wp-content/uploads/2023/10/tape-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/ready-mixed-finish-spray-550.png",
+      "path": "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550.png",
+      "attachment": "/ready-mixed-finish-spray-550/",
+      "width": 1067,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550-480x720.png",
+        "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550-683x1024.png",
+        "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550-150x150.png",
+        "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550-768x1152.png",
+        "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550-1024x1536.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/primer.png",
+      "path": "/wp-content/uploads/2023/10/primer.png",
+      "attachment": "/primer/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/primer-720x480.png",
+        "/wp-content/uploads/2023/10/primer-1024x683.png",
+        "/wp-content/uploads/2023/10/primer-150x150.png",
+        "/wp-content/uploads/2023/10/primer-768x512.png",
+        "/wp-content/uploads/2023/10/primer-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pistool3.png",
+      "path": "/wp-content/uploads/2023/10/pistool3.png",
+      "attachment": "/pistool3/",
+      "width": 480,
+      "height": 319,
+      "variants": [
+        "/wp-content/uploads/2023/10/pistool3-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pistool2.png",
+      "path": "/wp-content/uploads/2023/10/pistool2.png",
+      "attachment": "/pistool2/",
+      "width": 480,
+      "height": 349,
+      "variants": [
+        "/wp-content/uploads/2023/10/pistool2-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pistool.png",
+      "path": "/wp-content/uploads/2023/10/pistool.png",
+      "attachment": "/pistool/",
+      "width": 1067,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/pistool-480x720.png",
+        "/wp-content/uploads/2023/10/pistool-683x1024.png",
+        "/wp-content/uploads/2023/10/pistool-150x150.png",
+        "/wp-content/uploads/2023/10/pistool-768x1152.png",
+        "/wp-content/uploads/2023/10/pistool-1024x1536.png"
+      ],
+      "usedOn": [
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/lucht.png",
+      "path": "/wp-content/uploads/2023/10/lucht.png",
+      "attachment": "/lucht/",
+      "width": 179,
+      "height": 183,
+      "variants": [
+        "/wp-content/uploads/2023/10/lucht-150x150.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/cleaner510.png",
+      "path": "/wp-content/uploads/2023/10/cleaner510.png",
+      "attachment": "/cleaner510/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/cleaner510-720x480.png",
+        "/wp-content/uploads/2023/10/cleaner510-1024x683.png",
+        "/wp-content/uploads/2023/10/cleaner510-150x150.png",
+        "/wp-content/uploads/2023/10/cleaner510-768x512.png",
+        "/wp-content/uploads/2023/10/cleaner510-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/poxyfix.png",
+      "path": "/wp-content/uploads/2023/10/poxyfix.png",
+      "attachment": "/producten/2-componenten-lijmen/attachment/poxyfix/",
+      "width": 1067,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/poxyfix-480x720.png",
+        "/wp-content/uploads/2023/10/poxyfix-683x1024.png",
+        "/wp-content/uploads/2023/10/poxyfix-150x150.png",
+        "/wp-content/uploads/2023/10/poxyfix-768x1152.png",
+        "/wp-content/uploads/2023/10/poxyfix-1024x1536.png"
+      ],
+      "usedOn": [
+        "/producten/2-componenten-lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pu-stonefix-478.png",
+      "path": "/wp-content/uploads/2023/10/pu-stonefix-478.png",
+      "attachment": "/producten/vullende-lijmende-pu-schuimen/attachment/pu-stonefix-478/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pu-stonefix-478-720x480.png",
+        "/wp-content/uploads/2023/10/pu-stonefix-478-1024x683.png",
+        "/wp-content/uploads/2023/10/pu-stonefix-478-150x150.png",
+        "/wp-content/uploads/2023/10/pu-stonefix-478-768x512.png",
+        "/wp-content/uploads/2023/10/pu-stonefix-478-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/vullende-lijmende-pu-schuimen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pur-cleaner-450.png",
+      "path": "/wp-content/uploads/2023/10/pur-cleaner-450.png",
+      "attachment": "/producten/vullende-lijmende-pu-schuimen/attachment/pur-cleaner-450/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pur-cleaner-450-720x480.png",
+        "/wp-content/uploads/2023/10/pur-cleaner-450-1024x683.png",
+        "/wp-content/uploads/2023/10/pur-cleaner-450-150x150.png",
+        "/wp-content/uploads/2023/10/pur-cleaner-450-768x512.png",
+        "/wp-content/uploads/2023/10/pur-cleaner-450-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/vullende-lijmende-pu-schuimen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pu-foam-gun-470.png",
+      "path": "/wp-content/uploads/2023/10/pu-foam-gun-470.png",
+      "attachment": "/producten/vullende-lijmende-pu-schuimen/attachment/pu-foam-gun-470/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pu-foam-gun-470-720x480.png",
+        "/wp-content/uploads/2023/10/pu-foam-gun-470-1024x683.png",
+        "/wp-content/uploads/2023/10/pu-foam-gun-470-150x150.png",
+        "/wp-content/uploads/2023/10/pu-foam-gun-470-768x512.png",
+        "/wp-content/uploads/2023/10/pu-foam-gun-470-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/vullende-lijmende-pu-schuimen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pu-foam-flex-471.png",
+      "path": "/wp-content/uploads/2023/10/pu-foam-flex-471.png",
+      "attachment": "/producten/vullende-lijmende-pu-schuimen/attachment/pu-foam-flex-471/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pu-foam-flex-471-720x480.png",
+        "/wp-content/uploads/2023/10/pu-foam-flex-471-1024x683.png",
+        "/wp-content/uploads/2023/10/pu-foam-flex-471-150x150.png",
+        "/wp-content/uploads/2023/10/pu-foam-flex-471-768x512.png",
+        "/wp-content/uploads/2023/10/pu-foam-flex-471-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/vullende-lijmende-pu-schuimen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/fire_foam-472.png",
+      "path": "/wp-content/uploads/2023/10/fire_foam-472.png",
+      "attachment": "/producten/vullende-lijmende-pu-schuimen/attachment/fire_foam-472/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/fire_foam-472-720x480.png",
+        "/wp-content/uploads/2023/10/fire_foam-472-1024x683.png",
+        "/wp-content/uploads/2023/10/fire_foam-472-150x150.png",
+        "/wp-content/uploads/2023/10/fire_foam-472-768x512.png",
+        "/wp-content/uploads/2023/10/fire_foam-472-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/vullende-lijmende-pu-schuimen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pu-lijmen.jpg",
+      "path": "/wp-content/uploads/2023/10/pu-lijmen.jpg",
+      "attachment": "/producten/vullende-lijmende-pu-schuimen/attachment/pu-lijmen/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pu-lijmen-720x480.jpg",
+        "/wp-content/uploads/2023/10/pu-lijmen-1024x683.jpg",
+        "/wp-content/uploads/2023/10/pu-lijmen-150x150.jpg",
+        "/wp-content/uploads/2023/10/pu-lijmen-768x512.jpg",
+        "/wp-content/uploads/2023/10/pu-lijmen-1536x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/vullende-lijmende-pu-schuimen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/topflex-p230.png",
+      "path": "/wp-content/uploads/2023/10/topflex-p230.png",
+      "attachment": "/producten/kitten/attachment/topflex-p230/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/topflex-p230-720x480.png",
+        "/wp-content/uploads/2023/10/topflex-p230-1024x683.png",
+        "/wp-content/uploads/2023/10/topflex-p230-150x150.png",
+        "/wp-content/uploads/2023/10/topflex-p230-768x512.png",
+        "/wp-content/uploads/2023/10/topflex-p230-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silocon-nf215.png",
+      "path": "/wp-content/uploads/2023/10/silocon-nf215.png",
+      "attachment": "/producten/kitten/attachment/silocon-nf215/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/silocon-nf215-720x480.png",
+        "/wp-content/uploads/2023/10/silocon-nf215-1024x683.png",
+        "/wp-content/uploads/2023/10/silocon-nf215-150x150.png",
+        "/wp-content/uploads/2023/10/silocon-nf215-768x512.png",
+        "/wp-content/uploads/2023/10/silocon-nf215-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silocon-ht211.png",
+      "path": "/wp-content/uploads/2023/10/silocon-ht211.png",
+      "attachment": "/producten/kitten/attachment/silocon-ht211/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/silocon-ht211-720x480.png",
+        "/wp-content/uploads/2023/10/silocon-ht211-1024x683.png",
+        "/wp-content/uploads/2023/10/silocon-ht211-150x150.png",
+        "/wp-content/uploads/2023/10/silocon-ht211-768x512.png",
+        "/wp-content/uploads/2023/10/silocon-ht211-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silicon-sa216.png",
+      "path": "/wp-content/uploads/2023/10/silicon-sa216.png",
+      "attachment": "/producten/kitten/attachment/silicon-sa216/",
+      "width": 1072,
+      "height": 1500,
+      "variants": [
+        "/wp-content/uploads/2023/10/silicon-sa216-515x720.png",
+        "/wp-content/uploads/2023/10/silicon-sa216-732x1024.png",
+        "/wp-content/uploads/2023/10/silicon-sa216-150x150.png",
+        "/wp-content/uploads/2023/10/silicon-sa216-768x1075.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silicon-gr210.png",
+      "path": "/wp-content/uploads/2023/10/silicon-gr210.png",
+      "attachment": "/producten/kitten/attachment/silicon-gr210/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/silicon-gr210-720x480.png",
+        "/wp-content/uploads/2023/10/silicon-gr210-1024x683.png",
+        "/wp-content/uploads/2023/10/silicon-gr210-150x150.png",
+        "/wp-content/uploads/2023/10/silicon-gr210-768x512.png",
+        "/wp-content/uploads/2023/10/silicon-gr210-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silicon-cl218.png",
+      "path": "/wp-content/uploads/2023/10/silicon-cl218.png",
+      "attachment": "/producten/kitten/attachment/silicon-cl218/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/silicon-cl218-720x480.png",
+        "/wp-content/uploads/2023/10/silicon-cl218-1024x683.png",
+        "/wp-content/uploads/2023/10/silicon-cl218-150x150.png",
+        "/wp-content/uploads/2023/10/silicon-cl218-768x512.png",
+        "/wp-content/uploads/2023/10/silicon-cl218-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silicon-all250.png",
+      "path": "/wp-content/uploads/2023/10/silicon-all250.png",
+      "attachment": "/producten/kitten/attachment/silicon-all250/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/silicon-all250-720x480.png",
+        "/wp-content/uploads/2023/10/silicon-all250-1024x683.png",
+        "/wp-content/uploads/2023/10/silicon-all250-150x150.png",
+        "/wp-content/uploads/2023/10/silicon-all250-768x512.png",
+        "/wp-content/uploads/2023/10/silicon-all250-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/silicon-315.png",
+      "path": "/wp-content/uploads/2023/10/silicon-315.png",
+      "attachment": "/producten/kitten/attachment/silicon-315/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/silicon-315-720x480.png",
+        "/wp-content/uploads/2023/10/silicon-315-1024x683.png",
+        "/wp-content/uploads/2023/10/silicon-315-150x150.png",
+        "/wp-content/uploads/2023/10/silicon-315-768x512.png",
+        "/wp-content/uploads/2023/10/silicon-315-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/unnamed-1.jpg",
+      "path": "/wp-content/uploads/2023/10/unnamed-1.jpg",
+      "attachment": "/producten/kitten/attachment/unnamed-2/",
+      "width": 1560,
+      "height": 1040,
+      "variants": [
+        "/wp-content/uploads/2023/10/unnamed-1-720x480.jpg",
+        "/wp-content/uploads/2023/10/unnamed-1-1024x683.jpg",
+        "/wp-content/uploads/2023/10/unnamed-1-150x150.jpg",
+        "/wp-content/uploads/2023/10/unnamed-1-768x512.jpg",
+        "/wp-content/uploads/2023/10/unnamed-1-1536x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/super-pro-352.png",
+      "path": "/wp-content/uploads/2023/10/super-pro-352.png",
+      "attachment": "/producten/lijmen/attachment/super-pro-352/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/super-pro-352-720x480.png",
+        "/wp-content/uploads/2023/10/super-pro-352-1024x683.png",
+        "/wp-content/uploads/2023/10/super-pro-352-150x150.png",
+        "/wp-content/uploads/2023/10/super-pro-352-768x512.png",
+        "/wp-content/uploads/2023/10/super-pro-352-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/super-all-360.png",
+      "path": "/wp-content/uploads/2023/10/super-all-360.png",
+      "attachment": "/producten/lijmen/attachment/super-all-360/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/super-all-360-720x480.png",
+        "/wp-content/uploads/2023/10/super-all-360-1024x683.png",
+        "/wp-content/uploads/2023/10/super-all-360-150x150.png",
+        "/wp-content/uploads/2023/10/super-all-360-768x512.png",
+        "/wp-content/uploads/2023/10/super-all-360-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/",
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pro-paint-325.png",
+      "path": "/wp-content/uploads/2023/10/pro-paint-325.png",
+      "attachment": "/producten/lijmen/attachment/pro-paint-325/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pro-paint-325-720x480.png",
+        "/wp-content/uploads/2023/10/pro-paint-325-1024x683.png",
+        "/wp-content/uploads/2023/10/pro-paint-325-150x150.png",
+        "/wp-content/uploads/2023/10/pro-paint-325-768x512.png",
+        "/wp-content/uploads/2023/10/pro-paint-325-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/high-tack-360.png",
+      "path": "/wp-content/uploads/2023/10/high-tack-360.png",
+      "attachment": "/producten/lijmen/attachment/high-tack-360/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/high-tack-360-720x480.png",
+        "/wp-content/uploads/2023/10/high-tack-360-1024x683.png",
+        "/wp-content/uploads/2023/10/high-tack-360-150x150.png",
+        "/wp-content/uploads/2023/10/high-tack-360-768x512.png",
+        "/wp-content/uploads/2023/10/high-tack-360-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/crystal-340.png",
+      "path": "/wp-content/uploads/2023/10/crystal-340.png",
+      "attachment": "/producten/lijmen/attachment/crystal-340/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/crystal-340-720x480.png",
+        "/wp-content/uploads/2023/10/crystal-340-1024x683.png",
+        "/wp-content/uploads/2023/10/crystal-340-150x150.png",
+        "/wp-content/uploads/2023/10/crystal-340-768x512.png",
+        "/wp-content/uploads/2023/10/crystal-340-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/315-facade-lm.png",
+      "path": "/wp-content/uploads/2023/10/315-facade-lm.png",
+      "attachment": "/producten/lijmen/attachment/315-facade-lm/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/315-facade-lm-720x480.png",
+        "/wp-content/uploads/2023/10/315-facade-lm-1024x683.png",
+        "/wp-content/uploads/2023/10/315-facade-lm-150x150.png",
+        "/wp-content/uploads/2023/10/315-facade-lm-768x512.png",
+        "/wp-content/uploads/2023/10/315-facade-lm-1536x1024.png"
+      ],
+      "usedOn": [
+        "/producten/kitten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/unnamed.jpg",
+      "path": "/wp-content/uploads/2023/10/unnamed.jpg",
+      "attachment": "/producten/lijmen/attachment/unnamed/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/unnamed-720x480.jpg",
+        "/wp-content/uploads/2023/10/unnamed-1024x683.jpg",
+        "/wp-content/uploads/2023/10/unnamed-150x150.jpg",
+        "/wp-content/uploads/2023/10/unnamed-768x512.jpg",
+        "/wp-content/uploads/2023/10/unnamed-1536x1024.jpg"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/connectproducts.png",
+      "path": "/wp-content/uploads/2023/10/connectproducts.png",
+      "attachment": "/producten/lijmen/attachment/connectproducts/",
+      "width": 400,
+      "height": 126,
+      "variants": [
+        "/wp-content/uploads/2023/10/connectproducts-150x126.png"
+      ],
+      "usedOn": [
+        "/producten/lijmen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/quick_bond.png",
+      "path": "/wp-content/uploads/2023/10/quick_bond.png",
+      "attachment": "/quick_bond/",
+      "width": 1404,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/quick_bond-632x720.png",
+        "/wp-content/uploads/2023/10/quick_bond-899x1024.png",
+        "/wp-content/uploads/2023/10/quick_bond-150x150.png",
+        "/wp-content/uploads/2023/10/quick_bond-768x875.png",
+        "/wp-content/uploads/2023/10/quick_bond-1348x1536.png"
+      ],
+      "usedOn": [
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pu_foam_flex.png",
+      "path": "/wp-content/uploads/2023/10/pu_foam_flex.png",
+      "attachment": "/pu_foam_flex/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pu_foam_flex-720x480.png",
+        "/wp-content/uploads/2023/10/pu_foam_flex-1024x683.png",
+        "/wp-content/uploads/2023/10/pu_foam_flex-150x150.png",
+        "/wp-content/uploads/2023/10/pu_foam_flex-768x512.png",
+        "/wp-content/uploads/2023/10/pu_foam_flex-1536x1024.png"
+      ],
+      "usedOn": [
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/pro_paint.png",
+      "path": "/wp-content/uploads/2023/10/pro_paint.png",
+      "attachment": "/pro_paint/",
+      "width": 1600,
+      "height": 1067,
+      "variants": [
+        "/wp-content/uploads/2023/10/pro_paint-720x480.png",
+        "/wp-content/uploads/2023/10/pro_paint-1024x683.png",
+        "/wp-content/uploads/2023/10/pro_paint-150x150.png",
+        "/wp-content/uploads/2023/10/pro_paint-768x512.png",
+        "/wp-content/uploads/2023/10/pro_paint-1536x1024.png"
+      ],
+      "usedOn": [
+        "/zzp-pakket/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/connect_products.png",
+      "path": "/wp-content/uploads/2023/10/connect_products.png",
+      "attachment": "/connect_products/",
+      "width": 1067,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/connect_products-480x720.png",
+        "/wp-content/uploads/2023/10/connect_products-683x1024.png",
+        "/wp-content/uploads/2023/10/connect_products-150x150.png",
+        "/wp-content/uploads/2023/10/connect_products-768x1152.png",
+        "/wp-content/uploads/2023/10/connect_products-1024x1536.png"
+      ],
+      "usedOn": [
+        "/producten/diversen/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/16.jpg",
+      "path": "/wp-content/uploads/2023/10/16.jpg",
+      "attachment": "/16/",
+      "width": 1200,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/16-225x300.jpg",
+        "/wp-content/uploads/2023/10/16-768x1024.jpg",
+        "/wp-content/uploads/2023/10/16-150x150.jpg",
+        "/wp-content/uploads/2023/10/16-768x1024.jpg",
+        "/wp-content/uploads/2023/10/16-1152x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/15.jpg",
+      "path": "/wp-content/uploads/2023/10/15.jpg",
+      "attachment": "/15/",
+      "width": 1600,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/15-300x225.jpg",
+        "/wp-content/uploads/2023/10/15-1024x768.jpg",
+        "/wp-content/uploads/2023/10/15-150x150.jpg",
+        "/wp-content/uploads/2023/10/15-768x576.jpg",
+        "/wp-content/uploads/2023/10/15-1536x1152.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/14.jpg",
+      "path": "/wp-content/uploads/2023/10/14.jpg",
+      "attachment": "/14/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/14-169x300.jpg",
+        "/wp-content/uploads/2023/10/14-576x1024.jpg",
+        "/wp-content/uploads/2023/10/14-150x150.jpg",
+        "/wp-content/uploads/2023/10/14-768x1365.jpg",
+        "/wp-content/uploads/2023/10/14-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/13.jpg",
+      "path": "/wp-content/uploads/2023/10/13.jpg",
+      "attachment": "/13/",
+      "width": 1600,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/13-300x225.jpg",
+        "/wp-content/uploads/2023/10/13-1024x768.jpg",
+        "/wp-content/uploads/2023/10/13-150x150.jpg",
+        "/wp-content/uploads/2023/10/13-768x576.jpg",
+        "/wp-content/uploads/2023/10/13-1536x1152.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/12.jpg",
+      "path": "/wp-content/uploads/2023/10/12.jpg",
+      "attachment": "/12/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/12-169x300.jpg",
+        "/wp-content/uploads/2023/10/12-576x1024.jpg",
+        "/wp-content/uploads/2023/10/12-150x150.jpg",
+        "/wp-content/uploads/2023/10/12-768x1365.jpg",
+        "/wp-content/uploads/2023/10/12-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/11.jpg",
+      "path": "/wp-content/uploads/2023/10/11.jpg",
+      "attachment": "/11/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/11-169x300.jpg",
+        "/wp-content/uploads/2023/10/11-576x1024.jpg",
+        "/wp-content/uploads/2023/10/11-150x150.jpg",
+        "/wp-content/uploads/2023/10/11-768x1365.jpg",
+        "/wp-content/uploads/2023/10/11-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/10.jpg",
+      "path": "/wp-content/uploads/2023/10/10.jpg",
+      "attachment": "/10/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/10-169x300.jpg",
+        "/wp-content/uploads/2023/10/10-576x1024.jpg",
+        "/wp-content/uploads/2023/10/10-150x150.jpg",
+        "/wp-content/uploads/2023/10/10-768x1365.jpg",
+        "/wp-content/uploads/2023/10/10-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/09.jpg",
+      "path": "/wp-content/uploads/2023/10/09.jpg",
+      "attachment": "/09/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/09-300x169.jpg",
+        "/wp-content/uploads/2023/10/09-1024x576.jpg",
+        "/wp-content/uploads/2023/10/09-150x150.jpg",
+        "/wp-content/uploads/2023/10/09-768x432.jpg",
+        "/wp-content/uploads/2023/10/09-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/08.jpg",
+      "path": "/wp-content/uploads/2023/10/08.jpg",
+      "attachment": "/08/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/08-300x169.jpg",
+        "/wp-content/uploads/2023/10/08-1024x576.jpg",
+        "/wp-content/uploads/2023/10/08-150x150.jpg",
+        "/wp-content/uploads/2023/10/08-768x432.jpg",
+        "/wp-content/uploads/2023/10/08-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/07.jpg",
+      "path": "/wp-content/uploads/2023/10/07.jpg",
+      "attachment": "/07/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/07-169x300.jpg",
+        "/wp-content/uploads/2023/10/07-576x1024.jpg",
+        "/wp-content/uploads/2023/10/07-150x150.jpg",
+        "/wp-content/uploads/2023/10/07-768x1365.jpg",
+        "/wp-content/uploads/2023/10/07-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/06.jpg",
+      "path": "/wp-content/uploads/2023/10/06.jpg",
+      "attachment": "/06/",
+      "width": 1000,
+      "height": 1000,
+      "variants": [
+        "/wp-content/uploads/2023/10/06-300x300.jpg",
+        "/wp-content/uploads/2023/10/06-150x150.jpg",
+        "/wp-content/uploads/2023/10/06-768x768.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/05.jpg",
+      "path": "/wp-content/uploads/2023/10/05.jpg",
+      "attachment": "/05/",
+      "width": 1600,
+      "height": 1200,
+      "variants": [
+        "/wp-content/uploads/2023/10/05-300x225.jpg",
+        "/wp-content/uploads/2023/10/05-1024x768.jpg",
+        "/wp-content/uploads/2023/10/05-150x150.jpg",
+        "/wp-content/uploads/2023/10/05-768x576.jpg",
+        "/wp-content/uploads/2023/10/05-1536x1152.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/04.jpg",
+      "path": "/wp-content/uploads/2023/10/04.jpg",
+      "attachment": "/04/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/04-300x169.jpg",
+        "/wp-content/uploads/2023/10/04-1024x576.jpg",
+        "/wp-content/uploads/2023/10/04-150x150.jpg",
+        "/wp-content/uploads/2023/10/04-768x432.jpg",
+        "/wp-content/uploads/2023/10/04-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/03.jpg",
+      "path": "/wp-content/uploads/2023/10/03.jpg",
+      "attachment": "/03/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/03-300x169.jpg",
+        "/wp-content/uploads/2023/10/03-1024x576.jpg",
+        "/wp-content/uploads/2023/10/03-150x150.jpg",
+        "/wp-content/uploads/2023/10/03-768x432.jpg",
+        "/wp-content/uploads/2023/10/03-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/02.jpg",
+      "path": "/wp-content/uploads/2023/10/02.jpg",
+      "attachment": "/02/",
+      "width": 900,
+      "height": 1600,
+      "variants": [
+        "/wp-content/uploads/2023/10/02-169x300.jpg",
+        "/wp-content/uploads/2023/10/02-576x1024.jpg",
+        "/wp-content/uploads/2023/10/02-150x150.jpg",
+        "/wp-content/uploads/2023/10/02-768x1365.jpg",
+        "/wp-content/uploads/2023/10/02-864x1536.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/01.jpg",
+      "path": "/wp-content/uploads/2023/10/01.jpg",
+      "attachment": "/01/",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        "/wp-content/uploads/2023/10/01-300x169.jpg",
+        "/wp-content/uploads/2023/10/01-1024x576.jpg",
+        "/wp-content/uploads/2023/10/01-150x150.jpg",
+        "/wp-content/uploads/2023/10/01-768x432.jpg",
+        "/wp-content/uploads/2023/10/01-1536x864.jpg"
+      ],
+      "usedOn": [
+        "/projecten/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/NijTec_slider2.jpg",
+      "path": "/wp-content/uploads/2023/10/NijTec_slider2.jpg",
+      "attachment": "/nijtec_slider2/",
+      "width": 851,
+      "height": 315,
+      "variants": [
+        "/wp-content/uploads/2023/10/NijTec_slider2-300x111.jpg",
+        "/wp-content/uploads/2023/10/NijTec_slider2-150x150.jpg",
+        "/wp-content/uploads/2023/10/NijTec_slider2-768x284.jpg"
+      ],
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "source": "https://nijtec.nl/wp-content/uploads/2023/10/NijTec_logo.png",
+      "path": "/wp-content/uploads/2023/10/NijTec_logo.png",
+      "attachment": "/nijtec_logo/",
+      "width": 512,
+      "height": 341,
+      "variants": [
+        "/wp-content/uploads/2023/10/NijTec_logo-300x200.png",
+        "/wp-content/uploads/2023/10/NijTec_logo-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgc66pqvmdmf0c4ovkevdybf6bmd5y1eu4wrs.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgcjcci81mgfuzqrkgx2fojmxozcno8ndbl2g.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgcs43ogbscgffhhd2l74u143xw0bhph2419k.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgde1hm1172huiu9ukrivpqt1k5nh1dja35rc.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgdmt8s9bcyieykzn6fnkv8a7t2b4uucyvlyg.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgdmt8uaz3dy0ttucrfoypnet06khemk9j3v0.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgdr74hgrwrdwwy1yn9sp4t9zbr5nv56ektv4.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgdzyvrsdji9p36h6ey05z50bywc0s6eoo9vc.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgdzyw42by2vcanlfwy8h1nrv5lw42vmgl9ao.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dge8qnaam3yvwqeb8imd67591eijrwcg5dphs.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dged4iver6ww6y9o4tgfirvzmiyvlt2uzrxlc.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgelwa1n1cswre0dxf4k7xdgsrvj9mjookdsg.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgb73ohhwds0nwpalbpyqw68lct516c34g51e.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgbe4a82xbafinp2feno3td0qcqgrfich2whc.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgbt12f2lsi230232twahrvxiz2s6q05cf9sm.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgc66p6f11c2xno5rqehji45acfrog7dvly8u.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgcs433zqg24cr0y98ktadtu7ypetzvg3l2zs.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgde1h1kfus5rudqqqr519jj5kz1zjjibk7qq.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgf7to9g1fo47tlfyub2w16sodqh5x4rdszt0.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgfeehn49234n5ehbak6ewawk2eyws8dnebyc.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgfkzb0sgoi52h7inqt9xrf0fr3gnnbzwzo3o.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgftr270que5mwy8gchemwwhm004bgstls4as.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgg2itd910a67coy8y5jc2dys8wrza9nakkhw.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dggdhic1dpn6wwdchp8p7i8t921lk23oek4qs.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dggdhie31g2mirm77a8qlcnxu95uwlvvp7mnc.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dggmp1x84x21imjnhilh4k839tbcjtfch1i20.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgh48kkbq9gq7m3x65jjbns3vqjm3418zm6r4.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgh48ku5al4eq6hm6jy4dbebiab9cy70t5dci.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-150x150.png",
+        "/wp-content/uploads/2023/10/elementor/thumbs/NijTec_logo-qdsn7dgg615hk1mgwztllstn8h485t3h5ii38h8v2q.png"
+      ],
+      "usedOn": [
+        "/algemene-voorwaarden/",
+        "/over-ons/",
+        "/"
+      ]
+    }
+  ]
+}
