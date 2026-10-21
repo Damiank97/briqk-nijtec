@@ -3,12 +3,13 @@
 ## Geslaagd
 
 - `npm test`: 13 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten.
-- Browsercontrole van de gebouwde site in Chromium: 150 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend.
+- Browsercontrole van de gebouwde site in Chromium: 154 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend.
 - Geen horizontale pagina-overflow in de geteste breedtes. Alle homepageafbeeldingen geladen. Alle 16 projectfoto’s op meerdere scrollposities gecontroleerd: geen overlap met onderschriften of andere projectkaarten. Ook intro- en toepassingsfoto’s gecontroleerd.
 - Eén revealmechanisme: eenmalig zichtbaar vanaf 88% van de viewport. Vóór de drempel onzichtbaar, daarna zichtbaar; terugscrollen verbergt inhoud niet opnieuw. Hele kaarten en tekstkolommen schuiven niet mee met scroll.
 - Alle acht productvensters: juiste inhoud, focus binnen venster, Tab-begrenzing, Escape, terugkeerfocus zonder ongewenste scrollsprong. Aanvraagknop vult het formulier; wissen werkt.
 - Fotoviewer: openen, vorige/volgende met rondgang, Escape en focus terug naar foto.
 - 3D-canvas actief op alle vier breedtes. Begeleidende tekst staat buiten het modelvlak; bedienknoppen hebben een eigen ruimte. Visueel bekeken op mobiel formaat.
+- Quickbond gebruikt één gezamenlijke sticky-scène op desktop, geen drie onafhankelijk plakkende kolommen. Bij meerdere scrollposities is de afstand tussen informatiepaneel en model identiek; tijdens het vastzetten blijft de paneelhoogte gelijk. Op mobiel blijven beide in de normale documentstroom. Het label Leveringsvorm heeft nu leesbaar contrast op het witte paneel.
 - Contact: gekoppelde labels, lege/onjuiste gegevens geweigerd, alle velden in mailconcept, veilige codering van bijzondere tekens, lange berichten zonder afkappen via kopieerfallback. Geen ontvangstclaim. Kopiëren inclusief fallback bij geweigerde klembordtoegang in aparte logische tests.
 - Gemeten layoutverschuiving tijdens het laden in de browserronde circa 0,013–0,029 CLS. Dit is een lokale labcontrole, geen PageSpeed-veldmeting.
 - Geen opgevangen runtime- of ontbrekende-resourcefouten op de geteste pagina’s. Onbekende pagina geeft 404; oude sitemap verwijst naar nieuwe.

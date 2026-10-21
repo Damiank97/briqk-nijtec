@@ -116,6 +116,18 @@ async function audit(width){
  record(width+' px: actieve 3D-canvas',$('.qb-render-stage').dataset.viewerState==='active',$('.qb-render-stage').dataset.viewerState);
  const notes=$('.qb-story-notes').getBoundingClientRect(),canvas=$('.qb-webgl-canvas').getBoundingClientRect();
  record(width+' px: 3D-uitleg staat buiten het model',!overlaps(notes,canvas));
+ const scene=$('.qb-scene'),box=$('.qb-box'),model=$('.qb-model-wrap');
+ if(width>1100){
+  const section=$('#quickbond'),style=w.getComputedStyle(scene);
+  const entry=section.getBoundingClientRect().top+w.scrollY+parseFloat(w.getComputedStyle(section).paddingTop)-parseFloat(style.top);
+  const offsets=[],tops=[];
+  for(const offset of [-40,20,100,200]){
+   w.scrollTo(0,entry+offset);await settle();
+   offsets.push(box.getBoundingClientRect().top-model.getBoundingClientRect().top);
+   tops.push(box.getBoundingClientRect().top);
+  }
+  record(width+' px: informatiepaneel blijft vast naast 3D-scène',style.position==='sticky'&&Math.max(...offsets)-Math.min(...offsets)<1&&Math.max(...tops.slice(1))-Math.min(...tops.slice(1))<1,JSON.stringify({offsets,tops}));
+ }else record(width+' px: informatiepaneel blijft in mobiele documentstroom',w.getComputedStyle(scene).position==='static'&&w.getComputedStyle(box).position==='static');
  record(width+' px: geen runtimefouten',w.__qaErrors.length===0,w.__qaErrors.join('; '));
 }
 async function auditRoutes(){

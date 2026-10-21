@@ -72,6 +72,9 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 - Animatie mag de productuitleg ondersteunen: gebruik scroll-progress voor
   voortgang, subtiele reveal voor echte content en één interactieve 3D-visual
   voor Quickbond. Geen animatie op iedere losse tekstregel.
+- De Quickbond-scène heeft op desktop één gezamenlijk sticky-ankerpunt. Het
+  witte toepassingspaneel schuift niet afzonderlijk ten opzichte van het model.
+  Op mobiel blijven de onderdelen gewoon in de documentstroom.
 - De lokale True You-referentie gebruikt geen live 3D maar vooraf gerenderde
   WebM/MP4-productfilms. De relevante les is de cinematografische presentatie:
   grote media, weinig gelijktijdige boodschappen en `clip-path`-reveals die bij
