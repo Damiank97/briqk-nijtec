@@ -50,8 +50,8 @@ async function audit(width){
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
  const nav=$('nav').getBoundingClientRect(); const logo=$('.nav-logo').getBoundingClientRect(); const call=$('.nav-cta').getBoundingClientRect();
  record(width+' px: navigatie valt binnen scherm',logo.left>=-1&&call.right<=w.innerWidth+1&&logo.right<call.left);
- const brandImage=$('.nav-logo img'),brandStyle=w.getComputedStyle(brandImage),plate=$('.nav-logo-plate'),plateStyle=w.getComputedStyle(plate);
- record(width+' px: origineel logo leesbaar op licht vlak',brandImage.naturalWidth===512&&brandImage.naturalHeight===341&&brandStyle.filter==='none'&&brandStyle.mixBlendMode==='normal'&&brandStyle.objectFit==='contain'&&plateStyle.backgroundColor==='rgb(251, 249, 244)'&&brandImage.getBoundingClientRect().height<=nav.height);
+ const brandImage=$('.nav-logo img'),brandStyle=w.getComputedStyle(brandImage),frameStyle=w.getComputedStyle($('.nav-logo-frame')),navStyle=w.getComputedStyle($('nav'));
+ record(width+' px: origineel logo geïntegreerd in lichte menubalk',brandImage.naturalWidth===512&&brandImage.naturalHeight===341&&brandStyle.filter==='none'&&brandStyle.mixBlendMode==='normal'&&brandStyle.objectFit==='contain'&&frameStyle.backgroundColor==='rgba(0, 0, 0, 0)'&&navStyle.backgroundColor==='rgb(251, 249, 244)'&&brandImage.getBoundingClientRect().height<=nav.height);
  const reveal=$('#projecten .section-title'); const revealTop=reveal.getBoundingClientRect().top+w.scrollY; const initialRevealed=reveal.classList.contains('is-revealed');const initialScroll=w.scrollY;
  w.scrollTo(0,revealTop-w.innerHeight*.94);await pause(250);const before=reveal.classList.contains('is-revealed');const beforeY=reveal.getBoundingClientRect().top;
  w.scrollTo(0,revealTop-w.innerHeight*.84);await pause(250);const after=reveal.classList.contains('is-revealed');

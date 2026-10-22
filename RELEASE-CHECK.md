@@ -2,7 +2,7 @@
 
 ## Geslaagd
 
-- `npm test`: 26 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo en de Strato-contactroute met een nep-mailtransport.
+- `npm test`: 27 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd.
 - Browsercontrole van de gebouwde site in Chromium: 166 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst.
 - Geen horizontale pagina-overflow in de geteste breedtes. Alle homepageafbeeldingen geladen. Alle 16 projectfoto’s op meerdere scrollposities gecontroleerd: geen overlap met onderschriften of andere projectkaarten. Ook intro- en toepassingsfoto’s gecontroleerd.
 - Eén revealmechanisme: eenmalig zichtbaar vanaf 88% van de viewport. Vóór de drempel onzichtbaar, daarna zichtbaar; terugscrollen verbergt inhoud niet opnieuw. Hele kaarten en tekstkolommen schuiven niet mee met scroll.
@@ -16,12 +16,12 @@
 
 ## Logo, tekst en bestellen — 22 oktober 2026
 
-- Het originele logo is byte-identiek gebleven. Een licht vlak en iets grotere weergave geven contrast, zonder recolor, uitsnede of filter. Dit is op alle 17 pagina's getest, inclusief de krappe navigatie op 320 px.
+- Het originele logo is byte-identiek gebleven. Na afwijzing van het losse witte vlak door de gebruiker is de navigatie volledig paperLight gemaakt, met donkerblauwe Instrument Sans-tekst, compacte bedrijfsnaam en subtiele onderlijn. Geen losse logotegel of dikke oranje band. Dit is op alle 17 pagina's getest, inclusief de krappe navigatie op 320 px.
 - Sectiekoppen hebben geen clip-masker meer en een regelhoogte van 1,08. De volledige onderkant van de j in 'verlijmd' is in de browser zichtbaar; ook g/p/y worden niet afgeknipt. Beeldreveals blijven behouden.
 - Bestelling aanvragen opent het formulier met ZZP-pakket, aantallen/levering en een verzoek om prijsbevestiging. Geen telefoon-/WhatsApp-handoff. Gewone duidelijk gelabelde belknoppen blijven telefoonlinks.
 - Strato SMTP via Node.js voorbereid: vaste ontvanger info@nijtec.nl, eigen mailbox als afzender, klantadres als Reply-To, TLS-controle, begrensde invoer, origin-controle, spamval, kortlevend ondertekend token, lokale rate limit en blokkering van dubbel klikken. Geen mailgegevens in browser of Git. Installatie gepind; npm meldde nul bekende kwetsbaarheden bij installatie.
 - Zonder serversecret blijft de transparante mailapp-/kopieerroute actief. SMTP-fouten geven geen valse succesmelding. Een time-out wordt als onzekere verzending gemeld en niet automatisch herhaald.
-- Nog nodig door beheerder: SMTP_PASS en een afzonderlijke CONTACT_FORM_SECRET veilig invullen in Vercel, opnieuw deployen, echte ontvangst én Reply-To testen. Lokale rate limiting is niet verdeeld over instanties; aanvullende firewallregel aanbevolen. Zie MAIL-INSTELLEN.md. Er is in deze controle geen echte mail verstuurd.
+- Correctie na gebruikersinformatie: het MX-record wijst naar Microsoft 365, niet Strato. De eerdere instructie SMTP_PASS in te vullen is vervallen. De Strato-adapter is aanvullend vergrendeld op expliciete providerkeuze; losse mailsecrets activeren hem niet. Microsoft-verzending is nog niet gebouwd of geautoriseerd. Beheertoegang en passende mailboxgebonden rechten zijn eerst nodig; daarna implementatie en echte ontvangst-/Reply-To-test. Lokale rate limiting is niet verdeeld over instanties; aanvullende firewallregel aanbevolen. Zie MAIL-INSTELLEN.md. Er is in deze controle geen echte mail verstuurd en er zijn geen mail-/DNS-records gewijzigd.
 
 ## Grenzen van deze controle
 

@@ -13,7 +13,9 @@ function createHandler({ env = process.env, now = Date.now, createTransport = no
   const used = new Map();
   let transport;
   const username = env.SMTP_USER || recipient;
-  const enabled = Boolean(env.SMTP_PASS && env.CONTACT_FORM_SECRET?.length >= 32 && emailPattern.test(username) && username.endsWith('@nijtec.nl'));
+  // Nijtec uses Microsoft 365. Never activate this Strato adapter merely because
+  // somebody followed the superseded SMTP password instructions.
+  const enabled = Boolean(env.MAIL_PROVIDER === 'strato' && env.SMTP_PASS && env.CONTACT_FORM_SECRET?.length >= 32 && emailPattern.test(username) && username.endsWith('@nijtec.nl'));
   // Do not expose a public HMAC oracle based on the mailbox password.
   const secret = env.CONTACT_FORM_SECRET || 'disabled';
   const digest = text => createHmac('sha256', secret).update(text).digest('base64url');

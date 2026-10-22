@@ -39,7 +39,7 @@
     "breakpoints": [1440, 900, 768, 390]
   },
   "components": {
-    "navigationLogo": "Het originele Nijtec-logo blijft byte-identiek, zonder recolor, uitsnede of filter. Toon het iets groter, in de oorspronkelijke beeldverhouding, op een licht paperLight-vlak binnen de blauwe navigatie",
+    "navigationLogo": "Origineel logo byte-identiek, zonder recolor, uitsnede of filter, geïntegreerd in een volledig paperLight menubalk. Geen losse witte tegel of kader. Compacte Instrument Sans-bedrijfsnaam en donkerblauwe navigatietekst; subtiele onderlijn, geen dikke oranje band",
     "hero": "Beschrijvende leesbare kop met een feitelijke introductie en een projectfoto met dossiercaption",
     "features": "Genummerde horizontale registerregels",
     "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie",

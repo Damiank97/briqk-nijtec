@@ -6,7 +6,7 @@ function setup({ configured = true, result = { accepted: ['info@nijtec.nl'] }, f
   let clock = 1000000;
   const sent = [], transports = [];
   const handler = createHandler({
-    env: configured ? { SMTP_PASS: 'not-a-real-password', CONTACT_FORM_SECRET: 'test-only-form-signing-key-with-32-plus-characters', NODE_ENV: 'production' } : {},
+    env: configured ? { MAIL_PROVIDER: 'strato', SMTP_PASS: 'not-a-real-password', CONTACT_FORM_SECRET: 'test-only-form-signing-key-with-32-plus-characters', NODE_ENV: 'production' } : {},
     now: () => clock,
     createTransport(options) {
       transports.push(options);
@@ -30,6 +30,15 @@ test('unconfigured server advertises fallback and cannot send', async()=>{
   assert.deepEqual((await h.request()).body,{enabled:false});
   assert.equal((await h.request('POST',{})).statusCode,503);
   assert.equal(h.sent.length,0);
+});
+
+test('mailbox password alone never activates the wrong provider for Microsoft 365',async()=>{
+  for(const provider of [undefined,'microsoft365']) {
+    const handler=createHandler({env:{MAIL_PROVIDER:provider,SMTP_PASS:'not-a-real-password',CONTACT_FORM_SECRET:'test-only-key-with-at-least-32-characters'}});
+    let body;
+    await handler({method:'GET',headers:{},socket:{remoteAddress:'192.0.2.1'}},{setHeader(){},end(text){body=JSON.parse(text);}});
+    assert.deepEqual(body,{enabled:false});
+  }
 });
 
 test('Strato send uses verified TLS, fixed recipient and sender; client email is Reply-To only', async()=>{

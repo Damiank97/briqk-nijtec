@@ -19,10 +19,11 @@
 - De eerste viewport moet zonder zoeken duidelijk maken dat dit de website van
   **Nijtec B.V.** is. De bedrijfsnaam staat daarom zichtbaar in navigatie én hero.
 - Gebruik het Nijtec-logo niet als klein decoratief pictogram. Combineer het in
-  de navigatie met de geschreven bedrijfsnaam en de regel “Service & Quality”.
+  de navigatie met een compact geschreven bedrijfsnaam. Vermijd dubbele slogans.
 - Het originele Nijtec-logo is een vast merkbeeld dat ook op producten staat.
   Gebruik het ongewijzigde bestand, zonder AI-variant, recolor, uitsnede of filter.
-  Contrast ontstaat door een licht, geïntegreerd logovlak in de blauwe menubalk.
+  Contrast ontstaat door één volledig lichte menubalk met donkerblauwe tekst.
+  Geen losse witte logotegel, donkere omlijsting of dikke oranje onderband.
   Behoud alle letters, bogen, kleuren en de oorspronkelijke beeldverhouding.
 - Nijtec-blauw (`#2e4d9a`, donker `#17264e`) is de dragende kleur voor navigatie,
   koppen en technische vlakken. Nijtec-oranje (`#ef762f`) markeert afzender,
@@ -102,8 +103,9 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   van de Nijtec-mailbox. Sla daarvoor geen wachtwoorden in de browser of Git op.
 - Bestelknoppen openen het formulier met product/pakket en aanvraagcontext, nooit
   ongemerkt een telefoon- of WhatsApp-app. Een aanvraag is geen definitieve order.
-  Rechtstreeks mailen verloopt uitsluitend via de server en Strato SMTP, met vaste
-  ontvanger en klantadres als Reply-To. Zonder configuratie blijft de eerlijke
+  Rechtstreeks mailen verloopt uitsluitend via de server en de bevestigde
+  mailprovider. Nijtec gebruikt Microsoft 365; de Strato-aanname is vervallen.
+  Gebruik een vaste ontvanger en klantadres als Reply-To. Zonder configuratie blijft de eerlijke
   mailconcept-/kopieerroute actief. Zie `MAIL-INSTELLEN.md` voor activering,
   spambeperkingen en de verplichte echte ontvangsttest.
 - Alle animatie heeft een `prefers-reduced-motion`-variant waarin inhoud direct
