@@ -9,6 +9,7 @@
     "prepare:seo": "node scripts/prepare-seo-config.cjs"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
     "nodemailer": "10.2.0"
   }
 }

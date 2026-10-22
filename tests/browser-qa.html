@@ -48,6 +48,7 @@ async function audit(width){
  record(width+' px: stabiele layout bij laden', w.__qaCLS<.1, String(w.__qaCLS));
  record(width+' px: ankerlinks bestaan',all('a[href^="#"]').every(a=>d.getElementById(a.hash.slice(1))));
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
+ record(width+' px: lokale tests sturen geen bezoekersstatistieken',!$('#nijtec-analytics').dataset.initialized&&!all('script[src*="/insights/script.js"]').length&&!w.va);
  const companyItems=all('.contact-info .contact-item'),kvk=companyItems.findIndex(e=>e.textContent.includes('KvK'));
  record(width+' px: btw direct onder KvK',kvk>=0&&companyItems[kvk+1]?.textContent.includes('BTWNL866979001.B01'));
  record(width+' px: Over Nijtec leesbaar zonder overlap',$('#over-nijtec').textContent.includes('André Nijhof')&&!overlaps($('.about-intro').getBoundingClientRect(),$('.about-copy').getBoundingClientRect())&&all('.about-copy p').every(e=>parseFloat(w.getComputedStyle(e).fontSize)>=17));

@@ -2,8 +2,8 @@
 
 ## Geslaagd
 
-- `npm test`: 31 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd. Ook bedrijfsverhaal, btw-nummer, productlabels en de fotogegevens op alle 17 pagina's zijn gecontroleerd.
-- Browsercontrole van de gebouwde site in Chromium: 206 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst, de leesbare Over Nijtec-sectie en de productfoto's in alle acht pop-ups.
+- `npm test`: 37 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd. Ook bedrijfsverhaal, btw-nummer, productlabels en de fotogegevens op alle 17 pagina's zijn gecontroleerd. Zes Analytics-tests controleren de productiebeperking, privacykeuzes, URL-redactie, eenmalige initialisatie, openbare buildconfiguratie en integratie op alle pagina's.
+- Browsercontrole van de gebouwde site in Chromium: 210 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst, de leesbare Over Nijtec-sectie en de productfoto's in alle acht pop-ups. Op alle vier breedtes is gecontroleerd dat de lokale testomgeving geen Analytics-tracker start.
 - Geen horizontale pagina-overflow in de geteste breedtes. Alle homepageafbeeldingen geladen. Alle 16 projectfoto’s op meerdere scrollposities gecontroleerd: geen overlap met onderschriften of andere projectkaarten. Ook intro- en toepassingsfoto’s gecontroleerd.
 - Eén revealmechanisme: eenmalig zichtbaar vanaf 88% van de viewport. Vóór de drempel onzichtbaar, daarna zichtbaar; terugscrollen verbergt inhoud niet opnieuw. Hele kaarten en tekstkolommen schuiven niet mee met scroll.
 - Alle acht productvensters: juiste inhoud, focus binnen venster, Tab-begrenzing, Escape, terugkeerfocus zonder ongewenste scrollsprong. Aanvraagknop vult het formulier; wissen werkt.
@@ -29,6 +29,14 @@
 - Over Nijtec staat na de projecten, met een menulink en hetzelfde verhaal op de bestaande /over-ons/. De inhoud is gebaseerd op het oude welkomstverhaal: levering, technisch advies, montage en André Nijhof als aanspreekpunt. Geen verzonnen historie of portret. Herkomst staat in seo/content-sources.md.
 - Alle acht productpop-ups bevatten nu originele foto's: 14 zorgvuldig gekozen product-, materiaal- en toepassingsbeelden. Ze laden pas bij openen van de pop-up, hebben eigen afmetingen en onderschriften en openen in hun oorspronkelijke formaat in een nieuw tabblad. Focusbegrenzing, Escape en aanvraagactie blijven werken.
 - Productlabels zijn visueel gecontroleerd. Een oud bestand genaamd super-all-360.png toont in werkelijkheid een Seal-it 350 Super-All; het onderschrift en de productpagina volgen nu het etiket. Kleine beelden worden niet opgeblazen. Geen oorspronkelijke foto of oorspronkelijke foto-URL is verwijderd of gewijzigd.
+
+## Vercel Web Analytics — 22 oktober 2026
+
+- Toegevoegd na expliciete toestemming van de gebruiker. Officiële SDK 2.0.1 voor de bestaande statische site, zonder Next.js/React-migratie.
+- Alleen HTTPS nijtec.nl en www.nijtec.nl worden gemeten. Geen formulierteksten, aangepaste events, URL-zoekparameters of fragmenten. Do Not Track en Global Privacy Control voorkomen initialisatie.
+- Alleen openbare same-origin-intakepaden worden uit Vercels buildconfiguratie overgenomen. Geen serversecrets in de HTML. Referrer-Policy aangescherpt naar strict-origin.
+- De footer bevat een uitklapbare toelichting. Technische en privacygrenzen staan in ANALYTICS.md; dit is geen volledige privacyverklaring of juridische goedkeuring.
+- Lokale tests bewijzen de integratie en afscherming, niet het aantal bezoekers in Vercels afgeschermde dashboard. Na publicatie wordt de openbare trackerroute apart gecontroleerd. Dashboardbevestiging vereist accounttoegang.
 
 ## Grenzen van deze controle
 

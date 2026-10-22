@@ -2,6 +2,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const pages = require('../seo/pages.cjs');
 const productMedia = require('../seo/product-media.cjs');
+const analyticsConfig = require('../seo/analytics-config.cjs');
 const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'dist');
 const origin = 'https://nijtec.nl';
@@ -23,6 +24,7 @@ async function run(){
   const inventory=JSON.parse(await fs.readFile(path.join(root,'seo/legacy-inventory.json'),'utf8'));
   let source=await fs.readFile(path.join(root,'index.html'),'utf8');
   source=source.replace('<!-- PRODUCT_MEDIA_DATA -->','<script type="application/json" id="product-media-data">'+JSON.stringify(productMedia).replace(/</g,'\\u003c')+'</script>');
+  source=source.replace('<!-- WEB_ANALYTICS_CONFIG -->','<script type="application/json" id="analytics-config">'+analyticsConfig(process.env.VERCEL_OBSERVABILITY_CLIENT_CONFIG)+'</script>');
   const legal=JSON.parse(await fs.readFile(path.join(root,'seo/legacy-terms.json'),'utf8'));
   source=source.replace(/const avData = \[[\s\S]*?\n\];/,'const avData = '+JSON.stringify(legal.articles).replace(/</g,'\\u003c')+';');
   const pageLinks='<div class="footer-pages" aria-label="Pagina’s van Nijtec">'+pages.map(p=>'<a href="'+p.path+'">'+escape(p.title)+'</a>').join('')+'</div>';
@@ -47,7 +49,10 @@ async function run(){
     return html;
   }
   await fs.mkdir(out,{recursive:true});
-  for(const name of ['assets','NijTec_logo.png','redesign.css','quickbond-viewer.js','motion.js','contact.js'])await fs.cp(path.join(root,name),path.join(out,name),{recursive:true});
+  for(const name of ['assets','NijTec_logo.png','redesign.css','quickbond-viewer.js','motion.js','contact.js','analytics.js'])await fs.cp(path.join(root,name),path.join(out,name),{recursive:true});
+  await fs.mkdir(path.join(out,'assets/vendor'),{recursive:true});
+  await fs.copyFile(path.join(root,'node_modules/@vercel/analytics/dist/index.mjs'),path.join(out,'assets/vendor/vercel-analytics.js'));
+  await fs.copyFile(path.join(root,'node_modules/@vercel/analytics/dist/index.mjs.map'),path.join(out,'assets/vendor/index.mjs.map'));
   await fs.cp(path.join(root,'legacy-assets'),out,{recursive:true});
   await fs.writeFile(path.join(out,'index.html'),source.replace(/<head>[\s\S]*?<\/head>/,'<head>'+pageHead()+'</head>'));
   const routeMap={'#top':'/','#producten':'/producten/','#quickbond':'/producten/quickbond/','#projecten':'/projecten/','#zzp':'/zzp-pakket/','#over-nijtec':'/over-ons/','#contact':'/contact/','#toepassingen':'/#toepassingen'};
@@ -72,7 +77,7 @@ async function run(){
   const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>'<url><loc>'+origin+route+'</loc>'+inventory.media.filter(m=>m.usedOn.includes(route)).map(m=>'<image:image><image:loc>'+escape(origin+m.path)+'</image:loc></image:image>').join('')+'</url>').join('')+'</urlset>\n';
   await fs.writeFile(path.join(out,'sitemap.xml'),sitemap);
   await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://nijtec.nl/sitemap.xml\n');
-  await fs.writeFile(path.join(out,'404.html'),'<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Pagina niet gevonden | Nijtec</title><link rel="stylesheet" href="/redesign.css?v=19"><main class="detail-intro"><h1>Deze pagina bestaat niet.</h1><p><a href="/">Ga naar Nijtec</a> of bekijk <a href="/producten/">het assortiment</a>.</p></main></html>');
+  await fs.writeFile(path.join(out,'404.html'),'<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Pagina niet gevonden | Nijtec</title><link rel="stylesheet" href="/redesign.css?v=20"><main class="detail-intro"><h1>Deze pagina bestaat niet.</h1><p><a href="/">Ga naar Nijtec</a> of bekijk <a href="/producten/">het assortiment</a>.</p></main></html>');
   console.log('Built '+urls.length+' pages; preserved '+inventory.media.length+' original image URLs.');
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});
