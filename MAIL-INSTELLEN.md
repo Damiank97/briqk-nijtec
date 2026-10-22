@@ -16,17 +16,18 @@ Bestelling aanvragen opent het contactformulier met de pakketnaam, ruimte voor
 producten/aantallen en levering. Dit is een aanvraag, geen betaling of definitieve
 order. Nijtec bevestigt prijs, voorraad en levering zelf.
 
-## Nog nodig voor rechtstreekse verzending
+## Microsoft-koppeling gereed in code, activering nog nodig
 
 1. Bevestig bij de Microsoft 365-beheerder dat info@nijtec.nl een actieve mailbox
    is, en of dit een gebruikersmailbox of gedeelde mailbox is.
-2. Kies en autoriseer de verzendkoppeling. Microsoft Graph met OAuth is een
-   passende route: alleen verzenden namens de afgesproken mailbox, zonder
-   mailboxwachtwoorden in de website. De beheerder moet de rechten beperken tot
-   die mailbox; brede tenant-toegang mag niet automatisch worden toegestaan.
-3. Bouw en configureer die adapter pas op basis van de gekozen/geautoriseerde
-   Microsoft-instellingen. De Microsoft-adapter is nog niet geïmplementeerd of
-   getest; alleen het ontvangstformulier en de bestelroute zijn gereed.
+2. De gebruiker koos Microsoft 365 en bevestigde beheerderstoegang. De server-
+   adapter is geïmplementeerd en met een neptransport getest. Alleen OAuth over
+   vaste HTTPS-adressen; geen Resend of SMTP AUTH. Volg MICROSOFT365-INSTELLEN.md.
+3. Registreer en autoriseer de app met Exchange Application RBAC voor alleen
+   info@nijtec.nl. Plaats tenant-ID, client-ID, mailbox-object-ID, appsecret en een aparte formulier-
+   sleutel uitsluitend in Vercel Production, en kies MAIL_PROVIDER=microsoft365.
+   Er zijn nog geen echte beheerrechten of secrets ingesteld. De live site
+   blijft dus de eerlijke mailapp-/kopieerroute gebruiken tot activering.
 4. Test op de productiesite één herkenbare aanvraag, controleer Outlook Inbox én
    Ongewenste e-mail en controleer dat Beantwoorden naar de klant gaat.
 
@@ -45,7 +46,8 @@ niet automatisch. Bewaar de gegevens voor een veilige fallback.
   dubbele-aanvraagbeperking en een lokale limiet van 3 aanvragen per kwartier per
   IP plus 30 per uur per function-instantie. IP's worden alleen gehasht en tijdelijk
   in geheugen gehouden. Geen formulierinhoud of SMTP-details in applicatielogs.
-- Een lokale limiet is **niet gedeeld tussen serverless-instanties**. Voor extra
+- De lokale limiet en het geheugen voor verbruikte tokens zijn **niet gedeeld
+  tussen serverless-instanties**; dit is geen wereldwijde replaygarantie. Voor extra
   bescherming: voeg in Vercel **Firewall → Rules** een rate-limitregel toe op
   POST `/api/contact`, per IP bijvoorbeeld 5 per 15 minuten. Beschikbaarheid en
   kosten hangen af van het Vercel-abonnement; niet door deze code ingesteld.
@@ -56,6 +58,7 @@ niet automatisch. Bewaar de gegevens voor een veilige fallback.
 ## Bewijs en resterende stap
 
 Automatische tests gebruiken een neptransport: geen echte mail of klantgegevens
-worden verstuurd. Zij bewijzen geen werkende Microsoft 365-verzending.
+worden verstuurd. Zij bewijzen geen werkende Microsoft 365-verzending. Ook een
+positieve configuratiestatus bewijst geen juiste rechten of inboxaflevering.
 
 Bron: [Microsoft Graph sendMail](https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0).

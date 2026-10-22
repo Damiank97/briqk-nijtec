@@ -13,6 +13,16 @@ André Nijhof. Het huidige bedrijfsadres is Dalen. De nieuwe tekst is een korte
 herschrijving van deze feiten, geen letterlijke kopie of verzonnen biografie.
 Er zijn geen nieuwe garanties, oprichtingsjaren of certificeringsclaims toegevoegd.
 
+Op verzoek is dit verhaal op 22 oktober verplaatst: direct onder het openingsbeeld,
+vóór de toepassingen, met de kop 'Wij zijn Nijtec.'. De oude zoekindex voor
+https://nijtec.nl/producten/lijmen/ noemt Nijtec expliciet als dealer van
+Connectproducts. De welkomsttekst noemt daarom Seal-it lijmen en kitten van
+Connect Products naast Quickbond. Er is geen nieuwe claim over exclusief of
+actueel officieel dealerschap toegevoegd. De merkkoppeling Seal-it / Connect
+Products is ook gecontroleerd bij de fabrikant:
+https://www.connectproducts.nl/nl/ en de officiële productcatalogus op
+https://www.connectproducts.nl/files/seal-it-product-catalogus.pdf.
+
 De 14 geselecteerde beelden staan ongewijzigd in legacy-assets en behouden hun
 oude wp-content-adressen. Alle beelden zijn visueel bekeken. Sommige bestandsnamen
 zijn onnauwkeurig: super-all-360.png toont bijvoorbeeld een Seal-it 350 Super-All.

@@ -89,7 +89,7 @@
         });
         const result = await response.json();
         if (!response.ok || result.ok !== true) throw new Error(result.code || 'SEND_FAILED');
-        showStatus('Uw bericht is verzonden naar Nijtec. Een bestelaanvraag is pas definitief na bevestiging door Nijtec.');
+        showStatus('Uw bericht is aangeboden aan de mailserver van Nijtec. Een bestelaanvraag is pas definitief na bevestiging door Nijtec.');
         // Keep all inputs intact. Do not automatically retry an uncertain send.
         fallback.hidden = true;
         await configure();

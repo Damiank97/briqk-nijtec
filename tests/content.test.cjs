@@ -21,9 +21,9 @@ test('all 17 contact sections show the supplied VAT number directly after KvK',(
 test('home and existing about URL share the factual company story and contact person',()=>{
   const home=htmlFor('/'),about=section(home,'over-nijtec');
   assert.ok(about);
-  for(const text of ['Over Nijtec','Dalen','Nijtec Montage Team','André Nijhof','technisch advies']) assert.ok(about.includes(text),text);
-  assert.ok(home.indexOf('id="projecten"')<home.indexOf('id="over-nijtec"'));
-  assert.ok(home.indexOf('id="over-nijtec"')<home.indexOf('id="contact"'));
+  for(const text of ['Over Nijtec','Wij zijn Nijtec.','Dalen','Quickbond','Seal-it','Connect Products','Nijtec Montage Team','André Nijhof','technisch advies']) assert.ok(about.includes(text),text);
+  assert.deepEqual([...home.matchAll(/<section[^>]*id="([^"]+)"/g)].map(match=>match[1]).slice(0,3),['top','over-nijtec','toepassingen']);
+  assert.equal((home.match(/id="over-nijtec"/g)||[]).length,1);
   assert.ok(htmlFor('/over-ons/').includes(about));
   assert.ok(home.includes('href="#over-nijtec">Over Nijtec</a>'));
   assert.ok(htmlFor('/over-ons/').includes('href="/over-ons/">Over Nijtec</a>'));

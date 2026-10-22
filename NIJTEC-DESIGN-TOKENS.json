@@ -44,7 +44,7 @@
     "features": "Genummerde horizontale registerregels",
     "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie",
     "productDetail": "Vierkant dossierpaneel vanaf rechts; originele product- en toepassingsfoto's in een rustige tweekolomsselectie met productnaam. Behoud beeldverhouding, vergroot lage resoluties niet en open het origineel via een gewone fotolink",
-    "about": "Over Nijtec als rustig redactioneel tekstdeel na de projecten: compacte kop links, leesbare bedrijfstekst rechts, één concrete contactactie. Geen verzonnen historie, portret, quote of statistieken. Dezelfde tekst ook op /over-ons/",
+    "about": "Welkomstverhaal direct onder het openingsbeeld en vóór de toepassingen: Wij zijn Nijtec, compacte kop links, leesbare bedrijfstekst rechts, Quickbond en Seal-it van Connect Products concreet genoemd, één contactactie. Geen verzonnen historie, portret, quote of statistieken. Dezelfde tekst ook op /over-ons/",
     "gallery": "Natuurlijk beeldformaat met vaste HTML-dimensies in kolommen; elke foto heeft een eigen clipping-container en een stilstaand bijschrift eronder",
     "imageViewer": "Volledig zwart beeldvlak met teller en pijlnavigatie",
     "form": "Gelabelde velden met native validatie; opent een ingevulde e-mail naar info@nijtec.nl, met kopieerfallback. Nooit ontvangst claimen zonder echte verzending",

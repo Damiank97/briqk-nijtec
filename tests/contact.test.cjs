@@ -92,7 +92,7 @@ test('configured form sends all fields to own server and preserves inputs', asyn
   for(const key of ['naam','bedrijf','email','onderwerp','bericht']) assert.equal(h.requests[0][key],h.input[key]);
   assert.equal(h.requests[0].token,'test-token');
   assert.equal(h.location.href,'');
-  assert.match(h.nodes.get('contact-handoff').textContent,/is verzonden/);
+  assert.match(h.nodes.get('contact-handoff').textContent,/aangeboden aan de mailserver/);
   assert.equal(h.nodes.get('contact-fields').hidden,false);
 });
 

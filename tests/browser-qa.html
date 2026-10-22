@@ -11,7 +11,7 @@ iframe { border:0; background:white; display:block; }
 </style>
 <header><strong>Nijtec browsercontrole</strong> <span id="status">Starten…</span><br>
 <button id="run">Tests opnieuw</button><button data-width="1440">1440 px</button><button data-width="768">768 px</button><button data-width="390">390 px</button><button data-width="320">320 px</button>
-<button data-jump="top">Intro</button><button data-jump="toepassingen">Toepassingen</button><button data-jump="quickbond">3D-viewer</button><button data-jump="producten">Producten</button><button data-jump="projecten">Foto's</button><button data-jump="contact">Contact</button>
+<button data-jump="top">Intro</button><button data-jump="over-nijtec">Welkom</button><button data-jump="toepassingen">Toepassingen</button><button data-jump="quickbond">3D-viewer</button><button data-jump="producten">Producten</button><button data-jump="projecten">Foto's</button><button data-jump="contact">Contact</button>
 </header><main><div id="results" role="log"></div><div id="preview"><iframe id="site" title="Nijtec testweergave" width="390" height="844" src="/"></iframe></div></main>
 <script>
 const frame = document.getElementById('site');
@@ -52,6 +52,7 @@ async function audit(width){
  const companyItems=all('.contact-info .contact-item'),kvk=companyItems.findIndex(e=>e.textContent.includes('KvK'));
  record(width+' px: btw direct onder KvK',kvk>=0&&companyItems[kvk+1]?.textContent.includes('BTWNL866979001.B01'));
  record(width+' px: Over Nijtec leesbaar zonder overlap',$('#over-nijtec').textContent.includes('André Nijhof')&&!overlaps($('.about-intro').getBoundingClientRect(),$('.about-copy').getBoundingClientRect())&&all('.about-copy p').every(e=>parseFloat(w.getComputedStyle(e).fontSize)>=17));
+ record(width+' px: welkomstverhaal direct onder het openingsbeeld',$('#over-nijtec').previousElementSibling.id==='top'&&$('#over-nijtec').nextElementSibling.id==='toepassingen'&&$('#over-nijtec').textContent.includes('Seal-it lijmen en kitten van Connect Products'));
  const nav=$('nav').getBoundingClientRect(); const logo=$('.nav-logo').getBoundingClientRect(); const call=$('.nav-cta').getBoundingClientRect();
  record(width+' px: navigatie valt binnen scherm',logo.left>=-1&&call.right<=w.innerWidth+1&&logo.right<call.left);
  const brandImage=$('.nav-logo img'),brandStyle=w.getComputedStyle(brandImage),frameStyle=w.getComputedStyle($('.nav-logo-frame')),navStyle=w.getComputedStyle($('nav'));
@@ -64,7 +65,7 @@ async function audit(width){
  const titleStyle=w.getComputedStyle(reveal);
  record(width+' px: koppen knippen geen j/g/p/y af',titleStyle.clipPath==='none'&&parseFloat(titleStyle.lineHeight)>=parseFloat(titleStyle.fontSize)*1.07,titleStyle.clipPath+' / '+titleStyle.lineHeight);
  let badOverflow=[],imageText=[],cardCollisions=[];
- for(const id of ['top','toepassingen','quickbond','producten','zzp','projecten','over-nijtec','voorwaarden','contact']){
+ for(const id of ['top','over-nijtec','toepassingen','quickbond','producten','zzp','projecten','voorwaarden','contact']){
   $('#'+id).scrollIntoView();await settle();
   if(d.documentElement.scrollWidth>w.innerWidth+1)badOverflow.push(id+':'+d.documentElement.scrollWidth);
  }

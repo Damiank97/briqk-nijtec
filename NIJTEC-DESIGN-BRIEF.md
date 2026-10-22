@@ -57,8 +57,9 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   uit de oude site. Labels volgen het zichtbare etiket, niet alleen de soms
   onjuiste bestandsnaam. Kleine beelden worden niet opgeblazen. Originele foto's
   openen via een gewone link; de pop-up blijft beschikbaar in het vorige tabblad.
-- Over Nijtec is een leesbaar, feitelijk bedrijfsverhaal na de projecten en op
-  /over-ons/. Baseer inhoud op het oude welkomstverhaal, zonder verzonnen historie,
+- Over Nijtec is het welkomstverhaal direct onder het openingsbeeld, vóór de
+  toepassingen, en staat ook op /over-ons/. Noem Quickbond en Seal-it van Connect
+  Products op basis van de oude site. Baseer inhoud op het oude verhaal, zonder verzonnen historie,
   medewerkers, portretten of citaten. Het btw-nummer staat direct onder KvK.
 - Gebruik geen em dash in marketingcopy. Gebruik een punt, komma of nieuwe zin.
 - Gebruik geen “Meer info”, “Ontdek meer” of vergelijkbare generieke CTA.
@@ -112,6 +113,9 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   ongemerkt een telefoon- of WhatsApp-app. Een aanvraag is geen definitieve order.
   Rechtstreeks mailen verloopt uitsluitend via de server en de bevestigde
   mailprovider. Nijtec gebruikt Microsoft 365; de Strato-aanname is vervallen.
+  De Microsoft Graph-adapter is geïmplementeerd. Activeer hem alleen met een
+  mailboxgebonden Application Mail.Send-toewijzing en Vercel Production-secrets;
+  geen brede mailrechten, Resend of mailboxwachtwoord. Zie MICROSOFT365-INSTELLEN.md.
   Gebruik een vaste ontvanger en klantadres als Reply-To. Zonder configuratie blijft de eerlijke
   mailconcept-/kopieerroute actief. Zie `MAIL-INSTELLEN.md` voor activering,
   spambeperkingen en de verplichte echte ontvangsttest.

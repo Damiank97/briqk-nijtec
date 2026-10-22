@@ -1,21 +1,24 @@
 const { createHmac, timingSafeEqual, randomBytes } = require('node:crypto');
 const nodemailer = require('nodemailer');
+const { createMicrosoftMailer } = require('./microsoft-mail.cjs');
 
 const recipient = 'info@nijtec.nl';
 const subjects = new Set(['Productinformatie', 'Offerte aanvragen', 'Bestelling aanvragen', 'Technisch advies', 'ZZP-pakket', 'Montage opdracht']);
 const emailPattern = /^[^\s<>@,;\r\n]+@[^\s<>@,;\r\n]+\.[^\s<>@,;\r\n]+$/;
 const maximumBytes = 24000;
 
-function createHandler({ env = process.env, now = Date.now, createTransport = nodemailer.createTransport } = {}) {
+function createHandler({ env = process.env, now = Date.now, createTransport = nodemailer.createTransport, fetchImpl = globalThis.fetch } = {}) {
   // These counters are per warm function instance, not a distributed firewall.
   // Set the documented Vercel WAF rule before enabling a high-volume public form.
   const limits = new Map();
   const used = new Map();
   let transport;
-  const username = env.SMTP_USER || recipient;
+  const microsoft = createMicrosoftMailer({ env, now, fetchImpl });
+  const username = env.MAIL_PROVIDER === 'microsoft365' ? recipient : env.SMTP_USER || recipient;
   // Nijtec uses Microsoft 365. Never activate this Strato adapter merely because
   // somebody followed the superseded SMTP password instructions.
-  const enabled = Boolean(env.MAIL_PROVIDER === 'strato' && env.SMTP_PASS && env.CONTACT_FORM_SECRET?.length >= 32 && emailPattern.test(username) && username.endsWith('@nijtec.nl'));
+  const providerReady = env.MAIL_PROVIDER === 'microsoft365' ? microsoft.configured : env.MAIL_PROVIDER === 'strato' && env.SMTP_PASS && emailPattern.test(username) && username.endsWith('@nijtec.nl');
+  const enabled = Boolean(providerReady && env.CONTACT_FORM_SECRET?.length >= 32 && (!env.VERCEL || env.VERCEL_ENV === 'production'));
   // Do not expose a public HMAC oracle based on the mailbox password.
   const secret = env.CONTACT_FORM_SECRET || 'disabled';
   const digest = text => createHmac('sha256', secret).update(text).digest('base64url');
@@ -88,10 +91,10 @@ function createHandler({ env = process.env, now = Date.now, createTransport = no
     const validField = (name, max, required = false, singleLine = true) => typeof input[name] === 'string' && input[name].length <= max && (!required || input[name].trim().length > 0) && !/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(input[name]) && (!singleLine || !/[\r\n]/.test(input[name]));
     if (!validField('naam', 120, true) || !validField('bedrijf', 160) || !validField('email', 254, true) || !emailPattern.test(input.email.trim()) || !subjects.has(input.onderwerp) || !validField('bericht', 6000, true, false)) return reply(400, { code: 'INVALID_INPUT' });
     if (overLimit(ip)) { res.setHeader('Retry-After', '900'); return reply(429, { code: 'RATE_LIMIT' }); }
-    // Consume before awaiting SMTP: duplicate clicks cannot enqueue the same token.
+    // Consume before awaiting the provider; replay protection is instance-local.
     used.set(input.token, now() + 30 * 60 * 1000);
     try {
-      transport ||= createTransport({
+      transport ||= env.MAIL_PROVIDER === 'microsoft365' ? microsoft : createTransport({
         host: 'smtp.strato.com', port: 465, secure: true,
         auth: { user: username, pass: env.SMTP_PASS },
         tls: { minVersion: 'TLSv1.2', rejectUnauthorized: true },
@@ -109,7 +112,7 @@ function createHandler({ env = process.env, now = Date.now, createTransport = no
       if (!info.accepted?.some(address => String(address).toLowerCase() === recipient)) return reply(502, { code: 'SEND_FAILED' });
       return reply(200, { ok: true });
     } catch {
-      // Never expose SMTP credentials, mailbox responses or visitor data in logs.
+      // Never expose provider credentials, mailbox responses or visitor data in logs.
       return reply(502, { code: 'SEND_FAILED' });
     }
   };
