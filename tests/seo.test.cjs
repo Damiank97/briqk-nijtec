@@ -9,6 +9,10 @@ const config=require('../vercel.json');
 const pages=require('../seo/pages.cjs');
 const htmlFor=route=>fs.readFileSync(path.join(dist,route,'index.html'),'utf8');
 const exists=url=>{const p=new URL(url,'https://nijtec.nl').pathname;return fs.existsSync(path.join(dist,p))||fs.existsSync(path.join(dist,p,'index.html'));};
+test('Domain routing has a single owner and production HTML has no hidden demo banner',()=>{
+ assert.ok(config.redirects.every(r=>!r.has?.some(c=>c.type==='host')),'Manage primary domain redirects in Vercel Domains only');
+ assert.ok(!htmlFor('/').includes('<div class="demo-banner">'));
+});
 test('All 17 meaningful original page addresses have real, uniquely titled HTML',()=>{
  const titles=[];
  assert.equal(inventory.pages.length,17);

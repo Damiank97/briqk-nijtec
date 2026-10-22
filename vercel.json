@@ -38,17 +38,6 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.nijtec.nl"
-        }
-      ],
-      "destination": "https://nijtec.nl/:path*",
-      "permanent": true
-    },
-    {
       "source": "/wp-sitemap.xml",
       "destination": "/sitemap.xml",
       "permanent": true

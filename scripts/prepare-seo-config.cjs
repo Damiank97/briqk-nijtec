@@ -3,8 +3,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const inventory = require('../seo/legacy-inventory.json');
+// Host canonicalization belongs in Vercel Domains, not a second application
+// rule that can redirect assets back against the platform's primary domain.
 const redirects = [
-  {source:'/:path*',has:[{type:'host',value:'www.nijtec.nl'}],destination:'https://nijtec.nl/:path*',permanent:true},
   {source:'/wp-sitemap.xml',destination:'/sitemap.xml',permanent:true},
   {source:'/wp-sitemap-posts-page-1.xml',destination:'/sitemap.xml',permanent:true},
   {source:'/producten/pu-lijmen',destination:'/producten/vullende-lijmende-pu-schuimen/',permanent:true}
