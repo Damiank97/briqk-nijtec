@@ -25,6 +25,8 @@
   Contrast ontstaat door één volledig lichte menubalk met donkerblauwe tekst.
   Geen losse witte logotegel, donkere omlijsting of dikke oranje onderband.
   Behoud alle letters, bogen, kleuren en de oorspronkelijke beeldverhouding.
+- Het tabbladicoon gebruikt dezelfde ongewijzigde transparante logobron op een
+  vierkante, ondoorzichtige paperLight-achtergrond. Niet het oude zwarte bestand.
 - Nijtec-blauw (`#2e4d9a`, donker `#17264e`) is de dragende kleur voor navigatie,
   koppen en technische vlakken. Nijtec-oranje (`#ef762f`) markeert afzender,
   acties en belangrijke accenten.
@@ -104,11 +106,11 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 - Elke foto heeft een eigen clipping-container. Captions staan in de normale
   documentflow onder dat beeldvlak, buiten de geanimeerde container. Reserveer
   de oorspronkelijke afbeeldingsruimte vooraf met correcte width/height-attributen.
-- De tijdelijke contactroute opent een ingevulde mail naar info@nijtec.nl in de
+- De terugvalroute bij ontbrekende verzendconfiguratie opent een ingevulde mail naar info@nijtec.nl in de
   mailapp van de bezoeker. De bezoeker verstuurt zelf. Houd alle invoer zichtbaar,
   bied een kopieerfallback en toon nooit een onbevestigde ontvangstmelding.
-  Rechtstreekse serververzending volgt pas na configuratie en een ontvangsttest
-  van de Nijtec-mailbox. Sla daarvoor geen wachtwoorden in de browser of Git op.
+  Microsoft 365-serververzending is op 22 oktober 2026 geactiveerd; de gebruiker
+  bevestigde ontvangst van de echte formulierproef. Sla geen secrets in browser of Git op.
 - Bestelknoppen openen het formulier met product/pakket en aanvraagcontext, nooit
   ongemerkt een telefoon- of WhatsApp-app. Een aanvraag is geen definitieve order.
   Rechtstreeks mailen verloopt uitsluitend via de server en de bevestigde
@@ -213,6 +215,8 @@ vorm heeft:
   kenmerken en toepassingen als gewone lijsten. Geen emoji, chips, afgeronde
   SaaS-modal of dikke schaduw.
 - Formulieren: rechte velden, zichtbare labels, consistente hoogte, heldere focus.
+- Het berichtvak is minimaal 240 px hoog en verticaal verstelbaar. Productacties
+  reserveren ruimte voor hun volledige tekst; een pijl mag niet los afbreken.
 - Hover toont interactiviteit subtiel; focus is altijd zichtbaar.
 - Interactieve doelen zijn minimaal 44 x 44 px.
 

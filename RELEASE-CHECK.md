@@ -2,7 +2,7 @@
 
 ## Geslaagd
 
-- `npm test`: 46 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd. Ook bedrijfsverhaal, btw-nummer, productlabels en de fotogegevens op alle 17 pagina's zijn gecontroleerd. Zes Analytics-tests controleren de productiebeperking, privacykeuzes, URL-redactie, eenmalige initialisatie, openbare buildconfiguratie en integratie op alle pagina's. Negen Microsoft-tests controleren uitsluitend nagebootste OAuth/Graph-verzending, vaste mailadressen, validatie, time-outs, caching, foutafhandeling en het uitschakelen op previews.
+- `npm test`: 48 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd. Ook bedrijfsverhaal, btw-nummer, productlabels en de fotogegevens op alle 17 pagina's zijn gecontroleerd. Zes Analytics-tests controleren de productiebeperking, privacykeuzes, URL-redactie, eenmalige initialisatie, openbare buildconfiguratie en integratie op alle pagina's. Negen Microsoft-tests controleren uitsluitend nagebootste OAuth/Graph-verzending, vaste mailadressen, validatie, time-outs, caching, foutafhandeling en het uitschakelen op previews. Twee nieuwe favicon-tests controleren de vierkante lichte ondergrond, het ingesloten byte-identieke logo en de integratie op alle pagina's.
 - Browsercontrole van de gebouwde site in Chromium: 214 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst, de leesbare Over Nijtec-sectie en de productfoto's in alle acht pop-ups. Op alle vier breedtes is gecontroleerd dat de lokale testomgeving geen Analytics-tracker start en dat het welkomstverhaal direct onder het openingsbeeld staat.
 - Geen horizontale pagina-overflow in de geteste breedtes. Alle homepageafbeeldingen geladen. Alle 16 projectfoto’s op meerdere scrollposities gecontroleerd: geen overlap met onderschriften of andere projectkaarten. Ook intro- en toepassingsfoto’s gecontroleerd.
 - Eén revealmechanisme: eenmalig zichtbaar vanaf 88% van de viewport. Vóór de drempel onzichtbaar, daarna zichtbaar; terugscrollen verbergt inhoud niet opnieuw. Hele kaarten en tekstkolommen schuiven niet mee met scroll.
@@ -21,7 +21,7 @@
 - Bestelling aanvragen opent het formulier met ZZP-pakket, aantallen/levering en een verzoek om prijsbevestiging. Geen telefoon-/WhatsApp-handoff. Gewone duidelijk gelabelde belknoppen blijven telefoonlinks.
 - Strato SMTP via Node.js voorbereid: vaste ontvanger info@nijtec.nl, eigen mailbox als afzender, klantadres als Reply-To, TLS-controle, begrensde invoer, origin-controle, spamval, kortlevend ondertekend token, lokale rate limit en blokkering van dubbel klikken. Geen mailgegevens in browser of Git. Installatie gepind; npm meldde nul bekende kwetsbaarheden bij installatie.
 - Zonder serversecret blijft de transparante mailapp-/kopieerroute actief. SMTP-fouten geven geen valse succesmelding. Een time-out wordt als onzekere verzending gemeld en niet automatisch herhaald.
-- Correctie na gebruikersinformatie: het MX-record wijst naar Microsoft 365, niet Strato. De eerdere instructie SMTP_PASS in te vullen is vervallen. De Strato-adapter is aanvullend vergrendeld op expliciete providerkeuze; losse mailsecrets activeren hem niet. De Microsoft-adapter is inmiddels gebouwd en met nagebootste netwerkantwoorden getest, maar nog niet geautoriseerd of echt geconfigureerd. Een echte ontvangst-/Reply-To-test blijft nodig. Lokale rate limiting is niet verdeeld over instanties; aanvullende firewallregel aanbevolen. Zie MAIL-INSTELLEN.md en MICROSOFT365-INSTELLEN.md. Er is in deze controle geen echte mail verstuurd en er zijn geen mail-/DNS-records gewijzigd.
+- Correctie na gebruikersinformatie: het MX-record wijst naar Microsoft 365, niet Strato. De eerdere instructie SMTP_PASS in te vullen is vervallen. De Strato-adapter is aanvullend vergrendeld op expliciete providerkeuze; losse mailsecrets activeren hem niet. Microsoft 365 is inmiddels geautoriseerd en echt geconfigureerd; de gebruiker bevestigde ontvangst van de formulierproef. Een handmatige Outlook-beantwoordcontrole is nog niet expliciet bevestigd. Lokale rate limiting is niet verdeeld over instanties; aanvullende firewallregel aanbevolen. Zie MAIL-INSTELLEN.md en MICROSOFT365-INSTELLEN.md. Geen mail-/DNS-records gewijzigd.
 
 ## Bedrijfsverhaal, btw en productbeelden — 22 oktober 2026
 
@@ -35,10 +35,27 @@
 - De gebruiker koos de bestaande Microsoft 365-mail en bevestigde beheerderstoegang. Geen Resend-account of extra verzenddienst aangemaakt.
 - OAuth client credentials en Microsoft Graph sendMail over vaste HTTPS-hosts. Token alleen in servergeheugen, verversing vóór de vervaldatum, geen redirect of automatische herhaling van een mail-POST.
 - Afzender én ontvanger zijn vast info@nijtec.nl; klantnaam en klantadres gaan naar Reply-To. Geen HTML-injectie, bijlagen, willekeurige ontvangers of nieuwe mailrechten in de browser. Microsofts 202 wordt afgewacht en alleen als serveracceptatie gemeld, niet als bewezen inboxaflevering.
-- Activering vereist een Microsoft-app, Application Mail.Send met scope uitsluitend info@nijtec.nl, aparte formulierondertekeningssleutel en Production-instellingen in Vercel. Niets hiervan is als uitgevoerd of echt getest afgevinkt. De live mailapp-/kopieerfallback blijft totdat die activering gereed is.
+- De gebruiker heeft de Microsoft-app en Application Mail.Send met scope uitsluitend info@nijtec.nl ingesteld, InScope=True aangetoond en de zes Production-instellingen in Vercel opgeslagen en heruitgerold. De openbare configuratieroute gaf enabled=true.
+- Eén herkenbare test zonder klantgegevens is via het openbare formulier ingediend: NIJTEC-MAILTEST-20261022-A1. De interface meldde pas na Microsoft-acceptatie succes. De gebruiker bevestigde vervolgens daadwerkelijke ontvangst bij info@nijtec.nl. Geen tweede proef voor alleen visuele wijzigingen verstuurd. Reply-To is in automatische tests gecontroleerd; handmatig Beantwoorden in Outlook is nog niet expliciet bevestigd.
 - MICROSOFT365-INSTELLEN.md bevat de beheerinstructies, waarschuwing voor optellende brede Entra-rechten, Secret-velden in Vercel, herpublicatie, echte Outlook-/Reply-To-test en terugvalroute.
 
-## Vercel Web Analytics — 22 oktober 2026
+## Favicon, productacties en berichtvak — aanvullende ronde 22 oktober 2026
+
+- Het oude tabbladicoon gebruikte een bitmap met zwarte achtergrond. Het nieuwe
+  vierkante SVG-icoon zet het ongewijzigde transparante logo op paperLight. Het
+  originele logo in de menubalk en op producten is niet aangepast. Alle 17 pagina's
+  verwijzen naar het nieuwe cache-adres. Visueel bekeken op 16, 32 en 48 pixels op
+  lichte en donkere achtergrond; geen afzonderlijk nieuw beeldmerk gemaakt.
+- Productacties krijgen hun volledige inhoudsbreedte en breken niet tussen tekst
+  en pijl. Het berichtvak is 240 px hoog in plaats van 100 px, met verticale
+  resize en leesbare regelafstand. De verzendroute is niet gewijzigd.
+- Aanvullende Chromium-ronde: 222 controles, nul fouten op 320, 390, 768 en 1440 px,
+  inclusief de 16 vervolgpagina's. Nieuwe controles voor het grotere verstelbare
+  berichtvak en de niet-afbrekende productpijlen. Lokale CLS circa 0,020–0,047.
+  De tests verstuurden geen mail. Geen nieuwe afleveringstest nodig voor deze
+  uitsluitend visuele wijzigingen.
+
+## Vercel Web Analytics: integratie
 
 - Toegevoegd na expliciete toestemming van de gebruiker. Officiële SDK 2.0.1 voor de bestaande statische site, zonder Next.js/React-migratie.
 - Alleen HTTPS nijtec.nl en www.nijtec.nl worden gemeten. Geen formulierteksten, aangepaste events, URL-zoekparameters of fragmenten. Do Not Track en Global Privacy Control voorkomen initialisatie.
@@ -50,7 +67,7 @@
 
 De browsercontroles zijn herhaalbaar: bouw met `npm run build`, start lokaal met `npm run serve:qa` en open `http://127.0.0.1:4173/__qa`. De controle verstuurt geen e-mail en is geen onderdeel van de openbare deployment. Alleen de testserver in `scripts/serve-qa.cjs` maakt die route beschikbaar.
 
-Dit zijn Chromium-tests met verschillende viewportbreedtes, geen tests op alle fysieke iPhones/Androids of in Safari. Het daadwerkelijk openen/verzenden/ontvangen met iedere mailapp is niet end-to-end getest en vereist een echte ingestelde mailapp. Rechtstreekse serververzending kan pas na configuratie van de mailbox en een ontvangsttest worden bevestigd. De reduced-motion-regels zijn geïmplementeerd; een aparte fysieke toegankelijkheidscontrole blijft verstandig.
+Dit zijn Chromium-tests met verschillende viewportbreedtes, geen tests op alle fysieke iPhones/Androids of in Safari. Het daadwerkelijk openen/verzenden/ontvangen met iedere mailapp is niet end-to-end getest en vereist een echte ingestelde mailapp. Rechtstreekse Microsoft-verzending en ontvangst van één formulierproef zijn bevestigd, niet de aflevering van ieder toekomstig bericht. De reduced-motion-regels zijn geïmplementeerd; een aparte fysieke toegankelijkheidscontrole blijft verstandig.
 
 Google-indexering, sitelinks, lokaal bedrijfspaneel en AI-vermeldingen zijn niet door een lokale test te bewijzen. Daarvoor zijn de echte domeinoverstap, Search Console en daarna waarneming nodig. Zie `SEO-GEO-MIGRATIE.md` voor de vereiste controles, inclusief mailrecords, André’s gegevens/productinformatie en terugdraaiplan.
 

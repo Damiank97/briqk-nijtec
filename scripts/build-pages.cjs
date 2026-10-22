@@ -50,6 +50,7 @@ async function run(){
   }
   await fs.mkdir(out,{recursive:true});
   for(const name of ['assets','NijTec_logo.png','redesign.css','quickbond-viewer.js','motion.js','contact.js','analytics.js'])await fs.cp(path.join(root,name),path.join(out,name),{recursive:true});
+  await fs.writeFile(path.join(out,'assets/favicon.svg'),require('../seo/favicon.cjs')(await fs.readFile(path.join(root,'assets/nijtec-logo-nav.png'))));
   await fs.mkdir(path.join(out,'assets/vendor'),{recursive:true});
   await fs.copyFile(path.join(root,'node_modules/@vercel/analytics/dist/index.mjs'),path.join(out,'assets/vendor/vercel-analytics.js'));
   await fs.copyFile(path.join(root,'node_modules/@vercel/analytics/dist/index.mjs.map'),path.join(out,'assets/vendor/index.mjs.map'));

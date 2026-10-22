@@ -39,15 +39,16 @@
     "breakpoints": [1440, 900, 768, 390]
   },
   "components": {
+    "favicon": "Vierkant en ondoorzichtig paperLight-vlak met het byte-identieke transparante Nijtec-logo volledig passend. Geen zwart achtergrondbestand, uitsnede, recolor of nieuw merkbeeld",
     "navigationLogo": "Origineel logo byte-identiek, zonder recolor, uitsnede of filter, geïntegreerd in een volledig paperLight menubalk. Geen losse witte tegel of kader. Compacte Instrument Sans-bedrijfsnaam en donkerblauwe navigatietekst; subtiele onderlijn, geen dikke oranje band",
     "hero": "Beschrijvende leesbare kop met een feitelijke introductie en een projectfoto met dossiercaption",
     "features": "Genummerde horizontale registerregels",
-    "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie",
+    "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie. Actietekst en pijl blijven op één regel met een inhoudsbrede kolom; op smalle schermen een eigen regel",
     "productDetail": "Vierkant dossierpaneel vanaf rechts; originele product- en toepassingsfoto's in een rustige tweekolomsselectie met productnaam. Behoud beeldverhouding, vergroot lage resoluties niet en open het origineel via een gewone fotolink",
     "about": "Welkomstverhaal direct onder het openingsbeeld en vóór de toepassingen: Wij zijn Nijtec, compacte kop links, leesbare bedrijfstekst rechts, Quickbond en Seal-it van Connect Products concreet genoemd, één contactactie. Geen verzonnen historie, portret, quote of statistieken. Dezelfde tekst ook op /over-ons/",
     "gallery": "Natuurlijk beeldformaat met vaste HTML-dimensies in kolommen; elke foto heeft een eigen clipping-container en een stilstaand bijschrift eronder",
     "imageViewer": "Volledig zwart beeldvlak met teller en pijlnavigatie",
-    "form": "Gelabelde velden met native validatie; opent een ingevulde e-mail naar info@nijtec.nl, met kopieerfallback. Nooit ontvangst claimen zonder echte verzending",
+    "form": "Gelabelde velden met native validatie; berichtvak minimaal 240px hoog, verticaal verstelbaar. Actieve Microsoft 365-serververzending naar info@nijtec.nl; alleen serveracceptatie melden. Zonder configuratie mailconcept met kopieerfallback. Ontvangst van één echte test door gebruiker bevestigd op 22 oktober 2026",
     "motion": "Eenmalige reveals bij 88% van de viewport, 550–650 ms. Tekst gebruikt alleen opacity, nooit clip-path; koppen hebben ruimte voor staartletters. Alleen beeldvlakken krijgen een begrensde reveal; kaarten en captions blijven stil. Quickbond heeft één gezamenlijk sticky-ankerpunt op desktop: het toepassingspaneel beweegt niet los van het model. Op mobiel normale documentstroom. Scroll-progress en één echte WebGL-viewer met scrollrotatie en dragbediening blijven behouden"
   },
   "banned": [

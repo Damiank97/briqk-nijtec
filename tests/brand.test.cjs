@@ -20,3 +20,21 @@ test('Every generated page uses the original logo without a separate contrast pl
   assert.ok(!html.includes('nav-logo-plate'),route);
  }
 });
+
+test('Square light favicon embeds unchanged transparent artwork without external requests',()=>{
+ const svg=fs.readFileSync(path.join(root,'dist/assets/favicon.svg'),'utf8');
+ assert.match(svg,/width="64" height="64" viewBox="0 0 64 64"/);
+ assert.ok(svg.includes('<rect width="64" height="64" fill="'+require('../NIJTEC-DESIGN-TOKENS.json').color.paperLight+'"/>'));
+ assert.match(svg,/preserveAspectRatio="xMidYMid meet"/);
+ const embedded=Buffer.from(svg.match(/href="data:image\/png;base64,([^"]+)"/)[1],'base64');
+ assert.deepEqual(embedded,fs.readFileSync(path.join(root,'assets/nijtec-logo-nav.png')));
+ assert.doesNotMatch(svg,/<script|<foreignObject|onload=|href="https?:|filter=/i);
+});
+
+test('All generated pages use the new cache-keyed SVG tab icon',()=>{
+ for(const route of ['/',...require('../seo/pages.cjs').map(p=>p.path)]){
+  const html=fs.readFileSync(path.join(root,'dist',route,'index.html'),'utf8');
+  assert.match(html,/<link rel="icon" href="\/assets\/favicon.svg\?v=1" type="image\/svg\+xml" sizes="any">/);
+  assert.doesNotMatch(html,/<link rel="icon" href="\/NijTec_logo.png"/);
+ }
+});

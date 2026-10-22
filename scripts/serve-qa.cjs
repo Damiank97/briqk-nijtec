@@ -5,7 +5,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '../dist');
 const config = require('../vercel.json');
 const contact = require('../api/contact.js');
-const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.png':'image/png', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.json':'application/json' };
+const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.png':'image/png', '.svg':'image/svg+xml', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.json':'application/json' };
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://127.0.0.1:4173');
@@ -20,8 +20,9 @@ http.createServer(async (req, res) => {
     if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); return res.end(); }
     const redirect=config.redirects.find(r=>!r.has&&r.source.replace(/\/$/,'')===url.pathname.replace(/\/$/,''));
     if(redirect){res.writeHead(308,{Location:redirect.destination});return res.end();}
-    let target = url.pathname === '/__qa' ? path.join(__dirname, '../tests/browser-qa.html') : path.resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
-    if (url.pathname !== '/__qa' && !target.startsWith(root + path.sep)) { res.writeHead(403); return res.end(); }
+    const qaPage = new Map([['/__qa', 'browser-qa.html'], ['/__qa/branding', 'branding-qa.html']]).get(url.pathname);
+    let target = qaPage ? path.join(__dirname, '../tests', qaPage) : path.resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
+    if (!qaPage && !target.startsWith(root + path.sep)) { res.writeHead(403); return res.end(); }
     if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');
     let body = await fs.readFile(target);
     if (path.extname(target)==='.html' && url.searchParams.has('qa')) {

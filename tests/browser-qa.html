@@ -115,6 +115,8 @@ async function audit(width){
  $('#prefill-clear-btn').click();
  const accordion=$('.av-header');accordion.click();record(width+' px: voorwaarden openen/sluiten',$('.av-body').classList.contains('open'));accordion.click();
  record(width+' px: formulierlabels gekoppeld',all('#contact-fields input,#contact-fields textarea,#contact-fields select').every(e=>e.labels?.length));
+ record(width+' px: berichtvak groter en verticaal verstelbaar',$('#f-bericht').getBoundingClientRect().height>=240&&w.getComputedStyle($('#f-bericht')).resize==='vertical');
+ record(width+' px: productpijlen blijven bij de tekst zonder overflow',all('.product-card-link').every(e=>{const r=e.getBoundingClientRect();return w.getComputedStyle(e).whiteSpace==='nowrap'&&r.right<=width+1&&e.scrollWidth<=e.clientWidth+1;}));
  const form=$('#contact-fields'); form.reset();
  record(width+' px: leeg formulier wordt geweigerd',!form.checkValidity());
  $('#f-naam').value='QA & Nijtec';$('#f-email').value='geen-email';$('#f-bericht').value='Testvraag';

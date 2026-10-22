@@ -963,7 +963,7 @@ nav {
 
 .product-card {
   display: grid;
-  grid-template-columns: 155px 260px minmax(0, 1fr) 170px;
+  grid-template-columns: 155px 260px minmax(0, 1fr) max-content;
   align-items: center;
   min-height: 0;
   padding: 23px 0;
@@ -1007,6 +1007,7 @@ nav {
 
 .product-card-link {
   justify-self: end;
+  white-space: nowrap;
   margin: 0;
   color: var(--ink);
   border-bottom: 1px solid var(--ink);
@@ -1277,6 +1278,13 @@ nav {
 .form-group select:focus { border-color: #d36a48; outline: 2px solid transparent; }
 
 .form-group select option { background: #292621; color: #fff; }
+
+.form-group textarea {
+  height: 240px;
+  min-height: 240px;
+  resize: vertical;
+  line-height: 1.6;
+}
 
 .form-submit {
   width: auto;
@@ -1565,7 +1573,7 @@ footer {
   .qb-visual { grid-template-columns: minmax(330px, 1fr) minmax(280px, .8fr); }
   .products-grid { margin-top: 48px; }
   .product-card { grid-template-columns: 120px 220px minmax(0,1fr); }
-  .product-card-link { grid-column: 2; justify-self: start; margin-top: 8px; }
+  .product-card-link { grid-column: 2 / -1; justify-self: start; margin-top: 8px; }
   .zzp-inner { grid-template-columns: 1fr 250px; gap: 50px; }
   .photo-grid { columns: 2; }
 }

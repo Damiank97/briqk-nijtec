@@ -1,7 +1,11 @@
 # Contactformulier rechtstreeks naar Outlook
 
-De code is gereed voor Microsoft 365, maar verzendt pas na onderstaande
-beheerinstellingen. Er is nog geen echte Microsoft-mail verstuurd of ontvangen.
+Microsoft 365 is op 22 oktober 2026 geactiveerd. De gebruiker bevestigde ontvangst
+van de echte formulierproef NIJTEC-MAILTEST-20261022-A1 bij info@nijtec.nl.
+Onderstaande stappen zijn installatie- en herstelreferentie, geen nog uit te voeren
+registratie. Maak bestaande apps en Exchange-toewijzingen niet dubbel aan.
+Reply-To is automatisch getest; een handmatige Outlook-beantwoordcontrole is nog
+niet expliciet bevestigd. Secrets staan uitsluitend in Vercel, niet in deze handleiding.
 Er is geen Resend-account of extra verzenddienst nodig. Geen PHP, wijziging van
 MX-records, SMTP AUTH of mailboxwachtwoord. De bestaande mailbox blijft intact.
 
