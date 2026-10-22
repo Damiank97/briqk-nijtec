@@ -39,6 +39,7 @@
     "breakpoints": [1440, 900, 768, 390]
   },
   "components": {
+    "navigationLogo": "Het originele Nijtec-logo blijft byte-identiek, zonder recolor, uitsnede of filter. Toon het iets groter, in de oorspronkelijke beeldverhouding, op een licht paperLight-vlak binnen de blauwe navigatie",
     "hero": "Beschrijvende leesbare kop met een feitelijke introductie en een projectfoto met dossiercaption",
     "features": "Genummerde horizontale registerregels",
     "products": "Enkelkoloms productindex met nummer, naam, toepassing en specifieke actie",
@@ -46,7 +47,7 @@
     "gallery": "Natuurlijk beeldformaat met vaste HTML-dimensies in kolommen; elke foto heeft een eigen clipping-container en een stilstaand bijschrift eronder",
     "imageViewer": "Volledig zwart beeldvlak met teller en pijlnavigatie",
     "form": "Gelabelde velden met native validatie; opent een ingevulde e-mail naar info@nijtec.nl, met kopieerfallback. Nooit ontvangst claimen zonder echte verzending",
-    "motion": "Eenmalige reveals bij 88% van de viewport, 550–650 ms. Alleen koppen en begrensde beeldvlakken; kaarten en captions blijven stil. Quickbond heeft één gezamenlijk sticky-ankerpunt op desktop: het toepassingspaneel beweegt niet los van het model. Op mobiel normale documentstroom. Scroll-progress en één echte WebGL-viewer met scrollrotatie en dragbediening blijven behouden"
+    "motion": "Eenmalige reveals bij 88% van de viewport, 550–650 ms. Tekst gebruikt alleen opacity, nooit clip-path; koppen hebben ruimte voor staartletters. Alleen beeldvlakken krijgen een begrensde reveal; kaarten en captions blijven stil. Quickbond heeft één gezamenlijk sticky-ankerpunt op desktop: het toepassingspaneel beweegt niet los van het model. Op mobiel normale documentstroom. Scroll-progress en één echte WebGL-viewer met scrollrotatie en dragbediening blijven behouden"
   },
   "banned": [
     "gradient",

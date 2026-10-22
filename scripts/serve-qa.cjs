@@ -4,10 +4,12 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '../dist');
 const config = require('../vercel.json');
+const contact = require('../api/contact.js');
 const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.png':'image/png', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.json':'application/json' };
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://127.0.0.1:4173');
+    if (url.pathname === '/api/contact') return await contact(req, res);
     if (req.method === 'POST' && url.pathname === '/__qa/report') {
       let data = '';
       for await (const chunk of req) { data += chunk; if (data.length > 100000) throw new Error('Too large'); }

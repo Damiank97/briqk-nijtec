@@ -1,9 +1,9 @@
-# Controle website — 21 oktober 2026
+# Controle website — 22 oktober 2026
 
 ## Geslaagd
 
-- `npm test`: 14 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten.
-- Browsercontrole van de gebouwde site in Chromium: 154 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend.
+- `npm test`: 26 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo en de Strato-contactroute met een nep-mailtransport.
+- Browsercontrole van de gebouwde site in Chromium: 166 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst.
 - Geen horizontale pagina-overflow in de geteste breedtes. Alle homepageafbeeldingen geladen. Alle 16 projectfoto’s op meerdere scrollposities gecontroleerd: geen overlap met onderschriften of andere projectkaarten. Ook intro- en toepassingsfoto’s gecontroleerd.
 - Eén revealmechanisme: eenmalig zichtbaar vanaf 88% van de viewport. Vóór de drempel onzichtbaar, daarna zichtbaar; terugscrollen verbergt inhoud niet opnieuw. Hele kaarten en tekstkolommen schuiven niet mee met scroll.
 - Alle acht productvensters: juiste inhoud, focus binnen venster, Tab-begrenzing, Escape, terugkeerfocus zonder ongewenste scrollsprong. Aanvraagknop vult het formulier; wissen werkt.
@@ -14,11 +14,20 @@
 - Gemeten layoutverschuiving tijdens het laden in de browserronde circa 0,013–0,029 CLS. Dit is een lokale labcontrole, geen PageSpeed-veldmeting.
 - Geen opgevangen runtime- of ontbrekende-resourcefouten op de geteste pagina’s. Onbekende pagina geeft 404; oude sitemap verwijst naar nieuwe.
 
+## Logo, tekst en bestellen — 22 oktober 2026
+
+- Het originele logo is byte-identiek gebleven. Een licht vlak en iets grotere weergave geven contrast, zonder recolor, uitsnede of filter. Dit is op alle 17 pagina's getest, inclusief de krappe navigatie op 320 px.
+- Sectiekoppen hebben geen clip-masker meer en een regelhoogte van 1,08. De volledige onderkant van de j in 'verlijmd' is in de browser zichtbaar; ook g/p/y worden niet afgeknipt. Beeldreveals blijven behouden.
+- Bestelling aanvragen opent het formulier met ZZP-pakket, aantallen/levering en een verzoek om prijsbevestiging. Geen telefoon-/WhatsApp-handoff. Gewone duidelijk gelabelde belknoppen blijven telefoonlinks.
+- Strato SMTP via Node.js voorbereid: vaste ontvanger info@nijtec.nl, eigen mailbox als afzender, klantadres als Reply-To, TLS-controle, begrensde invoer, origin-controle, spamval, kortlevend ondertekend token, lokale rate limit en blokkering van dubbel klikken. Geen mailgegevens in browser of Git. Installatie gepind; npm meldde nul bekende kwetsbaarheden bij installatie.
+- Zonder serversecret blijft de transparante mailapp-/kopieerroute actief. SMTP-fouten geven geen valse succesmelding. Een time-out wordt als onzekere verzending gemeld en niet automatisch herhaald.
+- Nog nodig door beheerder: SMTP_PASS en een afzonderlijke CONTACT_FORM_SECRET veilig invullen in Vercel, opnieuw deployen, echte ontvangst én Reply-To testen. Lokale rate limiting is niet verdeeld over instanties; aanvullende firewallregel aanbevolen. Zie MAIL-INSTELLEN.md. Er is in deze controle geen echte mail verstuurd.
+
 ## Grenzen van deze controle
 
 De browsercontroles zijn herhaalbaar: bouw met `npm run build`, start lokaal met `npm run serve:qa` en open `http://127.0.0.1:4173/__qa`. De controle verstuurt geen e-mail en is geen onderdeel van de openbare deployment. Alleen de testserver in `scripts/serve-qa.cjs` maakt die route beschikbaar.
 
-Dit zijn Chromium-tests met verschillende viewportbreedtes, geen tests op alle fysieke iPhones/Androids of in Safari. Het daadwerkelijk openen/verzenden/ontvangen met iedere mailapp is niet end-to-end getest en vereist een echte ingestelde mailapp. De site verzendt niet zelf. De reduced-motion-regels zijn geïmplementeerd; een aparte fysieke toegankelijkheidscontrole blijft verstandig.
+Dit zijn Chromium-tests met verschillende viewportbreedtes, geen tests op alle fysieke iPhones/Androids of in Safari. Het daadwerkelijk openen/verzenden/ontvangen met iedere mailapp is niet end-to-end getest en vereist een echte ingestelde mailapp. Rechtstreekse serververzending kan pas na configuratie van de mailbox en een ontvangsttest worden bevestigd. De reduced-motion-regels zijn geïmplementeerd; een aparte fysieke toegankelijkheidscontrole blijft verstandig.
 
 Google-indexering, sitelinks, lokaal bedrijfspaneel en AI-vermeldingen zijn niet door een lokale test te bewijzen. Daarvoor zijn de echte domeinoverstap, Search Console en daarna waarneming nodig. Zie `SEO-GEO-MIGRATIE.md` voor de vereiste controles, inclusief mailrecords, André’s gegevens/productinformatie en terugdraaiplan.
 

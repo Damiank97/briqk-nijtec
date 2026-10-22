@@ -50,10 +50,15 @@ async function audit(width){
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
  const nav=$('nav').getBoundingClientRect(); const logo=$('.nav-logo').getBoundingClientRect(); const call=$('.nav-cta').getBoundingClientRect();
  record(width+' px: navigatie valt binnen scherm',logo.left>=-1&&call.right<=w.innerWidth+1&&logo.right<call.left);
+ const brandImage=$('.nav-logo img'),brandStyle=w.getComputedStyle(brandImage),plate=$('.nav-logo-plate'),plateStyle=w.getComputedStyle(plate);
+ record(width+' px: origineel logo leesbaar op licht vlak',brandImage.naturalWidth===512&&brandImage.naturalHeight===341&&brandStyle.filter==='none'&&brandStyle.mixBlendMode==='normal'&&brandStyle.objectFit==='contain'&&plateStyle.backgroundColor==='rgb(251, 249, 244)'&&brandImage.getBoundingClientRect().height<=nav.height);
  const reveal=$('#projecten .section-title'); const revealTop=reveal.getBoundingClientRect().top+w.scrollY; const initialRevealed=reveal.classList.contains('is-revealed');const initialScroll=w.scrollY;
  w.scrollTo(0,revealTop-w.innerHeight*.94);await pause(250);const before=reveal.classList.contains('is-revealed');const beforeY=reveal.getBoundingClientRect().top;
  w.scrollTo(0,revealTop-w.innerHeight*.84);await pause(250);const after=reveal.classList.contains('is-revealed');
  record(width+' px: reveal start op 88% viewport',!before&&after,JSON.stringify({initialRevealed,initialScroll,before,after,beforeY,afterY:reveal.getBoundingClientRect().top,height:w.innerHeight}));
+ await pause(650);
+ const titleStyle=w.getComputedStyle(reveal);
+ record(width+' px: koppen knippen geen j/g/p/y af',titleStyle.clipPath==='none'&&parseFloat(titleStyle.lineHeight)>=parseFloat(titleStyle.fontSize)*1.07,titleStyle.clipPath+' / '+titleStyle.lineHeight);
  let badOverflow=[],imageText=[],cardCollisions=[];
  for(const id of ['top','toepassingen','quickbond','producten','zzp','projecten','voorwaarden','contact']){
   $('#'+id).scrollIntoView();await settle();
@@ -98,6 +103,9 @@ async function audit(width){
  all('.product-card')[0].click();await settle();$('#modal-cta-btn').click();await pause(650);
  record(width+' px: productaanvraag vult contact correct', $('#f-bericht').value.includes('Lijmen')&&$('#f-onderwerp').value==='Offerte aanvragen'&&d.activeElement===$('#f-naam'));
  $('#prefill-clear-btn').click();record(width+' px: aanvraag wissen',!$('#f-bericht').value&&$('#product-prefill-banner').style.display==='none');
+ $('#f-bericht').value='Bestaande vraag behouden.';all('[data-order]')[0].click();await pause(650);
+ record(width+' px: bestellen opent zichtbaar formulier met pakket en behoudt tekst',$('#f-bericht').value.includes('ZZP-pakket')&&$('#f-bericht').value.includes('Bestaande vraag behouden.')&&$('#f-onderwerp').value==='Bestelling aanvragen'&&d.activeElement===$('#f-naam')&&$('.contact-form').getBoundingClientRect().top<w.innerHeight/2);
+ $('#prefill-clear-btn').click();
  const accordion=$('.av-header');accordion.click();record(width+' px: voorwaarden openen/sluiten',$('.av-body').classList.contains('open'));accordion.click();
  record(width+' px: formulierlabels gekoppeld',all('#contact-fields input,#contact-fields textarea,#contact-fields select').every(e=>e.labels?.length));
  const form=$('#contact-fields'); form.reset();

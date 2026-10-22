@@ -70,7 +70,7 @@ async function run(){
   const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>'<url><loc>'+origin+route+'</loc>'+inventory.media.filter(m=>m.usedOn.includes(route)).map(m=>'<image:image><image:loc>'+escape(origin+m.path)+'</image:loc></image:image>').join('')+'</url>').join('')+'</urlset>\n';
   await fs.writeFile(path.join(out,'sitemap.xml'),sitemap);
   await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://nijtec.nl/sitemap.xml\n');
-  await fs.writeFile(path.join(out,'404.html'),'<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Pagina niet gevonden | Nijtec</title><link rel="stylesheet" href="/redesign.css?v=16"><main class="detail-intro"><h1>Deze pagina bestaat niet.</h1><p><a href="/">Ga naar Nijtec</a> of bekijk <a href="/producten/">het assortiment</a>.</p></main></html>');
+  await fs.writeFile(path.join(out,'404.html'),'<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Pagina niet gevonden | Nijtec</title><link rel="stylesheet" href="/redesign.css?v=17"><main class="detail-intro"><h1>Deze pagina bestaat niet.</h1><p><a href="/">Ga naar Nijtec</a> of bekijk <a href="/producten/">het assortiment</a>.</p></main></html>');
   console.log('Built '+urls.length+' pages; preserved '+inventory.media.length+' original image URLs.');
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});

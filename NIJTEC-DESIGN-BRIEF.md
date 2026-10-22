@@ -20,6 +20,10 @@
   **Nijtec B.V.** is. De bedrijfsnaam staat daarom zichtbaar in navigatie én hero.
 - Gebruik het Nijtec-logo niet als klein decoratief pictogram. Combineer het in
   de navigatie met de geschreven bedrijfsnaam en de regel “Service & Quality”.
+- Het originele Nijtec-logo is een vast merkbeeld dat ook op producten staat.
+  Gebruik het ongewijzigde bestand, zonder AI-variant, recolor, uitsnede of filter.
+  Contrast ontstaat door een licht, geïntegreerd logovlak in de blauwe menubalk.
+  Behoud alle letters, bogen, kleuren en de oorspronkelijke beeldverhouding.
 - Nijtec-blauw (`#2e4d9a`, donker `#17264e`) is de dragende kleur voor navigatie,
   koppen en technische vlakken. Nijtec-oranje (`#ef762f`) markeert afzender,
   acties en belangrijke accenten.
@@ -85,6 +89,9 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   De trigger ligt op 88% van de viewporthoogte en de animatie duurt 550–650 ms.
   Een onderdeel blijft daarna zichtbaar, ook bij terugscrollen. Gebruik geen
   tweede view-timeline, parallax of translate op dezelfde kaart of caption.
+- Tekst krijgt uitsluitend een opacity-reveal, nooit een clip-masker. Geef koppen
+  voldoende regelhoogte voor onder meer j, g, p en y. Alleen beeldvlakken worden
+  begrensd met clip-path; tekstonderkanten mogen niet worden afgesneden.
 - Elke foto heeft een eigen clipping-container. Captions staan in de normale
   documentflow onder dat beeldvlak, buiten de geanimeerde container. Reserveer
   de oorspronkelijke afbeeldingsruimte vooraf met correcte width/height-attributen.
@@ -93,6 +100,12 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   bied een kopieerfallback en toon nooit een onbevestigde ontvangstmelding.
   Rechtstreekse serververzending volgt pas na configuratie en een ontvangsttest
   van de Nijtec-mailbox. Sla daarvoor geen wachtwoorden in de browser of Git op.
+- Bestelknoppen openen het formulier met product/pakket en aanvraagcontext, nooit
+  ongemerkt een telefoon- of WhatsApp-app. Een aanvraag is geen definitieve order.
+  Rechtstreeks mailen verloopt uitsluitend via de server en Strato SMTP, met vaste
+  ontvanger en klantadres als Reply-To. Zonder configuratie blijft de eerlijke
+  mailconcept-/kopieerroute actief. Zie `MAIL-INSTELLEN.md` voor activering,
+  spambeperkingen en de verplichte echte ontvangsttest.
 - Alle animatie heeft een `prefers-reduced-motion`-variant waarin inhoud direct
   zichtbaar en volledig leesbaar blijft.
 

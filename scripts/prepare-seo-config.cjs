@@ -21,7 +21,8 @@ const config = {
   framework:null,
   buildCommand:'node scripts/build-pages.cjs',
   outputDirectory:'dist',
-  installCommand:'',
+  installCommand:'npm ci --omit=dev',
+  functions:{'api/contact.js':{maxDuration:30}},
   cleanUrls:true,
   trailingSlash:true,
   headers:[
