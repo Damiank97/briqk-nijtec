@@ -24,13 +24,15 @@ Google-indexering, sitelinks, lokaal bedrijfspaneel en AI-vermeldingen zijn niet
 
 De geautomatiseerde controles betekenen dus niet dat alle externe afhankelijkheden voor livegang al zijn geregeld. De bestaande `nijtec.nl`-hosting en het Google Bedrijfsprofiel worden door deze commit niet omgezet.
 
-## PHP-controle
-
 ## Domeinherstel — 22 oktober 2026
 
 Na de domeinkoppeling verwees Vercel nijtec.nl naar www.nijtec.nl, terwijl de projectconfiguratie assetverzoeken vanaf www naar nijtec.nl terugstuurde. Dit gaf een aantoonbare 308-lus voor CSS, logo, hero-afbeelding, scripts en lettertype. De HTML op www en de Vercel-link was identiek: dit was geen oude deployment.
 
 De dubbele hostredirect is verwijderd uit vercel.json én de generator, zodat alleen Vercel Domains de hoofdvariant bepaalt. Ook de uitsluitend met CSS verborgen demobanner is uit de HTML verwijderd. De gewenste hoofdvariant blijft https://nijtec.nl/; de daadwerkelijke dashboardinstelling moet apart worden bevestigd. Er worden geen DNS-/mailrecords gewijzigd door deze codefix.
+
+Na publicatie rechtstreeks gecontroleerd: www.nijtec.nl geeft 200 met de juiste bestandstypen voor CSS, logo, hero, motion-script, lettertype en de coatingspagina; de bestandshashes komen overeen met de werkende Vercel-versie. Nijtec.nl verwijst nog één keer naar www, zonder lus terug. In de browser op het echte domein zijn logo en hero geladen, Instrument Sans actief, de 3D-viewer actief en nul demobanners aanwezig. Het productiedomein geeft geen preview-noindex-header.
+
+Nog open: het Vercel-dashboard vraagt opnieuw om accountverificatie. Voor de afgesproken hoofdvariant zonder www moet nijtec.nl aan Production worden gekoppeld zonder domeinredirect, en www.nijtec.nl daarnaar verwijzen. Hiervoor is Vercel-toegang nodig; dit is niet als uitgevoerd afgevinkt.
 
 ## PHP-controle
 
