@@ -2,8 +2,8 @@
 
 ## Geslaagd
 
-- `npm test`: 27 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd.
-- Browsercontrole van de gebouwde site in Chromium: 166 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst.
+- `npm test`: 31 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Nieuwe tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd. Ook bedrijfsverhaal, btw-nummer, productlabels en de fotogegevens op alle 17 pagina's zijn gecontroleerd.
+- Browsercontrole van de gebouwde site in Chromium: 206 controles, nul fouten. Homepage op 320, 390, 768 en 1440 px breed; alle 16 vervolgpagina’s ook op 390 px geopend. Inclusief bestelknop naar formulier met behoud van eerder ingevulde tekst, de leesbare Over Nijtec-sectie en de productfoto's in alle acht pop-ups.
 - Geen horizontale pagina-overflow in de geteste breedtes. Alle homepageafbeeldingen geladen. Alle 16 projectfoto’s op meerdere scrollposities gecontroleerd: geen overlap met onderschriften of andere projectkaarten. Ook intro- en toepassingsfoto’s gecontroleerd.
 - Eén revealmechanisme: eenmalig zichtbaar vanaf 88% van de viewport. Vóór de drempel onzichtbaar, daarna zichtbaar; terugscrollen verbergt inhoud niet opnieuw. Hele kaarten en tekstkolommen schuiven niet mee met scroll.
 - Alle acht productvensters: juiste inhoud, focus binnen venster, Tab-begrenzing, Escape, terugkeerfocus zonder ongewenste scrollsprong. Aanvraagknop vult het formulier; wissen werkt.
@@ -22,6 +22,13 @@
 - Strato SMTP via Node.js voorbereid: vaste ontvanger info@nijtec.nl, eigen mailbox als afzender, klantadres als Reply-To, TLS-controle, begrensde invoer, origin-controle, spamval, kortlevend ondertekend token, lokale rate limit en blokkering van dubbel klikken. Geen mailgegevens in browser of Git. Installatie gepind; npm meldde nul bekende kwetsbaarheden bij installatie.
 - Zonder serversecret blijft de transparante mailapp-/kopieerroute actief. SMTP-fouten geven geen valse succesmelding. Een time-out wordt als onzekere verzending gemeld en niet automatisch herhaald.
 - Correctie na gebruikersinformatie: het MX-record wijst naar Microsoft 365, niet Strato. De eerdere instructie SMTP_PASS in te vullen is vervallen. De Strato-adapter is aanvullend vergrendeld op expliciete providerkeuze; losse mailsecrets activeren hem niet. Microsoft-verzending is nog niet gebouwd of geautoriseerd. Beheertoegang en passende mailboxgebonden rechten zijn eerst nodig; daarna implementatie en echte ontvangst-/Reply-To-test. Lokale rate limiting is niet verdeeld over instanties; aanvullende firewallregel aanbevolen. Zie MAIL-INSTELLEN.md. Er is in deze controle geen echte mail verstuurd en er zijn geen mail-/DNS-records gewijzigd.
+
+## Bedrijfsverhaal, btw en productbeelden — 22 oktober 2026
+
+- BTW NL866979001.B01 staat direct onder KvK op alle 17 pagina's en in de bedrijfsgegevens voor zoekmachines.
+- Over Nijtec staat na de projecten, met een menulink en hetzelfde verhaal op de bestaande /over-ons/. De inhoud is gebaseerd op het oude welkomstverhaal: levering, technisch advies, montage en André Nijhof als aanspreekpunt. Geen verzonnen historie of portret. Herkomst staat in seo/content-sources.md.
+- Alle acht productpop-ups bevatten nu originele foto's: 14 zorgvuldig gekozen product-, materiaal- en toepassingsbeelden. Ze laden pas bij openen van de pop-up, hebben eigen afmetingen en onderschriften en openen in hun oorspronkelijke formaat in een nieuw tabblad. Focusbegrenzing, Escape en aanvraagactie blijven werken.
+- Productlabels zijn visueel gecontroleerd. Een oud bestand genaamd super-all-360.png toont in werkelijkheid een Seal-it 350 Super-All; het onderschrift en de productpagina volgen nu het etiket. Kleine beelden worden niet opgeblazen. Geen oorspronkelijke foto of oorspronkelijke foto-URL is verwijderd of gewijzigd.
 
 ## Grenzen van deze controle
 

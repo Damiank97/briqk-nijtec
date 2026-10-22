@@ -53,6 +53,13 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 - Producten en voordelen zijn genummerde registerregels, geen kaarten.
 - Projectfoto's behouden hun natuurlijke beeldverhouding en captions staan
   onder het beeld. Geen gradient-overlay op fotografie.
+- De productpop-ups tonen een selectie originele product- of toepassingsfoto's
+  uit de oude site. Labels volgen het zichtbare etiket, niet alleen de soms
+  onjuiste bestandsnaam. Kleine beelden worden niet opgeblazen. Originele foto's
+  openen via een gewone link; de pop-up blijft beschikbaar in het vorige tabblad.
+- Over Nijtec is een leesbaar, feitelijk bedrijfsverhaal na de projecten en op
+  /over-ons/. Baseer inhoud op het oude welkomstverhaal, zonder verzonnen historie,
+  medewerkers, portretten of citaten. Het btw-nummer staat direct onder KvK.
 - Gebruik geen em dash in marketingcopy. Gebruik een punt, komma of nieuwe zin.
 - Gebruik geen “Meer info”, “Ontdek meer” of vergelijkbare generieke CTA.
 - De hoofdkop moet letterlijk noemen wat Nijtec levert en voor welke markt.

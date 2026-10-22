@@ -439,7 +439,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/redesign.css?v=18">
+<link rel="stylesheet" href="/redesign.css?v=19">
 <script src="/motion.js?v=1" defer></script>
 <script src="/contact.js?v=2" defer></script>
 </head>
@@ -459,6 +459,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
     <a href="#quickbond">Quickbond</a>
     <a href="#projecten">Projecten</a>
     <a href="#zzp">ZZP-Pakket</a>
+    <a href="#over-nijtec">Over Nijtec</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="tel:0615588843" class="nav-cta">Bel direct</a>
@@ -654,6 +655,19 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
   </div>
 </section>
 
+<section class="about" id="over-nijtec" aria-labelledby="about-title">
+  <div class="about-intro">
+    <div class="section-label">Over Nijtec</div>
+    <h2 id="about-title">Van productkeuze tot montage.</h2>
+  </div>
+  <div class="about-copy">
+    <p class="about-lead">Nijtec B.V. is een leverancier uit Dalen voor professionele gebruikers in de bouw en industrie. Wij leveren lijmen, afdichtingskitten, PU-schuimen, coatings en toebehoren, afgestemd op het werk dat u wilt uitvoeren.</p>
+    <p>Wij leveren niet alleen de materialen. Het Nijtec Montage Team brengt ook gevelbeplating, steenstrips en coatingsystemen aan, onder meer bij renovatie en herstelwerk. Zo kunt u de productkeuze én de uitvoering met hetzelfde bedrijf bespreken.</p>
+    <p>Van Quickbond voor gevel- en plaatverlijming tot een coating voor wand of vloer: we kijken naar de ondergrond, toepassing en verwerking. U krijgt technisch advies en de bijbehorende verwerkingsinformatie.</p>
+    <div class="about-person"><strong>André Nijhof</strong><span>Uw aanspreekpunt bij Nijtec B.V.</span><a href="tel:0615588843">Bel André: 06-155 888 43 →</a></div>
+  </div>
+</section>
+
 <!-- ALGEMENE VOORWAARDEN -->
 <section class="av-section" id="voorwaarden">
   <div class="section-label">Juridisch</div>
@@ -673,6 +687,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
         <div class="contact-item"><div class="contact-item-icon">Mail</div><div><a href="mailto:info@nijtec.nl">info&#64;nijtec.nl</a></div></div>
         <div class="contact-item"><div class="contact-item-icon">Adres</div><div>Laveringsveen 10<br>7751 DN Dalen</div></div>
         <div class="contact-item"><div class="contact-item-icon">KvK</div><div>95043780</div></div>
+        <div class="contact-item"><div class="contact-item-icon">BTW</div><div>NL866979001.B01</div></div>
       </div>
     </div>
     <div class="contact-form">
@@ -727,6 +742,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 </footer>
 
 <!-- PRODUCT MODAL -->
+<!-- PRODUCT_MEDIA_DATA -->
 <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-header">
@@ -735,6 +751,11 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
       <button class="modal-close" id="modal-close-btn" aria-label="Productinformatie sluiten">✕</button>
     </div>
     <div class="modal-body">
+      <section class="modal-media" aria-labelledby="modal-media-title">
+        <h3 class="modal-section-title" id="modal-media-title">Producten in beeld</h3>
+        <div class="modal-gallery" id="modal-gallery"></div>
+        <p class="modal-media-note">Een selectie uit het assortiment. Klik op een foto voor het originele beeld. Vraag Nijtec naar de actuele uitvoering en beschikbaarheid.</p>
+      </section>
       <div class="modal-desc" id="modal-desc"></div>
       <div class="modal-section-title">Kenmerken</div>
       <div class="modal-props" id="modal-props"></div>
@@ -818,10 +839,35 @@ function trapDialogFocus(event, dialog) {
 }
 function openModal(key, trigger) {
   const p = products[key];
+  if (!p) return;
   modalTrigger = trigger || document.activeElement;
   document.getElementById('modal-icon').textContent = p.icon;
   document.getElementById('modal-title').textContent = p.title;
   document.getElementById('modal-subtitle').textContent = p.subtitle;
+  const media = JSON.parse(document.getElementById('product-media-data')?.textContent || '{}')[key] || [];
+  const gallery = document.getElementById('modal-gallery');
+  gallery.replaceChildren();
+  media.forEach(photo => {
+    const figure = document.createElement('figure');
+    figure.className = 'modal-product-photo';
+    const link = document.createElement('a');
+    link.href = photo.src;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.className = 'modal-photo-link modal-photo-link--' + photo.kind;
+    link.setAttribute('aria-label', 'Open originele foto: ' + photo.name + ' (nieuw tabblad)');
+    const image = document.createElement('img');
+    image.src = photo.src;
+    image.alt = photo.name;
+    image.width = photo.width;
+    image.height = photo.height;
+    image.decoding = 'async';
+    const caption = document.createElement('figcaption');
+    caption.textContent = photo.name;
+    link.append(image);
+    figure.append(link, caption);
+    gallery.append(figure);
+  });
   document.getElementById('modal-desc').textContent = p.desc;
   document.getElementById('modal-props').innerHTML = p.props.map(x=>`<div class="modal-prop">${x}</div>`).join('');
   document.getElementById('modal-tags').innerHTML = p.tags.map(x=>`<span class="modal-tag">${x}</span>`).join('');
@@ -830,6 +876,7 @@ function openModal(key, trigger) {
   document.getElementById('modal-overlay').setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   setPageInert(true);
+  document.getElementById('modal').scrollTop = 0;
   document.getElementById('modal-close-btn').focus({preventScroll:true});
 }
 function closeModal(){

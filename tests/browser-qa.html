@@ -48,6 +48,9 @@ async function audit(width){
  record(width+' px: stabiele layout bij laden', w.__qaCLS<.1, String(w.__qaCLS));
  record(width+' px: ankerlinks bestaan',all('a[href^="#"]').every(a=>d.getElementById(a.hash.slice(1))));
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
+ const companyItems=all('.contact-info .contact-item'),kvk=companyItems.findIndex(e=>e.textContent.includes('KvK'));
+ record(width+' px: btw direct onder KvK',kvk>=0&&companyItems[kvk+1]?.textContent.includes('BTWNL866979001.B01'));
+ record(width+' px: Over Nijtec leesbaar zonder overlap',$('#over-nijtec').textContent.includes('André Nijhof')&&!overlaps($('.about-intro').getBoundingClientRect(),$('.about-copy').getBoundingClientRect())&&all('.about-copy p').every(e=>parseFloat(w.getComputedStyle(e).fontSize)>=17));
  const nav=$('nav').getBoundingClientRect(); const logo=$('.nav-logo').getBoundingClientRect(); const call=$('.nav-cta').getBoundingClientRect();
  record(width+' px: navigatie valt binnen scherm',logo.left>=-1&&call.right<=w.innerWidth+1&&logo.right<call.left);
  const brandImage=$('.nav-logo img'),brandStyle=w.getComputedStyle(brandImage),frameStyle=w.getComputedStyle($('.nav-logo-frame')),navStyle=w.getComputedStyle($('nav'));
@@ -60,7 +63,7 @@ async function audit(width){
  const titleStyle=w.getComputedStyle(reveal);
  record(width+' px: koppen knippen geen j/g/p/y af',titleStyle.clipPath==='none'&&parseFloat(titleStyle.lineHeight)>=parseFloat(titleStyle.fontSize)*1.07,titleStyle.clipPath+' / '+titleStyle.lineHeight);
  let badOverflow=[],imageText=[],cardCollisions=[];
- for(const id of ['top','toepassingen','quickbond','producten','zzp','projecten','voorwaarden','contact']){
+ for(const id of ['top','toepassingen','quickbond','producten','zzp','projecten','over-nijtec','voorwaarden','contact']){
   $('#'+id).scrollIntoView();await settle();
   if(d.documentElement.scrollWidth>w.innerWidth+1)badOverflow.push(id+':'+d.documentElement.scrollWidth);
  }
@@ -85,6 +88,8 @@ async function audit(width){
  const hero=$('.hero-project'); record(width+' px: introfoto naast/voor eigen tekst',!overlaps(visibleRect(hero.querySelector('img'),w),hero.querySelector('figcaption').getBoundingClientRect()));
  for(const card of all('.product-card')){
   card.focus();card.click();await settle();
+  const media=all('#modal-gallery img');await Promise.all(media.map(img=>img.decode().catch(()=>{})));
+  record(width+' px: productfoto\'s '+card.dataset.modal,media.length>0&&media.every(img=>img.complete&&img.naturalWidth>0&&img.alt&&img.parentElement.target==='_blank'&&img.parentElement.rel.includes('noopener')&&!overlaps(visibleRect(img,w),img.closest('figure').querySelector('figcaption').getBoundingClientRect())));
   const opened=$('#modal-overlay').classList.contains('open')&&$('#modal-title').textContent.trim()===card.querySelector('h3').textContent.trim();
   const focusInside=$('#modal').contains(d.activeElement);
   const y=w.scrollY;
