@@ -1,5 +1,34 @@
 # Controle website — 22 oktober 2026
 
+## Quickbond-artikel, e-mailvalidatie en SEO-audit — 23 oktober 2026
+
+- `npm test`: 59 geslaagde tests, nul fouten. De site bevat nu 18 pagina's met
+  behoud van de 17 bestaande adressen en 108 oorspronkelijke afbeeldingen.
+- Chromium: 234 controles geslaagd op 320, 390, 768 en 1440 px, inclusief alle
+  17 vervolgpagina's en het nieuwe artikel op 390, 768 en 1440 px. Bij de eerste
+  artikelcontrole bleek mobiele bodytekst 17 px; die is naar 18 px gebracht en de
+  volledige ronde is opnieuw geslaagd. Geen overlap of horizontale overflow.
+- Eén uitlegartikel, zonder verzonnen klantvragen of beoordeelclaim door André.
+  Origineel projectbeeld, bronregistratie in seo/content-sources.md, organisatie als
+  auteur, datum, product-/projectlinks, BlogPosting, canonical en sitemap. Geen
+  droogtijden of andere gegevens van de gelijknamige ARDEX-/tandheelkundige producten.
+- Eén gedeelde e-mailpolicy in browser en server: vereiste lokale naam en openbaar
+  domein, punt in domein, geldige labels/lengtes, geen opeenvolgende punten in het lokale
+  deel, headerinjectie of meerdere adressen. Plusadressen en subdomeinen toegestaan.
+  Onvolledige adressen zoals naam@bedrijf worden geweigerd, met gekoppelde
+  foutmelding die na correctie verdwijnt. Native type=email/required/pattern blijft.
+  Afwijzing gebeurt vóór verbruik van token en vóór aanroep van de mailprovider.
+- Dit valideert de schrijfwijze, niet het bestaan of eigendom van een mailbox.
+  Er is geen externe e-mailvalidatiedienst of verificatiemail toegevoegd. De
+  browserronde verstuurde geen mail; de eerdere ontvangstproef blijft het bewijs.
+- SEO-controle omvat alle 18 titels/beschrijvingen/H1's/canonical-/social-URL's,
+  interne links, media, bedrijfsdata, structured data, sitemap en preview-noindex.
+  SEO-GEO-MIGRATIE.md benoemt ook wat niet is bewezen: Search Console/indexering,
+  profielbeheer, actuele productgoedkeuring en de tegenstrijdige www/canonical-signalen.
+- Een openbare PageSpeed API-controle is geprobeerd, maar Google gaf HTTP 429
+  wegens dagquota. Geen nieuwe PageSpeed-score of Core Web Vitals-veldmeting
+  geclaimd. Handmatige PageSpeed/Rich Results Test blijft open.
+
 ## Geslaagd
 
 - `npm test`: 48 geautomatiseerde tests, nul fouten. Inclusief behoud van 17 pagina-adressen, 108 oorspronkelijke afbeeldingen, redirects, interne links, metadata, structured data, sitemap, testomgeving-noindex en alle 20 bestaande voorwaardenartikelen. Ook een controle dat broncode en uitvoer geen PHP-bestanden of PHP/Composer-runtime bevatten, geen tweede hostredirect introduceren en geen verborgen demobanner bevatten. Tests controleren behoud van het originele logo, het formulier met nep-mailtransport en dat de verkeerde mailprovider niet per ongeluk wordt geactiveerd. Ook bedrijfsverhaal, btw-nummer, productlabels en de fotogegevens op alle 17 pagina's zijn gecontroleerd. Zes Analytics-tests controleren de productiebeperking, privacykeuzes, URL-redactie, eenmalige initialisatie, openbare buildconfiguratie en integratie op alle pagina's. Negen Microsoft-tests controleren uitsluitend nagebootste OAuth/Graph-verzending, vaste mailadressen, validatie, time-outs, caching, foutafhandeling en het uitschakelen op previews. Twee nieuwe favicon-tests controleren de vierkante lichte ondergrond, het ingesloten byte-identieke logo en de integratie op alle pagina's.

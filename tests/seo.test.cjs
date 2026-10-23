@@ -26,6 +26,21 @@ test('All 17 meaningful original page addresses have real, uniquely titled HTML'
  }
  assert.equal(new Set(titles).size,17);
 });
+
+test('Every page including the article has unique metadata, one H1 and matching canonical/social URL',()=>{
+ const titles=new Set(),descriptions=new Set();
+ for(const route of ['/',...pages.map(p=>p.path)]){
+  const html=htmlFor(route),title=html.match(/<title>(.*?)<\/title>/)?.[1],description=html.match(/<meta name="description" content="([^"]*)">/)?.[1];
+  assert.ok(title&&description,route);assert.ok(!titles.has(title),route+' duplicate title');assert.ok(!descriptions.has(description),route+' duplicate description');
+  titles.add(title);descriptions.add(description);
+  assert.equal((html.match(/<h1\b/g)||[]).length,1,route);
+  assert.ok(html.includes('rel="canonical" href="https://nijtec.nl'+route+'"'),route);
+  assert.ok(html.includes('property="og:url" content="https://nijtec.nl'+route+'"'),route);
+  assert.ok(html.includes('property="og:title"'));assert.ok(html.includes('property="og:description"'));
+  assert.doesNotMatch(html,/<meta name="robots" content="(?:noindex|none)/i);
+ }
+ assert.equal(titles.size,pages.length+1);assert.equal(descriptions.size,pages.length+1);
+});
 test('Generated static pages have usable internal links, anchors, media and structured data',()=>{
  for(const route of ['/',...pages.map(p=>p.path)]){
   const html=htmlFor(route);
@@ -66,7 +81,8 @@ test('108 original image URLs exist; every variant/attachment redirect resolves 
 });
 test('Sitemap covers the real pages and images, and robots exposes only the production sitemap',()=>{
  const xml=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');
- assert.equal((xml.match(/<url>/g)||[]).length,17);
+ assert.equal((xml.match(/<url>/g)||[]).length,1+pages.length);
+ for(const p of pages)assert.ok(xml.includes('<loc>https://nijtec.nl'+p.path+'</loc>'));
  for(const p of inventory.pages)assert.ok(xml.includes('<loc>https://nijtec.nl'+p.path+'</loc>'));
  for(const m of inventory.media)assert.ok(xml.includes('https://nijtec.nl'+m.path));
  const robots=fs.readFileSync(path.join(dist,'robots.txt'),'utf8');

@@ -217,6 +217,13 @@ vorm heeft:
 - Formulieren: rechte velden, zichtbare labels, consistente hoogte, heldere focus.
 - Het berichtvak is minimaal 240 px hoog en verticaal verstelbaar. Productacties
   reserveren ruimte voor hun volledige tekst; een pijl mag niet los afbreken.
+- E-mailadressen krijgen dezelfde syntaxcontrole in browser en server, met een
+  gekoppelde leesbare foutmelding. Geen claim dat syntax bewijst dat een mailbox
+  bestaat of van de bezoeker is. Plusadressen en normale subdomeinen blijven geldig.
+- Artikelen volgen het Werkboek-systeem met echte projectbeelden, leesbare koppen,
+  verantwoord auteurschap en bronregistratie. Geen verzonnen klantvragen,
+  zoekvolumes, review door André of technische verwerkingsgegevens. Behoud interne
+  product-/projectlinks, canonical, sitemap en passende BlogPosting-data.
 - Hover toont interactiviteit subtiel; focus is altijd zichtbaar.
 - Interactieve doelen zijn minimaal 44 x 44 px.
 

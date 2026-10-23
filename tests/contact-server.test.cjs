@@ -75,6 +75,16 @@ test('invalid fields, spam trap and mail header injection cannot send',async()=>
   assert.equal(h.sent.length,0);
 });
 
+test('server rejects invalid email before consuming the token or invoking the mail provider',async()=>{
+  const h=setup(),body=await h.payload();
+  for(const email of ['naam@bedrijf','naam@bedrijf.','a..b@bedrijf.nl','a@-bedrijf.nl','a@bedrijf..nl','a@bedrijf.c']){
+    const result=await h.request('POST',{...body,email});
+    assert.equal(result.statusCode,400);assert.equal(result.body.code,'INVALID_EMAIL');
+  }
+  assert.equal(h.sent.length,0);assert.equal(h.transports.length,0);
+  assert.equal((await h.request('POST',{...body,email:'klant+offerte@bedrijf.nl'})).statusCode,200);
+});
+
 test('signed form token is required, bound to requester, time-limited and single-use',async()=>{
   const h=setup(),body=await h.payload();
   assert.equal((await h.request('POST',{...body,token:'tampered'})).statusCode,400);

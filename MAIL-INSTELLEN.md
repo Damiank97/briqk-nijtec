@@ -44,6 +44,11 @@ niet automatisch. Bewaar de gegevens voor een veilige fallback.
   **Die instelling hoort niet bij de getoonde Microsoft 365-configuratie.**
 - Alleen JSON, begrensde invoer, vaste ontvanger, geen bijlagen of externe
   bestandstoegang, geen door de klant instelbare mailheaders.
+- Sinds 23 oktober dezelfde e-mailsyntaxcontrole in browser en server, met native
+  veldvalidatie en leesbare foutmelding. Onvolledige adressen zoals naam@bedrijf
+  worden geweigerd. Plusadressen en subdomeinen zijn toegestaan. Dit bewijst niet
+  dat een mailbox bestaat of van de bezoeker is; geen externe validatiedienst of
+  automatische verificatiemail toegevoegd.
 - Exact toegestane origins, een ondertekend kortlevend formulier-token, spamval,
   dubbele-aanvraagbeperking en een lokale limiet van 3 aanvragen per kwartier per
   IP plus 30 per uur per function-instantie. IP's worden alleen gehasht en tijdelijk

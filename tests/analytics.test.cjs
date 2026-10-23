@@ -50,7 +50,7 @@ test('only public same-origin Vercel intake paths enter build configuration',()=
   assert.ok(!publicConfig('{"analytics":{"scriptSrc":"/../private","secret":"NEVER-PUBLISH"}}').includes('NEVER-PUBLISH'));
 });
 
-test('all 17 generated pages load the official locally pinned SDK and disclose statistics',()=>{
+test('all generated pages load the official locally pinned SDK and disclose statistics',()=>{
   assert.equal(require('../package.json').dependencies['@vercel/analytics'],'2.0.1');
   assert.ok(fs.existsSync(path.join(root,'dist/assets/vendor/vercel-analytics.js')));
   for(const route of ['/',...require('../seo/pages.cjs').map(p=>p.path)]){

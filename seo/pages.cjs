@@ -14,5 +14,6 @@ module.exports = [
   { path:'/projecten/', title:'Projecten van Nijtec', intro:'Bekijk uitgevoerd werk met gevelbeplating, steenstrips en coatings. De foto’s laten toepassingen van Quickbond en het werk van het Nijtec Montage Team zien.', section:'projecten' },
   { path:'/contact/', title:'Contact met Nijtec', intro:'Bel of mail Nijtec B.V. in Dalen voor productinformatie, technisch advies, een offerte of montage.', section:'contact' },
   { path:'/zzp-pakket/', title:'ZZP-pakket', intro:'Een compact pakket met producten voor het dagelijkse werk. Bespreek de samenstelling, actuele prijs en beschikbaarheid rechtstreeks met Nijtec.', section:'zzp' },
-  { path:'/algemene-voorwaarden/', title:'Algemene voorwaarden Nijtec B.V.', intro:'Bekijk de voorwaarden bij aanbiedingen, overeenkomsten en leveringen van Nijtec B.V. Vraag bij een opdracht om de toepasselijke volledige voorwaarden.', terms:true }
+  { path:'/algemene-voorwaarden/', title:'Algemene voorwaarden Nijtec B.V.', intro:'Bekijk de voorwaarden bij aanbiedingen, overeenkomsten en leveringen van Nijtec B.V. Vraag bij een opdracht om de toepasselijke volledige voorwaarden.', terms:true },
+  require('./quickbond-article.cjs')
 ];

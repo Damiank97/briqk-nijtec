@@ -1,10 +1,10 @@
 const { createHmac, timingSafeEqual, randomBytes } = require('node:crypto');
 const nodemailer = require('nodemailer');
 const { createMicrosoftMailer } = require('./microsoft-mail.cjs');
+const { isValid: validEmail } = require('../email-validation.js');
 
 const recipient = 'info@nijtec.nl';
 const subjects = new Set(['Productinformatie', 'Offerte aanvragen', 'Bestelling aanvragen', 'Technisch advies', 'ZZP-pakket', 'Montage opdracht']);
-const emailPattern = /^[^\s<>@,;\r\n]+@[^\s<>@,;\r\n]+\.[^\s<>@,;\r\n]+$/;
 const maximumBytes = 24000;
 
 function createHandler({ env = process.env, now = Date.now, createTransport = nodemailer.createTransport, fetchImpl = globalThis.fetch } = {}) {
@@ -17,7 +17,7 @@ function createHandler({ env = process.env, now = Date.now, createTransport = no
   const username = env.MAIL_PROVIDER === 'microsoft365' ? recipient : env.SMTP_USER || recipient;
   // Nijtec uses Microsoft 365. Never activate this Strato adapter merely because
   // somebody followed the superseded SMTP password instructions.
-  const providerReady = env.MAIL_PROVIDER === 'microsoft365' ? microsoft.configured : env.MAIL_PROVIDER === 'strato' && env.SMTP_PASS && emailPattern.test(username) && username.endsWith('@nijtec.nl');
+  const providerReady = env.MAIL_PROVIDER === 'microsoft365' ? microsoft.configured : env.MAIL_PROVIDER === 'strato' && env.SMTP_PASS && validEmail(username) && username.endsWith('@nijtec.nl');
   const enabled = Boolean(providerReady && env.CONTACT_FORM_SECRET?.length >= 32 && (!env.VERCEL || env.VERCEL_ENV === 'production'));
   // Do not expose a public HMAC oracle based on the mailbox password.
   const secret = env.CONTACT_FORM_SECRET || 'disabled';
@@ -89,7 +89,8 @@ function createHandler({ env = process.env, now = Date.now, createTransport = no
     if (input.website) return reply(400, { code: 'INVALID_INPUT' });
     if (!validToken(input.token, ip) || used.has(input.token)) return reply(400, { code: 'EXPIRED_TOKEN' });
     const validField = (name, max, required = false, singleLine = true) => typeof input[name] === 'string' && input[name].length <= max && (!required || input[name].trim().length > 0) && !/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(input[name]) && (!singleLine || !/[\r\n]/.test(input[name]));
-    if (!validField('naam', 120, true) || !validField('bedrijf', 160) || !validField('email', 254, true) || !emailPattern.test(input.email.trim()) || !subjects.has(input.onderwerp) || !validField('bericht', 6000, true, false)) return reply(400, { code: 'INVALID_INPUT' });
+    if (!validField('email', 254, true) || !validEmail(input.email)) return reply(400, { code: 'INVALID_EMAIL' });
+    if (!validField('naam', 120, true) || !validField('bedrijf', 160) || !subjects.has(input.onderwerp) || !validField('bericht', 6000, true, false)) return reply(400, { code: 'INVALID_INPUT' });
     if (overLimit(ip)) { res.setHeader('Retry-After', '900'); return reply(429, { code: 'RATE_LIMIT' }); }
     // Consume before awaiting the provider; replay protection is instance-local.
     used.set(input.token, now() + 30 * 60 * 1000);

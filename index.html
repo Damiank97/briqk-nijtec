@@ -439,9 +439,10 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/redesign.css?v=21">
+<link rel="stylesheet" href="/redesign.css?v=22">
 <script src="/motion.js?v=1" defer></script>
-<script src="/contact.js?v=3" defer></script>
+<script src="/email-validation.js?v=1" defer></script>
+<script src="/contact.js?v=4" defer></script>
 <!-- WEB_ANALYTICS_CONFIG -->
 <script type="module" id="nijtec-analytics" src="/analytics.js?v=1"></script>
 </head>
@@ -556,6 +557,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
       <div class="qb-guarantee-num">10</div>
       <div class="qb-guarantee-text"><strong style="color:white">jaar garantie</strong><br>op de verlijmende hechting én het product</div>
     </div>
+    <a class="qb-article-link" href="/blog/quickbond-gevelbeplating-verlijmen/">Lees het artikel over gevelbeplating&nbsp;→</a>
   </div>
   <div class="qb-model-wrap" aria-label="Interactieve 3D productweergave van de Quickbond verlijmende kit">
       <div class="qb-story-notes" aria-hidden="true">
@@ -708,7 +710,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
           <div class="form-group"><label for="f-naam">Naam (verplicht)</label><input type="text" id="f-naam" name="naam" autocomplete="name" maxlength="120" required placeholder="Uw naam"></div>
           <div class="form-group"><label for="f-bedrijf">Bedrijf</label><input type="text" id="f-bedrijf" name="bedrijf" autocomplete="organization" maxlength="160" placeholder="Bedrijfsnaam"></div>
         </div>
-        <div class="form-group" style="margin-bottom:16px"><label for="f-email">E-mailadres (verplicht)</label><input type="email" id="f-email" name="email" autocomplete="email" maxlength="254" required placeholder="uw@email.nl"></div>
+        <div class="form-group" style="margin-bottom:16px"><label for="f-email">E-mailadres (verplicht)</label><input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254" required pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="f-email-error" placeholder="uw@email.nl"><p class="field-error" id="f-email-error" aria-live="polite" hidden>Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.nl.</p></div>
         <div class="form-group" style="margin-bottom:16px"><label for="f-onderwerp">Onderwerp</label>
           <select id="f-onderwerp" name="onderwerp"><option>Productinformatie</option><option>Offerte aanvragen</option><option>Bestelling aanvragen</option><option>Technisch advies</option><option>ZZP-pakket</option><option>Montage opdracht</option></select>
         </div>

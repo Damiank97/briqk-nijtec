@@ -8,17 +8,18 @@ const source = fs.readFileSync(path.join(__dirname, '../contact.js'), 'utf8');
 function harness({ valid = true, clipboardFails = false, values = {}, enabled = false, sendStatus = 200, sendResult = {ok:true}, sendThrows = false } = {}) {
   const input = { naam: 'Test & Élise', bedrijf: 'Bouw #1', email: 'qa@example.invalid', onderwerp: 'Offerte aanvragen', bericht: 'Gevelpanelen? Prijs & levering graag.', ...values };
   const nodes = new Map();
-  for (const id of ['contact-fields', 'contact-handoff', 'contact-copy-fallback', 'contact-copy-text', 'form-submit-btn', 'contact-copy-btn', 'f-naam', 'f-bericht', 'contact-help']) {
-    nodes.set(id, { hidden: true, value: '', textContent: '', handlers: {}, addEventListener(type, cb) { this.handlers[type] = cb; }, focus() { this.focused = true; }, select() { this.selected = true; }, setCustomValidity(text) { this.error = text; } });
+  for (const id of ['contact-fields', 'contact-handoff', 'contact-copy-fallback', 'contact-copy-text', 'form-submit-btn', 'contact-copy-btn', 'f-naam', 'f-bericht', 'f-email', 'f-email-error', 'contact-help']) {
+    nodes.set(id, { hidden: true, value: '', textContent: '', handlers: {}, attributes: {}, addEventListener(type, cb) { this.handlers[type] = cb; }, focus() { this.focused = true; }, select() { this.selected = true; }, setCustomValidity(text) { this.error = text; }, setAttribute(key,value) { this.attributes[key]=value; }, removeAttribute(key) { delete this.attributes[key]; }, reportValidity() { return !this.error; } });
   }
   nodes.get('f-naam').value = input.naam;
   nodes.get('f-bericht').value = input.bericht;
+  nodes.get('f-email').value = input.email;
   nodes.get('contact-fields').hidden = false;
-  nodes.get('contact-fields').reportValidity = () => valid && !nodes.get('f-naam').error && !nodes.get('f-bericht').error;
+  nodes.get('contact-fields').reportValidity = () => valid && !nodes.get('f-naam').error && !nodes.get('f-bericht').error && !nodes.get('f-email').error;
   const location = { href: '' }, copied = [], requests = [];
   vm.runInNewContext(source, {
     document: { getElementById: id => nodes.get(id), querySelectorAll: () => [] },
-    window: { location },
+    window: { location, NijtecEmailValidation: require('../email-validation.js') },
     navigator: { clipboard: { async writeText(text) { if (clipboardFails) throw new Error('Denied'); copied.push(text); } } },
     FormData: class { get(key) { return input[key]; } },
     AbortSignal,
@@ -110,4 +111,26 @@ test('failed or uncertain delivery never claims success or opens another app', a
 test('double submit sends only once while pending', async () => {
   const h=harness({enabled:true}); await Promise.all([h.submit(),h.submit()]);
   assert.equal(h.requests.length,1);
+});
+
+test('invalid email blocks send, mail handoff and copy even with a syntactically permissive browser',async()=>{
+  for(const email of ['naam@bedrijf','naam@bedrijf.','a..b@example.nl','naam@-bedrijf.nl','naam@bedrijf..nl']){
+    const h=harness({enabled:true,values:{email}});await h.submit();await h.copy();
+    assert.equal(h.requests.length,0,email);assert.equal(h.location.href,'');assert.equal(h.copied.length,0);
+    assert.equal(h.nodes.get('f-email-error').hidden,false);assert.equal(h.nodes.get('f-email').attributes['aria-invalid'],'true');
+  }
+});
+
+test('email error clears immediately after correction and after form reset',()=>{
+  const h=harness({values:{email:'naam@bedrijf'}}),field=h.nodes.get('f-email'),error=h.nodes.get('f-email-error');
+  field.handlers.blur();assert.equal(error.hidden,false);
+  field.value='naam+offerte@bedrijf.nl';field.handlers.input();assert.equal(error.hidden,true);assert.equal(field.error,'');
+  field.value='fout';field.handlers.blur();h.nodes.get('contact-fields').handlers.reset();assert.equal(error.hidden,true);assert.equal(field.error,'');
+});
+
+test('server email rejection focuses the address without claiming success or opening mail',async()=>{
+  const h=harness({enabled:true,sendStatus:400,sendResult:{code:'INVALID_EMAIL'}});await h.submit();
+  assert.equal(h.nodes.get('f-email').focused,true);assert.equal(h.nodes.get('f-email-error').hidden,false);
+  assert.equal(h.nodes.get('contact-handoff').hidden,true);assert.equal(h.location.href,'');
+  assert.equal(h.nodes.get('form-submit-btn').disabled,false);
 });

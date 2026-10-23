@@ -115,13 +115,16 @@ async function audit(width){
  $('#prefill-clear-btn').click();
  const accordion=$('.av-header');accordion.click();record(width+' px: voorwaarden openen/sluiten',$('.av-body').classList.contains('open'));accordion.click();
  record(width+' px: formulierlabels gekoppeld',all('#contact-fields input,#contact-fields textarea,#contact-fields select').every(e=>e.labels?.length));
+ record(width+' px: Quickbond-artikel vindbaar',$('.qb-article-link').getAttribute('href')==='/blog/quickbond-gevelbeplating-verlijmen/');
  record(width+' px: berichtvak groter en verticaal verstelbaar',$('#f-bericht').getBoundingClientRect().height>=240&&w.getComputedStyle($('#f-bericht')).resize==='vertical');
  record(width+' px: productpijlen blijven bij de tekst zonder overflow',all('.product-card-link').every(e=>{const r=e.getBoundingClientRect();return w.getComputedStyle(e).whiteSpace==='nowrap'&&r.right<=width+1&&e.scrollWidth<=e.clientWidth+1;}));
  const form=$('#contact-fields'); form.reset();
  record(width+' px: leeg formulier wordt geweigerd',!form.checkValidity());
  $('#f-naam').value='QA & Nijtec';$('#f-email').value='geen-email';$('#f-bericht').value='Testvraag';
  record(width+' px: onjuist e-mailadres wordt geweigerd',!form.checkValidity());
- $('#f-email').value='qa@example.invalid';$('#f-bedrijf').value='Testbedrijf';
+ const badEmails=['naam@bedrijf','naam@bedrijf.','naam@bedrijf.c','a..b@bedrijf.nl','naam@-bedrijf.nl'];
+ record(width+' px: incomplete en ongeldige e-mailadressen geweigerd',badEmails.every(value=>{const e=$('#f-email');e.value=value;e.dispatchEvent(new w.Event('input',{bubbles:true}));return !form.checkValidity()&&!$('#f-email-error').hidden&&e.getAttribute('aria-invalid')==='true';}));
+ $('#f-email').value='qa@example.invalid';$('#f-email').dispatchEvent(new w.Event('input',{bubbles:true}));$('#f-bedrijf').value='Testbedrijf';
  record(width+' px: geldig formulier geaccepteerd',form.checkValidity());
  $('#f-bericht').value='Lange vraag met é, &, ? en #. '.repeat(100);
  form.requestSubmit();await settle();
@@ -148,7 +151,7 @@ async function audit(width){
  record(width+' px: geen runtimefouten',w.__qaErrors.length===0,w.__qaErrors.join('; '));
 }
 async function auditRoutes(){
- const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/2-componenten-lijmen/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/producten/luchtdicht-bouwen/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/'];
+ const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/2-componenten-lijmen/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/producten/luchtdicht-bouwen/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/','/blog/quickbond-gevelbeplating-verlijmen/'];
  frame.width=390;frame.height=844;
  for(const route of routes){
   await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa='+Date.now();});
@@ -158,6 +161,13 @@ async function auditRoutes(){
  }
  const missing=await fetch('/dit-bestaat-niet/');record('Onbekende pagina geeft echte 404',missing.status===404);
  const old=await fetch('/wp-sitemap.xml');record('Oude sitemap verwijst door naar nieuwe sitemap',old.ok&&old.url.endsWith('/sitemap.xml'));
+ for(const width of [390,768,1440]){
+  frame.width=width;await new Promise(resolve=>{frame.onload=resolve;frame.src='/blog/quickbond-gevelbeplating-verlijmen/?qa='+Date.now();});
+  const w=frame.contentWindow,d=w.document;await d.fonts.ready;await pause(100);
+  const img=d.querySelector('.blog-figure img');await img.decode();
+  const copy=d.querySelector('.blog-copy'),figure=d.querySelector('.blog-figure');
+  record(width+' px: blog leesbaar met echt projectbeeld zonder overlap',img.naturalWidth===1600&&d.documentElement.scrollWidth<=w.innerWidth+1&&!overlaps(copy.getBoundingClientRect(),figure.getBoundingClientRect())&&parseFloat(w.getComputedStyle(copy.querySelector('p')).fontSize)>=18&&d.querySelector('.blog-contact-link').getAttribute('href')==='#contact'&&w.__qaErrors.length===0);
+ }
 }
 async function run(){
  document.getElementById('run').disabled=true;checks=[];results.replaceChildren();

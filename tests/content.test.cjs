@@ -9,7 +9,7 @@ const inventory=require('../seo/legacy-inventory.json');
 const htmlFor=route=>fs.readFileSync(path.join(root,'dist',route,'index.html'),'utf8');
 const section=(html,id)=>html.match(new RegExp('<section[^>]*id="'+id+'"[^>]*>[\\s\\S]*?<\\/section>'))?.[0];
 
-test('all 17 contact sections show the supplied VAT number directly after KvK',()=>{
+test('all generated contact sections show the supplied VAT number directly after KvK',()=>{
   for(const route of ['/',...pages.map(p=>p.path)]){
     const html=htmlFor(route),contact=section(html,'contact');
     assert.match(contact,/KvK<\/div><div>95043780<\/div><\/div>\s*<div class="contact-item"><div class="contact-item-icon">BTW<\/div><div>NL866979001\.B01<\/div>/,route);

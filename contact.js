@@ -7,6 +7,8 @@
   const copyText = document.getElementById('contact-copy-text');
   const submit = document.getElementById('form-submit-btn');
   const copy = document.getElementById('contact-copy-btn');
+  const email = document.getElementById('f-email');
+  const emailError = document.getElementById('f-email-error');
   const recipient = 'info@nijtec.nl';
   let delivery = { enabled: false };
   let sending = false;
@@ -66,10 +68,31 @@
       const input = document.getElementById(id);
       input.setCustomValidity(input.value.trim() ? '' : 'Vul dit veld in.');
     });
+    checkEmail(true);
     return form.reportValidity();
   }
 
-  form.addEventListener('input', event => event.target.setCustomValidity?.(''));
+  function checkEmail(showError = false) {
+    const valid = window.NijtecEmailValidation.isValid(email.value);
+    email.setCustomValidity(valid ? '' : 'Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.nl.');
+    if (valid || showError || !emailError.hidden) {
+      emailError.hidden = valid;
+      email.setAttribute('aria-invalid', String(!valid));
+    }
+    return valid;
+  }
+
+  email.addEventListener('blur', () => { if (email.value || !emailError.hidden) checkEmail(true); });
+  email.addEventListener('input', () => checkEmail());
+  email.addEventListener('change', () => checkEmail());
+  email.addEventListener('invalid', () => checkEmail(true));
+  form.addEventListener('reset', () => {
+    email.setCustomValidity('');
+    email.removeAttribute('aria-invalid');
+    emailError.hidden = true;
+  });
+
+  form.addEventListener('input', event => { if (event.target !== email) event.target.setCustomValidity?.(''); });
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (sending || !validate()) return;
@@ -88,6 +111,14 @@
           signal: AbortSignal.timeout(25000)
         });
         const result = await response.json();
+        if (!response.ok && result.code === 'INVALID_EMAIL') {
+          email.setCustomValidity('Controleer uw e-mailadres, bijvoorbeeld naam@bedrijf.nl.');
+          emailError.hidden = false;
+          email.setAttribute('aria-invalid', 'true');
+          email.focus();
+          email.reportValidity();
+          return;
+        }
         if (!response.ok || result.ok !== true) throw new Error(result.code || 'SEND_FAILED');
         showStatus('Uw bericht is aangeboden aan de mailserver van Nijtec. Een bestelaanvraag is pas definitief na bevestiging door Nijtec.');
         // Keep all inputs intact. Do not automatically retry an uncertain send.

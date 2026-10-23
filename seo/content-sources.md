@@ -32,3 +32,28 @@ De kleine beelden bij luchtdicht bouwen worden niet boven hun bronformaat vergro
 
 BTW NL866979001.B01 is door de gebruiker opgegeven en stond ook onder de oude
 bedrijfstekst. Het is toegevoegd aan het zichtbare contactblok en structured data.
+
+## Quickbond-artikel, 23 oktober 2026
+
+Op expliciet verzoek is een uitlegartikel toegevoegd zonder verzonnen klantvragen.
+Zoekopdrachten naar Nijtec Quickbond, verwerking, primer en droogtijd leverden vooral
+Nijtecs bestaande productpagina, bedrijfsverhaal en projecten op. Er is geen
+betrouwbare verzameling echte klantvragen of zoekvolume vastgesteld.
+
+Primaire bronnen voor de beperkte productfeiten en bestaande praktijkvoorbeelden:
+
+- https://nijtec.nl/producten/quickbond/ (ook oude tekst uit de zoekindex): hoge
+  aanvangskleefkracht, gevelbeplating/steenstrips, leveringsvormen.
+- https://nijtec.nl/over-ons/ (oude tekst uit de zoekindex): toepassingen zonder
+  primer/paneltape, technisch advies en montage.
+- https://nijtec.nl/projecten/: bestaande projectonderschriften. Het gebruikte
+  hero-project.jpg is een bestaande, visueel gecontroleerde Nijtec-projectfoto.
+
+Resultaten over ARDEX Quickbond tegellijm en ITENA QuickBond tandheelkunde zijn
+andere producten en leveren geen specificaties voor Nijtec. Er is geen actuele
+Quickbond-TDS verkregen. Daarom bevat het artikel geen verzonnen droogtijd,
+lijmrilmaat, verbruik, draagkracht, keurmerk of universele montagevrijgave. Het
+artikel verwijst voor uitvoering naar de actuele project-/verwerkingsinformatie.
+De checklist met aan te leveren projectgegevens is redactionele uitleg, niet een
+beweerde lijst van echte vragen. Auteur is de organisatie Nijtec B.V., niet een
+verzonnen klant of een zogenaamd door André beoordeeld artikel.
