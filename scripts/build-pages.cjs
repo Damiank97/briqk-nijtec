@@ -80,8 +80,11 @@ async function run(){
     else if(page.terms)content='<article class="detail-copy legal-copy">'+legal.html+'</article>';
     else content='<article class="detail-copy"><h2>'+escape(page.heading)+'</h2><p>'+escape(page.text)+'</p><ul>'+page.items.map(t=>'<li>'+escape(t)+'</li>').join('')+'</ul><p><a href="'+page.related+'">Bekijk ook '+escape(pages.find(p=>p.path===page.related)?.title || 'de toepassing')+' →</a></p><p>Vraag Nijtec naar actuele beschikbaarheid en de verwerkingsinformatie voor uw toepassing.</p></article>';
     if(!page.section && !page.index && !page.terms && !page.article){
-      const photos=media.filter(m=>m.usedOn.includes(page.path));
-      if(photos.length)content+='<div class="detail-media">'+photos.map(m=>'<a href="'+escape(m.path)+'"><img src="'+escape(m.path)+'" alt="'+escape(page.title+': '+path.basename(m.path).replace(/\.[^.]+$/,'').replace(/[-_]/g,' '))+'" width="'+m.width+'" height="'+m.height+'" loading="lazy"><span>'+escape(path.basename(m.path).replace(/\.[^.]+$/,'').replace(/[-_]/g,' '))+'</span></a>').join('')+'</div>';
+      if(page.photos)content+='<div class="modal-gallery detail-featured-products">'+page.photos.map(m=>'<figure class="modal-product-photo"><a class="modal-photo-link" href="'+escape(m.src)+'" target="_blank" rel="noopener"><img src="'+escape(m.src)+'" alt="'+escape(m.name)+'" width="'+m.width+'" height="'+m.height+'" loading="lazy"></a><figcaption>'+escape(m.name)+'</figcaption><p class="product-photo-description">'+escape(m.description)+'</p><ul class="product-photo-features">'+m.features.map(t=>'<li>'+escape(t)+'</li>').join('')+'</ul>'+(m.document?'<a class="product-document-link" href="'+escape(m.document.src)+'" target="_blank" rel="noopener">'+escape(m.document.label)+'</a>':'')+'</figure>').join('')+'</div>';
+      else{
+        const photos=media.filter(m=>m.usedOn.includes(page.path));
+        if(photos.length)content+='<div class="detail-media">'+photos.map(m=>'<a href="'+escape(m.path)+'"><img src="'+escape(m.path)+'" alt="'+escape(page.title+': '+path.basename(m.path).replace(/\.[^.]+$/,'').replace(/[-_]/g,' '))+'" width="'+m.width+'" height="'+m.height+'" loading="lazy"><span>'+escape(path.basename(m.path).replace(/\.[^.]+$/,'').replace(/[-_]/g,' '))+'</span></a>').join('')+'</div>';
+      }
     }
     const intro='<header class="detail-intro"><div class="detail-breadcrumb"><a href="/">Home</a> / '+(page.path.startsWith('/producten/')&&page.path!=='/producten/'?'<a href="/producten/">Producten</a> / ':'')+'<span>'+escape(page.title)+'</span></div><h1>'+escape(page.title)+'</h1><p>'+escape(page.intro)+'</p></header>';
     const main='<main id="top" class="detail-page">'+intro+(page.section?content:'<div class="detail-body">'+content+'</div>')+(page.section==='contact'?'':contacts)+'</main>';
@@ -90,7 +93,11 @@ async function run(){
     const dir=path.join(out,page.path);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'index.html'),html);
   }
   const urls=['/',...pages.map(p=>p.path)];
-  const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>'<url><loc>'+origin+route+'</loc>'+media.filter(m=>m.usedOn.includes(route)).map(m=>'<image:image><image:loc>'+escape(origin+m.path)+'</image:loc></image:image>').join('')+(pages.find(p=>p.path===route)?.article?'<image:image><image:loc>'+origin+pages.find(p=>p.path===route).article.image+'</image:loc></image:image>':'')+'</url>').join('')+'</urlset>\n';
+  const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>{
+    const page=pages.find(p=>p.path===route);
+    const images=new Set([...media.filter(m=>m.usedOn.includes(route)).map(m=>m.path),...(page?.photos||[]).map(m=>m.src),...(route==='/'?Object.values(productMedia).flat().map(m=>m.src):[]),...(page?.article?[page.article.image]:[])]);
+    return '<url><loc>'+origin+route+'</loc>'+[...images].map(src=>'<image:image><image:loc>'+escape(origin+src)+'</image:loc></image:image>').join('')+'</url>';
+  }).join('')+'</urlset>\n';
   await fs.writeFile(path.join(out,'sitemap.xml'),sitemap);
   await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://nijtec.nl/sitemap.xml\n');
   await fs.writeFile(path.join(out,'404.html'),'<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Pagina niet gevonden | Nijtec</title><link rel="stylesheet" href="/redesign.css?v=20"><main class="detail-intro"><h1>Deze pagina bestaat niet.</h1><p><a href="/">Ga naar Nijtec</a> of bekijk <a href="/producten/">het assortiment</a>.</p></main></html>');

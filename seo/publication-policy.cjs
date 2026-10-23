@@ -1,6 +1,7 @@
 // Historical import is provenance, not permission to publish the current offer.
 // Visually reviewed on 2026-10-23. New imports require an explicit review here.
 const retiredRoutes = Object.freeze(['/producten/luchtdicht-bouwen/']);
+const movedRoutes = Object.freeze({'/producten/2-componenten-lijmen/':'/producten/chemisch-anker/'});
 const excludedFiles = Object.freeze(['elastic-gunfoam-b2.png','compressband-2d.png','BUTYLBAND-FLEECE.jpg','zwaluw.png']);
 const reviewedOctoberFiles = [
   'xample11.png','example10.png','example09.png','example08.jpg','example07.jpg','example06.jpg','example05.jpg','example04.jpg','example03.jpg','example02.jpg','example01.jpg',
@@ -14,7 +15,7 @@ const reviewedOctoberFiles = [
 const prefix = '/wp-content/uploads/2023/10/';
 const reviewedPaths = new Set([...reviewedOctoberFiles.map(file => prefix + file), '/wp-content/uploads/2023/11/Silicon-ep-217.png']);
 const excludedPaths = Object.freeze(excludedFiles.map(file => prefix + file));
-const isPagePublished = route => !retiredRoutes.includes(route);
+const isPagePublished = route => !retiredRoutes.includes(route) && !Object.hasOwn(movedRoutes,route);
 function publishedMedia(inventory) {
   for (const media of inventory.media) {
     if (!reviewedPaths.has(media.path) && !excludedPaths.includes(media.path)) throw new Error('Media review required: ' + media.path);
@@ -22,4 +23,4 @@ function publishedMedia(inventory) {
   }
   return inventory.media.filter(media => reviewedPaths.has(media.path) && media.usedOn.some(isPagePublished));
 }
-module.exports = {retiredRoutes, excludedPaths, isPagePublished, publishedMedia};
+module.exports = {retiredRoutes, movedRoutes, excludedPaths, isPagePublished, publishedMedia};

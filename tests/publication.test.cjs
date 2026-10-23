@@ -26,7 +26,7 @@ test('retired category, competitor originals and every known alias are absent fr
 test('historical records remain private and new unreviewed imports fail closed',()=>{
   assert.equal(inventory.pages.length,17);
   assert.equal(inventory.media.length,108);
-  assert.equal(policy.publishedMedia(inventory).length,104);
+  assert.equal(policy.publishedMedia(inventory).length,103);
   for(const name of ['seo','legacy-assets','tests','__qa'])assert.ok(!fs.existsSync(path.join(dist,name)),name);
   assert.throws(()=>policy.publishedMedia({media:[...inventory.media,{path:'/wp-content/uploads/2023/10/new-unreviewed.png'}]}),/Media review required/);
   assert.throws(()=>policy.publishedMedia({media:[{...inventory.media[0],source:'https://other.example/image.png'}]}),/Unexpected original media path/);
@@ -34,7 +34,7 @@ test('historical records remain private and new unreviewed imports fail closed',
 
 test('published popup data only uses approved originals and remaining index numbering is sequential',()=>{
   const media=require('../seo/product-media.cjs');
-  const approved=new Set(policy.publishedMedia(inventory).map(m=>m.path));
+  const approved=new Set([...policy.publishedMedia(inventory),...require('../seo/supplied-assets.cjs')].map(m=>m.path));
   for(const image of Object.values(media).flat())assert.ok(approved.has(image.src),image.src);
   const html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
   const numbers=[...html.matchAll(/class="product-card-icon">(\d{2}) \/ /g)].map(m=>m[1]);

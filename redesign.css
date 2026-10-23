@@ -1433,6 +1433,15 @@ footer {
 .modal-media .modal-media-note { margin: 14px 0 0; color: var(--ink-soft); font-size: 13px; line-height: 1.65; }
 .modal-photo-link:hover { border-color: var(--nijtec-blue); }
 .modal-photo-link:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.product-photo-description, .product-photo-features { color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
+.product-photo-description { margin: 12px 0; }
+.product-photo-features { margin: 12px 0; padding-left: 20px; }
+.product-photo-features li + li { margin-top: 8px; }
+.product-document-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); font-size: 14px; line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
+.product-document-link:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.detail-featured-products { margin-top: 48px; }
+.detail-featured-products .modal-photo-link { height: 260px; }
+@media (max-width: 600px) { .detail-featured-products, .modal-gallery--detailed { grid-template-columns: 1fr; } }
 @media (max-width: 380px) { .modal-photo-link { height: 190px; } }
 
 .modal-desc {

@@ -16,10 +16,10 @@ test('Domain routing has a single owner and production HTML has no hidden demo b
  assert.ok(config.redirects.every(r=>!r.has?.some(c=>c.type==='host')),'Manage primary domain redirects in Vercel Domains only');
  assert.ok(!htmlFor('/').includes('<div class="demo-banner">'));
 });
-test('All 16 retained original page addresses have real, uniquely titled HTML',()=>{
+test('All 15 retained original page addresses have real, uniquely titled HTML',()=>{
  const titles=[];
  assert.equal(inventory.pages.length,17);
- assert.equal(activeOriginalPages.length,16);
+ assert.equal(activeOriginalPages.length,15);
  for(const page of activeOriginalPages){
   const html=htmlFor(page.path);
   assert.equal((html.match(/<h1\b/g)||[]).length,1,page.path);
@@ -28,7 +28,7 @@ test('All 16 retained original page addresses have real, uniquely titled HTML',(
   assert.ok(!html.includes('name="robots" content="noindex'),page.path);
   titles.push(html.match(/<title>(.*?)<\/title>/)[1]);
  }
- assert.equal(new Set(titles).size,16);
+ assert.equal(new Set(titles).size,15);
 });
 
 test('Every page including the article has unique metadata, one H1 and matching canonical/social URL',()=>{
@@ -67,9 +67,9 @@ test('Generated static pages have usable internal links, anchors, media and stru
   if(route!=='/')assert.ok(graph.find(x=>x['@type']==='BreadcrumbList'));
  }
 });
-test('104 reviewed original image URLs exist; every retained variant/attachment redirect resolves without chains',()=>{
+test('103 reviewed original image URLs exist; every retained variant/attachment redirect resolves without chains',()=>{
  assert.equal(inventory.media.length,108);
- assert.equal(activeMedia.length,104);
+ assert.equal(activeMedia.length,103);
  const redirects=config.redirects.filter(r=>!r.has);
  const sources=new Set(redirects.map(r=>r.source));
  assert.equal(sources.size,redirects.length);

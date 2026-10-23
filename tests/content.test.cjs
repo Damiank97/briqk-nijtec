@@ -30,13 +30,13 @@ test('home and existing about URL share the factual company story and contact pe
 });
 
 test('all seven active popup categories use reviewed original media and accurate dimensions',()=>{
-  assert.deepEqual(Object.keys(media),['lijmen','kitten','pu','coatings','2comp','steenstrips','acrylaten']);
+  assert.deepEqual(Object.keys(media),['lijmen','kitten','pu','coatings','anker','steenstrips','acrylaten']);
   let count=0;
   for(const photos of Object.values(media)){
     assert.ok(photos.length);
     for(const photo of photos){
       count++;
-      const original=inventory.media.find(m=>m.path===photo.src);
+      const original=[...inventory.media,...require('../seo/supplied-assets.cjs')].find(m=>m.path===photo.src);
       assert.ok(original,photo.src);
       assert.equal(original.width,photo.width);assert.equal(original.height,photo.height);
       assert.ok(fs.statSync(path.join(root,'dist',photo.src)).size>0);

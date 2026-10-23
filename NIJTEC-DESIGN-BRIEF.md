@@ -61,8 +61,14 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 - Producten en voordelen zijn genummerde registerregels, geen kaarten.
 - Projectfoto's behouden hun natuurlijke beeldverhouding en captions staan
   onder het beeld. Geen gradient-overlay op fotografie.
-- De zeven productpop-ups tonen twaalf gecontroleerde product- of toepassingsfoto's
-  uit de oude site. Labels volgen het zichtbare etiket, niet alleen de soms
+- De zeven productpop-ups tonen twaalf gecontroleerde product- of toepassingsfoto's.
+  De gebruiker leverde actuele originelen voor Seal-it 478 PU-Stonefix, 479
+  PU-Foam Gun Black en 720 Chem-Fix. Toon 479 en 478 met eigen uitleg binnen PU;
+  720 vervangt de algemene 2-componentenlijmen-categorie als Chemisch anker.
+  Maak expliciet dat de getoonde producten een selectie zijn. Productbladen
+  voor 479 en 720 zijn gekoppeld; inventeer geen 478-productblad of technische
+  waarden. Behoud belangrijke beperkingen en volg de geleverde documentatie.
+  Labels volgen het zichtbare etiket, niet alleen de soms
   onjuiste bestandsnaam. Kleine beelden worden niet opgeblazen. Originele foto's
   openen via een gewone link; de pop-up blijft beschikbaar in het vorige tabblad.
 - Over Nijtec is het welkomstverhaal direct onder het openingsbeeld, vóór de

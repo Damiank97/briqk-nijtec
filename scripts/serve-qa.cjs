@@ -5,7 +5,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '../dist');
 const config = require('../vercel.json');
 const contact = require('../api/contact.js');
-const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.png':'image/png', '.svg':'image/svg+xml', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.json':'application/json' };
+const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.png':'image/png', '.svg':'image/svg+xml', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.json':'application/json', '.pdf':'application/pdf' };
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://127.0.0.1:4173');

@@ -8,7 +8,8 @@ De nieuwe site staat inmiddels op het Nijtec-domein. De Microsoft 365-verzendpro
 is op 22 oktober daadwerkelijk ontvangen volgens de gebruiker; de oude vermelding
 van alleen een mailconcept geldt nu uitsluitend voor de terugvalroute.
 
-De build bevat nu 17 pagina's: 16 behouden oorspronkelijke adressen en één nieuw
+De build bevat nu 17 pagina's: 15 behouden oorspronkelijke adressen, de nieuwe
+`/producten/chemisch-anker/`-pagina en één nieuw
 Quickbond-artikel op `/blog/quickbond-gevelbeplating-verlijmen/`. Het artikel heeft
 direct leesbare HTML, organisatie als auteur, publicatiedatum, BlogPosting-data,
 interne links vanaf homepage/productpagina/footer en opname in de sitemap met
@@ -20,6 +21,12 @@ afbeeldingen en hun thumbnail-/attachment-redirects worden niet gepubliceerd.
 Zonder inhoudelijk equivalente vervanging krijgt de oude URL een echte 404,
 geen misleidende homepage-redirect of robots-blokkade. Bronarchief is geen
 publicatiebron zonder de beoordeling in `seo/publication-policy.cjs`.
+
+De oude `/producten/2-componenten-lijmen/` verwijst permanent naar de nieuwe
+chemisch-ankerpagina met Seal-it 720 Chem-Fix. De bijbehorende Poxyfix-foto en
+oude verwijzingen zijn vervallen. Aangeleverde 478/479/720-foto's en de 479/720-
+productbladen zijn ongewijzigd toegevoegd. Producttekst staat ook direct leesbaar
+op de PU- en chemisch-ankerpagina, met eigen metadata en opname in de sitemap.
 
 De geautomatiseerde SEO-controle gaat over alle 17 pagina's: unieke titles en
 beschrijvingen, één H1, canonical/social-URL, interne links, media, bedrijfsgegevens,
@@ -51,11 +58,11 @@ Google bepaalt zelf rankings, snippets, sitelinks en het uiterlijk van het bedri
 
 ## In deze versie geregeld
 
-- 16 behouden openbare WordPress-pagina’s hebben echte, direct leesbare HTML op hun bestaande adres. Onder andere `/over-ons/`, `/contact/`, `/producten/quickbond/`, `/producten/coatings/` en `/producten/vullende-lijmende-pu-schuimen/`.
+- 15 behouden openbare WordPress-pagina’s hebben echte, direct leesbare HTML op hun bestaande adres. Onder andere `/over-ons/`, `/contact/`, `/producten/quickbond/`, `/producten/coatings/` en `/producten/vullende-lijmende-pu-schuimen/`. De oude 2-componentenlijmen-URL verwijst naar de chemisch-ankerpagina.
 - Unieke paginatitels, beschrijvingen, één H1, Nederlandse taalinstelling, logische interne links en zelfverwijzende canonicals naar `https://nijtec.nl/`.
 - LocalBusiness-, WebSite- en op vervolgpagina’s WebPage- en BreadcrumbList-data, met consistente naam, telefoon, adres en e-mail. Geen verzonnen reviews, openingstijden, voorraad of aanbiedingen in de data.
-- XML-sitemap met de 16 behouden oorspronkelijke pagina’s en het nieuwe artikel, plus beoordeelde afbeelding-URL’s; robots.txt verwijst naar de productiesitemap. Oude WordPress-sitemapadressen krijgen een permanente verwijzing.
-- 104 beoordeelde oorspronkelijke afbeeldingen worden onder hun oude `/wp-content/uploads/…`-adres gepubliceerd. Alleen hun bekende WordPress-thumbnail- en attachment-adressen verwijzen permanent naar het bijbehorende origineel. Vier beelden van de vervallen categorie zijn uitgesloten. Projectfoto’s gebruiken ook in de nieuwe galerij die oorspronkelijke URL’s.
+- XML-sitemap met de 15 behouden oorspronkelijke pagina’s, chemisch anker en het nieuwe artikel, plus beoordeelde afbeelding-URL’s; robots.txt verwijst naar de productiesitemap. Oude WordPress-sitemapadressen krijgen een permanente verwijzing.
+- 103 beoordeelde oorspronkelijke afbeeldingen worden onder hun oude `/wp-content/uploads/…`-adres gepubliceerd. Alleen hun bekende WordPress-thumbnail- en attachment-adressen verwijzen permanent naar het bijbehorende origineel. Vier beelden van de vervallen categorie en de oude Poxyfix-foto zijn uitgesloten. Drie nieuwe aangeleverde productfoto's staan onder `/assets/products/`. Projectfoto’s gebruiken ook in de nieuwe galerij hun oorspronkelijke URL’s.
 - Het afgesproken hoofdadres is `https://nijtec.nl/`. Beheer de www-omleiding uitsluitend bij Vercel Domains: nijtec.nl dient de productieversie, www.nijtec.nl verwijst daarnaar door. Geen tweede hostomleiding in vercel.json; die kan met een omgekeerde dashboardinstelling een redirectlus voor assets veroorzaken. Bestaande inhoudelijke pagina-adressen krijgen geen algemene homepage-redirect. Onbekende adressen krijgen een echte 404.
 - Vercel-testdomeinen krijgen `X-Robots-Tag: noindex, follow`, zodat zij niet met de productiesite concurreren. Die regel geldt niet voor nijtec.nl.
 - Alle 20 gepubliceerde artikelen van de algemene voorwaarden zijn zonder inhoudelijke herformulering overgenomen, inclusief de volledige pagina. Dit is geen juridische actualiteitscontrole.

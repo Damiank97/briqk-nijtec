@@ -93,6 +93,8 @@ async function audit(width){
   card.focus();card.click();await settle();
   const media=all('#modal-gallery img');await Promise.all(media.map(img=>img.decode().catch(()=>{})));
   record(width+' px: productfoto\'s '+card.dataset.modal,media.length>0&&media.every(img=>img.complete&&img.naturalWidth>0&&img.alt&&img.parentElement.target==='_blank'&&img.parentElement.rel.includes('noopener')&&!overlaps(visibleRect(img,w),img.closest('figure').querySelector('figcaption').getBoundingClientRect())));
+  if(card.dataset.modal==='pu')record(width+' px: 479 en 478 met eigen eigenschappen en productblad',media[0]?.alt.includes('479')&&media[1]?.alt.includes('478')&&$('#modal-gallery').textContent.includes('watervaste polyurethaanlijm')&&$('#modal-gallery').textContent.includes('Niet UV-bestendig')&&all('#modal-gallery .product-document-link').length===1&&(width>600||all('#modal-gallery figure').every(f=>f.getBoundingClientRect().width>width*.7)));
+  if(card.dataset.modal==='anker')record(width+' px: chemisch anker met juiste foto, productblad en aanvraagcontext',media[0]?.alt.includes('720 Chem-Fix')&&$('#modal-gallery').textContent.includes('ETA 19/0799')&&$('#modal-gallery .product-document-link').href.endsWith('/assets/documents/seal-it-720-chem-fix.pdf')&&$('#modal-cta-btn').dataset.product==='Seal-it 720 Chem-Fix');
   const opened=$('#modal-overlay').classList.contains('open')&&$('#modal-title').textContent.trim()===card.querySelector('h3').textContent.trim();
   const focusInside=$('#modal').contains(d.activeElement);
   const y=w.scrollY;
@@ -152,7 +154,7 @@ async function audit(width){
  record(width+' px: geen runtimefouten',w.__qaErrors.length===0,w.__qaErrors.join('; '));
 }
 async function auditRoutes(){
- const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/2-componenten-lijmen/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/','/blog/quickbond-gevelbeplating-verlijmen/'];
+ const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/chemisch-anker/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/','/blog/quickbond-gevelbeplating-verlijmen/'];
  frame.width=390;frame.height=844;
  for(const route of routes){
   await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa='+Date.now();});
@@ -165,6 +167,10 @@ async function auditRoutes(){
   const removed=await fetch(route);record('Verwijderd adres niet meer gepubliceerd: '+route,removed.status===404);
  }
  const old=await fetch('/wp-sitemap.xml');record('Oude sitemap verwijst door naar nieuwe sitemap',old.ok&&old.url.endsWith('/sitemap.xml'));
+ const moved=await fetch('/producten/2-componenten-lijmen/');record('Oude categorie verwijst naar chemisch anker',moved.ok&&moved.url.endsWith('/producten/chemisch-anker/'));
+ for(const route of ['/assets/documents/seal-it-479-pu-foam-gun-black.pdf','/assets/documents/seal-it-720-chem-fix.pdf']){
+  const pdf=await fetch(route);record('Productblad bereikbaar: '+route,pdf.ok&&pdf.headers.get('content-type')==='application/pdf');
+ }
  for(const width of [390,768,1440]){
   frame.width=width;await new Promise(resolve=>{frame.onload=resolve;frame.src='/blog/quickbond-gevelbeplating-verlijmen/?qa='+Date.now();});
   const w=frame.contentWindow,d=w.document;await d.fonts.ready;await pause(100);

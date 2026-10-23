@@ -58,6 +58,11 @@
       "permanent": true
     },
     {
+      "source": "/producten/2-componenten-lijmen",
+      "destination": "/producten/chemisch-anker/",
+      "permanent": true
+    },
+    {
       "source": "/wp-content/uploads/2023/11/Silicon-ep-217-121x150.png",
       "destination": "/wp-content/uploads/2023/11/Silicon-ep-217.png",
       "permanent": true
@@ -1020,36 +1025,6 @@
     {
       "source": "/cleaner510",
       "destination": "/wp-content/uploads/2023/10/cleaner510.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/poxyfix-480x720.png",
-      "destination": "/wp-content/uploads/2023/10/poxyfix.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/poxyfix-683x1024.png",
-      "destination": "/wp-content/uploads/2023/10/poxyfix.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/poxyfix-150x150.png",
-      "destination": "/wp-content/uploads/2023/10/poxyfix.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/poxyfix-768x1152.png",
-      "destination": "/wp-content/uploads/2023/10/poxyfix.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/poxyfix-1024x1536.png",
-      "destination": "/wp-content/uploads/2023/10/poxyfix.png",
-      "permanent": true
-    },
-    {
-      "source": "/producten/2-componenten-lijmen/attachment/poxyfix",
-      "destination": "/wp-content/uploads/2023/10/poxyfix.png",
       "permanent": true
     },
     {

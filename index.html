@@ -439,7 +439,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/redesign.css?v=22">
+  <link rel="stylesheet" href="/redesign.css?v=23">
 <script src="/motion.js?v=1" defer></script>
 <script src="/email-validation.js?v=1" defer></script>
 <script src="/contact.js?v=4" defer></script>
@@ -609,12 +609,13 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 <section class="products" id="producten">
   <div class="section-label">Assortiment</div>
   <h2 class="section-title">Producten voor werkplaats en bouwplaats.</h2>
+  <p class="section-sub">Hieronder ziet u een selectie uit ons assortiment. Wij leveren onder andere deze producten. Vraag Nijtec naar overige producten en uitvoeringen.</p>
   <div class="products-grid">
     <div class="product-card" data-modal="lijmen" role="button" tabindex="0"><div class="product-card-icon">01 / LIJMEN</div><h3>Lijmen</h3><p>Voor hout, beton, metaal, kunststof en constructiepanelen.</p><div class="product-card-link">Bekijk lijmen →</div></div>
     <div class="product-card" data-modal="kitten" role="button" tabindex="0"><div class="product-card-icon">02 / KITTEN</div><h3>Kitten</h3><p>Voor voegen, gevels, ramen, deuren en sanitaire ruimten.</p><div class="product-card-link">Bekijk kitten →</div></div>
-    <div class="product-card" data-modal="pu" role="button" tabindex="0"><div class="product-card-icon">03 / PU</div><h3>PU-schuimen</h3><p>Voor vullen, isoleren en monteren.</p><div class="product-card-link">Bekijk PU-schuimen →</div></div>
+    <div class="product-card" data-modal="pu" role="button" tabindex="0"><div class="product-card-icon">03 / PU</div><h3>PU-schuimen</h3><p>Onder andere Seal-it 479 Gun Black en 478 PU-Stonefix.</p><div class="product-card-link">Bekijk PU-schuimen →</div></div>
     <div class="product-card" data-modal="coatings" role="button" tabindex="0"><div class="product-card-icon">04 / COATINGS</div><h3>Coatings</h3><p>Voor wand, vloer, dak en bestaande tegelondergronden.</p><div class="product-card-link">Bekijk coatings →</div></div>
-    <div class="product-card" data-modal="2comp" role="button" tabindex="0"><div class="product-card-icon">05 / 2-COMP</div><h3>2-component lijmen</h3><p>Voor zwaar belaste en chemisch bestendige verbindingen.</p><div class="product-card-link">Bekijk 2-component →</div></div>
+    <div class="product-card" data-modal="anker" role="button" tabindex="0"><div class="product-card-icon">05 / ANKER</div><h3>Chemisch anker</h3><p>Seal-it 720 Chem-Fix voor draadeinden, schroeven en bouten.</p><div class="product-card-link">Bekijk chemisch anker →</div></div>
     <div class="product-card" data-modal="steenstrips" role="button" tabindex="0"><div class="product-card-icon">06 / STEEN</div><h3>Steenstrips</h3><p>Voor gevels, entrees, tuinmuren en binnenwanden.</p><div class="product-card-link">Bekijk steenstrips →</div></div>
     <div class="product-card" data-modal="acrylaten" role="button" tabindex="0"><div class="product-card-icon">07 / ACRYLAAT</div><h3>Acrylaten</h3><p>Voor overschilderbare kieren, voegen en binnenwerk.</p><div class="product-card-link">Bekijk acrylaten →</div></div>
   </div>
@@ -818,9 +819,9 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 const products = {
   lijmen:{icon:'01',title:'Lijmen',subtitle:'Professionele verlijmingsoplossingen',desc:'Lijmen voor hout, beton, metaal, kunststof en constructiepanelen. De materiaalcombinatie, belasting en gewenste werktijd bepalen welk product geschikt is.',props:['Hoge initiële kleefkracht voor directe bevestiging','Geschikt voor diverse ondergronden (hout, beton, metaal, kunststof)','Snelle doorharding voor korte werktijden','ISO 9001 gecertificeerde productie','Technisch advies beschikbaar bij productkeuze'],tags:['Houtverbinding','Gevelplaten','Vloerbedekkingen','Isolatiemateriaal','Constructiepanelen','Metaalbevestiging']},
   kitten:{icon:'02',title:'Kitten',subtitle:'Afdichting voor bouw en industrie',desc:'Sanitairkit en elastische voegkit voor natte ruimten, gevelaansluitingen, ramen en deuren. Leverbaar in verschillende kleuren en samenstellingen.',props:['Overschilderbaar na uitharding','Elastisch en scheurbestendig','Geschikt voor natte ruimten (sanitair, keuken)','UV-bestendig voor buitentoepassingen','Voldoet aan bouwbesluit eisen'],tags:['Sanitaire ruimten','Gevelvoegen','Dilatatievoegen','Raam & deur','Dak & dakkapel','Vloer & wand']},
-  pu:{icon:'03',title:'PU-schuimen',subtitle:'Vullend en lijmend polyurethaanschuim',desc:'Nijtec levert PU-schuimen en PU-lijmen voor vullen, isoleren en monteren. Een vullend schuim heeft een andere taak dan een lijmschuim. Bespreek ondergrond, voegbreedte en verwerking met Nijtec voor een passende productkeuze.',props:['Vullende schuimen en lijmschuimen','PU Foam Gun 470 en PU Foam Flex 471','Fire Foam 472 en PU Stonefix 478','PUR Cleaner 450 voor het gereedschap','Vraag naar de actuele verwerkingsinformatie'],tags:['Kozijnmontage','Vullen van naden','Thermische isolatie','Bouwkundige opvulling']},
+  pu:{icon:'03',title:'PU-schuimen',subtitle:'Seal-it 479 Gun Black en 478 PU-Stonefix',desc:'Nijtec levert onder andere zwart isolatie- en montageschuim en polyurethaanlijm voor steensoorten. Hieronder ziet u twee producten uit ons assortiment. Een montageschuim en een steenlijm hebben verschillende toepassingen; bespreek uw ondergrond en verwerking met Nijtec.',props:['Productkeuze afgestemd op de ondergrond','Advies over het passende pistool en de verwerking','Overige PU-producten en uitvoeringen op aanvraag'],tags:['Kozijnmontage','Voegen en montageruimten','Isoleren en opvullen','Verlijmen van steensoorten']},
   coatings:{icon:'04',title:'Coatings',subtitle:'Wand-, vloer- en dakcoatings',desc:'Coatings voor bestaande tegels, betonvloeren, platte daken en gevels. Bestaande tegelondergronden kunnen worden behandeld zonder eerst te slopen.',props:['Direct op tegels aanbrengen (geen sloop)','Waterdicht en stroef (vloertoepassingen)','UV-bestendig voor dakcoatings','Slijtvast en makkelijk te reinigen','Verkrijgbaar in diverse kleuren'],tags:['Badkamer & keuken','Garagevloer','Plat dak','Balkons','Gevels','Betonvloer']},
-  '2comp':{icon:'05',title:'2-component lijmen',subtitle:'Maximale hechtkracht voor zware toepassingen',desc:'Wanneer standaard lijmen niet voldoende zijn, bieden 2-component lijmen de ultieme verbindingssterkte. Ideaal voor constructieve verbindingen waarbij hoge belasting of chemische weerstand vereist is.',props:['Extreem hoge treksterkte en schuifsterkte','Bestand tegen chemicaliën en oplosmiddelen','Geschikt voor constructieve verbindingen','Instelbare verwerkingstijd (pot life)','Diverse mengverhoudingen beschikbaar'],tags:['Staalconstructies','Betonreparatie','Machine- & apparatenbouw','Marine toepassingen','Chemische industrie','Zwaar transport']},
+  anker:{icon:'05',title:'Chemisch anker',subtitle:'Seal-it 720 Chem-Fix',desc:'Seal-it 720 Chem-Fix is een gecertificeerd 2-componenten chemisch anker voor het verankeren van draadeinden, schroeven en bouten. De ondergrond, boordiameter, inbeddingsdiepte en uithardingstijd bepalen de juiste verwerking. Volg het technische productblad en de toepasselijke certificering.',props:['Gecertificeerd 2-componenten chemisch anker','Geschikt voor draadeinden, schroeven en bouten','Snelle krachtopbouw met extreem sterk eindresultaat','Niet geschikt voor constante waterbelasting of voegafdichting','Pas belasten na volledige uitharding'],tags:['Beton en metselwerk','Massieve en holle ondergronden','Kozijnen en bouwelementen','Hekwerk en leuningen']},
   steenstrips:{icon:'06',title:'Steenstrips',subtitle:'Steenuitstraling voor gevel en interieur',desc:'Lichtgewicht steenstrips voor gevels, entrees, tuinmuren en binnenwanden. De strips zijn met Quickbond te monteren zonder mechanische ankers.',props:['Licht van gewicht, zonder extra verzwaring','Direct te verlijmen met Quickbond (geen ankers nodig)','Vorstbestendig voor buitengebruik','Verkrijgbaar in diverse kleuren en formaten','Eenvoudig op maat te snijden'],tags:['Gevelbekleding','Interieurdecoratie','Schoorsteenmantel','Tuinmuur','Accentwand','Entree & portaal']},
   acrylaten:{icon:'07',title:'Acrylaten',subtitle:'Overschilderbare afdichting',desc:'Acrylaten voor kieren, voegen, plinten, lijsten en reparatiewerk binnen. Ze zijn op waterbasis, eenvoudig te verwerken en na uitharding overschilderbaar.',props:['Overschilderbaar na uitharding','Op waterbasis','Eenvoudig te verwerken met kitpistool','Verkrijgbaar in wit, grijs en transparant','Makkelijk bij te werken na droging'],tags:['Voeg & naad afdichting','Overschilderbare kieren','Houtverbindingen','Plinten & lijsten','Reparatiewerk','Binnenhuiswerk']}
 };
@@ -848,6 +849,7 @@ function openModal(key, trigger) {
   document.getElementById('modal-subtitle').textContent = p.subtitle;
   const media = JSON.parse(document.getElementById('product-media-data')?.textContent || '{}')[key] || [];
   const gallery = document.getElementById('modal-gallery');
+  gallery.classList.toggle('modal-gallery--detailed', media.some(photo => photo.description));
   gallery.replaceChildren();
   media.forEach(photo => {
     const figure = document.createElement('figure');
@@ -868,12 +870,34 @@ function openModal(key, trigger) {
     caption.textContent = photo.name;
     link.append(image);
     figure.append(link, caption);
+    if (photo.description) {
+      const description = document.createElement('p');
+      description.className = 'product-photo-description';
+      description.textContent = photo.description;
+      figure.append(description);
+    }
+    if (photo.features) {
+      const list = document.createElement('ul');
+      list.className = 'product-photo-features';
+      photo.features.forEach(text => { const item = document.createElement('li'); item.textContent = text; list.append(item); });
+      figure.append(list);
+    }
+    if (photo.document) {
+      const documentLink = document.createElement('a');
+      documentLink.href = photo.document.src;
+      documentLink.textContent = photo.document.label;
+      documentLink.className = 'product-document-link';
+      documentLink.target = '_blank';
+      documentLink.rel = 'noopener';
+      figure.append(documentLink);
+    }
     gallery.append(figure);
   });
   document.getElementById('modal-desc').textContent = p.desc;
   document.getElementById('modal-props').innerHTML = p.props.map(x=>`<div class="modal-prop">${x}</div>`).join('');
   document.getElementById('modal-tags').innerHTML = p.tags.map(x=>`<span class="modal-tag">${x}</span>`).join('');
   document.getElementById('modal-cta-btn').textContent = 'Vraag informatie over ' + p.title + ' →';
+  document.getElementById('modal-cta-btn').dataset.product = key === 'anker' ? p.subtitle : p.title;
   document.getElementById('modal-overlay').classList.add('open');
   document.getElementById('modal-overlay').setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
@@ -955,7 +979,7 @@ BEDRIJFSINFORMATIE:
 
 TOPPRODUCT — QUICKBOND: IJzersterke verlijmende kit, 10 jaar garantie, geen primers/paneltapes nodig. Elastisch, krimpvrij, UV/waterbestendig, bestand chloor. Leverbaar: kokers, worsten 600ml, 200kg vaten.
 
-ASSORTIMENT: Quickbond, lijmen, kitten, PU-schuimen, 2-comp lijmen, acrylaten, coatings (wand/vloer/dak), steenstrips. Noem alleen producten uit dit aanbod. Verzin geen aanvullende productgroepen, merken of beschikbaarheid; verwijs bij twijfel naar Nijtec.
+ASSORTIMENT: Quickbond, lijmen, kitten, PU-schuimen (onder andere Seal-it 479 PU-Foam Gun Black en Seal-it 478 PU-Stonefix), chemisch anker (Seal-it 720 Chem-Fix), acrylaten, coatings (wand/vloer/dak), steenstrips. De getoonde producten zijn een selectie. Noem alleen producten uit dit aanbod. Verzin geen aanvullende productgroepen, merken of beschikbaarheid; verwijs bij twijfel naar Nijtec.
 
 ZZP-PAKKET: €50, zelf samen te stellen, incl. overschilderbare kit, Quickbond, PU-schuim, kitpistool.
 
@@ -1083,7 +1107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Modal CTA → contactformulier met product vooringevuld
   document.getElementById('modal-cta-btn').addEventListener('click', function() {
-    const productNaam = document.getElementById('modal-title').textContent;
+    const productNaam = this.dataset.product || document.getElementById('modal-title').textContent;
     const productIcon = document.getElementById('modal-icon').textContent;
     closeModal();
 
@@ -1094,8 +1118,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Textarea voorinvullen
-    document.getElementById('f-bericht').value =
-      'Ik heb interesse in: ' + productNaam + '.\n\nKunt u mij meer informatie en een offerte sturen?';
+    const message = document.getElementById('f-bericht');
+    const request = 'Ik heb interesse in: ' + productNaam + '.\n\nKunt u mij meer informatie en een offerte sturen?';
+    message.value = message.value.trim() ? message.value + '\n\n' + request : request;
 
     // Banner tonen
     const banner = document.getElementById('product-prefill-banner');

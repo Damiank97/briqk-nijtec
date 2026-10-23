@@ -68,6 +68,8 @@ pagina's en bestanden ook bij herhaald bouwen wegblijven.
 
 ## Quickbond-artikel, 23 oktober 2026
 
+Zie ook de latere assortimentsactualisering onderaan dit document.
+
 Op expliciet verzoek is een uitlegartikel toegevoegd zonder verzonnen klantvragen.
 Zoekopdrachten naar Nijtec Quickbond, verwerking, primer en droogtijd leverden vooral
 Nijtecs bestaande productpagina, bedrijfsverhaal en projecten op. Er is geen
@@ -90,3 +92,39 @@ artikel verwijst voor uitvoering naar de actuele project-/verwerkingsinformatie.
 De checklist met aan te leveren projectgegevens is redactionele uitleg, niet een
 beweerde lijst van echte vragen. Auteur is de organisatie Nijtec B.V., niet een
 verzonnen klant of een zogenaamd door André beoordeeld artikel.
+
+## Door Nijtec aangeleverde assortimentsactualisering
+
+De gebruiker bevestigt dat de eerste drie aangeleverde eigenschappen horen bij
+Seal-it 478 PU-Stonefix. De beschrijving van de gebruiksklare, watervaste
+polyurethaanlijm voor diverse steensoorten en de trek-/afschuif-/eindsterkte komen
+uit die expliciet aangeleverde bedrijfstekst. Er is geen 478-TDS aangeleverd;
+geen droogtijden, sterktegetallen, keurmerken of ondergrondvrijgaven erbij verzinnen.
+
+De gebruiker leverde drie originele PNG's en twee technische productbladen aan.
+De afbeeldingen blijven byte-identiek; hashes/dimensies staan in supplied-assets.cjs.
+De productinformatie staat in featured-products.cjs en is zichtbaar in de pop-ups
+én de direct leesbare PU-/chemisch-ankerpagina's. Het is nadrukkelijk een selectie,
+geen volledig of gegarandeerd voorradig assortiment. De eigenaar noemt 479 veelverkocht;
+de foto en beschrijving staan daarom vooraan bij de PU-selectie, zonder verzonnen cijfers.
+
+Bronnen (door gebruiker aangeleverde bestanden):
+
+- 876.-Seal-it-479-PU-FOAM_GUN_BLACK_NL_2026.pdf, 4 pagina's, versie 20260809.
+  Beschrijft snel uithardend zwart 1K isolatie-/montageschuim en low expansion.
+  Belangrijke beperkingen: niet UV-bestendig en niet voor onderwatergebruik.
+  Het blad heeft uiteenlopende waarden voor verwerkingstemperatuur en opbrengst
+  op verschillende pagina's. Die getallen worden niet als websiteadvies herhaald.
+- 876.-Seal-it-720-CHEM-FIX_03.pdf, 3 pagina's, versie 20240107.
+  Styreenvrije 2K polyesterhars, verankering van draadeinden/schroeven/bouten,
+  ETA 19/0799, massieve en holle ondergronden volgens de productinstructies.
+  Niet voor constante waterbelasting of voegafdichting; belasten na volledige
+  uitharding. Geen universeel constructief draagvermogen of algemene droogtijd.
+
+Alle PDF-pagina's zijn tekstueel gelezen en de eerste pagina's visueel gecontroleerd.
+De twee aangeleverde productbladen zijn ongewijzigd als downloads beschikbaar.
+De oude 2-componentenlijmen-categorie en Poxyfix-foto worden niet meer gepubliceerd.
+Het oude pagina-adres verwijst permanent naar /producten/chemisch-anker/.
+Er blijven 17 pagina's: 15 oorspronkelijke adressen, de nieuwe chemisch-ankerpagina
+en het Quickbond-artikel. 103 oude afbeeldingen en drie nieuwe productfoto's
+worden gepubliceerd; de historische import is niet aangepast of opnieuw uitgevoerd.

@@ -3,6 +3,7 @@
 const media = (file, name, width, height, kind = 'packshot') => ({
   src: '/wp-content/uploads/2023/10/' + file, name, width, height, kind
 });
+const featured = require('./featured-products.cjs');
 module.exports = {
   lijmen: [
     media('high-tack-360.png', 'Seal-it 360 High-Tack', 1600, 1067),
@@ -13,11 +14,11 @@ module.exports = {
     media('silocon-nf215.png', 'Seal-it 215 Silicon-NF', 1600, 1067)
   ],
   pu: [
-    media('pu-foam-gun-470.png', 'Seal-it 470 PU-Foam Gun', 1600, 1067),
-    media('pu-foam-flex-471.png', 'Seal-it 471 PU-Foam Flex', 1600, 1067)
+    featured.black,
+    featured.stonefix
   ],
   coatings: [media('epoxy-aanbrengen.jpg', 'Aanbrengen van een epoxyvloer', 1600, 900, 'application')],
-  '2comp': [media('poxyfix.png', 'Seal-it 530 Poxyfix', 1067, 1600, 'portrait')],
+  anker: [featured.anchor],
   steenstrips: [
     media('01.png', 'Steenstrips: kleur en metselverband', 444, 306, 'material'),
     media('example10.png', 'Steenstrips: materiaal en achterzijde', 703, 263, 'material')
