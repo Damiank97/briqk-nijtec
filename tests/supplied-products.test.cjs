@@ -27,6 +27,8 @@ test('owner-confirmed 478, 479 and 720 content is visible crawlable text with co
   if(product.document)assert.ok(page.includes('href="'+product.document.src+'"'));
  }
  assert.match(pu,/watervaste polyurethaanlijm/);assert.match(pu,/Niet UV-bestendig/);
+ assert.ok(pu.includes('Nijtec is de enige dealer van Seal-it 479 PU-Foam Gun Black in Noord-Nederland.'));
+ assert.doesNotMatch(pu,/<a class="modal-photo-link"[^>]*target="_blank"/);
  assert.match(anker,/ETA 19\/0799/);assert.match(anker,/Niet geschikt voor constante waterbelasting/);
  assert.doesNotMatch(anker,/Instelbare verwerkingstijd|Diverse mengverhoudingen|Marine toepassingen/);
  const home=html('/');assert.match(home,/een selectie uit ons assortiment/);

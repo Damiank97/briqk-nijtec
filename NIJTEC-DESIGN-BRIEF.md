@@ -70,7 +70,11 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
   waarden. Behoud belangrijke beperkingen en volg de geleverde documentatie.
   Labels volgen het zichtbare etiket, niet alleen de soms
   onjuiste bestandsnaam. Kleine beelden worden niet opgeblazen. Originele foto's
-  openen via een gewone link; de pop-up blijft beschikbaar in het vorige tabblad.
+  openen in de fotoviewer op dezelfde pagina. Sluiten herstelt de productpop-up,
+  scrollpositie en focus. Ook foto's op vervolgpagina's gebruiken die viewer.
+  De claim 'enige dealer van Seal-it 479 PU-Foam Gun Black in Noord-Nederland'
+  is op expliciet verzoek toegevoegd op basis van Andrés verklaring, niet op
+  basis van een onafhankelijke fabrikantbevestiging. Niet verbreden naar alle PUR.
 - Over Nijtec is het welkomstverhaal direct onder het openingsbeeld, vóór de
   toepassingen, en staat ook op /over-ons/. Noem Quickbond en Seal-it van Connect
   Products op basis van de oude site. Baseer inhoud op het oude verhaal, zonder verzonnen historie,

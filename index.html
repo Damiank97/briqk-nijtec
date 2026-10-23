@@ -439,7 +439,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/redesign.css?v=23">
+  <link rel="stylesheet" href="/redesign.css?v=24">
 <script src="/motion.js?v=1" defer></script>
 <script src="/email-validation.js?v=1" defer></script>
 <script src="/contact.js?v=4" defer></script>
@@ -758,7 +758,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
       <section class="modal-media" aria-labelledby="modal-media-title">
         <h3 class="modal-section-title" id="modal-media-title">Producten in beeld</h3>
         <div class="modal-gallery" id="modal-gallery"></div>
-        <p class="modal-media-note">Een selectie uit het assortiment. Klik op een foto voor het originele beeld. Vraag Nijtec naar de actuele uitvoering en beschikbaarheid.</p>
+        <p class="modal-media-note">Een selectie uit het assortiment. Klik op een foto om deze te vergroten. Vraag Nijtec naar de actuele uitvoering en beschikbaarheid.</p>
       </section>
       <div class="modal-desc" id="modal-desc"></div>
       <div class="modal-section-title">Kenmerken</div>
@@ -856,10 +856,8 @@ function openModal(key, trigger) {
     figure.className = 'modal-product-photo';
     const link = document.createElement('a');
     link.href = photo.src;
-    link.target = '_blank';
-    link.rel = 'noopener';
     link.className = 'modal-photo-link modal-photo-link--' + photo.kind;
-    link.setAttribute('aria-label', 'Open originele foto: ' + photo.name + ' (nieuw tabblad)');
+    link.setAttribute('aria-label', 'Vergroot foto: ' + photo.name);
     const image = document.createElement('img');
     image.src = photo.src;
     image.alt = photo.name;
@@ -918,10 +916,11 @@ function closeModalOutside(e){if(e.target===document.getElementById('modal-overl
 
 /* ── PROJECT VIEWER ─────────────────────── */
 let projectImages=[];
+let activeViewerImages=[];
 let activeProjectImage=0;
 let imageViewerTrigger=null;
 function renderProjectImage(){
-  const item=projectImages[activeProjectImage];
+  const item=activeViewerImages[activeProjectImage];
   if(!item)return;
   const img=item.querySelector('img');
   const caption=item.querySelector('.photo-caption span');
@@ -929,17 +928,32 @@ function renderProjectImage(){
   viewerImage.src=img.currentSrc || img.src;
   viewerImage.alt=img.alt;
   document.getElementById('image-viewer-caption').textContent=caption ? caption.textContent : img.alt;
-  document.getElementById('image-viewer-counter').textContent=String(activeProjectImage+1).padStart(2,'0')+' / '+String(projectImages.length).padStart(2,'0');
+  document.getElementById('image-viewer-counter').textContent=String(activeProjectImage+1).padStart(2,'0')+' / '+String(activeViewerImages.length).padStart(2,'0');
 }
 function openProjectViewer(index,trigger){
+  openImageViewer(projectImages,index,trigger);
+}
+function openImageViewer(items,index,trigger){
+  activeViewerImages=items;
   activeProjectImage=index;
   imageViewerTrigger=trigger || document.activeElement;
   renderProjectImage();
   const viewer=document.getElementById('image-viewer');
+  viewer.classList.toggle('image-viewer--product',!items[0]?.classList.contains('photo-item'));
   viewer.classList.add('open');
   viewer.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   setPageInert(true);
+  const overlay=document.getElementById('modal-overlay');
+  if(overlay.classList.contains('open')){
+    overlay.inert=true;
+    overlay.setAttribute('aria-hidden','true');
+    document.getElementById('modal').setAttribute('aria-modal','false');
+  }
+  document.getElementById('image-viewer-prev').hidden=items.length<2;
+  document.getElementById('image-viewer-next').hidden=items.length<2;
+  document.getElementById('image-viewer-prev').setAttribute('aria-label','Vorige foto');
+  document.getElementById('image-viewer-next').setAttribute('aria-label','Volgende foto');
   document.getElementById('image-viewer-close').focus({preventScroll:true});
 }
 function closeProjectViewer(){
@@ -947,12 +961,17 @@ function closeProjectViewer(){
   if(!viewer.classList.contains('open'))return;
   viewer.classList.remove('open');
   viewer.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
-  setPageInert(false);
+  const overlay=document.getElementById('modal-overlay');
+  const modalOpen=overlay.classList.contains('open');
+  overlay.inert=false;
+  overlay.setAttribute('aria-hidden',String(!modalOpen));
+  document.getElementById('modal').setAttribute('aria-modal','true');
+  document.body.style.overflow=modalOpen?'hidden':'';
+  setPageInert(modalOpen);
   if(imageViewerTrigger)imageViewerTrigger.focus({preventScroll:true});
 }
 function moveProjectViewer(direction){
-  activeProjectImage=(activeProjectImage+direction+projectImages.length)%projectImages.length;
+  activeProjectImage=(activeProjectImage+direction+activeViewerImages.length)%activeViewerImages.length;
   renderProjectImage();
 }
 document.addEventListener('keydown',function(e){
@@ -1076,6 +1095,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Projectfoto's → toegankelijke volledige viewer
+  document.addEventListener('click',function(event){
+    const link=event.target.closest('.modal-photo-link, .detail-media > a');
+    if(!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button!==0)return;
+    const gallery=link.closest('.modal-gallery, .detail-media');
+    if(!gallery)return;
+    const links=Array.from(gallery.querySelectorAll('a')).filter(a=>a.querySelector('img'));
+    event.preventDefault();
+    openImageViewer(links,links.indexOf(link),link);
+  });
   projectImages=Array.from(document.querySelectorAll('.photo-item'));
   projectImages.forEach(function(item,index){
     const img=item.querySelector('img');

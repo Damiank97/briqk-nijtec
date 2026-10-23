@@ -125,9 +125,10 @@ Alle PDF-pagina's zijn tekstueel gelezen en de eerste pagina's visueel gecontrol
 De twee aangeleverde productbladen zijn ongewijzigd als downloads beschikbaar.
 De oude 2-componentenlijmen-categorie en Poxyfix-foto worden niet meer gepubliceerd.
 Het oude pagina-adres verwijst permanent naar /producten/chemisch-anker/.
-Een mogelijke claim dat Nijtec de enige aanbieder van zwarte PUR is, is niet
-bevestigd of gepubliceerd. Eerst afbakenen welk product en marktgebied bedoeld
-worden en de exclusiviteit bij de fabrikant bevestigen.
+Op expliciet verzoek van de gebruiker is toegevoegd dat Nijtec de enige dealer
+van Seal-it 479 PU-Foam Gun Black in Noord-Nederland is. Bron: Andrés regionale
+dealerverklaring via de gebruiker. Dit is geen onafhankelijk door de fabrikant
+bevestigde exclusiviteit; niet verbreden naar alle zwarte PUR of heel Nederland.
 Er blijven 17 pagina's: 15 oorspronkelijke adressen, de nieuwe chemisch-ankerpagina
 en het Quickbond-artikel. 103 oude afbeeldingen en drie nieuwe productfoto's
 worden gepubliceerd; de historische import is niet aangepast of opnieuw uitgevoerd.

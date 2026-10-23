@@ -7,7 +7,7 @@ module.exports={
     ['IJzersterke verlijming van steensoorten','Hoge trek-, afschuif- en eindsterkte','Snelle uitharding en krachtopbouw']),
   black:photo('seal-it-479-pu-foam-gun-black.png','Seal-it 479 PU-Foam Gun Black',
     'Snel uithardend zwart isolatie- en montageschuim voor het afdichten en opvullen van voegen, naden, aansluitingen en stel- en montageruimten tussen bouwdelen.',
-    ['1-component polyurethaanschuim','Low expansion: schuimt licht op tijdens uitharding','Niet UV-bestendig; niet geschikt voor onderwatergebruik'],
+    ['Nijtec is de enige dealer van Seal-it 479 PU-Foam Gun Black in Noord-Nederland.','1-component polyurethaanschuim','Low expansion: schuimt licht op tijdens uitharding','Niet UV-bestendig; niet geschikt voor onderwatergebruik'],
     {src:'/assets/documents/seal-it-479-pu-foam-gun-black.pdf',label:'Technisch productblad 479 (PDF)'}),
   anchor:photo('seal-it-720-chem-fix.png','Seal-it 720 Chem-Fix',
     'Gecertificeerd 2-componenten chemisch anker op basis van styreenvrije polyesterhars voor het verankeren van draadeinden, schroeven en bouten.',

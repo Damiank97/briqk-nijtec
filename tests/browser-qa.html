@@ -92,7 +92,14 @@ async function audit(width){
  for(const card of all('.product-card')){
   card.focus();card.click();await settle();
   const media=all('#modal-gallery img');await Promise.all(media.map(img=>img.decode().catch(()=>{})));
-  record(width+' px: productfoto\'s '+card.dataset.modal,media.length>0&&media.every(img=>img.complete&&img.naturalWidth>0&&img.alt&&img.parentElement.target==='_blank'&&img.parentElement.rel.includes('noopener')&&!overlaps(visibleRect(img,w),img.closest('figure').querySelector('figcaption').getBoundingClientRect())));
+  record(width+' px: productfoto\'s '+card.dataset.modal,media.length>0&&media.every(img=>img.complete&&img.naturalWidth>0&&img.alt&&!img.parentElement.target&&!overlaps(visibleRect(img,w),img.closest('figure').querySelector('figcaption').getBoundingClientRect())));
+  const photoLink=media[0].parentElement,originalUrl=w.location.href;
+  photoLink.focus();photoLink.click();await settle();
+  const photoOpen=$('#image-viewer').classList.contains('open')&&$('#modal-overlay').inert&&d.activeElement===$('#image-viewer-close');
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));await settle();
+  const photoNext=$('#image-viewer-counter').textContent.startsWith(media.length>1?'02':'01');
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await settle();
+  record(width+' px: foto op dezelfde pagina met navigatie en terugkeer '+card.dataset.modal,photoOpen&&photoNext&&w.location.href===originalUrl&&!$('#image-viewer').classList.contains('open')&&$('#modal-overlay').classList.contains('open')&&!$('#modal-overlay').inert&&d.activeElement===photoLink&&d.body.style.overflow==='hidden');
   if(card.dataset.modal==='pu')record(width+' px: 479 en 478 met eigen eigenschappen en productblad',media[0]?.alt.includes('479')&&media[1]?.alt.includes('478')&&$('#modal-gallery').textContent.includes('watervaste polyurethaanlijm')&&$('#modal-gallery').textContent.includes('Niet UV-bestendig')&&all('#modal-gallery .product-document-link').length===1&&(width>600||all('#modal-gallery figure').every(f=>f.getBoundingClientRect().width>width*.7)));
   if(card.dataset.modal==='anker')record(width+' px: chemisch anker met juiste foto, productblad en aanvraagcontext',media[0]?.alt.includes('720 Chem-Fix')&&$('#modal-gallery').textContent.includes('ETA 19/0799')&&$('#modal-gallery .product-document-link').href.endsWith('/assets/documents/seal-it-720-chem-fix.pdf')&&$('#modal-cta-btn').dataset.product==='Seal-it 720 Chem-Fix');
   const opened=$('#modal-overlay').classList.contains('open')&&$('#modal-title').textContent.trim()===card.querySelector('h3').textContent.trim();
@@ -161,6 +168,12 @@ async function auditRoutes(){
   const w=frame.contentWindow,d=w.document;await d.fonts.ready;await pause(100);
   const header=d.querySelector('h1'),canonical=d.querySelector('[rel="canonical"]');
   record(route+' mobiele pagina',!!header&&canonical.href==='https://nijtec.nl'+route&&d.documentElement.scrollWidth<=w.innerWidth+1&&w.__qaErrors.length===0,w.__qaErrors.join('; '));
+  if(['/producten/chemisch-anker/','/producten/vullende-lijmende-pu-schuimen/'].includes(route)){
+   const link=d.querySelector('.modal-photo-link');link.focus();link.click();await settle();
+   const opened=d.querySelector('#image-viewer').classList.contains('open');
+   d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await settle();
+   record(route+' productfoto op dezelfde pagina',opened&&w.location.pathname===route&&d.activeElement===link&&!d.querySelector('#image-viewer').classList.contains('open'));
+  }
  }
  const missing=await fetch('/dit-bestaat-niet/');record('Onbekende pagina geeft echte 404',missing.status===404);
  for(const route of ['/producten/luchtdicht-bouwen/','/wp-content/uploads/2023/10/elastic-gunfoam-b2.png','/wp-content/uploads/2023/10/compressband-2d.png','/wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg','/wp-content/uploads/2023/10/zwaluw.png']){

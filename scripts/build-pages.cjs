@@ -89,7 +89,7 @@ async function run(){
     const intro='<header class="detail-intro"><div class="detail-breadcrumb"><a href="/">Home</a> / '+(page.path.startsWith('/producten/')&&page.path!=='/producten/'?'<a href="/producten/">Producten</a> / ':'')+'<span>'+escape(page.title)+'</span></div><h1>'+escape(page.title)+'</h1><p>'+escape(page.intro)+'</p></header>';
     const main='<main id="top" class="detail-page">'+intro+(page.section?content:'<div class="detail-body">'+content+'</div>')+(page.section==='contact'?'':contacts)+'</main>';
     const pageTail=page.section==='quickbond'?tail:tail.replace(/<script type="module" src="\/quickbond-viewer\.js[^\"]*"><\/script>/,'');
-    const html='<!DOCTYPE html><html lang="nl"><head>'+pageHead(page)+'</head><body><div class="scroll-progress" aria-hidden="true"></div>'+detailHeader+main+footer+pageTail+'</body></html>';
+    const html=('<!DOCTYPE html><html lang="nl"><head>'+pageHead(page)+'</head><body><div class="scroll-progress" aria-hidden="true"></div>'+detailHeader+main+footer+pageTail+'</body></html>').replace(/(<a class="modal-photo-link" href="[^"]+") target="_blank" rel="noopener"/g,'$1');
     const dir=path.join(out,page.path);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'index.html'),html);
   }
   const urls=['/',...pages.map(p=>p.path)];
