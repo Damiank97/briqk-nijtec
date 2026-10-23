@@ -48,6 +48,7 @@ async function audit(width){
  record(width+' px: stabiele layout bij laden', w.__qaCLS<.1, String(w.__qaCLS));
  record(width+' px: ankerlinks bestaan',all('a[href^="#"]').every(a=>d.getElementById(a.hash.slice(1))));
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
+ record(width+' px: alleen zeven actuele productgroepen',all('.product-card').length===7&&!/luchtdicht|zettex|zetex|zwaluw|den braven/i.test(d.documentElement.innerHTML));
  record(width+' px: lokale tests sturen geen bezoekersstatistieken',!$('#nijtec-analytics').dataset.initialized&&!all('script[src*="/insights/script.js"]').length&&!w.va);
  const companyItems=all('.contact-info .contact-item'),kvk=companyItems.findIndex(e=>e.textContent.includes('KvK'));
  record(width+' px: btw direct onder KvK',kvk>=0&&companyItems[kvk+1]?.textContent.includes('BTWNL866979001.B01'));
@@ -151,7 +152,7 @@ async function audit(width){
  record(width+' px: geen runtimefouten',w.__qaErrors.length===0,w.__qaErrors.join('; '));
 }
 async function auditRoutes(){
- const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/2-componenten-lijmen/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/producten/luchtdicht-bouwen/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/','/blog/quickbond-gevelbeplating-verlijmen/'];
+ const routes=['/producten/','/producten/quickbond/','/producten/lijmen/','/producten/kitten/','/producten/vullende-lijmende-pu-schuimen/','/producten/2-componenten-lijmen/','/producten/diversen/','/producten/acrylaten/','/producten/coatings/','/producten/steenstrips/','/over-ons/','/projecten/','/contact/','/zzp-pakket/','/algemene-voorwaarden/','/blog/quickbond-gevelbeplating-verlijmen/'];
  frame.width=390;frame.height=844;
  for(const route of routes){
   await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa='+Date.now();});
@@ -160,6 +161,9 @@ async function auditRoutes(){
   record(route+' mobiele pagina',!!header&&canonical.href==='https://nijtec.nl'+route&&d.documentElement.scrollWidth<=w.innerWidth+1&&w.__qaErrors.length===0,w.__qaErrors.join('; '));
  }
  const missing=await fetch('/dit-bestaat-niet/');record('Onbekende pagina geeft echte 404',missing.status===404);
+ for(const route of ['/producten/luchtdicht-bouwen/','/wp-content/uploads/2023/10/elastic-gunfoam-b2.png','/wp-content/uploads/2023/10/compressband-2d.png','/wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg','/wp-content/uploads/2023/10/zwaluw.png']){
+  const removed=await fetch(route);record('Verwijderd adres niet meer gepubliceerd: '+route,removed.status===404);
+ }
  const old=await fetch('/wp-sitemap.xml');record('Oude sitemap verwijst door naar nieuwe sitemap',old.ok&&old.url.endsWith('/sitemap.xml'));
  for(const width of [390,768,1440]){
   frame.width=width;await new Promise(resolve=>{frame.onload=resolve;frame.src='/blog/quickbond-gevelbeplating-verlijmen/?qa='+Date.now();});

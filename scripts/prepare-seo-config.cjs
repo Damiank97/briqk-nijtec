@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const inventory = require('../seo/legacy-inventory.json');
+const publication = require('../seo/publication-policy.cjs');
 // Host canonicalization belongs in Vercel Domains, not a second application
 // rule that can redirect assets back against the platform's primary domain.
 const redirects = [
@@ -11,7 +12,7 @@ const redirects = [
   {source:'/producten/pu-lijmen',destination:'/producten/vullende-lijmende-pu-schuimen/',permanent:true}
 ];
 const sources = new Set(redirects.map(r=>r.source));
-for(const media of inventory.media){
+for(const media of publication.publishedMedia(inventory)){
   for(const variant of media.variants){if(!sources.has(variant)){redirects.push({source:variant,destination:media.path,permanent:true});sources.add(variant);}}
   const attachment=media.attachment.replace(/\/$/,'');
   if(attachment && !sources.has(attachment)){redirects.push({source:attachment,destination:media.path,permanent:true});sources.add(attachment);}

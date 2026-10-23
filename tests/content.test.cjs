@@ -29,8 +29,8 @@ test('home and existing about URL share the factual company story and contact pe
   assert.ok(htmlFor('/over-ons/').includes('href="/over-ons/">Over Nijtec</a>'));
 });
 
-test('all eight popup categories use original preserved media and accurate dimensions',()=>{
-  assert.deepEqual(Object.keys(media),['lijmen','kitten','pu','coatings','2comp','steenstrips','luchtdicht','acrylaten']);
+test('all seven active popup categories use reviewed original media and accurate dimensions',()=>{
+  assert.deepEqual(Object.keys(media),['lijmen','kitten','pu','coatings','2comp','steenstrips','acrylaten']);
   let count=0;
   for(const photos of Object.values(media)){
     assert.ok(photos.length);
@@ -43,7 +43,7 @@ test('all eight popup categories use original preserved media and accurate dimen
       assert.ok(photo.name.length>6);
     }
   }
-  assert.equal(count,14);
+  assert.equal(count,12);
   assert.ok(media.lijmen.find(photo=>photo.src.endsWith('super-all-360.png')).name.includes('350'));
 });
 

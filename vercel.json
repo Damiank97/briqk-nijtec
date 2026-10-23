@@ -4,7 +4,11 @@
   "buildCommand": "node scripts/build-pages.cjs",
   "outputDirectory": "dist",
   "installCommand": "npm ci --omit=dev",
-  "functions": { "api/contact.js": { "maxDuration": 30 } },
+  "functions": {
+    "api/contact.js": {
+      "maxDuration": 30
+    }
+  },
   "cleanUrls": true,
   "trailingSlash": true,
   "headers": [
@@ -61,116 +65,6 @@
     {
       "source": "/silicon-ep-217",
       "destination": "/wp-content/uploads/2023/11/Silicon-ep-217.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elastic-gunfoam-b2-67x150.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-67x150.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dr01dye200guw6l04hdvmi8ojqloja2e3i3do.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqy7lslbvsaqmwimnyuwdv3lqvsr2n28szny8.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dr01tr20kooeehp5929w4xdudx3478kiyo62g.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqz5t8vh56s54p1fi2dm6pyni46bfp7r08ywo.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqydqtx51gqhpp2c5qmsr17iy4h0ioips9p4o.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/elastic-gunfoam-b2-qdzt5dqzfgkrj1yuyjz5m9xeyjzlh6zkn2atui0q7s.png",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/producten/luchtdicht-bouwen/attachment/elastic-gunfoam-b2",
-      "destination": "/wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d-qdzsxe4cq87xj0sdxhncfiayvgg6ygtfegbeex0u9k.png",
-      "destination": "/wp-content/uploads/2023/10/compressband-2d.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d-qdzsxe4d6w5k5yhz5roge48xx6n0kaor1t66s4iwhu.png",
-      "destination": "/wp-content/uploads/2023/10/compressband-2d.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/compressband-2d.png",
-      "destination": "/wp-content/uploads/2023/10/compressband-2d.png",
-      "permanent": true
-    },
-    {
-      "source": "/producten/luchtdicht-bouwen/attachment/compressband-2d",
-      "destination": "/wp-content/uploads/2023/10/compressband-2d.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/BUTYLBAND-FLEECE.jpg",
-      "destination": "/wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg",
-      "permanent": true
-    },
-    {
-      "source": "/producten/luchtdicht-bouwen/attachment/butylband-fleece",
-      "destination": "/wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/zwaluw-150x150.png",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs45xc5d2cbbr4csqhm2lsapuuk8x4vgo3ljo.png",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c57hk4spvn77hhn3v21k6ty4ifhjbx83cw.png",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c57do6i3r6un2c8el84ynb9stgucjns934.png",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c572mf4zm3ypnpa76jrw5qek7s9x1v26f4.png",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
-      "permanent": true
-    },
-    {
-      "source": "/wp-content/uploads/2023/10/elementor/thumbs/zwaluw-qdzskhs2c56wot3y21qwduahvc0vhmj49h2y2ayubk.png",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
-      "permanent": true
-    },
-    {
-      "source": "/producten/luchtdicht-bouwen/attachment/zwaluw",
-      "destination": "/wp-content/uploads/2023/10/zwaluw.png",
       "permanent": true
     },
     {

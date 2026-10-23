@@ -3,6 +3,7 @@ const path = require('node:path');
 const pages = require('../seo/pages.cjs');
 const productMedia = require('../seo/product-media.cjs');
 const analyticsConfig = require('../seo/analytics-config.cjs');
+const publication = require('../seo/publication-policy.cjs');
 const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'dist');
 const origin = 'https://nijtec.nl';
@@ -23,6 +24,8 @@ function schema(page) {
 }
 async function run(){
   const inventory=JSON.parse(await fs.readFile(path.join(root,'seo/legacy-inventory.json'),'utf8'));
+  const media=publication.publishedMedia(inventory);
+  if(pages.some(page=>!publication.isPagePublished(page.path)))throw new Error('Retired page must not be published');
   let source=await fs.readFile(path.join(root,'index.html'),'utf8');
   source=source.replace('<!-- PRODUCT_MEDIA_DATA -->','<script type="application/json" id="product-media-data">'+JSON.stringify(productMedia).replace(/</g,'\\u003c')+'</script>');
   source=source.replace('<!-- WEB_ANALYTICS_CONFIG -->','<script type="application/json" id="analytics-config">'+analyticsConfig(process.env.VERCEL_OBSERVABILITY_CLIENT_CONFIG)+'</script>');
@@ -50,13 +53,22 @@ async function run(){
     html=html.replace(/<meta property="og:description" content="[^"]*">/,'<meta property="og:description" content="'+escape(page.intro)+'">');
     return html;
   }
+  // dist is disposable generated output. Verify its exact location before clearing
+  // it so a rebuild cannot retain a retired page, original or thumbnail.
+  if(out!==path.resolve(root,'dist') || path.dirname(out)!==root)throw new Error('Unsafe build output');
+  try{if((await fs.lstat(out)).isSymbolicLink())throw new Error('Build output must not be a symlink');}catch(error){if(error.code!=='ENOENT')throw error;}
+  await fs.rm(out,{recursive:true,force:true});
   await fs.mkdir(out,{recursive:true});
   for(const name of ['assets','NijTec_logo.png','redesign.css','quickbond-viewer.js','motion.js','email-validation.js','contact.js','analytics.js'])await fs.cp(path.join(root,name),path.join(out,name),{recursive:true});
   await fs.writeFile(path.join(out,'assets/favicon.svg'),require('../seo/favicon.cjs')(await fs.readFile(path.join(root,'assets/nijtec-logo-nav.png'))));
   await fs.mkdir(path.join(out,'assets/vendor'),{recursive:true});
   await fs.copyFile(path.join(root,'node_modules/@vercel/analytics/dist/index.mjs'),path.join(out,'assets/vendor/vercel-analytics.js'));
   await fs.copyFile(path.join(root,'node_modules/@vercel/analytics/dist/index.mjs.map'),path.join(out,'assets/vendor/index.mjs.map'));
-  await fs.cp(path.join(root,'legacy-assets'),out,{recursive:true});
+  for(const item of media){
+    const target=path.join(out,item.path);
+    await fs.mkdir(path.dirname(target),{recursive:true});
+    await fs.copyFile(path.join(root,'legacy-assets',item.path),target);
+  }
   await fs.writeFile(path.join(out,'index.html'),source.replace(/<head>[\s\S]*?<\/head>/,'<head>'+pageHead()+'</head>'));
   const routeMap={'#top':'/','#producten':'/producten/','#quickbond':'/producten/quickbond/','#projecten':'/projecten/','#zzp':'/zzp-pakket/','#over-nijtec':'/over-ons/','#contact':'/contact/','#toepassingen':'/#toepassingen'};
   const detailHeader=header.replace(/href="(#[^"]*)"/g,(_,hash)=>'href="'+(routeMap[hash]||'/'+hash)+'"');
@@ -68,7 +80,7 @@ async function run(){
     else if(page.terms)content='<article class="detail-copy legal-copy">'+legal.html+'</article>';
     else content='<article class="detail-copy"><h2>'+escape(page.heading)+'</h2><p>'+escape(page.text)+'</p><ul>'+page.items.map(t=>'<li>'+escape(t)+'</li>').join('')+'</ul><p><a href="'+page.related+'">Bekijk ook '+escape(pages.find(p=>p.path===page.related)?.title || 'de toepassing')+' →</a></p><p>Vraag Nijtec naar actuele beschikbaarheid en de verwerkingsinformatie voor uw toepassing.</p></article>';
     if(!page.section && !page.index && !page.terms && !page.article){
-      const photos=inventory.media.filter(m=>m.usedOn.includes(page.path));
+      const photos=media.filter(m=>m.usedOn.includes(page.path));
       if(photos.length)content+='<div class="detail-media">'+photos.map(m=>'<a href="'+escape(m.path)+'"><img src="'+escape(m.path)+'" alt="'+escape(page.title+': '+path.basename(m.path).replace(/\.[^.]+$/,'').replace(/[-_]/g,' '))+'" width="'+m.width+'" height="'+m.height+'" loading="lazy"><span>'+escape(path.basename(m.path).replace(/\.[^.]+$/,'').replace(/[-_]/g,' '))+'</span></a>').join('')+'</div>';
     }
     const intro='<header class="detail-intro"><div class="detail-breadcrumb"><a href="/">Home</a> / '+(page.path.startsWith('/producten/')&&page.path!=='/producten/'?'<a href="/producten/">Producten</a> / ':'')+'<span>'+escape(page.title)+'</span></div><h1>'+escape(page.title)+'</h1><p>'+escape(page.intro)+'</p></header>';
@@ -78,10 +90,10 @@ async function run(){
     const dir=path.join(out,page.path);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'index.html'),html);
   }
   const urls=['/',...pages.map(p=>p.path)];
-  const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>'<url><loc>'+origin+route+'</loc>'+inventory.media.filter(m=>m.usedOn.includes(route)).map(m=>'<image:image><image:loc>'+escape(origin+m.path)+'</image:loc></image:image>').join('')+(pages.find(p=>p.path===route)?.article?'<image:image><image:loc>'+origin+pages.find(p=>p.path===route).article.image+'</image:loc></image:image>':'')+'</url>').join('')+'</urlset>\n';
+  const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>'<url><loc>'+origin+route+'</loc>'+media.filter(m=>m.usedOn.includes(route)).map(m=>'<image:image><image:loc>'+escape(origin+m.path)+'</image:loc></image:image>').join('')+(pages.find(p=>p.path===route)?.article?'<image:image><image:loc>'+origin+pages.find(p=>p.path===route).article.image+'</image:loc></image:image>':'')+'</url>').join('')+'</urlset>\n';
   await fs.writeFile(path.join(out,'sitemap.xml'),sitemap);
   await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://nijtec.nl/sitemap.xml\n');
   await fs.writeFile(path.join(out,'404.html'),'<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Pagina niet gevonden | Nijtec</title><link rel="stylesheet" href="/redesign.css?v=20"><main class="detail-intro"><h1>Deze pagina bestaat niet.</h1><p><a href="/">Ga naar Nijtec</a> of bekijk <a href="/producten/">het assortiment</a>.</p></main></html>');
-  console.log('Built '+urls.length+' pages; preserved '+inventory.media.length+' original image URLs.');
+  console.log('Built '+urls.length+' pages; published '+media.length+' reviewed original image URLs.');
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});

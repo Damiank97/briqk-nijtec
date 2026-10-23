@@ -18,9 +18,20 @@ http.createServer(async (req, res) => {
       res.writeHead(200, { 'Content-Type':'application/json' }); return res.end('{"ok":true}');
     }
     if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); return res.end(); }
+    // Local audit only: this server binds to loopback; these routes are never built.
+    if (url.pathname === '/__qa/media-inventory') {
+      res.writeHead(200, {'Content-Type':'application/json', 'Cache-Control':'no-store'});
+      return res.end(JSON.stringify(require('../seo/legacy-inventory.json').media));
+    }
+    if (url.pathname.startsWith('/__qa/archive/')) {
+      const original = url.pathname.slice('/__qa/archive'.length);
+      if (!require('../seo/legacy-inventory.json').media.some(m => m.path === original)) throw new Error('Unknown archive image');
+      res.writeHead(200, {'Content-Type':types[path.extname(original)], 'Cache-Control':'no-store'});
+      return res.end(await fs.readFile(path.join(__dirname, '../legacy-assets', original)));
+    }
     const redirect=config.redirects.find(r=>!r.has&&r.source.replace(/\/$/,'')===url.pathname.replace(/\/$/,''));
     if(redirect){res.writeHead(308,{Location:redirect.destination});return res.end();}
-    const qaPage = new Map([['/__qa', 'browser-qa.html'], ['/__qa/branding', 'branding-qa.html']]).get(url.pathname);
+    const qaPage = new Map([['/__qa', 'browser-qa.html'], ['/__qa/branding', 'branding-qa.html'], ['/__qa/media', 'media-audit.html']]).get(url.pathname);
     let target = qaPage ? path.join(__dirname, '../tests', qaPage) : path.resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
     if (!qaPage && !target.startsWith(root + path.sep)) { res.writeHead(403); return res.end(); }
     if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');

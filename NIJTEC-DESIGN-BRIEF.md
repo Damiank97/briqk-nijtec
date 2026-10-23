@@ -7,6 +7,12 @@
   bestaande Google-landingspagina’s en volledige voorwaarden weg.
 - Bestaande pagina- en foto-URL’s, canonical, sitemap en bedrijfsgegevens blijven
   onderdeel van de controle. Voeg geen verzonnen reviews of SEO-claims toe.
+- Een oude import is geen goedkeuring van het actuele assortiment. Volg
+  `seo/publication-policy.cjs`: alleen gecontroleerde beelden publiceren.
+  De gebruiker heeft luchtdicht bouwen op 23 oktober 2026 volledig laten vervallen.
+  Zettex is expliciet uitgesloten als concurrent; ook de oude Zwaluw/Den Braven-
+  beelden en alle andere media van de vervallen categorie niet publiceren.
+  Geen herintroductie via pop-up, chatbot, SEO-pagina, sitemap of foto-redirect.
 - `npm test` moet slagen. Test animaties en overlap daarnaast in de browser;
   een statische codecheck bewijst niet dat de weergave klopt.
 - Een contactactie mag uitsluitend bevestigen wat werkelijk gebeurd is. Zonder
@@ -55,7 +61,7 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 - Producten en voordelen zijn genummerde registerregels, geen kaarten.
 - Projectfoto's behouden hun natuurlijke beeldverhouding en captions staan
   onder het beeld. Geen gradient-overlay op fotografie.
-- De productpop-ups tonen een selectie originele product- of toepassingsfoto's
+- De zeven productpop-ups tonen twaalf gecontroleerde product- of toepassingsfoto's
   uit de oude site. Labels volgen het zichtbare etiket, niet alleen de soms
   onjuiste bestandsnaam. Kleine beelden worden niet opgeblazen. Originele foto's
   openen via een gewone link; de pop-up blijft beschikbaar in het vorige tabblad.
@@ -128,7 +134,7 @@ letterfamilie of schaduw buiten dat bestand zonder de reden te documenteren.
 
 - Bedrijf: Nijtec B.V. in Dalen.
 - Werk: professionele lijmen, kitten, PU-schuimen, coatings, steenstrips,
-  luchtdicht bouwen, technisch advies en montage.
+  technisch advies en montage.
 - Primaire bezoekers: zzp'ers, aannemers en industriële vakmensen die snel
   willen bepalen of Nijtec een geschikt product, advies of montageteam heeft.
 - Primaire uitkomst: voldoende vertrouwen en concrete informatie krijgen om

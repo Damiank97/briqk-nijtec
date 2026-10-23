@@ -8,26 +8,31 @@ De nieuwe site staat inmiddels op het Nijtec-domein. De Microsoft 365-verzendpro
 is op 22 oktober daadwerkelijk ontvangen volgens de gebruiker; de oude vermelding
 van alleen een mailconcept geldt nu uitsluitend voor de terugvalroute.
 
-De build bevat nu 18 pagina's: alle 17 oorspronkelijke adressen en één nieuw
+De build bevat nu 17 pagina's: 16 behouden oorspronkelijke adressen en één nieuw
 Quickbond-artikel op `/blog/quickbond-gevelbeplating-verlijmen/`. Het artikel heeft
 direct leesbare HTML, organisatie als auteur, publicatiedatum, BlogPosting-data,
 interne links vanaf homepage/productpagina/footer en opname in de sitemap met
 projectafbeelding. Geen verzonnen klantvragen, zoekvolumes of verwerkingsgetallen.
 
-De geautomatiseerde SEO-controle gaat over alle 18 pagina's: unieke titles en
+Op verzoek is de oude categorie `/producten/luchtdicht-bouwen/` volledig vervallen.
+De pagina, alle interne verwijzingen, sitemapvermelding, vier bijbehorende
+afbeeldingen en hun thumbnail-/attachment-redirects worden niet gepubliceerd.
+Zonder inhoudelijk equivalente vervanging krijgt de oude URL een echte 404,
+geen misleidende homepage-redirect of robots-blokkade. Bronarchief is geen
+publicatiebron zonder de beoordeling in `seo/publication-policy.cjs`.
+
+De geautomatiseerde SEO-controle gaat over alle 17 pagina's: unieke titles en
 beschrijvingen, één H1, canonical/social-URL, interne links, media, bedrijfsgegevens,
 gestructureerde data, oude URL's en sitemap. Dit is geen bewijs van indexering,
 rankings, AI-vermelding of controle door André van iedere productclaim.
 
 Openstaande aandachtspunten:
 
-- De laatst waargenomen hostomleiding gaat van nijtec.nl naar www.nijtec.nl,
-  terwijl canonical en sitemap het afgesproken nijtec.nl zonder www gebruiken.
-  Dat zijn tegenstrijdige canonical-signalen. Laat Vercel Domains aansluiten op
-  de afgesproken hoofdvariant: nijtec.nl serveert Production zonder redirect,
-  www.nijtec.nl verwijst permanent daarnaar. Geen tweede hostredirect in de code
-  toevoegen; die veroorzaakte eerder een lus. Nog niet als uitgevoerd afgevinkt.
-- Search Console: eigendom/toegang, sitemapindiening, URL-inspectie en de werkelijk
+- De gebruiker heeft Vercel Domains gecorrigeerd: nijtec.nl serveert Production,
+  www.nijtec.nl verwijst met 308 naar nijtec.nl. De livecontrole van 23 oktober
+  bevestigde dit. Geen tweede hostredirect in de code toevoegen.
+- Search Console: de gebruiker heeft domeineigendom via STRATO-TXT geverifieerd.
+  Sitemapindiening, URL-inspectie en de werkelijk
   door Google gekozen canonical zijn niet bevestigd. Rich Results Test, PageSpeed
   Insights/velddatacontrole en Google Bedrijfsprofielcontrole staan ook nog open.
 - Actuele productdocumenten en beoordeling van technische productclaims door
@@ -46,11 +51,11 @@ Google bepaalt zelf rankings, snippets, sitelinks en het uiterlijk van het bedri
 
 ## In deze versie geregeld
 
-- 17 betekenisvolle openbare WordPress-pagina’s hebben weer echte, direct leesbare HTML op hun bestaande adres. Onder andere `/over-ons/`, `/contact/`, `/producten/quickbond/`, `/producten/coatings/` en `/producten/vullende-lijmende-pu-schuimen/`.
+- 16 behouden openbare WordPress-pagina’s hebben echte, direct leesbare HTML op hun bestaande adres. Onder andere `/over-ons/`, `/contact/`, `/producten/quickbond/`, `/producten/coatings/` en `/producten/vullende-lijmende-pu-schuimen/`.
 - Unieke paginatitels, beschrijvingen, één H1, Nederlandse taalinstelling, logische interne links en zelfverwijzende canonicals naar `https://nijtec.nl/`.
 - LocalBusiness-, WebSite- en op vervolgpagina’s WebPage- en BreadcrumbList-data, met consistente naam, telefoon, adres en e-mail. Geen verzonnen reviews, openingstijden, voorraad of aanbiedingen in de data.
-- XML-sitemap met de 17 oorspronkelijke pagina’s en het nieuwe artikel, plus oorspronkelijke afbeelding-URL’s; robots.txt verwijst naar de productiesitemap. Oude WordPress-sitemapadressen krijgen een permanente verwijzing.
-- 108 oorspronkelijke afbeeldingen worden onder hun oude `/wp-content/uploads/…`-adres bewaard. Bekende WordPress-thumbnail- en attachment-adressen verwijzen permanent naar het bijbehorende origineel. Projectfoto’s gebruiken ook in de nieuwe galerij die oorspronkelijke URL’s.
+- XML-sitemap met de 16 behouden oorspronkelijke pagina’s en het nieuwe artikel, plus beoordeelde afbeelding-URL’s; robots.txt verwijst naar de productiesitemap. Oude WordPress-sitemapadressen krijgen een permanente verwijzing.
+- 104 beoordeelde oorspronkelijke afbeeldingen worden onder hun oude `/wp-content/uploads/…`-adres gepubliceerd. Alleen hun bekende WordPress-thumbnail- en attachment-adressen verwijzen permanent naar het bijbehorende origineel. Vier beelden van de vervallen categorie zijn uitgesloten. Projectfoto’s gebruiken ook in de nieuwe galerij die oorspronkelijke URL’s.
 - Het afgesproken hoofdadres is `https://nijtec.nl/`. Beheer de www-omleiding uitsluitend bij Vercel Domains: nijtec.nl dient de productieversie, www.nijtec.nl verwijst daarnaar door. Geen tweede hostomleiding in vercel.json; die kan met een omgekeerde dashboardinstelling een redirectlus voor assets veroorzaken. Bestaande inhoudelijke pagina-adressen krijgen geen algemene homepage-redirect. Onbekende adressen krijgen een echte 404.
 - Vercel-testdomeinen krijgen `X-Robots-Tag: noindex, follow`, zodat zij niet met de productiesite concurreren. Die regel geldt niet voor nijtec.nl.
 - Alle 20 gepubliceerde artikelen van de algemene voorwaarden zijn zonder inhoudelijke herformulering overgenomen, inclusief de volledige pagina. Dit is geen juridische actualiteitscontrole.

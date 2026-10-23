@@ -23,15 +23,48 @@ Products is ook gecontroleerd bij de fabrikant:
 https://www.connectproducts.nl/nl/ en de officiële productcatalogus op
 https://www.connectproducts.nl/files/seal-it-product-catalogus.pdf.
 
-De 14 geselecteerde beelden staan ongewijzigd in legacy-assets en behouden hun
+De oorspronkelijk 14 geselecteerde beelden staan ongewijzigd in legacy-assets en behouden hun
 oude wp-content-adressen. Alle beelden zijn visueel bekeken. Sommige bestandsnamen
 zijn onnauwkeurig: super-all-360.png toont bijvoorbeeld een Seal-it 350 Super-All.
 De onderschriften volgen het etiket. Voor coatings en steenstrips worden echte
 toepassings-/materiaalbeelden gebruikt; er zijn geen productverpakkingen verzonnen.
-De kleine beelden bij luchtdicht bouwen worden niet boven hun bronformaat vergroot.
+Deze oorspronkelijke selectie is op 23 oktober gecorrigeerd zoals hieronder beschreven.
 
 BTW NL866979001.B01 is door de gebruiker opgegeven en stond ook onder de oude
 bedrijfstekst. Het is toegevoegd aan het zichtbare contactblok en structured data.
+
+## Assortimentscorrectie en volledige mediacontrole, 23 oktober 2026
+
+De gebruiker bevestigt dat luchtdicht bouwen niet meer van toepassing is en
+Zettex een concurrent is. Dit gaat boven de historische WordPress-inventaris.
+De oude foto was geen nieuwe externe zoekvondst: `scripts/audit-legacy.cjs`
+registreerde hem via de openbare Nijtec WordPress-media-API, met gebruik op de
+oude `/producten/luchtdicht-bouwen/`-pagina. `scripts/import-legacy-media.cjs`
+haalde uitsluitend beelden van `https://nijtec.nl` op. De oorspronkelijke bron
+was `https://nijtec.nl/wp-content/uploads/2023/10/elastic-gunfoam-b2.png`.
+Dat bewijst herkomst, niet toestemming om het als huidig aanbod te publiceren.
+
+Verwijderd uit de publicatie: de volledige categorie/pagina en verwijzingen,
+de Zettex Elastic Gunfoam-foto, compressband-2d.png, BUTYLBAND-FLEECE.jpg en
+zwaluw.png (etiket Den Braven/Zwaluw). Ook hun varianten en attachment-redirects
+worden niet meer gepubliceerd. Oude bronbestanden/inventaris blijven alleen
+in het ontwikkelarchief voor controleerbare herkomst, niet in `dist/`.
+
+Alle 108 historische beelden zijn op 23 oktober visueel bekeken via de lokale,
+niet-gepubliceerde `/__qa/media`-controle. De overige herkenbare verpakkingen,
+ook unnamed.jpg en unnamed-1.jpg, tonen Seal-it/Connect Products of Nijtec
+Quickbond. De koppeling Seal-it/Connect Products steunt op de eerder vermelde
+oude Nijtec-tekst en fabrikantbronnen. Er zijn geen andere herkenbare
+concurrentmerken gevonden. Dit is geen bevestiging van actuele voorraad of
+een volledige lijst van alle bedrijven die André als concurrent beschouwt.
+De overige beelden tonen projecten, steenstrip-/coatingmateriaal, gereedschap
+of Nijtec-logo's. Ook de Quickbond-render is bekeken: alleen Nijtec-branding.
+
+De publicatie gebruikt nu 104 expliciet beoordeelde originele media en twaalf
+pop-upbeelden voor zeven categorieën. Nieuwe oude-media-imports worden niet
+automatisch gepubliceerd. De build weigert onbekende beelden tot beoordeling
+en leegt alleen het gevalideerde, opnieuw opbouwbare `dist/`, zodat verwijderde
+pagina's en bestanden ook bij herhaald bouwen wegblijven.
 
 ## Quickbond-artikel, 23 oktober 2026
 

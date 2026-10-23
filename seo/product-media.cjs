@@ -22,10 +22,6 @@ module.exports = {
     media('01.png', 'Steenstrips: kleur en metselverband', 444, 306, 'material'),
     media('example10.png', 'Steenstrips: materiaal en achterzijde', 703, 263, 'material')
   ],
-  luchtdicht: [
-    media('elastic-gunfoam-b2.png', 'Zetex Elastic Gunfoam B2', 67, 280, 'original-size'),
-    media('compressband-2d.png', 'Compressband voor aansluitingen', 114, 100, 'original-size')
-  ],
   acrylaten: [
     media('uni-acryl110.png', 'Seal-it 110 Uni-Acryl', 1600, 1067),
     media('top-acryl115.png', 'Seal-it 115 Top-Acryl', 1600, 1067)

@@ -7,16 +7,20 @@ const dist=path.join(root,'dist');
 const inventory=require('../seo/legacy-inventory.json');
 const config=require('../vercel.json');
 const pages=require('../seo/pages.cjs');
+const publication=require('../seo/publication-policy.cjs');
+const activeOriginalPages=inventory.pages.filter(p=>publication.isPagePublished(p.path));
+const activeMedia=publication.publishedMedia(inventory);
 const htmlFor=route=>fs.readFileSync(path.join(dist,route,'index.html'),'utf8');
 const exists=url=>{const p=new URL(url,'https://nijtec.nl').pathname;return fs.existsSync(path.join(dist,p))||fs.existsSync(path.join(dist,p,'index.html'));};
 test('Domain routing has a single owner and production HTML has no hidden demo banner',()=>{
  assert.ok(config.redirects.every(r=>!r.has?.some(c=>c.type==='host')),'Manage primary domain redirects in Vercel Domains only');
  assert.ok(!htmlFor('/').includes('<div class="demo-banner">'));
 });
-test('All 17 meaningful original page addresses have real, uniquely titled HTML',()=>{
+test('All 16 retained original page addresses have real, uniquely titled HTML',()=>{
  const titles=[];
  assert.equal(inventory.pages.length,17);
- for(const page of inventory.pages){
+ assert.equal(activeOriginalPages.length,16);
+ for(const page of activeOriginalPages){
   const html=htmlFor(page.path);
   assert.equal((html.match(/<h1\b/g)||[]).length,1,page.path);
   assert.match(html,/<html lang="nl">/);
@@ -24,7 +28,7 @@ test('All 17 meaningful original page addresses have real, uniquely titled HTML'
   assert.ok(!html.includes('name="robots" content="noindex'),page.path);
   titles.push(html.match(/<title>(.*?)<\/title>/)[1]);
  }
- assert.equal(new Set(titles).size,17);
+ assert.equal(new Set(titles).size,16);
 });
 
 test('Every page including the article has unique metadata, one H1 and matching canonical/social URL',()=>{
@@ -63,12 +67,13 @@ test('Generated static pages have usable internal links, anchors, media and stru
   if(route!=='/')assert.ok(graph.find(x=>x['@type']==='BreadcrumbList'));
  }
 });
-test('108 original image URLs exist; every variant/attachment redirect resolves without chains',()=>{
+test('104 reviewed original image URLs exist; every retained variant/attachment redirect resolves without chains',()=>{
  assert.equal(inventory.media.length,108);
+ assert.equal(activeMedia.length,104);
  const redirects=config.redirects.filter(r=>!r.has);
  const sources=new Set(redirects.map(r=>r.source));
  assert.equal(sources.size,redirects.length);
- for(const m of inventory.media){
+ for(const m of activeMedia){
   assert.ok(exists(m.path),m.path);
   assert.ok(fs.statSync(path.join(dist,m.path)).size>0);
   for(const v of m.variants)assert.ok(redirects.some(r=>r.source===v&&r.destination===m.path),v);
@@ -83,8 +88,8 @@ test('Sitemap covers the real pages and images, and robots exposes only the prod
  const xml=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');
  assert.equal((xml.match(/<url>/g)||[]).length,1+pages.length);
  for(const p of pages)assert.ok(xml.includes('<loc>https://nijtec.nl'+p.path+'</loc>'));
- for(const p of inventory.pages)assert.ok(xml.includes('<loc>https://nijtec.nl'+p.path+'</loc>'));
- for(const m of inventory.media)assert.ok(xml.includes('https://nijtec.nl'+m.path));
+ for(const p of activeOriginalPages)assert.ok(xml.includes('<loc>https://nijtec.nl'+p.path+'</loc>'));
+ for(const m of activeMedia)assert.ok(xml.includes('https://nijtec.nl'+m.path));
  const robots=fs.readFileSync(path.join(dist,'robots.txt'),'utf8');
  assert.match(robots,/Sitemap: https:\/\/nijtec.nl\/sitemap.xml/);
  assert.ok(!robots.includes('Disallow: /\n'));
