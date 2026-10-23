@@ -37,6 +37,7 @@ test('old category moves once to canonical chemical anchor page and its former p
  assert.ok(!pages.some(p=>p.path==='/producten/2-componenten-lijmen/'));
  assert.ok(!fs.existsSync(path.join(dist,'producten/2-componenten-lijmen')));
  assert.ok(config.redirects.some(r=>r.source==='/producten/2-componenten-lijmen'&&r.destination==='/producten/chemisch-anker/'&&r.permanent));
+ assert.ok(config.redirects.some(r=>r.source==='/producten/2-componenten-lijmen/'&&r.destination==='/producten/chemisch-anker/'&&r.permanent));
  assert.ok(!fs.existsSync(path.join(dist,'wp-content/uploads/2023/10/poxyfix.png')));
  assert.ok(!config.redirects.some(r=>/poxyfix/i.test(r.source+r.destination)));
  const xml=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');

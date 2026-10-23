@@ -11,7 +11,10 @@ const redirects = [
   {source:'/wp-sitemap-posts-page-1.xml',destination:'/sitemap.xml',permanent:true},
   {source:'/producten/pu-lijmen',destination:'/producten/vullende-lijmende-pu-schuimen/',permanent:true}
 ];
-for(const [source,destination] of Object.entries(publication.movedRoutes))redirects.push({source:source.replace(/\/$/,''),destination,permanent:true});
+for(const [source,destination] of Object.entries(publication.movedRoutes)){
+  // Vercel matches the slash form explicitly when trailingSlash is enabled.
+  for(const variant of new Set([source,source.replace(/\/$/,'')]))redirects.push({source:variant,destination,permanent:true});
+}
 const sources = new Set(redirects.map(r=>r.source));
 for(const media of publication.publishedMedia(inventory)){
   for(const variant of media.variants){if(!sources.has(variant)){redirects.push({source:variant,destination:media.path,permanent:true});sources.add(variant);}}

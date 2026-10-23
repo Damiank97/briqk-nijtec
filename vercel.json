@@ -58,6 +58,11 @@
       "permanent": true
     },
     {
+      "source": "/producten/2-componenten-lijmen/",
+      "destination": "/producten/chemisch-anker/",
+      "permanent": true
+    },
+    {
       "source": "/producten/2-componenten-lijmen",
       "destination": "/producten/chemisch-anker/",
       "permanent": true
