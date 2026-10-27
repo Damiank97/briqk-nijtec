@@ -525,6 +525,11 @@ nav {
   to { opacity: 1; clip-path: inset(0); scale: 1; }
 }
 
+/* Do not postpone the mobile LCP image behind an entrance animation. */
+@media (max-width: 900px) {
+  .hero-project { animation: none; }
+}
+
 .features-grid {
   grid-column: 1 / -1;
   display: block;

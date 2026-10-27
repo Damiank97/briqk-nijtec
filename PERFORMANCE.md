@@ -18,6 +18,9 @@ contactverzending en 3D-bediening blijven behouden.
   heeft een aparte oranje variant; origineel oranje blijft beschikbaar op donkerblauw.
   Tekstreveals beginnen op 95% in plaats van 35% opacity. Beeldreveals blijven gelijk.
 - Footerlinks zijn onderstreept en afbeeldingen hebben expliciete dimensies.
+- Op schermen tot 900 px verschijnt de openingsfoto direct, zonder vertraagde
+  clip/opacity-animatie. Een extra 768 px WebP voorkomt een onnodig grote
+  downloadsprong op mobiele schermen. Overige reveals en 3D blijven behouden.
 
 ## Verificatie
 

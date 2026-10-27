@@ -20,7 +20,7 @@ async function run() {
     const meta = await sharp(file).metadata();
     if (meta.width < 400 || (await fs.stat(file)).size < 30000) continue;
     const key = createHash('sha256').update(src).digest('hex').slice(0,16);
-    const widths = [...new Set([320,640,960,1600].map(w=>Math.min(w,meta.width)))];
+    const widths = [...new Set((src==='/assets/hero-project.jpg'?[320,640,768,960,1600]:[320,640,960,1600]).map(w=>Math.min(w,meta.width)))];
     const variants = [];
     for (const width of widths) {
       const target='/assets/optimized/'+key+'-'+width+'.webp';
