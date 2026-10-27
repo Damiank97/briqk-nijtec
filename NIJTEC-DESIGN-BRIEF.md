@@ -2,6 +2,16 @@
 
 ## Vindbaarheid en livegang
 
+- Prestatieverbetering 27 oktober 2026: bewaar alle goedgekeurde originelen en
+  hun URL's. Responsive WebP-voorbeelden staan apart onder assets/optimized;
+  de fotoviewer blijft het origineel openen. Merkartwork wordt niet geconverteerd.
+  De 3D-dependencies laden pas nabij Quickbond of bij toetsenbordfocus. Rendering
+  is vraaggestuurd, pauzeert buiten beeld en hervat bij bediening/scroll/resize.
+  Gebruik de contrastvarianten uit de tokens: donkerder oranje voor kleine tekst,
+  de iets lichtere displayvariant voor grote koppen en het originele oranje op
+  donkerblauw. Gedempte tekst blijft AA-leesbaar; een reveal verlaagt tekst niet
+  meer naar 35% opacity. Afbeeldingsreveals en het bestaande ontwerp blijven staan.
+
 - Volg `SEO-GEO-MIGRATIE.md` bij iedere publicatie of wijziging van pagina-adressen.
 - Bouw altijd de complete site naar `dist/`; losse bron-HTML publiceren laat de
   bestaande Google-landingspagina’s en volledige voorwaarden weg.

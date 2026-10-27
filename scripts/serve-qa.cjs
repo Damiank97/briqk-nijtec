@@ -38,7 +38,8 @@ http.createServer(async (req, res) => {
     let body = await fs.readFile(target);
     if (path.extname(target)==='.html' && url.searchParams.has('qa')) {
       const instrument = '<script>history.scrollRestoration="manual";window.__qaErrors=[];window.__qaCLS=0;addEventListener("error",e=>__qaErrors.push(e.message||e.target.src),true);addEventListener("unhandledrejection",e=>__qaErrors.push(String(e.reason)));new PerformanceObserver(list=>list.getEntries().forEach(e=>{if(!e.hadRecentInput)__qaCLS+=e.value})).observe({type:"layout-shift",buffered:true});<\/script>';
-      body = Buffer.from(body.toString().replace('<head>', '<head>' + instrument));
+      const frameCounter='<script>window.__qaRenderFrames=0;const qaNativeFrame=requestAnimationFrame;window.requestAnimationFrame=callback=>qaNativeFrame(time=>{if(callback.name==="render")window.__qaRenderFrames++;callback(time);});<\/script>';
+      body = Buffer.from(body.toString().replace('<head>', '<head>' + instrument + frameCounter));
     }
     res.writeHead(200, { 'Content-Type': types[path.extname(target)] || 'application/octet-stream', 'Cache-Control':'no-store' });
     res.end(req.method === 'HEAD' ? undefined : body);

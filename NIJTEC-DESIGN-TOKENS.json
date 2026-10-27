@@ -18,13 +18,14 @@
     "paperLight": "#fbf9f4",
     "ink": "#17264e",
     "inkSoft": "#465069",
-    "muted": "#697187",
+    "muted": "#5b657b",
     "rule": "#c7cddd",
     "nijtecBlue": "#2e4d9a",
     "nijtecBlueDeep": "#17264e",
     "nijtecBlueSoft": "#e9edf7",
     "nijtecOrange": "#ef762f",
-    "nijtecOrangeDark": "#c95018"
+    "nijtecOrangeDark": "#a23c11",
+    "nijtecOrangeDisplay": "#c95018"
   },
   "shape": {
     "primaryRadius": "0px",

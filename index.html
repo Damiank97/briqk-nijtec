@@ -439,7 +439,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/redesign.css?v=24">
+  <link rel="stylesheet" href="/redesign.css?v=25">
 <script src="/motion.js?v=1" defer></script>
 <script src="/email-validation.js?v=1" defer></script>
 <script src="/contact.js?v=4" defer></script>
@@ -471,7 +471,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 <main>
 <section class="hero" id="top">
   <div class="hero-logo-watermark">
-    <img src="/NijTec_logo.png" alt="">
+    <img src="/NijTec_logo.png" alt="" width="512" height="341" loading="lazy">
   </div>
   <div class="hero-content">
     <div class="hero-badge"><strong>Nijtec B.V.</strong><span>Lijmen · Kitten · Coatings · Montage</span></div>
@@ -568,7 +568,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
       <div class="qb-render-stage" role="group" tabindex="0" aria-label="Quickbond productviewer. Sleep horizontaal of gebruik de pijltjestoetsen om de koker te draaien." aria-describedby="qb-drag-hint">
         <div class="qb-render-glow" aria-hidden="true"></div>
         <canvas class="qb-webgl-canvas" aria-hidden="true"></canvas>
-        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Quickbond koker van Nijtec met witte nozzle en rood label" width="1175" height="1339" draggable="false">
+        <img class="qb-product-render" src="/assets/quickbond-render-v1.png" alt="Quickbond koker van Nijtec met witte nozzle en rood label" width="1175" height="1339" draggable="false" loading="lazy">
         <span class="qb-drag-hint" id="qb-drag-hint"><span aria-hidden="true">↔</span> Sleep voor 360°</span>
         <div class="qb-viewer-controls" aria-label="3D-weergave bedienen">
           <button type="button" data-qb-turn="-1" aria-label="Draai Quickbond naar links">←</button>
@@ -733,8 +733,8 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 </main>
 <footer>
   <div>
-    <img src="/NijTec_logo.png" alt="Nijtec" style="height:64px;mix-blend-mode:screen;filter:brightness(1.1);display:block;margin-bottom:4px;">
-    <div style="font-size:13px;color:rgba(255,255,255,0.4);">Lijmen, Kitten & Coatings voor bouw & industrie</div>
+    <img src="/NijTec_logo.png" alt="Nijtec" width="512" height="341" loading="lazy" style="height:64px;width:auto;mix-blend-mode:screen;filter:brightness(1.1);display:block;margin-bottom:4px;">
+    <div class="footer-description">Lijmen, Kitten & Coatings voor bouw & industrie</div>
   </div>
   <div class="footer-info">
     <div>Laveringsveen 10 · 7751 DN Dalen</div>
@@ -747,6 +747,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 
 <!-- PRODUCT MODAL -->
 <!-- PRODUCT_MEDIA_DATA -->
+<!-- RESPONSIVE_MEDIA_DATA -->
 <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-header">
@@ -859,6 +860,11 @@ function openModal(key, trigger) {
     link.className = 'modal-photo-link modal-photo-link--' + photo.kind;
     link.setAttribute('aria-label', 'Vergroot foto: ' + photo.name);
     const image = document.createElement('img');
+    const variants = JSON.parse(document.getElementById('responsive-media-data')?.textContent || '{}')[photo.src];
+    if (variants) {
+      image.srcset = variants.map(v => v.src + ' ' + v.width + 'w').join(', ');
+      image.sizes = '(min-width: 900px) 320px, (min-width: 600px) 45vw, 90vw';
+    }
     image.src = photo.src;
     image.alt = photo.name;
     image.width = photo.width;
@@ -925,7 +931,10 @@ function renderProjectImage(){
   const img=item.querySelector('img');
   const caption=item.querySelector('.photo-caption span');
   const viewerImage=document.getElementById('image-viewer-image');
-  viewerImage.src=img.currentSrc || img.src;
+  // Preview derivatives never replace the original in the full-size viewer.
+  viewerImage.src=item.matches('a[href]') ? item.href : img.src;
+  viewerImage.width=Number(img.getAttribute('width')) || img.naturalWidth;
+  viewerImage.height=Number(img.getAttribute('height')) || img.naturalHeight;
   viewerImage.alt=img.alt;
   document.getElementById('image-viewer-caption').textContent=caption ? caption.textContent : img.alt;
   document.getElementById('image-viewer-counter').textContent=String(activeProjectImage+1).padStart(2,'0')+' / '+String(activeViewerImages.length).padStart(2,'0');
@@ -1217,6 +1226,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 </script>
-<script type="module" src="/quickbond-viewer.js?v=10"></script>
+<script type="module" src="/quickbond-viewer.js?v=11"></script>
 </body>
 </html>

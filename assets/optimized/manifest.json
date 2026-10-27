@@ -1,0 +1,2070 @@
+{
+  "/wp-content/uploads/2023/10/xample11.png": [
+    {
+      "src": "/assets/optimized/3d29045bb53eac74-320.webp",
+      "width": 320,
+      "height": 176,
+      "bytes": 4238
+    },
+    {
+      "src": "/assets/optimized/3d29045bb53eac74-640.webp",
+      "width": 640,
+      "height": 352,
+      "bytes": 14304
+    },
+    {
+      "src": "/assets/optimized/3d29045bb53eac74-740.webp",
+      "width": 740,
+      "height": 407,
+      "bytes": 18358
+    }
+  ],
+  "/wp-content/uploads/2023/10/example10.png": [
+    {
+      "src": "/assets/optimized/703cbe8cd271fd8e-320.webp",
+      "width": 320,
+      "height": 120,
+      "bytes": 5988
+    },
+    {
+      "src": "/assets/optimized/703cbe8cd271fd8e-640.webp",
+      "width": 640,
+      "height": 239,
+      "bytes": 17618
+    },
+    {
+      "src": "/assets/optimized/703cbe8cd271fd8e-703.webp",
+      "width": 703,
+      "height": 263,
+      "bytes": 20822
+    }
+  ],
+  "/wp-content/uploads/2023/10/example08.jpg": [
+    {
+      "src": "/assets/optimized/79a4346186b603cb-320.webp",
+      "width": 320,
+      "height": 240,
+      "bytes": 15886
+    },
+    {
+      "src": "/assets/optimized/79a4346186b603cb-640.webp",
+      "width": 640,
+      "height": 480,
+      "bytes": 64560
+    },
+    {
+      "src": "/assets/optimized/79a4346186b603cb-960.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 138484
+    },
+    {
+      "src": "/assets/optimized/79a4346186b603cb-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "bytes": 323166
+    }
+  ],
+  "/wp-content/uploads/2023/10/example07.jpg": [
+    {
+      "src": "/assets/optimized/1479556f94046a54-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 10674
+    },
+    {
+      "src": "/assets/optimized/1479556f94046a54-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 32632
+    },
+    {
+      "src": "/assets/optimized/1479556f94046a54-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 59038
+    },
+    {
+      "src": "/assets/optimized/1479556f94046a54-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 136808
+    }
+  ],
+  "/wp-content/uploads/2023/10/example06.jpg": [
+    {
+      "src": "/assets/optimized/15ad21a7398133b3-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 14952
+    },
+    {
+      "src": "/assets/optimized/15ad21a7398133b3-640.webp",
+      "width": 640,
+      "height": 426,
+      "bytes": 52642
+    },
+    {
+      "src": "/assets/optimized/15ad21a7398133b3-650.webp",
+      "width": 650,
+      "height": 433,
+      "bytes": 57790
+    }
+  ],
+  "/wp-content/uploads/2023/10/example05.jpg": [
+    {
+      "src": "/assets/optimized/9d86a2491f9b4a30-320.webp",
+      "width": 320,
+      "height": 427,
+      "bytes": 30094
+    },
+    {
+      "src": "/assets/optimized/9d86a2491f9b4a30-640.webp",
+      "width": 640,
+      "height": 853,
+      "bytes": 89336
+    },
+    {
+      "src": "/assets/optimized/9d86a2491f9b4a30-900.webp",
+      "width": 900,
+      "height": 1200,
+      "bytes": 144606
+    }
+  ],
+  "/wp-content/uploads/2023/10/example04.jpg": [
+    {
+      "src": "/assets/optimized/4f50714df394c621-320.webp",
+      "width": 320,
+      "height": 427,
+      "bytes": 32276
+    },
+    {
+      "src": "/assets/optimized/4f50714df394c621-640.webp",
+      "width": 640,
+      "height": 853,
+      "bytes": 118450
+    },
+    {
+      "src": "/assets/optimized/4f50714df394c621-960.webp",
+      "width": 960,
+      "height": 1280,
+      "bytes": 247592
+    },
+    {
+      "src": "/assets/optimized/4f50714df394c621-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "bytes": 384750
+    }
+  ],
+  "/wp-content/uploads/2023/10/example03.jpg": [
+    {
+      "src": "/assets/optimized/7100c4d254d459fe-320.webp",
+      "width": 320,
+      "height": 427,
+      "bytes": 35108
+    },
+    {
+      "src": "/assets/optimized/7100c4d254d459fe-640.webp",
+      "width": 640,
+      "height": 853,
+      "bytes": 109598
+    },
+    {
+      "src": "/assets/optimized/7100c4d254d459fe-900.webp",
+      "width": 900,
+      "height": 1200,
+      "bytes": 191258
+    }
+  ],
+  "/wp-content/uploads/2023/10/example02.jpg": [
+    {
+      "src": "/assets/optimized/d1072e1d2a286d83-320.webp",
+      "width": 320,
+      "height": 427,
+      "bytes": 33436
+    },
+    {
+      "src": "/assets/optimized/d1072e1d2a286d83-640.webp",
+      "width": 640,
+      "height": 853,
+      "bytes": 101466
+    },
+    {
+      "src": "/assets/optimized/d1072e1d2a286d83-900.webp",
+      "width": 900,
+      "height": 1200,
+      "bytes": 181576
+    }
+  ],
+  "/wp-content/uploads/2023/10/example01.jpg": [
+    {
+      "src": "/assets/optimized/a94a7dd9e0cdf6f4-320.webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 25004
+    },
+    {
+      "src": "/assets/optimized/a94a7dd9e0cdf6f4-640.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 82292
+    },
+    {
+      "src": "/assets/optimized/a94a7dd9e0cdf6f4-960.webp",
+      "width": 960,
+      "height": 960,
+      "bytes": 153760
+    },
+    {
+      "src": "/assets/optimized/a94a7dd9e0cdf6f4-1600.webp",
+      "width": 1600,
+      "height": 1600,
+      "bytes": 312314
+    }
+  ],
+  "/wp-content/uploads/2023/10/23.jpg": [
+    {
+      "src": "/assets/optimized/5eeffe28c9e18963-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 8420
+    },
+    {
+      "src": "/assets/optimized/5eeffe28c9e18963-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 31276
+    }
+  ],
+  "/wp-content/uploads/2023/10/22.png": [
+    {
+      "src": "/assets/optimized/4db459f0103e8200-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 8284
+    },
+    {
+      "src": "/assets/optimized/4db459f0103e8200-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 27960
+    }
+  ],
+  "/wp-content/uploads/2023/10/21.jpg": [
+    {
+      "src": "/assets/optimized/a8d438076a883bb3-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 10036
+    },
+    {
+      "src": "/assets/optimized/a8d438076a883bb3-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 32714
+    }
+  ],
+  "/wp-content/uploads/2023/10/20.jpg": [
+    {
+      "src": "/assets/optimized/57efb378f7b71970-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 11418
+    },
+    {
+      "src": "/assets/optimized/57efb378f7b71970-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 44264
+    }
+  ],
+  "/wp-content/uploads/2023/10/19.jpg": [
+    {
+      "src": "/assets/optimized/d130f20783ea9cc5-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 11282
+    },
+    {
+      "src": "/assets/optimized/d130f20783ea9cc5-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 41182
+    }
+  ],
+  "/wp-content/uploads/2023/10/18.jpg": [
+    {
+      "src": "/assets/optimized/fdeccaa9124a2e91-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 12674
+    },
+    {
+      "src": "/assets/optimized/fdeccaa9124a2e91-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 43958
+    }
+  ],
+  "/wp-content/uploads/2023/10/17.jpg": [
+    {
+      "src": "/assets/optimized/8d1383b624d7c2e2-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 13732
+    },
+    {
+      "src": "/assets/optimized/8d1383b624d7c2e2-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 53316
+    }
+  ],
+  "/wp-content/uploads/2023/10/16-1.jpg": [
+    {
+      "src": "/assets/optimized/bcc4ed1eff14f10a-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 8876
+    },
+    {
+      "src": "/assets/optimized/bcc4ed1eff14f10a-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 30210
+    }
+  ],
+  "/wp-content/uploads/2023/10/15.png": [
+    {
+      "src": "/assets/optimized/3d52914179ee3d4c-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 14510
+    },
+    {
+      "src": "/assets/optimized/3d52914179ee3d4c-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 53206
+    }
+  ],
+  "/wp-content/uploads/2023/10/15-1.jpg": [
+    {
+      "src": "/assets/optimized/0522143f6c66a468-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 6990
+    },
+    {
+      "src": "/assets/optimized/0522143f6c66a468-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 20590
+    }
+  ],
+  "/wp-content/uploads/2023/10/14.png": [
+    {
+      "src": "/assets/optimized/e9d8cef2f94c46fe-320.webp",
+      "width": 320,
+      "height": 208,
+      "bytes": 10934
+    },
+    {
+      "src": "/assets/optimized/e9d8cef2f94c46fe-600.webp",
+      "width": 600,
+      "height": 390,
+      "bytes": 40762
+    }
+  ],
+  "/wp-content/uploads/2023/10/13.png": [
+    {
+      "src": "/assets/optimized/8843a93188791d6f-320.webp",
+      "width": 320,
+      "height": 222,
+      "bytes": 7464
+    },
+    {
+      "src": "/assets/optimized/8843a93188791d6f-447.webp",
+      "width": 447,
+      "height": 310,
+      "bytes": 15174
+    }
+  ],
+  "/wp-content/uploads/2023/10/12.png": [
+    {
+      "src": "/assets/optimized/58bfd0c411b418db-320.webp",
+      "width": 320,
+      "height": 223,
+      "bytes": 24048
+    },
+    {
+      "src": "/assets/optimized/58bfd0c411b418db-441.webp",
+      "width": 441,
+      "height": 308,
+      "bytes": 41392
+    }
+  ],
+  "/wp-content/uploads/2023/10/11.png": [
+    {
+      "src": "/assets/optimized/cf265268f7a50c34-320.webp",
+      "width": 320,
+      "height": 225,
+      "bytes": 11138
+    },
+    {
+      "src": "/assets/optimized/cf265268f7a50c34-443.webp",
+      "width": 443,
+      "height": 311,
+      "bytes": 18710
+    }
+  ],
+  "/wp-content/uploads/2023/10/10.png": [
+    {
+      "src": "/assets/optimized/b0c869d4639de7f6-320.webp",
+      "width": 320,
+      "height": 226,
+      "bytes": 15692
+    },
+    {
+      "src": "/assets/optimized/b0c869d4639de7f6-442.webp",
+      "width": 442,
+      "height": 312,
+      "bytes": 27892
+    }
+  ],
+  "/wp-content/uploads/2023/10/09.png": [
+    {
+      "src": "/assets/optimized/aef7421c16c275a0-320.webp",
+      "width": 320,
+      "height": 222,
+      "bytes": 23608
+    },
+    {
+      "src": "/assets/optimized/aef7421c16c275a0-445.webp",
+      "width": 445,
+      "height": 309,
+      "bytes": 40456
+    }
+  ],
+  "/wp-content/uploads/2023/10/08.png": [
+    {
+      "src": "/assets/optimized/9f82c23577435ad2-320.webp",
+      "width": 320,
+      "height": 222,
+      "bytes": 19544
+    },
+    {
+      "src": "/assets/optimized/9f82c23577435ad2-446.webp",
+      "width": 446,
+      "height": 310,
+      "bytes": 38610
+    }
+  ],
+  "/wp-content/uploads/2023/10/07.png": [
+    {
+      "src": "/assets/optimized/68bd5151cb083b9c-320.webp",
+      "width": 320,
+      "height": 223,
+      "bytes": 15892
+    },
+    {
+      "src": "/assets/optimized/68bd5151cb083b9c-443.webp",
+      "width": 443,
+      "height": 309,
+      "bytes": 29840
+    }
+  ],
+  "/wp-content/uploads/2023/10/06-1.jpg": [
+    {
+      "src": "/assets/optimized/619c851f4b35c2ad-320.webp",
+      "width": 320,
+      "height": 240,
+      "bytes": 20826
+    },
+    {
+      "src": "/assets/optimized/619c851f4b35c2ad-640.webp",
+      "width": 640,
+      "height": 480,
+      "bytes": 70646
+    },
+    {
+      "src": "/assets/optimized/619c851f4b35c2ad-960.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 142444
+    },
+    {
+      "src": "/assets/optimized/619c851f4b35c2ad-1280.webp",
+      "width": 1280,
+      "height": 960,
+      "bytes": 231970
+    }
+  ],
+  "/wp-content/uploads/2023/10/05.png": [
+    {
+      "src": "/assets/optimized/af4e85a5fb5eaeae-320.webp",
+      "width": 320,
+      "height": 223,
+      "bytes": 10802
+    },
+    {
+      "src": "/assets/optimized/af4e85a5fb5eaeae-442.webp",
+      "width": 442,
+      "height": 308,
+      "bytes": 17338
+    }
+  ],
+  "/wp-content/uploads/2023/10/04.png": [
+    {
+      "src": "/assets/optimized/d46e3528cce48001-320.webp",
+      "width": 320,
+      "height": 225,
+      "bytes": 9822
+    },
+    {
+      "src": "/assets/optimized/d46e3528cce48001-446.webp",
+      "width": 446,
+      "height": 314,
+      "bytes": 17188
+    }
+  ],
+  "/wp-content/uploads/2023/10/03.png": [
+    {
+      "src": "/assets/optimized/fc4747bbc945b40f-320.webp",
+      "width": 320,
+      "height": 225,
+      "bytes": 4744
+    },
+    {
+      "src": "/assets/optimized/fc4747bbc945b40f-443.webp",
+      "width": 443,
+      "height": 312,
+      "bytes": 8666
+    }
+  ],
+  "/wp-content/uploads/2023/10/02.png": [
+    {
+      "src": "/assets/optimized/dc9356c0d7cf70fb-320.webp",
+      "width": 320,
+      "height": 221,
+      "bytes": 4378
+    },
+    {
+      "src": "/assets/optimized/dc9356c0d7cf70fb-441.webp",
+      "width": 441,
+      "height": 305,
+      "bytes": 7456
+    }
+  ],
+  "/wp-content/uploads/2023/10/01.png": [
+    {
+      "src": "/assets/optimized/bd2c3707e5acd52f-320.webp",
+      "width": 320,
+      "height": 221,
+      "bytes": 8822
+    },
+    {
+      "src": "/assets/optimized/bd2c3707e5acd52f-444.webp",
+      "width": 444,
+      "height": 306,
+      "bytes": 15838
+    }
+  ],
+  "/wp-content/uploads/2023/10/resultaat-epoxyvloer.jpg": [
+    {
+      "src": "/assets/optimized/683f5dc8868a2730-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 12304
+    },
+    {
+      "src": "/assets/optimized/683f5dc8868a2730-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 37304
+    },
+    {
+      "src": "/assets/optimized/683f5dc8868a2730-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 70110
+    }
+  ],
+  "/wp-content/uploads/2023/10/epoxy-toplaag.jpg": [
+    {
+      "src": "/assets/optimized/d892faa5565cd6de-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 6580
+    },
+    {
+      "src": "/assets/optimized/d892faa5565cd6de-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 20960
+    },
+    {
+      "src": "/assets/optimized/d892faa5565cd6de-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 42372
+    }
+  ],
+  "/wp-content/uploads/2023/10/epoxy-op-tegelvloer.jpg": [
+    {
+      "src": "/assets/optimized/500955c1cae1daa2-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 4218
+    },
+    {
+      "src": "/assets/optimized/500955c1cae1daa2-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 22166
+    },
+    {
+      "src": "/assets/optimized/500955c1cae1daa2-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 46756
+    },
+    {
+      "src": "/assets/optimized/500955c1cae1daa2-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 108768
+    }
+  ],
+  "/wp-content/uploads/2023/10/epoxy-aanbrengen.jpg": [
+    {
+      "src": "/assets/optimized/6ec3f33a61814102-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 5948
+    },
+    {
+      "src": "/assets/optimized/6ec3f33a61814102-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 18180
+    },
+    {
+      "src": "/assets/optimized/6ec3f33a61814102-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 36392
+    },
+    {
+      "src": "/assets/optimized/6ec3f33a61814102-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 88978
+    }
+  ],
+  "/wp-content/uploads/2023/10/uni-acryl110.png": [
+    {
+      "src": "/assets/optimized/c9b9f6381c53a1e4-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3360
+    },
+    {
+      "src": "/assets/optimized/c9b9f6381c53a1e4-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8250
+    },
+    {
+      "src": "/assets/optimized/c9b9f6381c53a1e4-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13772
+    },
+    {
+      "src": "/assets/optimized/c9b9f6381c53a1e4-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 25248
+    }
+  ],
+  "/wp-content/uploads/2023/10/top-acryl115.png": [
+    {
+      "src": "/assets/optimized/610fd99187de43ba-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3220
+    },
+    {
+      "src": "/assets/optimized/610fd99187de43ba-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 7824
+    },
+    {
+      "src": "/assets/optimized/610fd99187de43ba-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 12700
+    },
+    {
+      "src": "/assets/optimized/610fd99187de43ba-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 21338
+    }
+  ],
+  "/wp-content/uploads/2023/10/spaster-fill125.png": [
+    {
+      "src": "/assets/optimized/b7b7bdfe6cdef33e-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3618
+    },
+    {
+      "src": "/assets/optimized/b7b7bdfe6cdef33e-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8520
+    },
+    {
+      "src": "/assets/optimized/b7b7bdfe6cdef33e-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13974
+    },
+    {
+      "src": "/assets/optimized/b7b7bdfe6cdef33e-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23448
+    }
+  ],
+  "/wp-content/uploads/2023/10/spac-cryl120.png": [
+    {
+      "src": "/assets/optimized/6ef5c57070ec8292-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3308
+    },
+    {
+      "src": "/assets/optimized/6ef5c57070ec8292-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 7976
+    },
+    {
+      "src": "/assets/optimized/6ef5c57070ec8292-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13402
+    },
+    {
+      "src": "/assets/optimized/6ef5c57070ec8292-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23504
+    }
+  ],
+  "/wp-content/uploads/2023/10/cement-fix130.png": [
+    {
+      "src": "/assets/optimized/7880e41d963a7014-320.webp",
+      "width": 320,
+      "height": 480,
+      "bytes": 7958
+    },
+    {
+      "src": "/assets/optimized/7880e41d963a7014-640.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 17244
+    },
+    {
+      "src": "/assets/optimized/7880e41d963a7014-960.webp",
+      "width": 960,
+      "height": 1440,
+      "bytes": 27792
+    },
+    {
+      "src": "/assets/optimized/7880e41d963a7014-1067.webp",
+      "width": 1067,
+      "height": 1600,
+      "bytes": 29508
+    }
+  ],
+  "/wp-content/uploads/2023/10/tape.png": [
+    {
+      "src": "/assets/optimized/220e95b681069cd0-320.webp",
+      "width": 320,
+      "height": 313,
+      "bytes": 10640
+    },
+    {
+      "src": "/assets/optimized/220e95b681069cd0-430.webp",
+      "width": 430,
+      "height": 420,
+      "bytes": 16126
+    }
+  ],
+  "/wp-content/uploads/2023/10/ready-mixed-finish-spray-550.png": [
+    {
+      "src": "/assets/optimized/7833f7a5fdb627e9-320.webp",
+      "width": 320,
+      "height": 480,
+      "bytes": 15888
+    },
+    {
+      "src": "/assets/optimized/7833f7a5fdb627e9-640.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 37432
+    },
+    {
+      "src": "/assets/optimized/7833f7a5fdb627e9-960.webp",
+      "width": 960,
+      "height": 1440,
+      "bytes": 61502
+    },
+    {
+      "src": "/assets/optimized/7833f7a5fdb627e9-1067.webp",
+      "width": 1067,
+      "height": 1600,
+      "bytes": 64062
+    }
+  ],
+  "/wp-content/uploads/2023/10/primer.png": [
+    {
+      "src": "/assets/optimized/1047d18fb3279a06-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 4556
+    },
+    {
+      "src": "/assets/optimized/1047d18fb3279a06-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 12004
+    },
+    {
+      "src": "/assets/optimized/1047d18fb3279a06-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 20848
+    },
+    {
+      "src": "/assets/optimized/1047d18fb3279a06-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 40840
+    }
+  ],
+  "/wp-content/uploads/2023/10/pistool3.png": [
+    {
+      "src": "/assets/optimized/04f5cd7a5d31d801-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 6204
+    },
+    {
+      "src": "/assets/optimized/04f5cd7a5d31d801-480.webp",
+      "width": 480,
+      "height": 319,
+      "bytes": 9162
+    }
+  ],
+  "/wp-content/uploads/2023/10/pistool2.png": [
+    {
+      "src": "/assets/optimized/c3757952f7a1f6fe-320.webp",
+      "width": 320,
+      "height": 233,
+      "bytes": 7878
+    },
+    {
+      "src": "/assets/optimized/c3757952f7a1f6fe-480.webp",
+      "width": 480,
+      "height": 349,
+      "bytes": 11732
+    }
+  ],
+  "/wp-content/uploads/2023/10/pistool.png": [
+    {
+      "src": "/assets/optimized/79cee263cb528567-320.webp",
+      "width": 320,
+      "height": 480,
+      "bytes": 17432
+    },
+    {
+      "src": "/assets/optimized/79cee263cb528567-640.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 40198
+    },
+    {
+      "src": "/assets/optimized/79cee263cb528567-960.webp",
+      "width": 960,
+      "height": 1440,
+      "bytes": 69780
+    },
+    {
+      "src": "/assets/optimized/79cee263cb528567-1067.webp",
+      "width": 1067,
+      "height": 1600,
+      "bytes": 66424
+    }
+  ],
+  "/wp-content/uploads/2023/10/cleaner510.png": [
+    {
+      "src": "/assets/optimized/01fc5d93f0524b23-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 4678
+    },
+    {
+      "src": "/assets/optimized/01fc5d93f0524b23-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 10764
+    },
+    {
+      "src": "/assets/optimized/01fc5d93f0524b23-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 17940
+    },
+    {
+      "src": "/assets/optimized/01fc5d93f0524b23-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 29860
+    }
+  ],
+  "/wp-content/uploads/2023/10/pu-stonefix-478.png": [
+    {
+      "src": "/assets/optimized/f602c59a6f0a322a-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3956
+    },
+    {
+      "src": "/assets/optimized/f602c59a6f0a322a-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 9474
+    },
+    {
+      "src": "/assets/optimized/f602c59a6f0a322a-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 15316
+    },
+    {
+      "src": "/assets/optimized/f602c59a6f0a322a-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 25610
+    }
+  ],
+  "/wp-content/uploads/2023/10/pur-cleaner-450.png": [
+    {
+      "src": "/assets/optimized/6507306a6f8e49a1-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 4360
+    },
+    {
+      "src": "/assets/optimized/6507306a6f8e49a1-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 10962
+    },
+    {
+      "src": "/assets/optimized/6507306a6f8e49a1-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 18488
+    },
+    {
+      "src": "/assets/optimized/6507306a6f8e49a1-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 31742
+    }
+  ],
+  "/wp-content/uploads/2023/10/pu-foam-gun-470.png": [
+    {
+      "src": "/assets/optimized/2313426d853de911-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3920
+    },
+    {
+      "src": "/assets/optimized/2313426d853de911-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 9140
+    },
+    {
+      "src": "/assets/optimized/2313426d853de911-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14898
+    },
+    {
+      "src": "/assets/optimized/2313426d853de911-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23868
+    }
+  ],
+  "/wp-content/uploads/2023/10/pu-foam-flex-471.png": [
+    {
+      "src": "/assets/optimized/83d091aa56296518-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3892
+    },
+    {
+      "src": "/assets/optimized/83d091aa56296518-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8832
+    },
+    {
+      "src": "/assets/optimized/83d091aa56296518-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14376
+    },
+    {
+      "src": "/assets/optimized/83d091aa56296518-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23726
+    }
+  ],
+  "/wp-content/uploads/2023/10/fire_foam-472.png": [
+    {
+      "src": "/assets/optimized/270b627d3bedc6f7-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3692
+    },
+    {
+      "src": "/assets/optimized/270b627d3bedc6f7-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8948
+    },
+    {
+      "src": "/assets/optimized/270b627d3bedc6f7-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14778
+    },
+    {
+      "src": "/assets/optimized/270b627d3bedc6f7-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23880
+    }
+  ],
+  "/wp-content/uploads/2023/10/pu-lijmen.jpg": [
+    {
+      "src": "/assets/optimized/76676fcdd4fbb270-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 9398
+    },
+    {
+      "src": "/assets/optimized/76676fcdd4fbb270-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 26642
+    },
+    {
+      "src": "/assets/optimized/76676fcdd4fbb270-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 44684
+    },
+    {
+      "src": "/assets/optimized/76676fcdd4fbb270-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 85944
+    }
+  ],
+  "/wp-content/uploads/2023/10/topflex-p230.png": [
+    {
+      "src": "/assets/optimized/4e890e370f7a4966-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3582
+    },
+    {
+      "src": "/assets/optimized/4e890e370f7a4966-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8336
+    },
+    {
+      "src": "/assets/optimized/4e890e370f7a4966-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13804
+    },
+    {
+      "src": "/assets/optimized/4e890e370f7a4966-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22170
+    }
+  ],
+  "/wp-content/uploads/2023/10/silocon-nf215.png": [
+    {
+      "src": "/assets/optimized/bcaee28d5b923ba3-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3502
+    },
+    {
+      "src": "/assets/optimized/bcaee28d5b923ba3-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8270
+    },
+    {
+      "src": "/assets/optimized/bcaee28d5b923ba3-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13644
+    },
+    {
+      "src": "/assets/optimized/bcaee28d5b923ba3-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22586
+    }
+  ],
+  "/wp-content/uploads/2023/10/silocon-ht211.png": [
+    {
+      "src": "/assets/optimized/43fd091c1a951822-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3692
+    },
+    {
+      "src": "/assets/optimized/43fd091c1a951822-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8712
+    },
+    {
+      "src": "/assets/optimized/43fd091c1a951822-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14170
+    },
+    {
+      "src": "/assets/optimized/43fd091c1a951822-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23408
+    }
+  ],
+  "/wp-content/uploads/2023/10/silicon-sa216.png": [
+    {
+      "src": "/assets/optimized/3790bd49b3dd405c-320.webp",
+      "width": 320,
+      "height": 448,
+      "bytes": 12508
+    },
+    {
+      "src": "/assets/optimized/3790bd49b3dd405c-640.webp",
+      "width": 640,
+      "height": 896,
+      "bytes": 27940
+    },
+    {
+      "src": "/assets/optimized/3790bd49b3dd405c-960.webp",
+      "width": 960,
+      "height": 1343,
+      "bytes": 44752
+    },
+    {
+      "src": "/assets/optimized/3790bd49b3dd405c-1072.webp",
+      "width": 1072,
+      "height": 1500,
+      "bytes": 47752
+    }
+  ],
+  "/wp-content/uploads/2023/10/silicon-gr210.png": [
+    {
+      "src": "/assets/optimized/e5d538704c3f0083-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3648
+    },
+    {
+      "src": "/assets/optimized/e5d538704c3f0083-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8344
+    },
+    {
+      "src": "/assets/optimized/e5d538704c3f0083-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13580
+    },
+    {
+      "src": "/assets/optimized/e5d538704c3f0083-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22278
+    }
+  ],
+  "/wp-content/uploads/2023/10/silicon-cl218.png": [
+    {
+      "src": "/assets/optimized/0f0c7e0e1480a4a9-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3454
+    },
+    {
+      "src": "/assets/optimized/0f0c7e0e1480a4a9-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8314
+    },
+    {
+      "src": "/assets/optimized/0f0c7e0e1480a4a9-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13600
+    },
+    {
+      "src": "/assets/optimized/0f0c7e0e1480a4a9-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22630
+    }
+  ],
+  "/wp-content/uploads/2023/10/silicon-all250.png": [
+    {
+      "src": "/assets/optimized/6bcaeb6aa3243948-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3552
+    },
+    {
+      "src": "/assets/optimized/6bcaeb6aa3243948-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8606
+    },
+    {
+      "src": "/assets/optimized/6bcaeb6aa3243948-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14256
+    },
+    {
+      "src": "/assets/optimized/6bcaeb6aa3243948-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23184
+    }
+  ],
+  "/wp-content/uploads/2023/10/silicon-315.png": [
+    {
+      "src": "/assets/optimized/dde6a5f34843cfeb-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 4606
+    },
+    {
+      "src": "/assets/optimized/dde6a5f34843cfeb-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 11534
+    },
+    {
+      "src": "/assets/optimized/dde6a5f34843cfeb-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 21124
+    },
+    {
+      "src": "/assets/optimized/dde6a5f34843cfeb-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 39322
+    }
+  ],
+  "/wp-content/uploads/2023/10/unnamed-1.jpg": [
+    {
+      "src": "/assets/optimized/fcb245f172bd1c24-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 10058
+    },
+    {
+      "src": "/assets/optimized/fcb245f172bd1c24-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 30128
+    },
+    {
+      "src": "/assets/optimized/fcb245f172bd1c24-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 53180
+    },
+    {
+      "src": "/assets/optimized/fcb245f172bd1c24-1560.webp",
+      "width": 1560,
+      "height": 1040,
+      "bytes": 105350
+    }
+  ],
+  "/wp-content/uploads/2023/10/super-pro-352.png": [
+    {
+      "src": "/assets/optimized/f3cf60218d939032-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3574
+    },
+    {
+      "src": "/assets/optimized/f3cf60218d939032-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8498
+    },
+    {
+      "src": "/assets/optimized/f3cf60218d939032-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13872
+    },
+    {
+      "src": "/assets/optimized/f3cf60218d939032-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22620
+    }
+  ],
+  "/wp-content/uploads/2023/10/super-all-360.png": [
+    {
+      "src": "/assets/optimized/e459fda3224c0183-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3590
+    },
+    {
+      "src": "/assets/optimized/e459fda3224c0183-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8722
+    },
+    {
+      "src": "/assets/optimized/e459fda3224c0183-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14286
+    },
+    {
+      "src": "/assets/optimized/e459fda3224c0183-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23618
+    }
+  ],
+  "/wp-content/uploads/2023/10/pro-paint-325.png": [
+    {
+      "src": "/assets/optimized/5112b71c6fd6dd2e-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3504
+    },
+    {
+      "src": "/assets/optimized/5112b71c6fd6dd2e-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8420
+    },
+    {
+      "src": "/assets/optimized/5112b71c6fd6dd2e-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13734
+    },
+    {
+      "src": "/assets/optimized/5112b71c6fd6dd2e-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22454
+    }
+  ],
+  "/wp-content/uploads/2023/10/high-tack-360.png": [
+    {
+      "src": "/assets/optimized/bb3562356b1c87fa-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3624
+    },
+    {
+      "src": "/assets/optimized/bb3562356b1c87fa-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8880
+    },
+    {
+      "src": "/assets/optimized/bb3562356b1c87fa-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14742
+    },
+    {
+      "src": "/assets/optimized/bb3562356b1c87fa-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23698
+    }
+  ],
+  "/wp-content/uploads/2023/10/crystal-340.png": [
+    {
+      "src": "/assets/optimized/22ac4168f56bf3a3-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3538
+    },
+    {
+      "src": "/assets/optimized/22ac4168f56bf3a3-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8488
+    },
+    {
+      "src": "/assets/optimized/22ac4168f56bf3a3-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13848
+    },
+    {
+      "src": "/assets/optimized/22ac4168f56bf3a3-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22312
+    }
+  ],
+  "/wp-content/uploads/2023/10/315-facade-lm.png": [
+    {
+      "src": "/assets/optimized/17863110d2856263-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 4606
+    },
+    {
+      "src": "/assets/optimized/17863110d2856263-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 11534
+    },
+    {
+      "src": "/assets/optimized/17863110d2856263-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 21124
+    },
+    {
+      "src": "/assets/optimized/17863110d2856263-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 39322
+    }
+  ],
+  "/wp-content/uploads/2023/10/unnamed.jpg": [
+    {
+      "src": "/assets/optimized/180f61d4414158ff-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 10392
+    },
+    {
+      "src": "/assets/optimized/180f61d4414158ff-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 31860
+    },
+    {
+      "src": "/assets/optimized/180f61d4414158ff-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 59004
+    },
+    {
+      "src": "/assets/optimized/180f61d4414158ff-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 125230
+    }
+  ],
+  "/wp-content/uploads/2023/10/quick_bond.png": [
+    {
+      "src": "/assets/optimized/8437aacf44bbe813-320.webp",
+      "width": 320,
+      "height": 365,
+      "bytes": 7554
+    },
+    {
+      "src": "/assets/optimized/8437aacf44bbe813-640.webp",
+      "width": 640,
+      "height": 729,
+      "bytes": 16432
+    },
+    {
+      "src": "/assets/optimized/8437aacf44bbe813-960.webp",
+      "width": 960,
+      "height": 1094,
+      "bytes": 27072
+    },
+    {
+      "src": "/assets/optimized/8437aacf44bbe813-1404.webp",
+      "width": 1404,
+      "height": 1600,
+      "bytes": 42920
+    }
+  ],
+  "/wp-content/uploads/2023/10/pu_foam_flex.png": [
+    {
+      "src": "/assets/optimized/d958bc9006776931-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3892
+    },
+    {
+      "src": "/assets/optimized/d958bc9006776931-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8832
+    },
+    {
+      "src": "/assets/optimized/d958bc9006776931-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 14376
+    },
+    {
+      "src": "/assets/optimized/d958bc9006776931-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 23726
+    }
+  ],
+  "/wp-content/uploads/2023/10/pro_paint.png": [
+    {
+      "src": "/assets/optimized/6aba6370356a0ea4-320.webp",
+      "width": 320,
+      "height": 213,
+      "bytes": 3504
+    },
+    {
+      "src": "/assets/optimized/6aba6370356a0ea4-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 8420
+    },
+    {
+      "src": "/assets/optimized/6aba6370356a0ea4-960.webp",
+      "width": 960,
+      "height": 640,
+      "bytes": 13734
+    },
+    {
+      "src": "/assets/optimized/6aba6370356a0ea4-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 22454
+    }
+  ],
+  "/wp-content/uploads/2023/10/connect_products.png": [
+    {
+      "src": "/assets/optimized/e45a6e820738c18f-320.webp",
+      "width": 320,
+      "height": 480,
+      "bytes": 17432
+    },
+    {
+      "src": "/assets/optimized/e45a6e820738c18f-640.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 40198
+    },
+    {
+      "src": "/assets/optimized/e45a6e820738c18f-960.webp",
+      "width": 960,
+      "height": 1440,
+      "bytes": 69780
+    },
+    {
+      "src": "/assets/optimized/e45a6e820738c18f-1067.webp",
+      "width": 1067,
+      "height": 1600,
+      "bytes": 66424
+    }
+  ],
+  "/wp-content/uploads/2023/10/16.jpg": [
+    {
+      "src": "/assets/optimized/7414ddc8df6b9b7b-320.webp",
+      "width": 320,
+      "height": 427,
+      "bytes": 29844
+    },
+    {
+      "src": "/assets/optimized/7414ddc8df6b9b7b-640.webp",
+      "width": 640,
+      "height": 853,
+      "bytes": 128686
+    },
+    {
+      "src": "/assets/optimized/7414ddc8df6b9b7b-960.webp",
+      "width": 960,
+      "height": 1280,
+      "bytes": 279188
+    },
+    {
+      "src": "/assets/optimized/7414ddc8df6b9b7b-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "bytes": 432414
+    }
+  ],
+  "/wp-content/uploads/2023/10/15.jpg": [
+    {
+      "src": "/assets/optimized/ff2a3b125dbab519-320.webp",
+      "width": 320,
+      "height": 240,
+      "bytes": 13124
+    },
+    {
+      "src": "/assets/optimized/ff2a3b125dbab519-640.webp",
+      "width": 640,
+      "height": 480,
+      "bytes": 54702
+    },
+    {
+      "src": "/assets/optimized/ff2a3b125dbab519-960.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 120904
+    },
+    {
+      "src": "/assets/optimized/ff2a3b125dbab519-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "bytes": 323318
+    }
+  ],
+  "/wp-content/uploads/2023/10/14.jpg": [
+    {
+      "src": "/assets/optimized/e34ff7f3bf0961f9-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 23472
+    },
+    {
+      "src": "/assets/optimized/e34ff7f3bf0961f9-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 70084
+    },
+    {
+      "src": "/assets/optimized/e34ff7f3bf0961f9-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 128520
+    }
+  ],
+  "/wp-content/uploads/2023/10/13.jpg": [
+    {
+      "src": "/assets/optimized/34d88a1e6c63ac34-320.webp",
+      "width": 320,
+      "height": 240,
+      "bytes": 15746
+    },
+    {
+      "src": "/assets/optimized/34d88a1e6c63ac34-640.webp",
+      "width": 640,
+      "height": 480,
+      "bytes": 59760
+    },
+    {
+      "src": "/assets/optimized/34d88a1e6c63ac34-960.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 125600
+    },
+    {
+      "src": "/assets/optimized/34d88a1e6c63ac34-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "bytes": 320164
+    }
+  ],
+  "/wp-content/uploads/2023/10/12.jpg": [
+    {
+      "src": "/assets/optimized/1c81062dcf322bfa-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 29924
+    },
+    {
+      "src": "/assets/optimized/1c81062dcf322bfa-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 92522
+    },
+    {
+      "src": "/assets/optimized/1c81062dcf322bfa-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 162496
+    }
+  ],
+  "/wp-content/uploads/2023/10/11.jpg": [
+    {
+      "src": "/assets/optimized/8a3b314d0c1ad7aa-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 20598
+    },
+    {
+      "src": "/assets/optimized/8a3b314d0c1ad7aa-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 63772
+    },
+    {
+      "src": "/assets/optimized/8a3b314d0c1ad7aa-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 114122
+    }
+  ],
+  "/wp-content/uploads/2023/10/10.jpg": [
+    {
+      "src": "/assets/optimized/16f137a2440d81fb-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 12304
+    },
+    {
+      "src": "/assets/optimized/16f137a2440d81fb-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 37304
+    },
+    {
+      "src": "/assets/optimized/16f137a2440d81fb-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 70110
+    }
+  ],
+  "/wp-content/uploads/2023/10/09.jpg": [
+    {
+      "src": "/assets/optimized/41613990f1a0d213-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 5948
+    },
+    {
+      "src": "/assets/optimized/41613990f1a0d213-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 18180
+    },
+    {
+      "src": "/assets/optimized/41613990f1a0d213-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 36392
+    },
+    {
+      "src": "/assets/optimized/41613990f1a0d213-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 88978
+    }
+  ],
+  "/wp-content/uploads/2023/10/08.jpg": [
+    {
+      "src": "/assets/optimized/346b241583e372dd-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 11578
+    },
+    {
+      "src": "/assets/optimized/346b241583e372dd-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 36446
+    },
+    {
+      "src": "/assets/optimized/346b241583e372dd-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 77038
+    },
+    {
+      "src": "/assets/optimized/346b241583e372dd-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 184448
+    }
+  ],
+  "/wp-content/uploads/2023/10/07.jpg": [
+    {
+      "src": "/assets/optimized/5e49ffa1bb1d381e-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 16218
+    },
+    {
+      "src": "/assets/optimized/5e49ffa1bb1d381e-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 57584
+    },
+    {
+      "src": "/assets/optimized/5e49ffa1bb1d381e-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 110364
+    }
+  ],
+  "/wp-content/uploads/2023/10/06.jpg": [
+    {
+      "src": "/assets/optimized/8fc0986b0db8c64f-320.webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 29036
+    },
+    {
+      "src": "/assets/optimized/8fc0986b0db8c64f-640.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 93786
+    },
+    {
+      "src": "/assets/optimized/8fc0986b0db8c64f-960.webp",
+      "width": 960,
+      "height": 960,
+      "bytes": 172930
+    },
+    {
+      "src": "/assets/optimized/8fc0986b0db8c64f-1000.webp",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 191272
+    }
+  ],
+  "/wp-content/uploads/2023/10/05.jpg": [
+    {
+      "src": "/assets/optimized/dc31d2a665201f33-320.webp",
+      "width": 320,
+      "height": 240,
+      "bytes": 11960
+    },
+    {
+      "src": "/assets/optimized/dc31d2a665201f33-640.webp",
+      "width": 640,
+      "height": 480,
+      "bytes": 36200
+    },
+    {
+      "src": "/assets/optimized/dc31d2a665201f33-960.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 70690
+    },
+    {
+      "src": "/assets/optimized/dc31d2a665201f33-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "bytes": 168752
+    }
+  ],
+  "/wp-content/uploads/2023/10/04.jpg": [
+    {
+      "src": "/assets/optimized/f9a5c5f76c742825-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 4472
+    },
+    {
+      "src": "/assets/optimized/f9a5c5f76c742825-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 12050
+    },
+    {
+      "src": "/assets/optimized/f9a5c5f76c742825-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 21466
+    },
+    {
+      "src": "/assets/optimized/f9a5c5f76c742825-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 52262
+    }
+  ],
+  "/wp-content/uploads/2023/10/03.jpg": [
+    {
+      "src": "/assets/optimized/60e8898775f91317-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 4616
+    },
+    {
+      "src": "/assets/optimized/60e8898775f91317-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 14232
+    },
+    {
+      "src": "/assets/optimized/60e8898775f91317-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 28848
+    },
+    {
+      "src": "/assets/optimized/60e8898775f91317-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 71386
+    }
+  ],
+  "/wp-content/uploads/2023/10/02.jpg": [
+    {
+      "src": "/assets/optimized/0ce9ce95579fc502-320.webp",
+      "width": 320,
+      "height": 569,
+      "bytes": 58386
+    },
+    {
+      "src": "/assets/optimized/0ce9ce95579fc502-640.webp",
+      "width": 640,
+      "height": 1138,
+      "bytes": 204708
+    },
+    {
+      "src": "/assets/optimized/0ce9ce95579fc502-900.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 386618
+    }
+  ],
+  "/wp-content/uploads/2023/10/01.jpg": [
+    {
+      "src": "/assets/optimized/4cb00acd48602e7c-320.webp",
+      "width": 320,
+      "height": 180,
+      "bytes": 10384
+    },
+    {
+      "src": "/assets/optimized/4cb00acd48602e7c-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 34398
+    },
+    {
+      "src": "/assets/optimized/4cb00acd48602e7c-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 70200
+    },
+    {
+      "src": "/assets/optimized/4cb00acd48602e7c-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 184804
+    }
+  ],
+  "/wp-content/uploads/2023/10/NijTec_slider2.jpg": [
+    {
+      "src": "/assets/optimized/3d8ff548f8570d8f-320.webp",
+      "width": 320,
+      "height": 118,
+      "bytes": 6470
+    },
+    {
+      "src": "/assets/optimized/3d8ff548f8570d8f-640.webp",
+      "width": 640,
+      "height": 237,
+      "bytes": 30862
+    },
+    {
+      "src": "/assets/optimized/3d8ff548f8570d8f-851.webp",
+      "width": 851,
+      "height": 315,
+      "bytes": 73298
+    }
+  ],
+  "/assets/hero-project.jpg": [
+    {
+      "src": "/assets/optimized/402b3bd1388c9efb-320.webp",
+      "width": 320,
+      "height": 240,
+      "bytes": 13124
+    },
+    {
+      "src": "/assets/optimized/402b3bd1388c9efb-640.webp",
+      "width": 640,
+      "height": 480,
+      "bytes": 54702
+    },
+    {
+      "src": "/assets/optimized/402b3bd1388c9efb-960.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 120904
+    },
+    {
+      "src": "/assets/optimized/402b3bd1388c9efb-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "bytes": 323318
+    }
+  ],
+  "/assets/quickbond-render-v1.png": [
+    {
+      "src": "/assets/optimized/2887da2261a24d11-320.webp",
+      "width": 320,
+      "height": 365,
+      "bytes": 10730
+    },
+    {
+      "src": "/assets/optimized/2887da2261a24d11-640.webp",
+      "width": 640,
+      "height": 729,
+      "bytes": 27464
+    },
+    {
+      "src": "/assets/optimized/2887da2261a24d11-960.webp",
+      "width": 960,
+      "height": 1094,
+      "bytes": 50158
+    },
+    {
+      "src": "/assets/optimized/2887da2261a24d11-1175.webp",
+      "width": 1175,
+      "height": 1339,
+      "bytes": 64424
+    }
+  ]
+}

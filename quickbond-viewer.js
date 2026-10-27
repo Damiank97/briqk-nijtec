@@ -1,16 +1,35 @@
-import * as THREE from '/assets/vendor/three.module.min.js';
-import { OrbitControls } from '/assets/vendor/OrbitControls.js?v=9';
+let THREE;
+let OrbitControls;
 
 const stage = document.querySelector('.qb-render-stage');
 const canvas = document.querySelector('.qb-webgl-canvas');
 
 if (stage && canvas) {
-  stage.dataset.viewerState = 'loading';
-  initQuickbondViewer().catch((error) => {
-    stage.dataset.viewerState = 'fallback';
-    stage.dataset.viewerError = error instanceof Error ? error.message : String(error);
-    console.error('Quickbond 3D-viewer kon niet worden gestart.', error);
-  });
+  stage.dataset.viewerState = 'waiting';
+  let started = false;
+  const load = async () => {
+    if (started) return;
+    started = true;
+    observer.disconnect();
+    stage.removeEventListener('focusin', load);
+    stage.dataset.viewerState = 'loading';
+    try {
+      [THREE, { OrbitControls }] = await Promise.all([
+        import('/assets/vendor/three.module.min.js'),
+        import('/assets/vendor/OrbitControls.js?v=9')
+      ]);
+      await initQuickbondViewer();
+    } catch (error) {
+      stage.dataset.viewerState = 'fallback';
+      stage.dataset.viewerError = error instanceof Error ? error.message : String(error);
+      console.error('Quickbond 3D-viewer kon niet worden gestart.', error);
+    }
+  };
+  const observer = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) load();
+  }, { rootMargin: '400px 0px' });
+  observer.observe(stage);
+  stage.addEventListener('focusin', load);
 }
 
 async function initQuickbondViewer() {
@@ -71,7 +90,9 @@ async function initQuickbondViewer() {
   let pointerActive = false;
   let scrollRotation = 0;
   let manualOffset = 0;
-  let viewerVisible = true;
+  let viewerVisible = false;
+  let renderFrame = 0;
+  let scrollFrame = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const quickbondSection = stage.closest('.quickbond');
   const storySteps = Array.from(stage.parentElement.querySelectorAll('[data-qb-step]'));
@@ -81,16 +102,20 @@ async function initQuickbondViewer() {
   controls.addEventListener('start', () => {
     pointerActive = true;
     stage.classList.add('is-dragging');
+    scheduleRender();
   });
   controls.addEventListener('end', () => {
     pointerActive = false;
     stage.classList.remove('is-dragging');
+    scheduleRender();
   });
+  controls.addEventListener('change', scheduleRender);
 
   stage.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
       manualOffset += event.key === 'ArrowRight' ? .28 : -.28;
+      scheduleRender();
     }
     if (event.key === 'Home' || event.key.toLowerCase() === 'r') {
       event.preventDefault();
@@ -101,6 +126,7 @@ async function initQuickbondViewer() {
   turnButtons.forEach((button) => {
     button.addEventListener('click', () => {
       manualOffset += Number(button.dataset.qbTurn || 0) * .34;
+      scheduleRender();
     });
   });
 
@@ -108,6 +134,7 @@ async function initQuickbondViewer() {
     manualOffset = 0;
     controls.reset();
     updateScrollRotation();
+    scheduleRender();
   }
 
   resetButton?.addEventListener('click', resetViewer);
@@ -122,6 +149,15 @@ async function initQuickbondViewer() {
     const activeStep = Math.min(storySteps.length - 1, Math.floor(progress * storySteps.length));
     storySteps.forEach((step, index) => step.classList.toggle('is-active', index === activeStep));
     stage.style.setProperty('--qb-progress', progress.toFixed(3));
+    scheduleRender();
+  }
+
+  function scheduleScrollRotation() {
+    if (!viewerVisible || scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      updateScrollRotation();
+    });
   }
 
   function resizeRenderer() {
@@ -134,6 +170,7 @@ async function initQuickbondViewer() {
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
+      scheduleRender();
     }
   }
 
@@ -141,28 +178,46 @@ async function initQuickbondViewer() {
   resizeObserver.observe(stage);
   const visibilityObserver = new IntersectionObserver((entries) => {
     viewerVisible = entries.some((entry) => entry.isIntersecting);
+    if (viewerVisible) {
+      updateScrollRotation();
+      scheduleRender();
+    } else {
+      cancelAnimationFrame(renderFrame);
+      renderFrame = 0;
+    }
   }, { rootMargin: '35% 0px' });
   visibilityObserver.observe(stage);
-  window.addEventListener('scroll', updateScrollRotation, { passive: true });
-  window.addEventListener('resize', updateScrollRotation);
+  window.addEventListener('scroll', scheduleScrollRotation, { passive: true });
+  window.addEventListener('resize', scheduleScrollRotation);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      cancelAnimationFrame(renderFrame);
+      renderFrame = 0;
+    } else scheduleRender();
+  });
   updateScrollRotation();
   resizeRenderer();
 
   const clock = new THREE.Clock();
+  function scheduleRender() {
+    if (!renderFrame && viewerVisible && !document.hidden) renderFrame = requestAnimationFrame(render);
+  }
   function render() {
-    requestAnimationFrame(render);
+    renderFrame = 0;
+    if (!viewerVisible || document.hidden) return;
     const delta = Math.min(clock.getDelta(), .05);
     if (!pointerActive) {
       product.rotation.y = reducedMotion ? manualOffset : THREE.MathUtils.damp(product.rotation.y, scrollRotation + manualOffset, 7.2, delta);
     }
     controls.update();
-    if (viewerVisible && !document.hidden) renderer.render(scene, camera);
+    renderer.render(scene, camera);
+    if (!reducedMotion && Math.abs(product.rotation.y - scrollRotation - manualOffset) > .001) scheduleRender();
   }
 
   renderer.render(scene, camera);
   stage.classList.add('webgl-ready');
   stage.dataset.viewerState = 'active';
-  render();
+  scheduleRender();
 }
 
 function createQuickbondModel(labelTexture) {

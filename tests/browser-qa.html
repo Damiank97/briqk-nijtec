@@ -46,6 +46,7 @@ async function audit(width){
  const {w,d}=await load(width); const $=s=>d.querySelector(s); const all=s=>[...d.querySelectorAll(s)];
  record(width+' px: alle afbeeldingen laden',all('img').filter(i=>!i.closest('#image-viewer')).every(i=>i.complete&&i.naturalWidth>0));
  record(width+' px: stabiele layout bij laden', w.__qaCLS<.1, String(w.__qaCLS));
+ record(width+' px: 3D laadt niet bij openen bovenaan',$('.qb-render-stage').dataset.viewerState==='waiting'&&!w.performance.getEntriesByType('resource').some(e=>e.name.includes('three.module')));
  record(width+' px: ankerlinks bestaan',all('a[href^="#"]').every(a=>d.getElementById(a.hash.slice(1))));
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
  record(width+' px: alleen zeven actuele productgroepen',all('.product-card').length===7&&!/luchtdicht|zettex|zetex|zwaluw|den braven/i.test(d.documentElement.innerHTML));
@@ -144,6 +145,10 @@ async function audit(width){
  record(width+' px: reveal blijft zichtbaar bij terugscrollen',marker&&header.classList.contains('is-revealed'));
  record(width+' px: kaarten schuiven niet met scroll',all('.photo-item,.product-card,.feature-card,.contact-form,.zzp-content').every(e=>{const s=w.getComputedStyle(e);return s.translate==='none'&&s.transform==='none'&&s.animationName==='none';}));
  record(width+' px: actieve 3D-canvas',$('.qb-render-stage').dataset.viewerState==='active',$('.qb-render-stage').dataset.viewerState);
+ const frames=w.__qaRenderFrames;w.scrollTo(0,0);await pause(300);const stopped=w.__qaRenderFrames;await pause(300);
+ record(width+' px: 3D-rendering pauzeert buiten beeld',frames>0&&w.__qaRenderFrames===stopped);
+ $('#quickbond').scrollIntoView();await pause(300);
+ record(width+' px: 3D hervat na terugscrollen',w.__qaRenderFrames>stopped);
  const notes=$('.qb-story-notes').getBoundingClientRect(),canvas=$('.qb-webgl-canvas').getBoundingClientRect();
  record(width+' px: 3D-uitleg staat buiten het model',!overlaps(notes,canvas));
  const scene=$('.qb-scene'),box=$('.qb-box'),model=$('.qb-model-wrap');
@@ -189,7 +194,7 @@ async function auditRoutes(){
   const w=frame.contentWindow,d=w.document;await d.fonts.ready;await pause(100);
   const img=d.querySelector('.blog-figure img');await img.decode();
   const copy=d.querySelector('.blog-copy'),figure=d.querySelector('.blog-figure');
-  record(width+' px: blog leesbaar met echt projectbeeld zonder overlap',img.naturalWidth===1600&&d.documentElement.scrollWidth<=w.innerWidth+1&&!overlaps(copy.getBoundingClientRect(),figure.getBoundingClientRect())&&parseFloat(w.getComputedStyle(copy.querySelector('p')).fontSize)>=18&&d.querySelector('.blog-contact-link').getAttribute('href')==='#contact'&&w.__qaErrors.length===0);
+  record(width+' px: blog leesbaar met echt projectbeeld zonder overlap',img.naturalWidth>0&&img.getAttribute('src')==='/assets/hero-project.jpg'&&img.getAttribute('width')==='1600'&&img.currentSrc.includes('/assets/optimized/')&&d.documentElement.scrollWidth<=w.innerWidth+1&&!overlaps(copy.getBoundingClientRect(),figure.getBoundingClientRect())&&parseFloat(w.getComputedStyle(copy.querySelector('p')).fontSize)>=18&&d.querySelector('.blog-contact-link').getAttribute('href')==='#contact'&&w.__qaErrors.length===0);
  }
 }
 async function run(){

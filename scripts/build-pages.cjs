@@ -4,6 +4,7 @@ const pages = require('../seo/pages.cjs');
 const productMedia = require('../seo/product-media.cjs');
 const analyticsConfig = require('../seo/analytics-config.cjs');
 const publication = require('../seo/publication-policy.cjs');
+const responsive = require('../seo/responsive-images.cjs');
 const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'dist');
 const origin = 'https://nijtec.nl';
@@ -28,6 +29,8 @@ async function run(){
   if(pages.some(page=>!publication.isPagePublished(page.path)))throw new Error('Retired page must not be published');
   let source=await fs.readFile(path.join(root,'index.html'),'utf8');
   source=source.replace('<!-- PRODUCT_MEDIA_DATA -->','<script type="application/json" id="product-media-data">'+JSON.stringify(productMedia).replace(/</g,'\\u003c')+'</script>');
+  const popupVariants=Object.fromEntries(Object.values(productMedia).flat().filter(m=>responsive.manifest[m.src]).map(m=>[m.src,responsive.manifest[m.src]]));
+  source=source.replace('<!-- RESPONSIVE_MEDIA_DATA -->','<script type="application/json" id="responsive-media-data">'+JSON.stringify(popupVariants).replace(/</g,'\\u003c')+'</script>');
   source=source.replace('<!-- WEB_ANALYTICS_CONFIG -->','<script type="application/json" id="analytics-config">'+analyticsConfig(process.env.VERCEL_OBSERVABILITY_CLIENT_CONFIG)+'</script>');
   const legal=JSON.parse(await fs.readFile(path.join(root,'seo/legacy-terms.json'),'utf8'));
   source=source.replace(/const avData = \[[\s\S]*?\n\];/,'const avData = '+JSON.stringify(legal.articles).replace(/</g,'\\u003c')+';');
@@ -69,7 +72,7 @@ async function run(){
     await fs.mkdir(path.dirname(target),{recursive:true});
     await fs.copyFile(path.join(root,'legacy-assets',item.path),target);
   }
-  await fs.writeFile(path.join(out,'index.html'),source.replace(/<head>[\s\S]*?<\/head>/,'<head>'+pageHead()+'</head>'));
+  await fs.writeFile(path.join(out,'index.html'),responsive.optimizeHtml(source.replace(/<head>[\s\S]*?<\/head>/,'<head>'+pageHead()+'</head>')));
   const routeMap={'#top':'/','#producten':'/producten/','#quickbond':'/producten/quickbond/','#projecten':'/projecten/','#zzp':'/zzp-pakket/','#over-nijtec':'/over-ons/','#contact':'/contact/','#toepassingen':'/#toepassingen'};
   const detailHeader=header.replace(/href="(#[^"]*)"/g,(_,hash)=>'href="'+(routeMap[hash]||'/'+hash)+'"');
   for(const page of pages){
@@ -90,7 +93,7 @@ async function run(){
     const main='<main id="top" class="detail-page">'+intro+(page.section?content:'<div class="detail-body">'+content+'</div>')+(page.section==='contact'?'':contacts)+'</main>';
     const pageTail=page.section==='quickbond'?tail:tail.replace(/<script type="module" src="\/quickbond-viewer\.js[^\"]*"><\/script>/,'');
     const html=('<!DOCTYPE html><html lang="nl"><head>'+pageHead(page)+'</head><body><div class="scroll-progress" aria-hidden="true"></div>'+detailHeader+main+footer+pageTail+'</body></html>').replace(/(<a class="modal-photo-link" href="[^"]+") target="_blank" rel="noopener"/g,'$1');
-    const dir=path.join(out,page.path);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'index.html'),html);
+    const dir=path.join(out,page.path);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'index.html'),responsive.optimizeHtml(html));
   }
   const urls=['/',...pages.map(p=>p.path)];
   const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+urls.map(route=>{

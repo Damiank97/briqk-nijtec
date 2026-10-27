@@ -6,7 +6,7 @@ const page=require('../seo/quickbond-article.cjs');
 const read=route=>fs.readFileSync(path.join(__dirname,'../dist',route,'index.html'),'utf8');
 test('Quickbond article is crawlable HTML with honest organization attribution and article metadata',()=>{
   const html=read(page.path);
-  assert.ok(html.includes(page.article.html));assert.equal((html.match(/<h1\b/g)||[]).length,1);
+  assert.ok(html.includes(require('../seo/responsive-images.cjs').optimizeHtml(page.article.html)));assert.equal((html.match(/<h1\b/g)||[]).length,1);
   assert.ok(html.includes('href="https://nijtec.nl'+page.path+'"'));assert.ok(html.includes('property="og:type" content="article"'));
   const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
   const article=graph.find(x=>x['@type']==='BlogPosting');assert.ok(article);
