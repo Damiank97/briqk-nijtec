@@ -70,21 +70,6 @@ p { text-wrap: pretty; }
 
 a { color: inherit; }
 
-.scroll-progress {
-  position: fixed;
-  z-index: 300;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--nijtec-orange);
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation: page-progress linear both;
-  animation-timeline: scroll(root block);
-}
-
-@keyframes page-progress { to { transform: scaleX(1); } }
 
 button, input, select, textarea { font: inherit; }
 
@@ -2197,3 +2182,27 @@ summary:focus-visible, [tabindex="0"]:focus-visible {
 .photo-item[id] { scroll-margin-top: 96px; }
 #chat-advice-note { font: 14px/1.5 var(--font-body); padding: 12px 16px; }
 @media (max-width: 900px) { .project-case { grid-template-columns: minmax(0,1fr); gap: 16px; } }
+.mobile-gallery-open, .mobile-terms-link { display: none; }
+@media (max-width: 768px) {
+  .hero { padding-top: 32px; gap: 28px; }
+  .hero h1 { max-width: none; font-size: clamp(34px,9.5vw,44px); line-height: 1.1; letter-spacing: -.035em; }
+  .hero h1 span { text-decoration: none; }
+  .hero-sub { margin-top: 20px; font-size: 18px; }
+  .hero-project figcaption { padding: 16px 18px; }
+  .hero-services { padding-bottom: 16px; }
+  .hero-services li { padding-block: 7px; }
+  .about, .features, .products, .projecten, .zzp, .av-section, .contact, .quickbond { padding-block: 48px; }
+  .section-title, .qb-content h2, .zzp-content h2, .contact h2 { max-width: none; font-size: clamp(30px,8.5vw,42px); line-height: 1.12; }
+  .section-sub { font-size: 17px; }
+  .application-grid { margin-top: 24px; margin-bottom: 32px; }
+  .features-grid, .products-grid, .project-cases { margin-top: 28px; }
+  .feature-card p, .product-card p, .zzp-content > p, .qb-content .qb-guarantee-note, .form-helper { font-size: 16px; }
+  .zzp-badge-big { width: 100%; padding: 22px; gap: 14px; }
+  .zzp-visual { margin-top: 24px; }
+  .project-case { padding-block: 22px; gap: 10px; }
+  .project-case dd { margin-bottom: 8px; }
+  .photo-grid.mobile-preview .photo-item:nth-child(n+5) { display: none; }
+  .av-accordion.mobile-preview .av-item:nth-child(n+4):not(:has(.av-body.open)) { display: none; }
+  .mobile-gallery-open, .mobile-terms-link { display: inline-flex; align-items: center; justify-content: flex-start; min-height: 44px; padding: 10px 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--ink); font: 600 15px/1.5 var(--font-body); text-decoration: none; cursor: pointer; }
+  .mobile-gallery-open:focus-visible, .mobile-terms-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+}

@@ -445,7 +445,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/redesign.css?v=36">
+<link rel="stylesheet" href="/redesign.css?v=37">
 <script src="/motion.js?v=1" defer></script>
 <script src="/email-validation.js?v=1" defer></script>
 <script src="/contact.js?v=6" defer></script>
@@ -454,7 +454,6 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 </head>
 <body>
 
-<div class="scroll-progress" aria-hidden="true"></div>
 
 
 <nav aria-label="Hoofdnavigatie">
@@ -1113,6 +1112,19 @@ document.addEventListener('DOMContentLoaded', function() {
     openImageViewer(links,links.indexOf(link),link);
   });
   projectImages=Array.from(document.querySelectorAll('.photo-item'));
+  // Keep the mobile home page short; all originals stay available in the viewer.
+  if(location.pathname==='/'){
+    const gallery=document.querySelector('.photo-grid');
+    if(gallery){
+      gallery.classList.add('mobile-preview');
+      const allPhotos=document.createElement('button');
+      allPhotos.type='button';allPhotos.className='mobile-gallery-open';
+      allPhotos.textContent='Bekijk alle '+projectImages.length+' projectfoto\u2019s';
+      allPhotos.setAttribute('aria-haspopup','dialog');
+      allPhotos.addEventListener('click',()=>openProjectViewer(0,allPhotos));
+      gallery.after(allPhotos);
+    }
+  }
   document.querySelectorAll('[data-project-photo]').forEach(function(link){
     link.addEventListener('click',function(event){
       if(event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button!==0)return;
@@ -1206,6 +1218,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
+    accordion.classList.add('mobile-preview');
     function openLegalHash() {
       if (!/^#artikel-\d+$/.test(location.hash)) return;
       const item = document.getElementById(location.hash.slice(1));
@@ -1216,6 +1229,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     addEventListener('hashchange',openLegalHash);
     openLegalHash();
+    const allTerms=document.createElement('a');
+    allTerms.className='mobile-terms-link';allTerms.href='/algemene-voorwaarden/';
+    allTerms.textContent='Lees alle '+avData.length+' artikelen';
+    accordion.after(allTerms);
   }
 
 });

@@ -49,6 +49,9 @@ async function audit(width){
  record(width+' px: 3D laadt niet bij openen bovenaan',$('.qb-render-stage').dataset.viewerState==='waiting'&&!w.performance.getEntriesByType('resource').some(e=>e.name.includes('three.module')));
  record(width+' px: ankerlinks bestaan',all('a[href^="#"]').every(a=>d.getElementById(a.hash.slice(1))));
  record(width+' px: geen dubbele IDs',new Set(all('[id]').map(e=>e.id)).size===all('[id]').length);
+ record(width+' px: decoratieve scrollindicator verwijderd',!$('.scroll-progress'));
+ const compact=w.innerWidth<=768;
+ record(width+' px: compact mobiel overzicht met alle bronnen behouden',all('.photo-item').length===16&&all('.photo-item').filter(e=>e.getClientRects().length).length===(compact?4:16)&&all('.av-item').length===20&&all('.av-item').filter(e=>e.getClientRects().length).length===(compact?3:20));
  record(width+' px: alleen zeven actuele productgroepen',all('.product-card').length===7&&!/luchtdicht|zettex|zetex|zwaluw|den braven/i.test(d.documentElement.innerHTML));
  record(width+' px: lokale tests sturen geen bezoekersstatistieken',!$('#nijtec-analytics').dataset.initialized&&!all('script[src*="/insights/script.js"]').length&&!w.va);
  const companyItems=all('.contact-info .contact-item'),kvk=companyItems.findIndex(e=>e.textContent.includes('KvK'));
@@ -66,6 +69,12 @@ async function audit(width){
  await pause(650);
  const titleStyle=w.getComputedStyle(reveal);
  record(width+' px: koppen knippen geen j/g/p/y af',titleStyle.clipPath==='none'&&parseFloat(titleStyle.lineHeight)>=parseFloat(titleStyle.fontSize)*1.07,titleStyle.clipPath+' / '+titleStyle.lineHeight);
+ if(compact){
+  const trigger=$('.mobile-gallery-open'),beforeUrl=w.location.href;trigger.focus();trigger.click();await settle();
+  const opened=$('#image-viewer').classList.contains('open')&&$('#image-viewer-counter').textContent==='01 / 16';
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await settle();
+  record(width+' px: alle fotos bereikbaar met focusherstel',opened&&!$('#image-viewer').classList.contains('open')&&d.activeElement===trigger&&w.location.href===beforeUrl);
+ }
  let badOverflow=[],imageText=[],cardCollisions=[];
  for(const id of ['top','over-nijtec','toepassingen','quickbond','producten','zzp','projecten','voorwaarden','contact']){
   $('#'+id).scrollIntoView();await settle();
