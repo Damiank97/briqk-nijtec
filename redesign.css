@@ -12,6 +12,8 @@
  */
 
 :root {
+  --font-body: "Instrument Sans", Arial, sans-serif;
+  --font-label: "Courier New", monospace;
   --paper: #f4f1e9;
   --paper-light: #fbf9f4;
   --ink: #17264e;
@@ -50,7 +52,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +61,7 @@ body {
 }
 
 h1, h2, h3, .section-title {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-weight: 400;
   text-wrap: balance;
 }
@@ -131,7 +133,7 @@ nav {
 }
 
 .nav-wordmark strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 400;
   letter-spacing: .01em;
@@ -140,7 +142,7 @@ nav {
 .nav-wordmark small {
   margin-top: 5px;
   color: #f5a678;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 8px;
   font-weight: 700;
   letter-spacing: .08em;
@@ -152,7 +154,7 @@ nav {
 .nav-links a,
 .nav-cta {
   color: #e9e5dc;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .06em;
@@ -200,7 +202,7 @@ nav {
 .qb-badge,
 .modal-section-title,
 .product-card-icon {
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -223,7 +225,7 @@ nav {
 }
 
 .hero-badge strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
   letter-spacing: .01em;
@@ -281,7 +283,7 @@ nav {
   border-radius: 0;
   box-shadow: none;
   transform: none !important;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .02em;
@@ -348,7 +350,7 @@ nav {
   display: block;
   margin-bottom: 10px;
   color: #f5a678;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .13em;
@@ -450,7 +452,7 @@ nav {
 .application-number {
   margin: 18px 22px 0;
   color: var(--nijtec-orange);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .16em;
@@ -459,7 +461,7 @@ nav {
 .application-card strong {
   margin: 7px 22px 0;
   color: var(--nijtec-blue-deep);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 25px;
   font-weight: 400;
   line-height: 1.05;
@@ -568,7 +570,7 @@ nav {
   background: transparent;
   border-radius: 0;
   color: var(--rust);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
@@ -577,7 +579,7 @@ nav {
 .feature-card h3 {
   margin: 0;
   color: var(--ink);
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -.015em;
@@ -655,7 +657,7 @@ nav {
 
 .qb-guarantee-num {
   color: #d36a48;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
 }
 
 .qb-guarantee-text { color: #c8c1b7; }
@@ -755,7 +757,7 @@ nav {
   color: #f3efe6;
   border: 1px solid rgba(255,255,255,.24);
   background: rgba(23, 38, 78, .74);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .08em;
@@ -846,14 +848,14 @@ nav {
 .qb-cartridge-label span,
 .qb-cartridge-label em,
 .qb-cartridge-label small {
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-style: normal;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 .qb-cartridge-label span { color: var(--nijtec-orange); font-size: 10px; font-weight: 700; }
-.qb-cartridge-label strong { font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; letter-spacing: -.03em; }
+.qb-cartridge-label strong { font-family: var(--font-body); font-size: 24px; font-weight: 400; letter-spacing: -.03em; }
 .qb-cartridge-label em { color: #d6dced; font-size: 8px; }
 .qb-cartridge-label small { padding-top: 10px; color: #f6a775; border-top: 1px solid rgba(255,255,255,.3); font-size: 8px; font-weight: 700; }
 
@@ -903,8 +905,8 @@ nav {
   text-align: center;
 }
 
-.qb-model-caption span { color: var(--nijtec-orange); font-family: "Courier New", monospace; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
-.qb-model-caption strong { font-family: Georgia, "Times New Roman", serif; font-size: 23px; font-weight: 400; }
+.qb-model-caption span { color: var(--nijtec-orange); font-family: var(--font-label); font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+.qb-model-caption strong { font-family: var(--font-body); font-size: 23px; font-weight: 400; }
 .qb-model-caption small { color: #c8cfe0; font-size: 12px; }
 
 @keyframes qb-orbit {
@@ -925,7 +927,7 @@ nav {
 .qb-toepassingen {
   margin-bottom: 14px;
   color: var(--ink);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -941,7 +943,7 @@ nav {
 
 .toep-icon {
   color: var(--rust);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 9px;
   font-weight: 700;
 }
@@ -1000,7 +1002,7 @@ nav {
 .product-card h3 {
   margin: 0;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 25px;
   font-weight: 400;
 }
@@ -1018,7 +1020,7 @@ nav {
   margin: 0;
   color: var(--ink);
   border-bottom: 1px solid var(--ink);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .02em;
@@ -1073,7 +1075,7 @@ nav {
 }
 
 .zzp-price { margin-bottom: 30px; }
-.zzp-prijs-val { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.zzp-prijs-val { color: var(--ink); font-family: var(--font-body); font-weight: 400; }
 .zzp-prijs-label { color: var(--muted); }
 
 .zzp-visual { display: flex; align-items: flex-start; }
@@ -1092,7 +1094,7 @@ nav {
   transform: none;
 }
 
-.zzp-badge-big .big-num { color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+.zzp-badge-big .big-num { color: var(--ink); font-family: var(--font-body); }
 .zzp-badge-big .big-label { color: var(--ink-soft); }
 
 .projecten { background: var(--paper-light); }
@@ -1186,7 +1188,7 @@ nav {
   padding: 18px 0;
   background: transparent;
   color: var(--ink);
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
 }
 
@@ -1238,7 +1240,7 @@ nav {
   background: transparent;
   border-radius: 0;
   color: #d36a48;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .12em;
@@ -1299,7 +1301,7 @@ nav {
   background: #f3efe6;
   border-radius: 0;
   color: var(--ink);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1393,7 +1395,7 @@ footer {
   background: transparent;
   border-radius: 0;
   color: var(--rust);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -1402,7 +1404,7 @@ footer {
 .modal-header-info h2 {
   margin: 0 0 6px;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: clamp(32px, 4vw, 45px);
   font-weight: 400;
   line-height: 1;
@@ -1499,7 +1501,7 @@ footer {
   padding: 12px 17px;
   background: var(--ink);
   border-radius: 0;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1536,7 +1538,7 @@ footer {
 }
 
 #image-viewer-counter {
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -1580,7 +1582,7 @@ footer {
 .image-viewer-figure figcaption {
   max-width: 760px;
   color: #c9c2b7;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-label);
   font-size: 10px;
   line-height: 1.6;
 }
@@ -1746,7 +1748,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Instrument Sans", Arial, sans-serif;
+  font-family: var(--font-body);
 }
 
 h1,
@@ -1759,7 +1761,7 @@ h3,
 .contact h2,
 .modal-header-info h2,
 .qb-model-caption strong {
-  font-family: "Instrument Sans", Arial, sans-serif;
+  font-family: var(--font-body);
 }
 
 body {
@@ -1797,10 +1799,10 @@ nav {
   filter: none;
 }
 .nav-wordmark { padding-left: 0; border: 0; color: var(--ink); }
-.nav-wordmark strong { font-family: "Instrument Sans", Arial, sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
-.nav-wordmark small { font-family: "Instrument Sans", Arial, sans-serif; font-size: 11px; font-weight: 400; color: var(--ink-soft); letter-spacing: 0; text-transform: none; margin-top: 4px; }
+.nav-wordmark strong { font-family: var(--font-body); font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
+.nav-wordmark small { font-family: var(--font-body); font-size: 11px; font-weight: 400; color: var(--ink-soft); letter-spacing: 0; text-transform: none; margin-top: 4px; }
 .nav-links { gap: clamp(18px, 2vw, 28px); }
-.nav-links a, .nav-cta { color: var(--ink); font-family: "Instrument Sans", Arial, sans-serif; font-size: 14px; font-weight: 600; text-transform: none; letter-spacing: 0; }
+.nav-links a, .nav-cta { color: var(--ink); font-family: var(--font-body); font-size: 14px; font-weight: 600; text-transform: none; letter-spacing: 0; }
 .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
 .nav-links a:hover, .nav-cta:hover { color: var(--nijtec-blue); }
 .nav-cta { min-height: 44px; display: inline-flex; align-items: center; }
@@ -1867,7 +1869,7 @@ nav {
 }
 
 .qb-prop { color: rgba(255,255,255,.82); font-size: 14px; }
-.qb-guarantee-num { font-family: "Instrument Sans", Arial, sans-serif; font-weight: 520; }
+.qb-guarantee-num { font-family: var(--font-body); font-weight: 520; }
 
 .qb-model-wrap {
   min-width: 0;
@@ -2126,7 +2128,7 @@ nav {
 .product-card-link, .modal-cta, .form-submit, .form-copy,
 .about-person a, .blog-contact-link, .product-document-link,
 .detail-index span, .qb-article-link {
-  font-family: "Instrument Sans", Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
   text-transform: none;
@@ -2157,3 +2159,6 @@ summary:focus-visible, [tabindex="0"]:focus-visible {
 .image-viewer :focus-visible, .hero-project figcaption :focus-visible {
   outline-color: var(--paper-light);
 }
+
+.application-card strong, .feature-card h3, .product-card h3 { font-weight: 520; }
+.zzp-prijs-val, .zzp-badge-big .big-num { font-variant-numeric: lining-nums tabular-nums; font-weight: 600; }
