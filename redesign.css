@@ -2120,3 +2120,40 @@ nav {
   .detail-intro > p { font-size: 18px; }
 }
 @media (max-width: 380px) { .footer-pages { grid-template-columns: minmax(0, 1fr); } }
+
+/* Readable actions and technical labels on all responsive breakpoints. */
+.btn-primary, .btn-secondary, .nav-cta, .nav-links a,
+.product-card-link, .modal-cta, .form-submit, .form-copy,
+.about-person a, .blog-contact-link, .product-document-link,
+.detail-index span, .qb-article-link {
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  min-height: 44px;
+  line-height: 1.5;
+}
+.btn-primary, .btn-secondary, .product-card-link, .modal-cta,
+.form-submit, .form-copy, .product-document-link, .about-person a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-label, .qb-badge, .contact-item-icon, .application-number,
+.feature-icon, .product-card-icon, .qb-toepassingen, .qb-leveringsvorm,
+.qb-model-caption > span, .hero-project figcaption > span,
+.modal-section-title, .modal-header-icon, .toep-icon {
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+.btn-primary:hover, .modal-cta:hover { background: var(--rust-dark); color: #fff; }
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+summary:focus-visible, [tabindex="0"]:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+.quickbond :focus-visible, .contact :focus-visible, footer :focus-visible,
+.image-viewer :focus-visible, .hero-project figcaption :focus-visible {
+  outline-color: var(--paper-light);
+}
