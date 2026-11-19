@@ -32,7 +32,7 @@ async function run(){
   const popupVariants=Object.fromEntries(Object.values(productMedia).flat().filter(m=>responsive.manifest[m.src]).map(m=>[m.src,responsive.manifest[m.src]]));
   source=source.replace('<!-- RESPONSIVE_MEDIA_DATA -->','<script type="application/json" id="responsive-media-data">'+JSON.stringify(popupVariants).replace(/</g,'\\u003c')+'</script>');
   source=source.replace('<!-- WEB_ANALYTICS_CONFIG -->','<script type="application/json" id="analytics-config">'+analyticsConfig(process.env.VERCEL_OBSERVABILITY_CLIENT_CONFIG)+'</script>');
-  const legal=JSON.parse(await fs.readFile(path.join(root,'seo/legacy-terms.json'),'utf8'));
+  const legal=require('../seo/legal-display.cjs');
   source=source.replace(/const avData = \[[\s\S]*?\n\];/,'const avData = '+JSON.stringify(legal.articles).replace(/</g,'\\u003c')+';');
   const pageLinks='<div class="footer-pages" aria-label="Pagina’s van Nijtec">'+pages.map(p=>'<a href="'+p.path+'">'+escape(p.title)+'</a>').join('')+'</div>';
   source=source.replace('<!-- PAGE_LINKS -->',pageLinks);
@@ -46,7 +46,8 @@ async function run(){
   const contacts=section('contact');
   function pageHead(page){
     let html=head.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,'<script type="application/ld+json">'+schema(page)+'</script>');
-    if(!page)return html;
+    const social=markup=>markup.replace(/<meta name="twitter:title" content="[^"]*">/,'<meta name="twitter:title" content="'+markup.match(/<meta property="og:title" content="([^"]*)">/)[1]+'">').replace(/<meta name="twitter:description" content="[^"]*">/,'<meta name="twitter:description" content="'+markup.match(/<meta property="og:description" content="([^"]*)">/)[1]+'">');
+    if(!page)return social(html);
     if(page.article)html=html.replace('<meta property="og:type" content="website">','<meta property="og:type" content="article">');
     html=html.replace(/<title>.*?<\/title>/,'<title>'+escape(page.title)+' | Nijtec B.V. Dalen</title>');
     html=html.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(page.intro)+'">');
@@ -54,7 +55,7 @@ async function run(){
     html=html.replace(/<meta property="og:url" content="[^"]*">/,'<meta property="og:url" content="'+origin+page.path+'">');
     html=html.replace(/<meta property="og:title" content="[^"]*">/,'<meta property="og:title" content="'+escape(page.title)+' | Nijtec">');
     html=html.replace(/<meta property="og:description" content="[^"]*">/,'<meta property="og:description" content="'+escape(page.intro)+'">');
-    return html;
+    return social(html);
   }
   // dist is disposable generated output. Verify its exact location before clearing
   // it so a rebuild cannot retain a retired page, original or thumbnail.

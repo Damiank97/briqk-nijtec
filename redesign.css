@@ -2185,3 +2185,5 @@ summary:focus-visible, [tabindex="0"]:focus-visible {
 .footer-brand { align-self: flex-start; padding: 18px; background: var(--paper-light); }
 .footer-brand img { display: block; width: 160px; height: auto; margin-bottom: 12px; mix-blend-mode: normal; filter: none; }
 .footer-brand .footer-description { color: var(--ink-soft); max-width: 30ch; }
+.footer-contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--paper-light); text-decoration: underline; text-underline-offset: 3px; }
+.footer-contact a:hover { color: var(--nijtec-orange); }
