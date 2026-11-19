@@ -97,7 +97,7 @@ test('Sitemap covers the real pages and images, and robots exposes only the prod
 test('Published legal page and homepage accordion retain all 20 original articles',()=>{
  const legal=require('../seo/legacy-terms.json');
  assert.equal(legal.articles.length,20);
- assert.ok(htmlFor('/algemene-voorwaarden/').includes(legal.html));
+ assert.ok(htmlFor('/algemene-voorwaarden/').replace(/ id="artikel-\d+"/g,'').includes(legal.html));
  const homepage=htmlFor('/');
  for(const article of legal.articles)assert.ok(homepage.includes(JSON.stringify(article.title).slice(1,-1)),article.title);
  assert.ok(!legal.html.match(/<(script|iframe|style)\b/i));
