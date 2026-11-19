@@ -197,9 +197,21 @@ async function auditRoutes(){
   record(width+' px: blog leesbaar met echt projectbeeld zonder overlap',img.naturalWidth>0&&img.getAttribute('src')==='/assets/hero-project.jpg'&&img.getAttribute('width')==='1600'&&img.currentSrc.includes('/assets/optimized/')&&d.documentElement.scrollWidth<=w.innerWidth+1&&!overlaps(copy.getBoundingClientRect(),figure.getBoundingClientRect())&&parseFloat(w.getComputedStyle(copy.querySelector('p')).fontSize)>=18&&d.querySelector('.blog-contact-link').getAttribute('href')==='#contact'&&w.__qaErrors.length===0);
  }
 }
+async function auditProductGuides(){
+ for(const width of [390,768,1440])for(const route of ['/producten/quickbond/','/producten/chemisch-anker/']){
+  frame.width=width;frame.height=844;
+  await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa='+Date.now();});
+  const w=frame.contentWindow,d=w.document;await d.fonts.ready;
+  const guide=d.querySelector('.product-guide'),link=guide.querySelector('[data-inquiry]');
+  const message=d.getElementById('f-bericht');message.value='Mijn eigen projectvraag.';
+  link.focus();link.click();await settle();
+  record(width+' px: '+route+' adviesaanvraag behoudt tekst en productcontext',message.value.startsWith('Mijn eigen projectvraag.')&&message.value.includes(link.dataset.inquiry)&&message.value.includes(link.dataset.inquiryContext)&&d.getElementById('f-onderwerp').value==='Technisch advies'&&d.activeElement===d.getElementById('f-naam'));
+  record(width+' px: '+route+' productuitleg leesbaar zonder overflow',guide.getBoundingClientRect().width<=w.innerWidth&&d.documentElement.scrollWidth<=w.innerWidth+1&&d.querySelectorAll('h1').length===1&&w.__qaErrors.length===0,w.__qaErrors.join('; '));
+ }
+}
 async function run(){
  document.getElementById('run').disabled=true;checks=[];results.replaceChildren();
- try{for(const width of [390,768,1440,320])await audit(width);await auditRoutes();}catch(e){record('Testuitvoering',false,String(e.stack||e));}
+ try{for(const width of [390,768,1440,320])await audit(width);await auditRoutes();await auditProductGuides();}catch(e){record('Testuitvoering',false,String(e.stack||e));}
  document.getElementById('run').disabled=false;frame.width=390;frame.height=844;
  const report=document.createElement('pre');report.id='json-report';report.textContent=JSON.stringify({date:new Date().toISOString(),checks},null,2);results.append(report);
  await fetch('/__qa/report',{method:'POST',headers:{'Content-Type':'application/json'},body:report.textContent});

@@ -17,7 +17,7 @@ test('browser and server execute the identical email policy without a network re
 test('all generated contact forms load validation before contact code and retain native constraints',()=>{
   for(const route of ['/',...require('../seo/pages.cjs').map(p=>p.path)]){
     const html=fs.readFileSync(path.join(__dirname,'../dist',route,'index.html'),'utf8');
-    assert.ok(html.indexOf('/email-validation.js?v=1')<html.indexOf('/contact.js?v=4'),route);
+    assert.ok(html.indexOf('/email-validation.js?v=1')<html.indexOf(html.match(/\/contact\.js\?v=\d+/)[0]),route);
     assert.match(html,/<input type="email" id="f-email"[^>]* required pattern=/);
     assert.ok(html.includes('aria-describedby="f-email-error"'));
   }

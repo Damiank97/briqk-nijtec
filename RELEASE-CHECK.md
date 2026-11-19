@@ -119,3 +119,19 @@ De nieuwe site bevat geen PHP-bestanden, PHP-interpreter, Composer of WordPress-
 De oude publiek bereikbare `nijtec.nl` was bij de inventarisatie nog WordPress. De PHP-versie, patchstatus en overige diensten van die oude hosting zijn zonder beheerrechten niet geverifieerd. Dat de nieuwe site geen PHP gebruikt, zegt niets over de oude server of absolute veiligheid tegen andere kwetsbaarheden. Een domeinverhuizing schakelt een oude server bovendien niet vanzelf uit.
 
 Op 21 oktober 2026 bevestigt [PHP zelf](https://www.php.net/archive/2026.php#2026-10-20-1) twee kritieke kwetsbaarheden en een aangekondigde beveiligingsrelease. Laat André’s huidige hoster de officiële update/mitigatie en eventuele overige PHP-diensten direct controleren. [CERT-EU](https://cert.europa.eu/publications/security-advisories/2026-018) adviseert snelle patching en zo nodig isolatie van blootgestelde toepassingen. Deze repositorycontrole is geen penetratietest en verklaart de oude hosting niet veilig.
+
+# Gerichte productverbeteringen, 19 november 2026
+
+- Quickbond: beschrijvende titel, extra statische productuitleg en verwijzingen
+  naar de bestaande blog en projectpagina. Extra adviesactie bij de 3D-presentatie.
+- Chemisch anker: uitleg van ankerlijm/verankeringslijm, polyester tegenover epoxy,
+  ondergrondkeuze en temperatuurafhankelijke uitharding met productbladlink.
+- Productadvies vult het formulier lokaal in, behoudt bestaande tekst en vraagt
+  naar relevante projectgegevens. Het verstuurt niets bij het aanklikken.
+- Geen nieuwe URL's, dependencies, analytics-events of afbeeldingen. De 17
+  pagina's, canonicals, mailadapter, privacykeuzes en bronbestanden blijven intact.
+- `npm test`: 74 geslaagd. Browsercontrole: 299 geslaagd, nul mislukt, met de
+  nieuwe productaanvragen op 390/768/1440 px en bestaande flows ook op 320 px.
+- Visueel beoordeeld op mobiel, tablet en desktop; geen consolefouten gezien.
+  Geen nieuwe PageSpeed- of rankingclaim. Bronafwegingen in content-sources.md.
+- Herstelpunt vóór deze wijziging: `0ebaa37b0b3036034344f099dd331b488c53491f`.

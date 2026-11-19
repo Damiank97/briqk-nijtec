@@ -26,15 +26,18 @@
   }
   const ready = configure();
 
-  document.querySelectorAll('[data-order]').forEach(link => {
+  document.querySelectorAll('[data-order], [data-inquiry]').forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
-      const product = link.dataset.order;
-      document.getElementById('f-onderwerp').value = 'Bestelling aanvragen';
+      const product = link.dataset.inquiry || link.dataset.order;
+      document.getElementById('f-onderwerp').value = link.dataset.inquiry ? 'Technisch advies' : 'Bestelling aanvragen';
       const input = document.getElementById('f-bericht');
-      const request = 'Ik wil graag het ' + product + ' aanvragen.\n\nGewenste producten en aantallen:\n\nGewenste levering of afhalen:\n\nKunt u de prijs, beschikbaarheid en levering bevestigen?';
+      const request = link.dataset.inquiry
+        ? 'Ik wil graag advies of een offerte voor ' + product + '.\n\nMijn toepassing:\n\n' + link.dataset.inquiryContext + '\n\nKunt u de passende uitvoering, prijs en levering met mij bespreken?'
+        : 'Ik wil graag het ' + product + ' aanvragen.\n\nGewenste producten en aantallen:\n\nGewenste levering of afhalen:\n\nKunt u de prijs, beschikbaarheid en levering bevestigen?';
       // Never discard a message the visitor has already written.
       input.value = input.value.trim() ? input.value + '\n\n' + request : request;
+      input.setCustomValidity('');
       document.getElementById('prefill-product-naam').textContent = product;
       document.getElementById('product-prefill-banner').style.display = 'flex';
       document.querySelector('.contact-form').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });

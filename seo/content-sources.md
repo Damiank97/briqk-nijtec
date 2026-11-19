@@ -1,3 +1,35 @@
+# Productuitleg op basis van Search Console, 19 november 2026
+
+De gebruiker gaf toestemming de bestaande site gericht te verbeteren na zijn
+Search Console-screenshots. Die tonen onder meer interesse in Quickbond,
+ankerlijm en verankeringslijm. De screenshots mengen 28 dagen en drie maanden;
+vertoningen zijn geen zoekvolumes of aanvragen. Er is geen positie-export of
+conversiemeting aangeleverd. Geen succespercentage of rangwinst claimen.
+
+De bestaande Quickbond-URL krijgt een beschrijvende titel en aanvullende
+productoriëntatie met links naar het bestaande artikel en echte projecten.
+Productclaims en leveringsvormen volgen de hieronder geregistreerde Nijtec-bronnen.
+Er is nog geen Quickbond-TDS verkregen: geen montageparameters, droogtijden of
+algemene ondergrondvrijgave toevoegen. Het bestaande artikel wordt niet als
+nieuw gepubliceerd en bestaande product-URL's blijven intact.
+
+De bestaande chemisch-ankerpagina krijgt uitleg over ankerlijm, de statische
+mixer, ondergronden, verwerking en uitharding. Het ongewijzigde, aangeleverde
+Seal-it 720-productblad (versie 20240107, alle drie pagina's opnieuw gelezen)
+onderbouwt de polyesterbasis en de temperatuurafhankelijke verwerkingstabel.
+Geen tijden of draagkrachten overnemen als universeel advies. Voor actuele
+verwerking blijven productblad, toepasselijke certificering en projectbeoordeling
+leidend. De tekst onderscheidt een polyesteranker van een epoxyanker en noemt
+geen onbevestigde epoxyproducten of concurrenten.
+
+De advieslinks vullen alleen het lokale formulier in, bewaren bestaande tekst en
+versturen niets totdat de bezoeker zelf verzendt. Geen nieuwe meetevents of
+persoonsgegevens naar analytics. De bestaande privacytekst blijft correct.
+
+Redactionele basis, geraadpleegd 19 november 2026:
+- https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- https://developers.google.com/search/docs/appearance/ai-features
+
 # Aanvulling bedrijfsverhaal en productbeelden, 22 oktober 2026
 
 De gebruiker vroeg het oorspronkelijke welkomstverhaal terug te brengen.

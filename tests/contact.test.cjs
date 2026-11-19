@@ -5,21 +5,24 @@ const path = require('node:path');
 const vm = require('node:vm');
 const source = fs.readFileSync(path.join(__dirname, '../contact.js'), 'utf8');
 
-function harness({ valid = true, clipboardFails = false, values = {}, enabled = false, sendStatus = 200, sendResult = {ok:true}, sendThrows = false } = {}) {
+function harness({ valid = true, clipboardFails = false, values = {}, enabled = false, sendStatus = 200, sendResult = {ok:true}, sendThrows = false, action } = {}) {
   const input = { naam: 'Test & Élise', bedrijf: 'Bouw #1', email: 'qa@example.invalid', onderwerp: 'Offerte aanvragen', bericht: 'Gevelpanelen? Prijs & levering graag.', ...values };
   const nodes = new Map();
-  for (const id of ['contact-fields', 'contact-handoff', 'contact-copy-fallback', 'contact-copy-text', 'form-submit-btn', 'contact-copy-btn', 'f-naam', 'f-bericht', 'f-email', 'f-email-error', 'contact-help']) {
+  for (const id of ['contact-fields', 'contact-handoff', 'contact-copy-fallback', 'contact-copy-text', 'form-submit-btn', 'contact-copy-btn', 'f-naam', 'f-bericht', 'f-email', 'f-email-error', 'contact-help', 'f-onderwerp', 'prefill-product-naam', 'product-prefill-banner']) {
     nodes.set(id, { hidden: true, value: '', textContent: '', handlers: {}, attributes: {}, addEventListener(type, cb) { this.handlers[type] = cb; }, focus() { this.focused = true; }, select() { this.selected = true; }, setCustomValidity(text) { this.error = text; }, setAttribute(key,value) { this.attributes[key]=value; }, removeAttribute(key) { delete this.attributes[key]; }, reportValidity() { return !this.error; } });
   }
   nodes.get('f-naam').value = input.naam;
   nodes.get('f-bericht').value = input.bericht;
   nodes.get('f-email').value = input.email;
+  nodes.get('product-prefill-banner').style = {};
+  const actionLink = { dataset: action, addEventListener(type, handler) { this[type] = handler; } };
+  const contactForm = { scrollIntoView() { this.scrolled = true; } };
   nodes.get('contact-fields').hidden = false;
   nodes.get('contact-fields').reportValidity = () => valid && !nodes.get('f-naam').error && !nodes.get('f-bericht').error && !nodes.get('f-email').error;
   const location = { href: '' }, copied = [], requests = [];
   vm.runInNewContext(source, {
-    document: { getElementById: id => nodes.get(id), querySelectorAll: () => [] },
-    window: { location, NijtecEmailValidation: require('../email-validation.js') },
+    document: { getElementById: id => nodes.get(id), querySelectorAll: () => action ? [actionLink] : [], querySelector: () => contactForm },
+    window: { location, matchMedia: () => ({ matches: true }), NijtecEmailValidation: require('../email-validation.js') },
     navigator: { clipboard: { async writeText(text) { if (clipboardFails) throw new Error('Denied'); copied.push(text); } } },
     FormData: class { get(key) { return input[key]; } },
     AbortSignal,
@@ -32,8 +35,33 @@ function harness({ valid = true, clipboardFails = false, values = {}, enabled = 
       return {ok:true,json:async()=>({enabled,token:'test-token'})};
     }
   });
-  return { nodes, location, input, copied, requests, submit: () => nodes.get('contact-fields').handlers.submit({ preventDefault() {} }), copy: () => nodes.get('contact-copy-btn').handlers.click() };
+  return { nodes, location, input, copied, requests, contactForm, activate: () => actionLink.click({preventDefault() {}}), submit: () => nodes.get('contact-fields').handlers.submit({ preventDefault() {} }), copy: () => nodes.get('contact-copy-btn').handlers.click() };
 }
+
+test('product advice preserves a written message, sets context and focuses without sending', () => {
+  const h = harness({ action: { inquiry:'Seal-it 720 Chem-Fix', inquiryContext:'Ondergrond en bevestigingsmiddel.' } });
+  h.nodes.get('f-bericht').setCustomValidity('Vul dit veld in.');
+  h.activate();
+  assert.ok(h.nodes.get('f-bericht').value.startsWith(h.input.bericht));
+  assert.match(h.nodes.get('f-bericht').value, /Seal-it 720 Chem-Fix/);
+  assert.match(h.nodes.get('f-bericht').value, /Ondergrond en bevestigingsmiddel/);
+  assert.equal(h.nodes.get('f-bericht').error, '');
+  assert.equal(h.nodes.get('f-onderwerp').value, 'Technisch advies');
+  assert.equal(h.nodes.get('product-prefill-banner').style.display, 'flex');
+  assert.equal(h.nodes.get('f-naam').focused, true);
+  assert.equal(h.contactForm.scrolled, true);
+  assert.equal(h.requests.length, 0);
+  assert.equal(h.location.href, '');
+});
+
+test('package request retains its ordering subject and delivery question', () => {
+  const h = harness({ action: { order:'ZZP-pakket' }, values:{bericht:''} });
+  h.activate();
+  assert.equal(h.nodes.get('f-onderwerp').value, 'Bestelling aanvragen');
+  assert.match(h.nodes.get('f-bericht').value, /ZZP-pakket aanvragen/);
+  assert.match(h.nodes.get('f-bericht').value, /Gewenste levering of afhalen/);
+  assert.doesNotMatch(h.nodes.get('f-bericht').value, /undefined/);
+});
 
 test('invalid form never opens mail or claims receipt', () => {
   const h = harness({ valid: false }); h.submit();
