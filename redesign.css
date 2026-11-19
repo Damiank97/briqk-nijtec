@@ -2187,3 +2187,13 @@ summary:focus-visible, [tabindex="0"]:focus-visible {
 .footer-brand .footer-description { color: var(--ink-soft); max-width: 30ch; }
 .footer-contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--paper-light); text-decoration: underline; text-underline-offset: 3px; }
 .footer-contact a:hover { color: var(--nijtec-orange); }
+.project-cases { margin-top: 48px; border-top: 1px solid var(--rule); }
+.project-case { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr) auto; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--rule); }
+.project-case h3 { font-size: 24px; font-weight: 520; }
+.project-case dl { margin: 0; font-size: 16px; }
+.project-case dt { font-weight: 600; }
+.project-case dd { margin: 0 0 14px; }
+.project-case a { font-size: 15px; min-height: 44px; align-self: start; padding-block: 10px; text-decoration: underline; }
+.photo-item[id] { scroll-margin-top: 96px; }
+#chat-advice-note { font: 14px/1.5 var(--font-body); padding: 12px 16px; }
+@media (max-width: 900px) { .project-case { grid-template-columns: minmax(0,1fr); gap: 16px; } }
