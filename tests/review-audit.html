@@ -1,0 +1,40 @@
+<!doctype html><html lang="nl"><meta charset="utf-8"><title>Nijtec beoordelingsmatrix</title>
+<style>body{font:16px Arial;margin:16px;background:#f4f1e9;color:#17264e}iframe{border:1px solid #c7cddd;display:block}pre{white-space:pre-wrap}</style>
+<h1>Controle van de beoordelingsversie</h1><p id="status">Starten</p><iframe id="site" title="Testpagina"></iframe><pre id="report"></pre>
+<script>
+const routes=['/','/producten/','/producten/quickbond/','/projecten/','/zzp-pakket/','/contact/','/algemene-voorwaarden/'];
+const frame=document.querySelector('#site'),rows=[];
+const rgb=s=>{const m=s.match(/[\d.]+/g)?.map(Number);return m?[...m.slice(0,3).map(v=>s.startsWith('color(srgb ')?v*255:v),m[3]??1]:[255,255,255,1];};
+const over=(a,b)=>a.slice(0,3).map((v,i)=>v*a[3]+b[i]*(1-a[3]));
+const lum=c=>c.slice(0,3).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0);
+const contrast=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
+const hex=c=>'#'+c.map(v=>Math.round(v).toString(16).padStart(2,'0')).join('');
+async function run(){
+ for(const width of [375,768,1440])for(const route of routes){
+  frame.width=width;frame.height=900;
+  await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa=review-matrix';});
+  const w=frame.contentWindow,d=w.document;await d.fonts.ready;
+  const visible=e=>e.getClientRects().length&&w.getComputedStyle(e).visibility!=='hidden';
+  const smallActions=[...d.querySelectorAll('.btn-primary,.btn-secondary,.nav-cta,.product-card-link,.form-submit,.form-copy,.project-case a,.blog-contact-link')].filter(visible).filter(e=>parseFloat(w.getComputedStyle(e).fontSize)<15).map(e=>e.className);
+  const shortActions=[...d.querySelectorAll('.btn-primary,.btn-secondary,.nav-cta,.product-card-link,.form-submit,.form-copy,.project-case a,.blog-contact-link')].filter(visible).filter(e=>e.getBoundingClientRect().height<43.9).map(e=>e.className);
+  const smallBody=[...d.querySelectorAll('main p,main li,main dd')].filter(visible).filter(e=>!e.closest('.qb-story-notes')&&parseFloat(w.getComputedStyle(e).fontSize)<16).map(e=>({selector:e.className||e.tagName.toLowerCase(),size:w.getComputedStyle(e).fontSize,text:e.textContent.trim().slice(0,65)}));
+  const pairs=new Map();const walker=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT);let node;
+  while(node=walker.nextNode()){
+   const e=node.parentElement;if(!node.textContent.trim()||!visible(e)||e.closest('script,style,[aria-hidden="true"],canvas'))continue;
+   const range=d.createRange();range.selectNodeContents(node);if(!range.getClientRects().length)continue;
+   const chain=[];for(let a=e;a;a=a.parentElement)chain.push(a);
+   let bg=[255,255,255];for(const a of chain.reverse()){const c=rgb(w.getComputedStyle(a).backgroundColor);bg=over(c,bg);}
+   const style=w.getComputedStyle(e),fg=over(rgb(style.color),bg),ratio=contrast(fg,bg);
+   if(ratio<4.5){const key=hex(fg)+'/'+hex(bg);if(!pairs.has(key))pairs.set(key,{pair:key,ratio:Number(ratio.toFixed(2)),size:style.fontSize,example:node.textContent.trim().slice(0,70)});}
+  }
+  const input=d.querySelector('#f-bericht'),placeholder=input?w.getComputedStyle(input,'::placeholder'):null;
+  const placeRatio=placeholder?contrast(over(rgb(placeholder.color),rgb(w.getComputedStyle(input).backgroundColor)),rgb(w.getComputedStyle(input).backgroundColor)):null;
+  const call=d.querySelector('.nav-cta'),r=call.getBoundingClientRect();
+  const row={route,width,overflow:d.documentElement.scrollWidth>w.innerWidth+1,callVisible:r.top>=0&&r.bottom<=w.innerHeight,smallActions,shortActions,smallBody,contrastPairs:[...pairs.values()],placeholderContrast:placeRatio?Number(placeRatio.toFixed(2)):null,errors:w.__qaErrors};
+  rows.push(row);document.querySelector('#status').textContent=rows.length+' / 21 gecontroleerd';
+ }
+ document.querySelector('#report').textContent=JSON.stringify({date:new Date().toISOString(),rows},null,2);
+ document.querySelector('#status').textContent='Gereed';
+}
+run().catch(e=>document.querySelector('#status').textContent=String(e.stack));
+</script></html>

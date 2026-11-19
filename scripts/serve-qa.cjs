@@ -31,14 +31,14 @@ http.createServer(async (req, res) => {
     }
     const redirect=config.redirects.find(r=>!r.has&&r.source.replace(/\/$/,'')===url.pathname.replace(/\/$/,''));
     if(redirect){res.writeHead(308,{Location:redirect.destination});return res.end();}
-    const qaPage = new Map([['/__qa', 'browser-qa.html'], ['/__qa/branding', 'branding-qa.html'], ['/__qa/media', 'media-audit.html']]).get(url.pathname);
+    const qaPage = new Map([['/__qa', 'browser-qa.html'], ['/__qa/branding', 'branding-qa.html'], ['/__qa/media', 'media-audit.html'], ['/__qa/review','review-audit.html']]).get(url.pathname);
     let target = qaPage ? path.join(__dirname, '../tests', qaPage) : path.resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
     if (!qaPage && !target.startsWith(root + path.sep)) { res.writeHead(403); return res.end(); }
     if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');
     let body = await fs.readFile(target);
     if (path.extname(target)==='.html' && url.searchParams.has('qa')) {
       const instrument = '<script>history.scrollRestoration="manual";window.__qaErrors=[];window.__qaCLS=0;addEventListener("error",e=>__qaErrors.push(e.message||e.target.src),true);addEventListener("unhandledrejection",e=>__qaErrors.push(String(e.reason)));new PerformanceObserver(list=>list.getEntries().forEach(e=>{if(!e.hadRecentInput)__qaCLS+=e.value})).observe({type:"layout-shift",buffered:true});<\/script>';
-      const frameCounter='<script>window.__qaRenderFrames=0;const qaNativeFrame=requestAnimationFrame;window.requestAnimationFrame=callback=>qaNativeFrame(time=>{if(callback.name==="render")window.__qaRenderFrames++;callback(time);});<\/script>';
+      const frameCounter='<script>window.__qaRenderFrames=0;for(const context of [window.WebGLRenderingContext,window.WebGL2RenderingContext]){if(!context)continue;for(const method of ["drawArrays","drawElements","drawArraysInstanced","drawElementsInstanced"]){const draw=context.prototype[method];if(typeof draw!=="function")continue;context.prototype[method]=function(...args){window.__qaRenderFrames++;return draw.apply(this,args);};}}<\/script>';
       body = Buffer.from(body.toString().replace('<head>', '<head>' + instrument + frameCounter));
     }
     res.writeHead(200, { 'Content-Type': types[path.extname(target)] || 'application/octet-stream', 'Cache-Control':'no-store' });
