@@ -8,12 +8,14 @@ const source = fs.readFileSync(path.join(__dirname, '../contact.js'), 'utf8');
 function harness({ valid = true, clipboardFails = false, values = {}, enabled = false, sendStatus = 200, sendResult = {ok:true}, sendThrows = false, action } = {}) {
   const input = { naam: 'Test & Élise', bedrijf: 'Bouw #1', email: 'qa@example.invalid', onderwerp: 'Offerte aanvragen', bericht: 'Gevelpanelen? Prijs & levering graag.', ...values };
   const nodes = new Map();
-  for (const id of ['contact-fields', 'contact-handoff', 'contact-copy-fallback', 'contact-copy-text', 'form-submit-btn', 'contact-copy-btn', 'f-naam', 'f-bericht', 'f-email', 'f-email-error', 'contact-help', 'f-onderwerp', 'prefill-product-naam', 'product-prefill-banner']) {
+  for (const id of ['contact-fields', 'contact-handoff', 'contact-copy-fallback', 'contact-copy-text', 'form-submit-btn', 'contact-copy-btn', 'f-naam', 'f-bericht', 'f-email', 'f-email-error', 'contact-help', 'f-onderwerp', 'prefill-product-naam', 'product-prefill-banner', 'prefill-clear-btn']) {
     nodes.set(id, { hidden: true, value: '', textContent: '', handlers: {}, attributes: {}, addEventListener(type, cb) { this.handlers[type] = cb; }, focus() { this.focused = true; }, select() { this.selected = true; }, setCustomValidity(text) { this.error = text; }, setAttribute(key,value) { this.attributes[key]=value; }, removeAttribute(key) { delete this.attributes[key]; }, reportValidity() { return !this.error; } });
   }
   nodes.get('f-naam').value = input.naam;
   nodes.get('f-bericht').value = input.bericht;
   nodes.get('f-email').value = input.email;
+  nodes.get('f-onderwerp').value = input.onderwerp;
+  nodes.get('f-bericht').placeholder = 'Uw vraag of bericht...';
   nodes.get('product-prefill-banner').style = {};
   const actionLink = { dataset: action, addEventListener(type, handler) { this[type] = handler; } };
   const contactForm = { scrollIntoView() { this.scrolled = true; } };
@@ -21,10 +23,10 @@ function harness({ valid = true, clipboardFails = false, values = {}, enabled = 
   nodes.get('contact-fields').reportValidity = () => valid && !nodes.get('f-naam').error && !nodes.get('f-bericht').error && !nodes.get('f-email').error;
   const location = { href: '' }, copied = [], requests = [];
   vm.runInNewContext(source, {
-    document: { getElementById: id => nodes.get(id), querySelectorAll: () => action ? [actionLink] : [], querySelector: () => contactForm },
+    document: { getElementById: id => nodes.get(id), querySelectorAll: () => action ? [actionLink] : [], querySelector: () => contactForm, addEventListener() {} },
     window: { location, matchMedia: () => ({ matches: true }), NijtecEmailValidation: require('../email-validation.js') },
     navigator: { clipboard: { async writeText(text) { if (clipboardFails) throw new Error('Denied'); copied.push(text); } } },
-    FormData: class { get(key) { return input[key]; } },
+    FormData: class { get(key) { return nodes.get('f-'+key)?.value ?? input[key]; } },
     AbortSignal,
     fetch: async (url, options) => {
       if(options.method === 'POST') {
@@ -42,9 +44,9 @@ test('product advice preserves a written message, sets context and focuses witho
   const h = harness({ action: { inquiry:'Seal-it 720 Chem-Fix', inquiryContext:'Ondergrond en bevestigingsmiddel.' } });
   h.nodes.get('f-bericht').setCustomValidity('Vul dit veld in.');
   h.activate();
-  assert.ok(h.nodes.get('f-bericht').value.startsWith(h.input.bericht));
-  assert.match(h.nodes.get('f-bericht').value, /Seal-it 720 Chem-Fix/);
-  assert.match(h.nodes.get('f-bericht').value, /Ondergrond en bevestigingsmiddel/);
+  assert.equal(h.nodes.get('f-bericht').value,h.input.bericht);
+  assert.equal(h.nodes.get('prefill-product-naam').textContent,'Seal-it 720 Chem-Fix');
+  assert.match(h.nodes.get('f-bericht').placeholder, /Ondergrond en bevestigingsmiddel/);
   assert.equal(h.nodes.get('f-bericht').error, '');
   assert.equal(h.nodes.get('f-onderwerp').value, 'Technisch advies');
   assert.equal(h.nodes.get('product-prefill-banner').style.display, 'flex');
@@ -58,8 +60,9 @@ test('package request retains its ordering subject and delivery question', () =>
   const h = harness({ action: { order:'ZZP-pakket' }, values:{bericht:''} });
   h.activate();
   assert.equal(h.nodes.get('f-onderwerp').value, 'Bestelling aanvragen');
-  assert.match(h.nodes.get('f-bericht').value, /ZZP-pakket aanvragen/);
-  assert.match(h.nodes.get('f-bericht').value, /Gewenste levering of afhalen/);
+  assert.equal(h.nodes.get('f-bericht').value,'');
+  assert.equal(h.nodes.get('prefill-product-naam').textContent,'ZZP-pakket');
+  assert.match(h.nodes.get('f-bericht').placeholder, /levering of afhalen/);
   assert.doesNotMatch(h.nodes.get('f-bericht').value, /undefined/);
 });
 
@@ -67,6 +70,26 @@ test('invalid form never opens mail or claims receipt', () => {
   const h = harness({ valid: false }); h.submit();
   assert.equal(h.location.href, '');
   assert.equal(h.nodes.get('contact-handoff').hidden, true);
+});
+
+test('empty or unchanged legacy template cannot send, but personal text sends with separate product context', async () => {
+  const h=harness({enabled:true,action:{order:'ZZP-pakket'},values:{bericht:''}});
+  h.activate();await h.submit();assert.equal(h.requests.length,0);
+  assert.equal(h.nodes.get('f-bericht').error,'Beschrijf kort uw toepassing en ondergrond.');
+  h.nodes.get('f-bericht').value='Ik heb interesse in: ZZP-pakket.\n\nKunt u mij meer informatie en een offerte sturen?';
+  await h.submit();assert.equal(h.requests.length,0);
+  h.nodes.get('f-bericht').value='Ik zoek materiaal voor houten gevelpanelen op aluminium.';
+  await h.submit();assert.equal(h.requests.length,1);
+  assert.equal(h.requests[0].bericht,'Aanvraag voor: ZZP-pakket\n\nIk zoek materiaal voor houten gevelpanelen op aluminium.');
+  assert.equal(h.nodes.get('f-bericht').value,'Ik zoek materiaal voor houten gevelpanelen op aluminium.');
+});
+
+test('clearing product context preserves the visitors own message',async()=>{
+ const h=harness({enabled:true,action:{inquiry:'Quickbond',inquiryContext:'Ondergrond.'}});
+ h.activate();h.nodes.get('prefill-clear-btn').handlers.click();
+ assert.equal(h.nodes.get('f-bericht').value,h.input.bericht);
+ assert.equal(h.nodes.get('f-bericht').placeholder,'Uw vraag of bericht...');
+ await h.submit();assert.equal(h.requests[0].bericht,h.input.bericht);
 });
 
 test('mail URI preserves every field, Unicode and reserved characters', async () => {

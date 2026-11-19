@@ -439,10 +439,10 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/redesign.css?v=31">
+  <link rel="stylesheet" href="/redesign.css?v=32">
 <script src="/motion.js?v=1" defer></script>
 <script src="/email-validation.js?v=1" defer></script>
-<script src="/contact.js?v=5" defer></script>
+<script src="/contact.js?v=6" defer></script>
 <!-- WEB_ANALYTICS_CONFIG -->
 <script type="module" id="nijtec-analytics" src="/analytics.js?v=1"></script>
 </head>
@@ -1149,33 +1149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productIcon = document.getElementById('modal-icon').textContent;
     closeModal();
 
-    // Dropdown op "Offerte aanvragen"
-    const onderwerp = document.getElementById('f-onderwerp');
-    for (let i = 0; i < onderwerp.options.length; i++) {
-      if (onderwerp.options[i].text === 'Offerte aanvragen') { onderwerp.selectedIndex = i; break; }
-    }
-
-    // Textarea voorinvullen
-    const message = document.getElementById('f-bericht');
-    const request = 'Ik heb interesse in: ' + productNaam + '.\n\nKunt u mij meer informatie en een offerte sturen?';
-    message.value = message.value.trim() ? message.value + '\n\n' + request : request;
-
-    // Banner tonen
-    const banner = document.getElementById('product-prefill-banner');
-    document.getElementById('prefill-product-naam').textContent = productIcon + ' ' + productNaam;
-    banner.style.display = 'flex';
-
-    // Scroll naar formulier + focus naam
-    document.querySelector('.contact-form').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
-    document.getElementById('f-naam').focus({preventScroll:true});
-  });
-
-  // Banner wis-knop
-  document.getElementById('prefill-clear-btn').addEventListener('click', function() {
-    document.getElementById('product-prefill-banner').style.display = 'none';
-    document.getElementById('f-bericht').value = '';
-    const onderwerp = document.getElementById('f-onderwerp');
-    onderwerp.selectedIndex = 0;
+    document.dispatchEvent(new CustomEvent('nijtec:product-request', {detail:{product:productNaam}}));
   });
 
   // Chat openen/sluiten

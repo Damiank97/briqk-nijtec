@@ -26,24 +26,48 @@
   }
   const ready = configure();
 
+  const messageField = document.getElementById('f-bericht');
+  const defaultPlaceholder = messageField.placeholder;
+  let requestContext = null;
+
+  function prefill(product, subject, context) {
+    requestContext = { product, legacy: [
+      'Ik heb interesse in: ' + product + '.\n\nKunt u mij meer informatie en een offerte sturen?',
+      'Ik wil graag het ' + product + ' aanvragen.\n\nGewenste producten en aantallen:\n\nGewenste levering of afhalen:\n\nKunt u de prijs, beschikbaarheid en levering bevestigen?',
+      'Ik wil graag advies of een offerte voor ' + product + '.\n\nMijn toepassing:\n\n' + context + '\n\nKunt u de passende uitvoering, prijs en levering met mij bespreken?'
+    ] };
+    document.getElementById('f-onderwerp').value = subject;
+    messageField.placeholder = 'Beschrijf kort uw toepassing en ondergrond.\n\n' + context;
+    messageField.maxLength = 6000 - ('Aanvraag voor: ' + product + '\n\n').length;
+    messageField.setCustomValidity('');
+    document.getElementById('prefill-product-naam').textContent = product;
+    document.getElementById('product-prefill-banner').style.display = 'flex';
+    document.querySelector('.contact-form').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    document.getElementById('f-naam').focus({ preventScroll: true });
+  }
+
   document.querySelectorAll('[data-order], [data-inquiry]').forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
-      const product = link.dataset.inquiry || link.dataset.order;
-      document.getElementById('f-onderwerp').value = link.dataset.inquiry ? 'Technisch advies' : 'Bestelling aanvragen';
-      const input = document.getElementById('f-bericht');
-      const request = link.dataset.inquiry
-        ? 'Ik wil graag advies of een offerte voor ' + product + '.\n\nMijn toepassing:\n\n' + link.dataset.inquiryContext + '\n\nKunt u de passende uitvoering, prijs en levering met mij bespreken?'
-        : 'Ik wil graag het ' + product + ' aanvragen.\n\nGewenste producten en aantallen:\n\nGewenste levering of afhalen:\n\nKunt u de prijs, beschikbaarheid en levering bevestigen?';
-      // Never discard a message the visitor has already written.
-      input.value = input.value.trim() ? input.value + '\n\n' + request : request;
-      input.setCustomValidity('');
-      document.getElementById('prefill-product-naam').textContent = product;
-      document.getElementById('product-prefill-banner').style.display = 'flex';
-      document.querySelector('.contact-form').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-      document.getElementById('f-naam').focus({ preventScroll: true });
+      prefill(link.dataset.inquiry || link.dataset.order,
+        link.dataset.inquiry ? 'Technisch advies' : 'Bestelling aanvragen',
+        link.dataset.inquiryContext || 'Welke producten en aantallen zoekt u? Vermeld ook levering of afhalen en de gewenste planning.');
     });
   });
+  document.addEventListener('nijtec:product-request', event => {
+    prefill(event.detail.product, 'Offerte aanvragen', 'Waarvoor wilt u het product gebruiken? Vermeld de hoeveelheid en gewenste planning.');
+  });
+  document.getElementById('prefill-clear-btn').addEventListener('click', () => {
+    requestContext = null;
+    messageField.placeholder = defaultPlaceholder;
+    messageField.maxLength = 6000;
+    document.getElementById('product-prefill-banner').style.display = 'none';
+    document.getElementById('f-onderwerp').selectedIndex = 0;
+  });
+  function requestMessage(values) {
+    const text = String(values.get('bericht') || '').trim();
+    return (requestContext ? 'Aanvraag voor: ' + requestContext.product + '\n\n' : '') + text;
+  }
 
   function message() {
     const values = new FormData(form);
@@ -56,7 +80,7 @@
       ...(company ? ['Bedrijf: ' + company] : []),
       'E-mailadres: ' + email,
       '',
-      String(values.get('bericht') || '').trim()
+      requestMessage(values)
     ].join('\r\n');
     return { subject, body, text: 'Aan: ' + recipient + '\r\nOnderwerp: ' + subject + '\r\n\r\n' + body };
   }
@@ -69,7 +93,8 @@
   function validate() {
     ['f-naam', 'f-bericht'].forEach(id => {
       const input = document.getElementById(id);
-      input.setCustomValidity(input.value.trim() ? '' : 'Vul dit veld in.');
+      const personal = input.value.trim() && (id !== 'f-bericht' || !requestContext?.legacy.includes(input.value.trim()));
+      input.setCustomValidity(personal ? '' : (id === 'f-bericht' ? 'Beschrijf kort uw toepassing en ondergrond.' : 'Vul dit veld in.'));
     });
     checkEmail(true);
     return form.reportValidity();
@@ -85,6 +110,7 @@
     return valid;
   }
 
+  messageField.addEventListener('invalid', () => { if (!messageField.value.trim()) messageField.setCustomValidity('Beschrijf kort uw toepassing en ondergrond.'); });
   email.addEventListener('blur', () => { if (email.value || !emailError.hidden) checkEmail(true); });
   email.addEventListener('input', () => checkEmail());
   email.addEventListener('change', () => checkEmail());
@@ -95,7 +121,10 @@
     emailError.hidden = true;
   });
 
-  form.addEventListener('input', event => { if (event.target !== email) event.target.setCustomValidity?.(''); });
+  form.addEventListener('input', event => {
+    if (event.target === messageField && requestContext?.legacy.includes(messageField.value.trim())) messageField.setCustomValidity('Beschrijf kort uw toepassing en ondergrond.');
+    else if (event.target !== email) event.target.setCustomValidity?.('');
+  });
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (sending || !validate()) return;
@@ -108,6 +137,7 @@
       try {
         const values = new FormData(form);
         const payload = Object.fromEntries(['naam', 'bedrijf', 'email', 'onderwerp', 'bericht', 'website'].map(key => [key, String(values.get(key) || '')]));
+        payload.bericht = requestMessage(values);
         const response = await fetch('/api/contact', {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...payload, token: delivery.token }),
@@ -131,7 +161,7 @@
         copyText.value = draft.text;
         fallback.hidden = false;
         const reason = error.message === 'RATE_LIMIT' ? 'Er zijn te veel aanvragen gedaan. Probeer het later opnieuw.' : error.message === 'EXPIRED_TOKEN' ? 'Het formulier stond lang open. Probeer het nogmaals.' : 'We konden de verzending niet bevestigen. Controleer bij Nijtec of het bericht is aangekomen voordat u opnieuw verstuurt.';
-        showStatus(reason + ' Uw ingevulde gegevens blijven bewaard. U kunt uw bericht ook kopiëren en mailen naar ' + recipient + '.');
+        showStatus(reason + ' U kunt Nijtec ook bellen op 06-155 888 43. Uw ingevulde gegevens blijven bewaard. U kunt uw bericht ook kopiëren en mailen naar ' + recipient + '.');
         await configure();
       } finally {
         sending = false;
