@@ -1,0 +1,1375 @@
+{
+  "date": "2026-11-19T14:27:28.977Z",
+  "rows": [
+    {
+      "route": "/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Vraag naar het technische productblad en de verwerkingsinformatie"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Ons montageteam brengt gevelbeplating en coatings op locatie aan."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote project"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Uitgebreide ondersteuning via technisch advies en gedetailleerde "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Groot assortiment op voorraad. Direct bereikbaar via telefoon of "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Productkeuze op basis van toepassing, ondergrond en benodigde hoe"
+        },
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor hout, beton, metaal, kunststof en constructiepanelen."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor voegen, gevels, ramen, deuren en sanitaire ruimten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Onder andere Seal-it 479 Gun Black en 478 PU-Stonefix."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor wand, vloer, dak en bestaande tegelondergronden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Seal-it 720 Chem-Fix voor draadeinden, schroeven en bouten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor gevels, entrees, tuinmuren en binnenwanden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor overschilderbare kieren, voegen en binnenwerk."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "Tenzij anders vermeld geschieden alle prijsopgaven onder voorbeho"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "2. Tenzij anders vermeld zijn de prijzen van gebruiker: · gebasee"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "pair": "#c95018/#f4f1e9",
+          "ratio": 4.01,
+          "size": "42px",
+          "example": "Nijtec levert"
+        }
+      ],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/producten/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/producten/quickbond/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/projecten/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/zzp-pakket/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/contact/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/algemene-voorwaarden/",
+      "width": 375,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Vraag naar het technische productblad en de verwerkingsinformatie"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Ons montageteam brengt gevelbeplating en coatings op locatie aan."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote project"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Uitgebreide ondersteuning via technisch advies en gedetailleerde "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Groot assortiment op voorraad. Direct bereikbaar via telefoon of "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Productkeuze op basis van toepassing, ondergrond en benodigde hoe"
+        },
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor hout, beton, metaal, kunststof en constructiepanelen."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor voegen, gevels, ramen, deuren en sanitaire ruimten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Onder andere Seal-it 479 Gun Black en 478 PU-Stonefix."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor wand, vloer, dak en bestaande tegelondergronden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Seal-it 720 Chem-Fix voor draadeinden, schroeven en bouten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor gevels, entrees, tuinmuren en binnenwanden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor overschilderbare kieren, voegen en binnenwerk."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "Tenzij anders vermeld geschieden alle prijsopgaven onder voorbeho"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "2. Tenzij anders vermeld zijn de prijzen van gebruiker: · gebasee"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "pair": "#c95018/#f4f1e9",
+          "ratio": 4.01,
+          "size": "50px",
+          "example": "Nijtec levert"
+        }
+      ],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/producten/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/producten/quickbond/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/projecten/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/zzp-pakket/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/contact/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/algemene-voorwaarden/",
+      "width": 768,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Vraag naar het technische productblad en de verwerkingsinformatie"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Ons montageteam brengt gevelbeplating en coatings op locatie aan."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote project"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Uitgebreide ondersteuning via technisch advies en gedetailleerde "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Groot assortiment op voorraad. Direct bereikbaar via telefoon of "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Productkeuze op basis van toepassing, ondergrond en benodigde hoe"
+        },
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor hout, beton, metaal, kunststof en constructiepanelen."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor voegen, gevels, ramen, deuren en sanitaire ruimten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Onder andere Seal-it 479 Gun Black en 478 PU-Stonefix."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor wand, vloer, dak en bestaande tegelondergronden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Seal-it 720 Chem-Fix voor draadeinden, schroeven en bouten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor gevels, entrees, tuinmuren en binnenwanden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor overschilderbare kieren, voegen en binnenwerk."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "Tenzij anders vermeld geschieden alle prijsopgaven onder voorbeho"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "2. Tenzij anders vermeld zijn de prijzen van gebruiker: · gebasee"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "pair": "#c95018/#f4f1e9",
+          "ratio": 4.01,
+          "size": "50px",
+          "example": "Nijtec levert"
+        }
+      ],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/producten/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/producten/quickbond/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/projecten/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/zzp-pakket/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/contact/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/algemene-voorwaarden/",
+      "width": 900,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Vraag naar het technische productblad en de verwerkingsinformatie"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Ons montageteam brengt gevelbeplating en coatings op locatie aan."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote project"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Uitgebreide ondersteuning via technisch advies en gedetailleerde "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Groot assortiment op voorraad. Direct bereikbaar via telefoon of "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Productkeuze op basis van toepassing, ondergrond en benodigde hoe"
+        },
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor hout, beton, metaal, kunststof en constructiepanelen."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor voegen, gevels, ramen, deuren en sanitaire ruimten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Onder andere Seal-it 479 Gun Black en 478 PU-Stonefix."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor wand, vloer, dak en bestaande tegelondergronden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Seal-it 720 Chem-Fix voor draadeinden, schroeven en bouten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor gevels, entrees, tuinmuren en binnenwanden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor overschilderbare kieren, voegen en binnenwerk."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "Tenzij anders vermeld geschieden alle prijsopgaven onder voorbeho"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "2. Tenzij anders vermeld zijn de prijzen van gebruiker: · gebasee"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "pair": "#c95018/#f4f1e9",
+          "ratio": 4.01,
+          "size": "50px",
+          "example": "Nijtec levert"
+        }
+      ],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/producten/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/producten/quickbond/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/projecten/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/zzp-pakket/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/contact/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/algemene-voorwaarden/",
+      "width": 901,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Vraag naar het technische productblad en de verwerkingsinformatie"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Ons montageteam brengt gevelbeplating en coatings op locatie aan."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote project"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Uitgebreide ondersteuning via technisch advies en gedetailleerde "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Groot assortiment op voorraad. Direct bereikbaar via telefoon of "
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Productkeuze op basis van toepassing, ondergrond en benodigde hoe"
+        },
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor hout, beton, metaal, kunststof en constructiepanelen."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor voegen, gevels, ramen, deuren en sanitaire ruimten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Onder andere Seal-it 479 Gun Black en 478 PU-Stonefix."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor wand, vloer, dak en bestaande tegelondergronden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Seal-it 720 Chem-Fix voor draadeinden, schroeven en bouten."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor gevels, entrees, tuinmuren en binnenwanden."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Voor overschilderbare kieren, voegen en binnenwerk."
+        },
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "Tenzij anders vermeld geschieden alle prijsopgaven onder voorbeho"
+        },
+        {
+          "selector": "p",
+          "size": "14px",
+          "text": "2. Tenzij anders vermeld zijn de prijzen van gebruiker: · gebasee"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "pair": "#c95018/#f4f1e9",
+          "ratio": 4.01,
+          "size": "73.3875px",
+          "example": "Nijtec levert"
+        }
+      ],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/producten/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/producten/quickbond/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "qb-guarantee-note",
+          "size": "15px",
+          "text": "Algemene garantieafspraken. Vraag Nijtec naar de specifieke Quick"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/projecten/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [
+        {
+          "project": "project-foto-11",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-01",
+          "opened": true,
+          "restored": true
+        },
+        {
+          "project": "project-foto-16",
+          "opened": true,
+          "restored": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "route": "/zzp-pakket/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "p",
+          "size": "15px",
+          "text": "Kies de producten die u dagelijks gebruikt en bestel ze als compa"
+        },
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/contact/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    },
+    {
+      "route": "/algemene-voorwaarden/",
+      "width": 1440,
+      "overflow": false,
+      "callVisible": true,
+      "smallActions": [],
+      "shortActions": [],
+      "smallBody": [
+        {
+          "selector": "form-helper",
+          "size": "15px",
+          "text": "Stel hieronder uw bericht op. Uw e-mailprogramma opent met de geg"
+        }
+      ],
+      "contrastPairs": [],
+      "placeholderContrast": 7.06,
+      "projectIssues": [],
+      "viewerChecks": [],
+      "errors": []
+    }
+  ]
+}

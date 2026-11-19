@@ -31,7 +31,7 @@ async function run(){
   const input=d.querySelector('#f-bericht'),placeholder=input?w.getComputedStyle(input,'::placeholder'):null;
   const placeRatio=placeholder?contrast(over(rgb(placeholder.color),rgb(w.getComputedStyle(input).backgroundColor)),rgb(w.getComputedStyle(input).backgroundColor)):null;
   const call=d.querySelector('.nav-cta'),r=call.getBoundingClientRect();
-  const projectCases=d.querySelector('.project-cases'),projectIssues=[];
+  const projectCases=d.querySelector('.project-cases'),projectIssues=[],viewerChecks=[];
   if(projectCases){
    const section=projectCases.closest('section'),sectionStyle=w.getComputedStyle(section),available=section.clientWidth-parseFloat(sectionStyle.paddingLeft)-parseFloat(sectionStyle.paddingRight);
    if(projectCases.getBoundingClientRect().width<available-2)projectIssues.push('Projectbeschrijvingen gebruiken niet de beschikbare sectiebreedte');
@@ -40,8 +40,18 @@ async function run(){
     for(const part of parts)if(part.r.width<100)projectIssues.push(article.querySelector('h3').textContent+': '+part.tag+' te smal');
     for(let a=0;a<parts.length;a++)for(let b=a+1;b<parts.length;b++){const x=parts[a].r,y=parts[b].r;if(x.left<y.right-1&&x.right>y.left+1&&x.top<y.bottom-1&&x.bottom>y.top+1)projectIssues.push(article.querySelector('h3').textContent+': overlappende tekstblokken');}
    }
+   for(const link of projectCases.querySelectorAll('[data-project-photo]')){
+    link.scrollIntoView({block:'center',behavior:'instant'});link.focus({preventScroll:true});
+    const before={y:w.scrollY,url:w.location.href};link.click();
+    await new Promise(resolve=>w.requestAnimationFrame(resolve));
+    const opened=d.querySelector('#image-viewer').classList.contains('open')&&d.querySelector('#image-viewer-image').src===link.href&&w.location.href===before.url&&Math.abs(w.scrollY-before.y)<=1;
+    d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+    await new Promise(resolve=>w.requestAnimationFrame(resolve));
+    const restored=!d.querySelector('#image-viewer').classList.contains('open')&&d.activeElement===link&&w.location.href===before.url&&Math.abs(w.scrollY-before.y)<=1;
+    viewerChecks.push({project:link.dataset.projectPhoto,opened,restored});
+   }
   }
-  const row={route,width,overflow:d.documentElement.scrollWidth>w.innerWidth+1,callVisible:r.top>=0&&r.bottom<=w.innerHeight,smallActions,shortActions,smallBody,contrastPairs:[...pairs.values()],placeholderContrast:placeRatio?Number(placeRatio.toFixed(2)):null,projectIssues,errors:w.__qaErrors};
+  const row={route,width,overflow:d.documentElement.scrollWidth>w.innerWidth+1,callVisible:r.top>=0&&r.bottom<=w.innerHeight,smallActions,shortActions,smallBody,contrastPairs:[...pairs.values()],placeholderContrast:placeRatio?Number(placeRatio.toFixed(2)):null,projectIssues,viewerChecks,errors:w.__qaErrors};
   rows.push(row);document.querySelector('#status').textContent=rows.length+' / '+(widths.length*routes.length)+' gecontroleerd';
  }
  document.querySelector('#report').textContent=JSON.stringify({date:new Date().toISOString(),rows},null,2);
