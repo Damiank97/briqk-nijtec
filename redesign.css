@@ -2162,3 +2162,11 @@ summary:focus-visible, [tabindex="0"]:focus-visible {
 
 .application-card strong, .feature-card h3, .product-card h3 { font-weight: 520; }
 .zzp-prijs-val, .zzp-badge-big .big-num { font-variant-numeric: lining-nums tabular-nums; font-weight: 600; }
+.hero-services { list-style: none; margin: 0 0 auto; padding: 0 0 32px; font-size: 16px; }
+.hero-services li { padding: 12px 0; border-bottom: 1px solid var(--muted); }
+.hero-project figcaption > div > span { font: 700 12px/1.6 var(--font-label); letter-spacing: .1em; color: var(--nijtec-orange); }
+.zzp-badge-big { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 20px; aspect-ratio: auto; }
+.zzp-badge-big h3 { font-size: 26px; }
+.zzp-badge-big .big-num { font-size: 42px; line-height: 1.15; }
+.zzp-badge-big p { font-size: 16px; line-height: 1.6; margin: 0; }
+@media (max-width: 900px) { .hero-services { padding-bottom: 24px; } }
