@@ -119,10 +119,10 @@ async function audit(width){
  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await settle();viewerOK&&=!$('#image-viewer').classList.contains('open')&&d.activeElement===cards[0];
  record(width+' px: fotoviewer navigatie/Escape/focusterugkeer',viewerOK);
  all('.product-card')[0].click();await settle();$('#modal-cta-btn').click();await pause(650);
- record(width+' px: productaanvraag vult contact correct', $('#f-bericht').value.includes('Lijmen')&&$('#f-onderwerp').value==='Offerte aanvragen'&&d.activeElement===$('#f-naam'));
+ record(width+' px: productaanvraag houdt bericht leeg en product apart', !$('#f-bericht').value&&$('#prefill-product-naam').textContent.includes('Lijmen')&&$('#f-onderwerp').value==='Offerte aanvragen'&&d.activeElement===$('#f-naam'));
  $('#prefill-clear-btn').click();record(width+' px: aanvraag wissen',!$('#f-bericht').value&&$('#product-prefill-banner').style.display==='none');
  $('#f-bericht').value='Bestaande vraag behouden.';all('[data-order]')[0].click();await pause(650);
- record(width+' px: bestellen opent zichtbaar formulier met pakket en behoudt tekst',$('#f-bericht').value.includes('ZZP-pakket')&&$('#f-bericht').value.includes('Bestaande vraag behouden.')&&$('#f-onderwerp').value==='Bestelling aanvragen'&&d.activeElement===$('#f-naam')&&$('.contact-form').getBoundingClientRect().top<w.innerHeight/2);
+ record(width+' px: bestellen opent zichtbaar formulier met pakket en behoudt tekst',$('#prefill-product-naam').textContent==='ZZP-pakket'&&$('#f-bericht').value==='Bestaande vraag behouden.'&&$('#f-onderwerp').value==='Bestelling aanvragen'&&d.activeElement===$('#f-naam')&&$('.contact-form').getBoundingClientRect().top<w.innerHeight/2);
  $('#prefill-clear-btn').click();
  const accordion=$('.av-header');accordion.click();record(width+' px: voorwaarden openen/sluiten',$('.av-body').classList.contains('open'));accordion.click();
  record(width+' px: formulierlabels gekoppeld',all('#contact-fields input,#contact-fields textarea,#contact-fields select').every(e=>e.labels?.length));
@@ -132,6 +132,7 @@ async function audit(width){
  const form=$('#contact-fields'); form.reset();
  record(width+' px: leeg formulier wordt geweigerd',!form.checkValidity());
  $('#f-naam').value='QA & Nijtec';$('#f-email').value='geen-email';$('#f-bericht').value='Testvraag';
+ $('#f-bericht').dispatchEvent(new w.Event('input',{bubbles:true}));
  record(width+' px: onjuist e-mailadres wordt geweigerd',!form.checkValidity());
  const badEmails=['naam@bedrijf','naam@bedrijf.','naam@bedrijf.c','a..b@bedrijf.nl','naam@-bedrijf.nl'];
  record(width+' px: incomplete en ongeldige e-mailadressen geweigerd',badEmails.every(value=>{const e=$('#f-email');e.value=value;e.dispatchEvent(new w.Event('input',{bubbles:true}));return !form.checkValidity()&&!$('#f-email-error').hidden&&e.getAttribute('aria-invalid')==='true';}));
@@ -146,7 +147,7 @@ async function audit(width){
  record(width+' px: kaarten schuiven niet met scroll',all('.photo-item,.product-card,.feature-card,.contact-form,.zzp-content').every(e=>{const s=w.getComputedStyle(e);return s.translate==='none'&&s.transform==='none'&&s.animationName==='none';}));
  record(width+' px: actieve 3D-canvas',$('.qb-render-stage').dataset.viewerState==='active',$('.qb-render-stage').dataset.viewerState);
  const frames=w.__qaRenderFrames;w.scrollTo(0,0);await pause(300);const stopped=w.__qaRenderFrames;await pause(300);
- record(width+' px: 3D-rendering pauzeert buiten beeld',frames>0&&w.__qaRenderFrames===stopped);
+ record(width+' px: 3D-rendering pauzeert buiten beeld',frames>0&&w.__qaRenderFrames===stopped,JSON.stringify({frames,stopped,after:w.__qaRenderFrames,scroll:w.scrollY}));
  $('#quickbond').scrollIntoView();await pause(300);
  record(width+' px: 3D hervat na terugscrollen',w.__qaRenderFrames>stopped);
  const notes=$('.qb-story-notes').getBoundingClientRect(),canvas=$('.qb-webgl-canvas').getBoundingClientRect();
@@ -205,13 +206,13 @@ async function auditProductGuides(){
   const guide=d.querySelector('.product-guide'),link=guide.querySelector('[data-inquiry]');
   const message=d.getElementById('f-bericht');message.value='Mijn eigen projectvraag.';
   link.focus();link.click();await settle();
-  record(width+' px: '+route+' adviesaanvraag behoudt tekst en productcontext',message.value.startsWith('Mijn eigen projectvraag.')&&message.value.includes(link.dataset.inquiry)&&message.value.includes(link.dataset.inquiryContext)&&d.getElementById('f-onderwerp').value==='Technisch advies'&&d.activeElement===d.getElementById('f-naam'));
+  record(width+' px: '+route+' adviesaanvraag behoudt tekst en productcontext',message.value==='Mijn eigen projectvraag.'&&d.querySelector('#prefill-product-naam').textContent===link.dataset.inquiry&&message.placeholder.includes(link.dataset.inquiryContext)&&d.getElementById('f-onderwerp').value==='Technisch advies'&&d.activeElement===d.getElementById('f-naam'));
   record(width+' px: '+route+' productuitleg leesbaar zonder overflow',guide.getBoundingClientRect().width<=w.innerWidth&&d.documentElement.scrollWidth<=w.innerWidth+1&&d.querySelectorAll('h1').length===1&&w.__qaErrors.length===0,w.__qaErrors.join('; '));
  }
 }
 async function run(){
  document.getElementById('run').disabled=true;checks=[];results.replaceChildren();
- try{for(const width of [390,768,1440,320])await audit(width);await auditRoutes();await auditProductGuides();}catch(e){record('Testuitvoering',false,String(e.stack||e));}
+ try{for(const width of [375,768,1440,320])await audit(width);await auditRoutes();await auditProductGuides();}catch(e){record('Testuitvoering',false,String(e.stack||e));}
  document.getElementById('run').disabled=false;frame.width=390;frame.height=844;
  const report=document.createElement('pre');report.id='json-report';report.textContent=JSON.stringify({date:new Date().toISOString(),checks},null,2);results.append(report);
  await fetch('/__qa/report',{method:'POST',headers:{'Content-Type':'application/json'},body:report.textContent});

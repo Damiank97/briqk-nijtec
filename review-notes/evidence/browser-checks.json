@@ -1,0 +1,1500 @@
+{
+  "date": "2026-11-19T13:52:31.210Z",
+  "checks": [
+    {
+      "name": "375 px: alle afbeeldingen laden",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: stabiele layout bij laden",
+      "ok": true,
+      "detail": "0.04759320819887744"
+    },
+    {
+      "name": "375 px: 3D laadt niet bij openen bovenaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: ankerlinks bestaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: geen dubbele IDs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: alleen zeven actuele productgroepen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: lokale tests sturen geen bezoekersstatistieken",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: btw direct onder KvK",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: Over Nijtec leesbaar zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: welkomstverhaal direct onder het openingsbeeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: navigatie valt binnen scherm",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: origineel logo geïntegreerd in lichte menubalk",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: reveal start op 88% viewport",
+      "ok": true,
+      "detail": "{\"initialRevealed\":false,\"initialScroll\":0,\"before\":false,\"after\":true,\"beforeY\":793.140625,\"afterY\":709.140625,\"height\":844}"
+    },
+    {
+      "name": "375 px: koppen knippen geen j/g/p/y af",
+      "ok": true,
+      "detail": "none / 46.656px"
+    },
+    {
+      "name": "375 px: geen horizontale pagina-overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: beelden overlappen geen bijschrift",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: projectkaarten overlappen elkaar niet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: introfoto naast/voor eigen tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: 479 en 478 met eigen eigenschappen en productblad",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: chemisch anker met juiste foto, productblad en aanvraagcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productfoto's acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: foto op dezelfde pagina met navigatie en terugkeer acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: product acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: fotoviewer navigatie/Escape/focusterugkeer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productaanvraag houdt bericht leeg en product apart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: aanvraag wissen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: bestellen opent zichtbaar formulier met pakket en behoudt tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: voorwaarden openen/sluiten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: formulierlabels gekoppeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: Quickbond-artikel vindbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: berichtvak groter en verticaal verstelbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: productpijlen blijven bij de tekst zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: leeg formulier wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: onjuist e-mailadres wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: incomplete en ongeldige e-mailadressen geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: geldig formulier geaccepteerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: lang bericht behouden in veilige kopieerfallback",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: geen misleidende ontvangstbevestiging",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: reveal blijft zichtbaar bij terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: kaarten schuiven niet met scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: actieve 3D-canvas",
+      "ok": true,
+      "detail": "active"
+    },
+    {
+      "name": "375 px: 3D-rendering pauzeert buiten beeld",
+      "ok": true,
+      "detail": "{\"frames\":56,\"stopped\":56,\"after\":56,\"scroll\":0}"
+    },
+    {
+      "name": "375 px: 3D hervat na terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: 3D-uitleg staat buiten het model",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: informatiepaneel blijft in mobiele documentstroom",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375 px: geen runtimefouten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: alle afbeeldingen laden",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: stabiele layout bij laden",
+      "ok": true,
+      "detail": "0.03797432776623939"
+    },
+    {
+      "name": "768 px: 3D laadt niet bij openen bovenaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: ankerlinks bestaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: geen dubbele IDs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: alleen zeven actuele productgroepen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: lokale tests sturen geen bezoekersstatistieken",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: btw direct onder KvK",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: Over Nijtec leesbaar zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: welkomstverhaal direct onder het openingsbeeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: navigatie valt binnen scherm",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: origineel logo geïntegreerd in lichte menubalk",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: reveal start op 88% viewport",
+      "ok": true,
+      "detail": "{\"initialRevealed\":false,\"initialScroll\":0,\"before\":false,\"after\":true,\"beforeY\":793.515625,\"afterY\":708.515625,\"height\":844}"
+    },
+    {
+      "name": "768 px: koppen knippen geen j/g/p/y af",
+      "ok": true,
+      "detail": "none / 51.84px"
+    },
+    {
+      "name": "768 px: geen horizontale pagina-overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: beelden overlappen geen bijschrift",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: projectkaarten overlappen elkaar niet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: introfoto naast/voor eigen tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: 479 en 478 met eigen eigenschappen en productblad",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: chemisch anker met juiste foto, productblad en aanvraagcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productfoto's acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: foto op dezelfde pagina met navigatie en terugkeer acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: product acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: fotoviewer navigatie/Escape/focusterugkeer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productaanvraag houdt bericht leeg en product apart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: aanvraag wissen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: bestellen opent zichtbaar formulier met pakket en behoudt tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: voorwaarden openen/sluiten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: formulierlabels gekoppeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: Quickbond-artikel vindbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: berichtvak groter en verticaal verstelbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: productpijlen blijven bij de tekst zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: leeg formulier wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: onjuist e-mailadres wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: incomplete en ongeldige e-mailadressen geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: geldig formulier geaccepteerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: lang bericht behouden in veilige kopieerfallback",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: geen misleidende ontvangstbevestiging",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: reveal blijft zichtbaar bij terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: kaarten schuiven niet met scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: actieve 3D-canvas",
+      "ok": true,
+      "detail": "active"
+    },
+    {
+      "name": "768 px: 3D-rendering pauzeert buiten beeld",
+      "ok": true,
+      "detail": "{\"frames\":28,\"stopped\":28,\"after\":28,\"scroll\":0}"
+    },
+    {
+      "name": "768 px: 3D hervat na terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: 3D-uitleg staat buiten het model",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: informatiepaneel blijft in mobiele documentstroom",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: geen runtimefouten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: alle afbeeldingen laden",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: stabiele layout bij laden",
+      "ok": true,
+      "detail": "0.020305351800554018"
+    },
+    {
+      "name": "1440 px: 3D laadt niet bij openen bovenaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: ankerlinks bestaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: geen dubbele IDs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: alleen zeven actuele productgroepen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: lokale tests sturen geen bezoekersstatistieken",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: btw direct onder KvK",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: Over Nijtec leesbaar zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: welkomstverhaal direct onder het openingsbeeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: navigatie valt binnen scherm",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: origineel logo geïntegreerd in lichte menubalk",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: reveal start op 88% viewport",
+      "ok": true,
+      "detail": "{\"initialRevealed\":false,\"initialScroll\":0,\"before\":false,\"after\":true,\"beforeY\":846.40625,\"afterY\":756.40625,\"height\":900}"
+    },
+    {
+      "name": "1440 px: koppen knippen geen j/g/p/y af",
+      "ok": true,
+      "detail": "none / 92.34px"
+    },
+    {
+      "name": "1440 px: geen horizontale pagina-overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: beelden overlappen geen bijschrift",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: projectkaarten overlappen elkaar niet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: introfoto naast/voor eigen tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: 479 en 478 met eigen eigenschappen en productblad",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: chemisch anker met juiste foto, productblad en aanvraagcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productfoto's acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: foto op dezelfde pagina met navigatie en terugkeer acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: product acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: fotoviewer navigatie/Escape/focusterugkeer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productaanvraag houdt bericht leeg en product apart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: aanvraag wissen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: bestellen opent zichtbaar formulier met pakket en behoudt tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: voorwaarden openen/sluiten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: formulierlabels gekoppeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: Quickbond-artikel vindbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: berichtvak groter en verticaal verstelbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: productpijlen blijven bij de tekst zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: leeg formulier wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: onjuist e-mailadres wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: incomplete en ongeldige e-mailadressen geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: geldig formulier geaccepteerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: lang bericht behouden in veilige kopieerfallback",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: geen misleidende ontvangstbevestiging",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: reveal blijft zichtbaar bij terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: kaarten schuiven niet met scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: actieve 3D-canvas",
+      "ok": true,
+      "detail": "active"
+    },
+    {
+      "name": "1440 px: 3D-rendering pauzeert buiten beeld",
+      "ok": true,
+      "detail": "{\"frames\":56,\"stopped\":56,\"after\":56,\"scroll\":0}"
+    },
+    {
+      "name": "1440 px: 3D hervat na terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: 3D-uitleg staat buiten het model",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: informatiepaneel blijft vast naast 3D-scène",
+      "ok": true,
+      "detail": "{\"offsets\":[81,81,81,81],\"tops\":[236.046875,195,195,195]}"
+    },
+    {
+      "name": "1440 px: geen runtimefouten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: alle afbeeldingen laden",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: stabiele layout bij laden",
+      "ok": true,
+      "detail": "0.04718268888397113"
+    },
+    {
+      "name": "320 px: 3D laadt niet bij openen bovenaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: ankerlinks bestaan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: geen dubbele IDs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: alleen zeven actuele productgroepen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: lokale tests sturen geen bezoekersstatistieken",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: btw direct onder KvK",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: Over Nijtec leesbaar zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: welkomstverhaal direct onder het openingsbeeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: navigatie valt binnen scherm",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: origineel logo geïntegreerd in lichte menubalk",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: reveal start op 88% viewport",
+      "ok": true,
+      "detail": "{\"initialRevealed\":false,\"initialScroll\":0,\"before\":false,\"after\":true,\"beforeY\":793.375,\"afterY\":709.375,\"height\":844}"
+    },
+    {
+      "name": "320 px: koppen knippen geen j/g/p/y af",
+      "ok": true,
+      "detail": "none / 45.36px"
+    },
+    {
+      "name": "320 px: geen horizontale pagina-overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: beelden overlappen geen bijschrift",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: projectkaarten overlappen elkaar niet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: introfoto naast/voor eigen tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product lijmen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product kitten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: 479 en 478 met eigen eigenschappen en productblad",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product pu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product coatings",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: chemisch anker met juiste foto, productblad en aanvraagcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product steenstrips",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productfoto's acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: foto op dezelfde pagina met navigatie en terugkeer acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: product acrylaten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: fotoviewer navigatie/Escape/focusterugkeer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productaanvraag houdt bericht leeg en product apart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: aanvraag wissen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: bestellen opent zichtbaar formulier met pakket en behoudt tekst",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: voorwaarden openen/sluiten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: formulierlabels gekoppeld",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: Quickbond-artikel vindbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: berichtvak groter en verticaal verstelbaar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: productpijlen blijven bij de tekst zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: leeg formulier wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: onjuist e-mailadres wordt geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: incomplete en ongeldige e-mailadressen geweigerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: geldig formulier geaccepteerd",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: lang bericht behouden in veilige kopieerfallback",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: geen misleidende ontvangstbevestiging",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: reveal blijft zichtbaar bij terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: kaarten schuiven niet met scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: actieve 3D-canvas",
+      "ok": true,
+      "detail": "active"
+    },
+    {
+      "name": "320 px: 3D-rendering pauzeert buiten beeld",
+      "ok": true,
+      "detail": "{\"frames\":56,\"stopped\":56,\"after\":56,\"scroll\":0}"
+    },
+    {
+      "name": "320 px: 3D hervat na terugscrollen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: 3D-uitleg staat buiten het model",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: informatiepaneel blijft in mobiele documentstroom",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "320 px: geen runtimefouten",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/quickbond/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/lijmen/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/kitten/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/vullende-lijmende-pu-schuimen/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/vullende-lijmende-pu-schuimen/ productfoto op dezelfde pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/chemisch-anker/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/chemisch-anker/ productfoto op dezelfde pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/diversen/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/acrylaten/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/coatings/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/producten/steenstrips/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/over-ons/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/projecten/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/contact/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/zzp-pakket/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/algemene-voorwaarden/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "/blog/quickbond-gevelbeplating-verlijmen/ mobiele pagina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Onbekende pagina geeft echte 404",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Verwijderd adres niet meer gepubliceerd: /producten/luchtdicht-bouwen/",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Verwijderd adres niet meer gepubliceerd: /wp-content/uploads/2023/10/elastic-gunfoam-b2.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Verwijderd adres niet meer gepubliceerd: /wp-content/uploads/2023/10/compressband-2d.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Verwijderd adres niet meer gepubliceerd: /wp-content/uploads/2023/10/BUTYLBAND-FLEECE.jpg",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Verwijderd adres niet meer gepubliceerd: /wp-content/uploads/2023/10/zwaluw.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Oude sitemap verwijst door naar nieuwe sitemap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Oude categorie verwijst naar chemisch anker",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Productblad bereikbaar: /assets/documents/seal-it-479-pu-foam-gun-black.pdf",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Productblad bereikbaar: /assets/documents/seal-it-720-chem-fix.pdf",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390 px: blog leesbaar met echt projectbeeld zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: blog leesbaar met echt projectbeeld zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: blog leesbaar met echt projectbeeld zonder overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390 px: /producten/quickbond/ adviesaanvraag behoudt tekst en productcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390 px: /producten/quickbond/ productuitleg leesbaar zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390 px: /producten/chemisch-anker/ adviesaanvraag behoudt tekst en productcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390 px: /producten/chemisch-anker/ productuitleg leesbaar zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: /producten/quickbond/ adviesaanvraag behoudt tekst en productcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: /producten/quickbond/ productuitleg leesbaar zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: /producten/chemisch-anker/ adviesaanvraag behoudt tekst en productcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "768 px: /producten/chemisch-anker/ productuitleg leesbaar zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: /producten/quickbond/ adviesaanvraag behoudt tekst en productcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: /producten/quickbond/ productuitleg leesbaar zonder overflow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: /producten/chemisch-anker/ adviesaanvraag behoudt tekst en productcontext",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 px: /producten/chemisch-anker/ productuitleg leesbaar zonder overflow",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

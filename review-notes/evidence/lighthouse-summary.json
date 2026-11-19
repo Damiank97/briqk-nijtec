@@ -1,0 +1,142 @@
+[
+  {
+    "file": "nijtec-review-before",
+    "url": "https://nijtec.nl/",
+    "date": "2026-11-19T13:31:11.598Z",
+    "categories": {
+      "performance": 87,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcp": 3188.911,
+    "tbt": 265.5,
+    "cls": 0,
+    "images": [
+      {
+        "resourceType": "image",
+        "label": "Image",
+        "requestCount": 5,
+        "transferSize": 664104
+      }
+    ],
+    "warnings": [
+      "The tested device appears to have a slower CPU than  Lighthouse expects. This can negatively affect your performance score. Learn more about [calibrating an appropriate CPU slowdown multiplier](https://github.com/GoogleChrome/lighthouse/blob/main/docs/throttling.md#cpu-throttling)."
+    ]
+  },
+  {
+    "file": "nijtec-review-after",
+    "url": "http://127.0.0.1:4173/",
+    "date": "2026-11-19T13:54:14.851Z",
+    "categories": {
+      "performance": 59,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcp": 5634.0199,
+    "tbt": 588.735075,
+    "cls": 0,
+    "images": [
+      {
+        "resourceType": "image",
+        "label": "Image",
+        "requestCount": 5,
+        "transferSize": 663860
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "file": "nijtec-review-baseline-1.json",
+    "url": "http://127.0.0.1:4174/",
+    "date": "2026-11-19T14:01:05.446Z",
+    "categories": {
+      "performance": 82,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "lcp": 4506.763101233635,
+    "tbt": 109,
+    "cls": 0,
+    "images": [
+      {
+        "resourceType": "image",
+        "label": "Image",
+        "requestCount": 5,
+        "transferSize": 663860
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "file": "nijtec-review-proposal-1.json",
+    "url": "http://127.0.0.1:4175/",
+    "date": "2026-11-19T14:01:18.191Z",
+    "categories": {
+      "performance": 83,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "lcp": 4428.698,
+    "tbt": 0,
+    "cls": 0,
+    "images": [
+      {
+        "resourceType": "image",
+        "label": "Image",
+        "requestCount": 5,
+        "transferSize": 663860
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "file": "nijtec-review-baseline-2.json",
+    "url": "http://127.0.0.1:4174/",
+    "date": "2026-11-19T14:01:31.109Z",
+    "categories": {
+      "performance": 81,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "lcp": 4578.999491451468,
+    "tbt": 108,
+    "cls": 0,
+    "images": [
+      {
+        "resourceType": "image",
+        "label": "Image",
+        "requestCount": 5,
+        "transferSize": 663860
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "file": "nijtec-review-proposal-2.json",
+    "url": "http://127.0.0.1:4175/",
+    "date": "2026-11-19T14:01:43.957Z",
+    "categories": {
+      "performance": 80,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "lcp": 4635,
+    "tbt": 115,
+    "cls": 0,
+    "images": [
+      {
+        "resourceType": "image",
+        "label": "Image",
+        "requestCount": 5,
+        "transferSize": 663860
+      }
+    ],
+    "warnings": []
+  }
+]
