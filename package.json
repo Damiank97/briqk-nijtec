@@ -4,6 +4,7 @@
   "scripts": {
     "build": "node scripts/build-pages.cjs",
     "serve:qa": "node scripts/serve-qa.cjs",
+    "prepare:images": "node scripts/prepare-images.cjs",
     "pretest": "npm run build",
     "test": "node --test tests/*.test.cjs",
     "prepare:seo": "node scripts/prepare-seo-config.cjs"
