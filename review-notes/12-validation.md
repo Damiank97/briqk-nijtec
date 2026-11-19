@@ -1,5 +1,7 @@
 # Nijtec: beoordeling van voorstellen 02–12
 
+Aanvulling na gebruikerscontrole: de oorspronkelijke controles hieronder misten een fout in de breedte van het nieuwe projectblok en het verkeerde footerlogobestand. Zie [correcties en devvoorstel](13-dev-preview.md) voor de oorzaak, het herstel en uitgebreidere controles. De oorspronkelijke uitkomsten zijn historische meetgegevens, geen bewijs dat die twee fouten afwezig waren.
+
 Datum: 19 november 2026. Beoordeelde code: `3bb2836`, met uitsluitend lokale controlemiddelen en dit rapport erbovenop. Productie/main/dev zijn niet gewijzigd. Alle voorstellen blijven concept.
 
 ## Besluit voor publicatie

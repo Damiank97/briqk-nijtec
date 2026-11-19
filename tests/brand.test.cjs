@@ -18,6 +18,7 @@ test('Every generated page uses the original logo without a separate contrast pl
   const html=fs.readFileSync(path.join(root,'dist',route,'index.html'),'utf8');
   assert.ok(html.includes('<span class="nav-logo-frame"><img src="/assets/nijtec-logo-nav.png"'),route);
   assert.ok(!html.includes('nav-logo-plate'),route);
+  assert.ok(html.includes('<div class="footer-brand">\n    <img src="/assets/nijtec-logo-nav.png"')||html.includes('<div class="footer-brand">\r\n    <img src="/assets/nijtec-logo-nav.png"'),route+' footer must use the original transparent artwork, not the black-background legacy image');
  }
 });
 

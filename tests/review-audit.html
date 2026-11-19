@@ -3,6 +3,7 @@
 <h1>Controle van de beoordelingsversie</h1><p id="status">Starten</p><iframe id="site" title="Testpagina"></iframe><pre id="report"></pre>
 <script>
 const routes=['/','/producten/','/producten/quickbond/','/projecten/','/zzp-pakket/','/contact/','/algemene-voorwaarden/'];
+const widths=[375,768,900,901,1440];
 const frame=document.querySelector('#site'),rows=[];
 const rgb=s=>{const m=s.match(/[\d.]+/g)?.map(Number);return m?[...m.slice(0,3).map(v=>s.startsWith('color(srgb ')?v*255:v),m[3]??1]:[255,255,255,1];};
 const over=(a,b)=>a.slice(0,3).map((v,i)=>v*a[3]+b[i]*(1-a[3]));
@@ -10,7 +11,7 @@ const lum=c=>c.slice(0,3).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055
 const contrast=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
 const hex=c=>'#'+c.map(v=>Math.round(v).toString(16).padStart(2,'0')).join('');
 async function run(){
- for(const width of [375,768,1440])for(const route of routes){
+ for(const width of widths)for(const route of routes){
   frame.width=width;frame.height=900;
   await new Promise(resolve=>{frame.onload=resolve;frame.src=route+'?qa=review-matrix';});
   const w=frame.contentWindow,d=w.document;await d.fonts.ready;
@@ -30,8 +31,18 @@ async function run(){
   const input=d.querySelector('#f-bericht'),placeholder=input?w.getComputedStyle(input,'::placeholder'):null;
   const placeRatio=placeholder?contrast(over(rgb(placeholder.color),rgb(w.getComputedStyle(input).backgroundColor)),rgb(w.getComputedStyle(input).backgroundColor)):null;
   const call=d.querySelector('.nav-cta'),r=call.getBoundingClientRect();
-  const row={route,width,overflow:d.documentElement.scrollWidth>w.innerWidth+1,callVisible:r.top>=0&&r.bottom<=w.innerHeight,smallActions,shortActions,smallBody,contrastPairs:[...pairs.values()],placeholderContrast:placeRatio?Number(placeRatio.toFixed(2)):null,errors:w.__qaErrors};
-  rows.push(row);document.querySelector('#status').textContent=rows.length+' / 21 gecontroleerd';
+  const projectCases=d.querySelector('.project-cases'),projectIssues=[];
+  if(projectCases){
+   const section=projectCases.closest('section'),sectionStyle=w.getComputedStyle(section),available=section.clientWidth-parseFloat(sectionStyle.paddingLeft)-parseFloat(sectionStyle.paddingRight);
+   if(projectCases.getBoundingClientRect().width<available-2)projectIssues.push('Projectbeschrijvingen gebruiken niet de beschikbare sectiebreedte');
+   for(const article of projectCases.children){
+    const parts=[...article.children].map(e=>({tag:e.tagName,r:e.getBoundingClientRect()}));
+    for(const part of parts)if(part.r.width<100)projectIssues.push(article.querySelector('h3').textContent+': '+part.tag+' te smal');
+    for(let a=0;a<parts.length;a++)for(let b=a+1;b<parts.length;b++){const x=parts[a].r,y=parts[b].r;if(x.left<y.right-1&&x.right>y.left+1&&x.top<y.bottom-1&&x.bottom>y.top+1)projectIssues.push(article.querySelector('h3').textContent+': overlappende tekstblokken');}
+   }
+  }
+  const row={route,width,overflow:d.documentElement.scrollWidth>w.innerWidth+1,callVisible:r.top>=0&&r.bottom<=w.innerHeight,smallActions,shortActions,smallBody,contrastPairs:[...pairs.values()],placeholderContrast:placeRatio?Number(placeRatio.toFixed(2)):null,projectIssues,errors:w.__qaErrors};
+  rows.push(row);document.querySelector('#status').textContent=rows.length+' / '+(widths.length*routes.length)+' gecontroleerd';
  }
  document.querySelector('#report').textContent=JSON.stringify({date:new Date().toISOString(),rows},null,2);
  document.querySelector('#status').textContent='Gereed';
