@@ -439,7 +439,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 }
 </style>
 <link rel="preload" href="/assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/redesign.css?v=30">
+  <link rel="stylesheet" href="/redesign.css?v=31">
 <script src="/motion.js?v=1" defer></script>
 <script src="/email-validation.js?v=1" defer></script>
 <script src="/contact.js?v=5" defer></script>
@@ -482,7 +482,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
     </div>
     <div class="hero-stats">
       <div class="stat-item"><div class="stat-val">10</div><div class="stat-label">jaar garantie Quickbond</div></div>
-      <div class="stat-item"><div class="stat-val">ISO</div><div class="stat-label">9001 gecertificeerd</div></div>
+      <div class="stat-item"><div class="stat-val">Advies</div><div class="stat-label">over productkeuze</div></div>
       <div class="stat-item"><div class="stat-val">B2B</div><div class="stat-label">& ZZP leverancier</div></div>
     </div>
   </div>
@@ -534,7 +534,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
     </a>
   </div>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">01</div><h3>ISO 9001 gecertificeerd</h3><p>De productie en kwaliteitscontrole volgen een vastgelegd ISO 9001-proces.</p></div>
+    <div class="feature-card"><div class="feature-icon">01</div><h3>Productinformatie</h3><p>Vraag naar het technische productblad en de verwerkingsinformatie voor uw toepassing.</p></div>
     <div class="feature-card"><div class="feature-icon">02</div><h3>Eigen montageteam</h3><p>Ons montageteam brengt gevelbeplating en coatings op locatie aan.</p></div>
     <div class="feature-card"><div class="feature-icon">03</div><h3>Flexibele levering</h3><p>Van kleine ZZP-pakketten (€50) tot 200kg vaten voor grote projecten. Voor elk budget een oplossing.</p></div>
     <div class="feature-card"><div class="feature-icon">04</div><h3>Technisch advies</h3><p>Uitgebreide ondersteuning via technisch advies en gedetailleerde verwerkingsinstructies bij elk product.</p></div>
@@ -559,6 +559,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
       <div class="qb-guarantee-num">10</div>
       <div class="qb-guarantee-text"><strong style="color:white">jaar garantie</strong><br>op de verlijmende hechting én het product</div>
     </div>
+    <p class="qb-guarantee-note"><a href="/algemene-voorwaarden/#artikel-12">Algemene garantieafspraken</a>. Vraag Nijtec naar de specifieke Quickbond-garantievoorwaarden voor uw toepassing.</p>
     <a class="qb-article-link" href="/blog/quickbond-gevelbeplating-verlijmen/">Lees het artikel over gevelbeplating&nbsp;→</a>
     <a class="qb-article-link" href="#contact" data-inquiry="Quickbond" data-inquiry-context="Plaatmateriaal of steenstrip, ondergrond en afmetingen. Hoeveelheid, planning en eventueel montage.">Vraag advies over Quickbond</a>
   </div>
@@ -818,7 +819,7 @@ footer{padding:52px max(24px,calc((100vw - 1200px)/2));}
 <script>
 /* ── PRODUCT DATA ─────────────────────────────── */
 const products = {
-  lijmen:{icon:'01',title:'Lijmen',subtitle:'Professionele verlijmingsoplossingen',desc:'Lijmen voor hout, beton, metaal, kunststof en constructiepanelen. De materiaalcombinatie, belasting en gewenste werktijd bepalen welk product geschikt is.',props:['Hoge initiële kleefkracht voor directe bevestiging','Geschikt voor diverse ondergronden (hout, beton, metaal, kunststof)','Snelle doorharding voor korte werktijden','ISO 9001 gecertificeerde productie','Technisch advies beschikbaar bij productkeuze'],tags:['Houtverbinding','Gevelplaten','Vloerbedekkingen','Isolatiemateriaal','Constructiepanelen','Metaalbevestiging']},
+  lijmen:{icon:'01',title:'Lijmen',subtitle:'Professionele verlijmingsoplossingen',desc:'Lijmen voor hout, beton, metaal, kunststof en constructiepanelen. De materiaalcombinatie, belasting en gewenste werktijd bepalen welk product geschikt is.',props:['Hoge initiële kleefkracht voor directe bevestiging','Geschikt voor diverse ondergronden (hout, beton, metaal, kunststof)','Snelle doorharding voor korte werktijden','Verwerkingsinformatie op aanvraag','Technisch advies beschikbaar bij productkeuze'],tags:['Houtverbinding','Gevelplaten','Vloerbedekkingen','Isolatiemateriaal','Constructiepanelen','Metaalbevestiging']},
   kitten:{icon:'02',title:'Kitten',subtitle:'Afdichting voor bouw en industrie',desc:'Sanitairkit en elastische voegkit voor natte ruimten, gevelaansluitingen, ramen en deuren. Leverbaar in verschillende kleuren en samenstellingen.',props:['Overschilderbaar na uitharding','Elastisch en scheurbestendig','Geschikt voor natte ruimten (sanitair, keuken)','UV-bestendig voor buitentoepassingen','Voldoet aan bouwbesluit eisen'],tags:['Sanitaire ruimten','Gevelvoegen','Dilatatievoegen','Raam & deur','Dak & dakkapel','Vloer & wand']},
   pu:{icon:'03',title:'PU-schuimen',subtitle:'Seal-it 479 Gun Black en 478 PU-Stonefix',desc:'Nijtec levert onder andere zwart isolatie- en montageschuim en polyurethaanlijm voor steensoorten. Hieronder ziet u twee producten uit ons assortiment. Een montageschuim en een steenlijm hebben verschillende toepassingen; bespreek uw ondergrond en verwerking met Nijtec.',props:['Productkeuze afgestemd op de ondergrond','Advies over het passende pistool en de verwerking','Overige PU-producten en uitvoeringen op aanvraag'],tags:['Kozijnmontage','Voegen en montageruimten','Isoleren en opvullen','Verlijmen van steensoorten']},
   coatings:{icon:'04',title:'Coatings',subtitle:'Wand-, vloer- en dakcoatings',desc:'Coatings voor bestaande tegels, betonvloeren, platte daken en gevels. Bestaande tegelondergronden kunnen worden behandeld zonder eerst te slopen.',props:['Direct op tegels aanbrengen (geen sloop)','Waterdicht en stroef (vloertoepassingen)','UV-bestendig voor dakcoatings','Slijtvast en makkelijk te reinigen','Verkrijgbaar in diverse kleuren'],tags:['Badkamer & keuken','Garagevloer','Plat dak','Balkons','Gevels','Betonvloer']},
@@ -1003,7 +1004,7 @@ const SYSTEM_PROMPT = `Je bent de vriendelijke en deskundige AI-assistent van Ni
 
 BEDRIJFSINFORMATIE:
 - Naam: Nijtec B.V. · Adres: Laveringsveen 10, 7751 DN Dalen
-- Telefoon: 06-15588843 · E-mail: info@nijtec.nl · ISO 9001 gecertificeerd
+- Telefoon: 06-15588843 · E-mail: info@nijtec.nl
 
 TOPPRODUCT — QUICKBOND: IJzersterke verlijmende kit, 10 jaar garantie, geen primers/paneltapes nodig. Elastisch, krimpvrij, UV/waterbestendig, bestand chloor. Leverbaar: kokers, worsten 600ml, 200kg vaten.
 
@@ -1201,6 +1202,8 @@ document.addEventListener('DOMContentLoaded', function() {
     avData.forEach(function(item, i) {
       const el = document.createElement('div');
       el.className = 'av-item';
+      const articleNumber = item.title.match(/^Artikel (\d+)/)?.[1];
+      if (articleNumber) el.id = 'artikel-' + articleNumber;
       el.innerHTML = `
         <button type="button" class="av-header" id="av-h-${i}" aria-expanded="false" aria-controls="av-b-${i}">
           ${item.title}
@@ -1222,6 +1225,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
+    function openLegalHash() {
+      if (!/^#artikel-\d+$/.test(location.hash)) return;
+      const item = document.getElementById(location.hash.slice(1));
+      const button = item?.querySelector('.av-header');
+      if (!button) return;
+      if (button.getAttribute('aria-expanded') !== 'true') button.click();
+      item.scrollIntoView({block:'start'});
+    }
+    addEventListener('hashchange',openLegalHash);
+    openLegalHash();
   }
 
 });
