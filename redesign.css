@@ -2173,3 +2173,12 @@ summary:focus-visible, [tabindex="0"]:focus-visible {
 .qb-content .qb-guarantee-note { font-size: 15px; line-height: 1.6; }
 .qb-guarantee-note a { text-decoration: underline; text-underline-offset: 3px; }
 .legal-copy [id^="artikel-"], .av-item[id] { scroll-margin-top: 96px; }
+.contact { --field-background: color-mix(in srgb, var(--nijtec-blue-deep) 90%, var(--paper-light)); }
+.form-group input, .form-group textarea, .form-group select, #contact-copy-text {
+  background: var(--field-background);
+  border: 2px solid rgb(251 249 244 / .4);
+  color: var(--paper-light);
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: #c8cfe0; opacity: 1; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus, #contact-copy-text:focus { border-color: var(--nijtec-orange); outline: 2px solid transparent; }
+.form-group select option { background: var(--nijtec-blue-deep); color: var(--paper-light); }
