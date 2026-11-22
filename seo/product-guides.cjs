@@ -2,10 +2,12 @@
 module.exports = {
   quickbond: `<article class="detail-copy product-guide" aria-label="Quickbond kiezen en aanvragen">
   <h2>Quickbond voor gevelbeplating en steenstrips</h2>
-  <p>Quickbond is een verlijmende kit met hoge aanvangskleefkracht. Nijtec levert Quickbond voor onder meer HDPL-volkernbeplating en gebruikt het bij de montage van steenstrips. De plaat of steenstrip, de ondergrond en de bevestiging bepalen samen of de toepassing geschikt is.</p>
+  <p>Quickbond is een verlijmende kit met extreem hoge aanvangskleefkracht. Nijtec levert Quickbond voor onder meer HDPL-volkernbeplating en gebruikt het bij de montage van steenstrips. De plaat of steenstrip, de ondergrond en de bevestiging bepalen samen of de toepassing geschikt is.</p>
   <p>Bekijk het <a href="/projecten/">uitgevoerde werk van het Nijtec Montage Team</a> voor voorbeelden van gevelbeplating en steenstrips. Voor de keuze en voorbereiding leest u ons <a href="/blog/quickbond-gevelbeplating-verlijmen/">artikel over gevelbeplating verlijmen met Quickbond</a>.</p>
+  <h2>Steenstrips sneller en schoner aanbrengen</h2>
+  <p>Bij het verlijmen van steenstrips met Quickbond hoeft u geen mortel aan te maken of te verwerken. Dat scheelt geknoei op de werkplek en maakt het aanbrengen sneller en schoner.</p>
   <h2>Ondergrond en verwerking afstemmen</h2>
-  <p>Een hoge aanvangskleefkracht zegt niet wanneer een verbinding volledig belastbaar is. Stem voorbereiding, lijmhoeveelheid, doorharding en eventuele tijdelijke ondersteuning af op de actuele verwerkingsinstructie en de voorschriften van de plaatleverancier. Laat ook toepassingen zonder primer of paneltape vooraf beoordelen voor uw materiaalcombinatie.</p>
+  <p>Een extreem hoge aanvangskleefkracht zegt niet wanneer een verbinding volledig belastbaar is. Stem voorbereiding, lijmhoeveelheid, doorharding en eventuele tijdelijke ondersteuning af op de actuele verwerkingsinstructie en de voorschriften van de plaatleverancier. Laat ook toepassingen zonder primer of paneltape vooraf beoordelen voor uw materiaalcombinatie.</p>
   <h2>Quickbond bestellen of montage bespreken</h2>
   <p>Quickbond wordt geleverd in kokers, worsten van 600 ml en vaten van 200 kg. Nijtec bespreekt met u de passende leveringsvorm, hoeveelheid, actuele prijs en beschikbaarheid. U kunt alleen materiaal aanvragen of ook de montage laten bespreken.</p>
   <p>Vermeld bij uw aanvraag het plaatmateriaal of de steenstrip, de ondergrond, de afmetingen of hoeveelheid en de gewenste planning. Zo kan Nijtec gericht met u meedenken.</p>

@@ -164,3 +164,13 @@ bevestigde exclusiviteit; niet verbreden naar alle zwarte PUR of heel Nederland.
 Er blijven 17 pagina's: 15 oorspronkelijke adressen, de nieuwe chemisch-ankerpagina
 en het Quickbond-artikel. 103 oude afbeeldingen en drie nieuwe productfoto's
 worden gepubliceerd; de historische import is niet aangepast of opnieuw uitgevoerd.
+
+## Quickbond-tekstcorrecties van 22 november 2026
+
+De gebruiker vraagt namens Nijtec om overal de productomschrijving
+"extreem hoge aanvangskleefkracht" te gebruiken. Ook is door de gebruiker als
+productvoordeel aangeleverd dat steenstrips met Quickbond zonder mortel kunnen
+worden aangebracht en dat dit sneller en schoner werkt. Dit is bedrijfstekst van
+de opdrachtgever, geen zelfstandig getoetste tijdsbesparing of universele
+montagevrijgave. Er zijn geen sterktegetallen of verwerkingstijden toegevoegd.
+De uitleg over geschikte materiaalcombinaties en actuele verwerking blijft staan.

@@ -95,6 +95,7 @@ async function initQuickbondViewer() {
   let scrollFrame = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const quickbondSection = stage.closest('.quickbond');
+  const quickbondScene = stage.closest('.qb-scene');
   const storySteps = Array.from(stage.parentElement.querySelectorAll('[data-qb-step]'));
   const turnButtons = Array.from(stage.querySelectorAll('[data-qb-turn]'));
   const resetButton = stage.querySelector('[data-qb-reset]');
@@ -143,8 +144,20 @@ async function initQuickbondViewer() {
   function updateScrollRotation() {
     if (!quickbondSection || reducedMotion) return;
     const rect = quickbondSection.getBoundingClientRect();
-    const scrollDistance = Math.max(1, rect.height - window.innerHeight);
-    const progress = THREE.MathUtils.clamp(-rect.top / scrollDistance, 0, 1);
+    const sectionStyle = getComputedStyle(quickbondSection);
+    const sceneStyle = quickbondScene && getComputedStyle(quickbondScene);
+    let scrollDistance = Math.max(1, rect.height - window.innerHeight);
+    let offset = -rect.top;
+    if (sceneStyle?.position === 'sticky') {
+      // Use the real interval in which the scene is pinned. Section-wide
+      // progress reaches step 3 too late when the scene is tall.
+      const paddingTop = parseFloat(sectionStyle.paddingTop) || 0;
+      const paddingBottom = parseFloat(sectionStyle.paddingBottom) || 0;
+      const stickyTop = parseFloat(sceneStyle.top) || 0;
+      scrollDistance = Math.max(1, rect.height - paddingTop - paddingBottom - quickbondScene.getBoundingClientRect().height);
+      offset = -rect.top - paddingTop + stickyTop;
+    }
+    const progress = THREE.MathUtils.clamp(offset / scrollDistance, 0, 1);
     scrollRotation = progress * Math.PI * 2 * 1.15;
     const activeStep = Math.min(storySteps.length - 1, Math.floor(progress * storySteps.length));
     storySteps.forEach((step, index) => step.classList.toggle('is-active', index === activeStep));

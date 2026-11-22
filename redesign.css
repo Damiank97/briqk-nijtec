@@ -1989,9 +1989,13 @@ nav {
 @media (min-width: 1101px) {
   .quickbond {
     display: block;
-    min-height: 195svh;
+    min-height: 0;
     padding: clamp(78px, 9vh, 112px) clamp(28px, 4vw, 76px);
   }
+
+  /* Keep the scrolling space relative to the actual scene height, including
+     enough pinned travel to read the final step before the scene leaves. */
+  .quickbond::after { content: ""; display: block; height: 120svh; }
 
   .qb-scene {
     display: grid;
@@ -2057,6 +2061,7 @@ nav {
 
 @media (prefers-reduced-motion: reduce) {
   .quickbond { min-height: 0; }
+  .quickbond::after { display: none; }
   .qb-scene { position: static; }
   .qb-story-notes { display: none; }
 }

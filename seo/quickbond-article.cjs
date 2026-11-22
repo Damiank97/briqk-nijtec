@@ -14,7 +14,7 @@ module.exports = {
     </figure>
     <div class="detail-copy blog-copy">
       <h2>Verlijmen begint bij de materiaalcombinatie</h2>
-      <p>Een gevelplaat, de achterliggende constructie en de bevestiging vormen samen één toepassing. Quickbond is een verlijmende kit met hoge aanvangskleefkracht. Nijtec levert het product voor onder meer gevelbeplating en gebruikt het ook bij de montage van steenstrips.</p>
+      <p>Een gevelplaat, de achterliggende constructie en de bevestiging vormen samen één toepassing. Quickbond is een verlijmende kit met extreem hoge aanvangskleefkracht. Nijtec levert het product voor onder meer gevelbeplating en gebruikt het ook bij de montage van steenstrips.</p>
       <p>Wilt u Quickbond voor uw eigen project gebruiken? Leg eerst vast welk plaatmateriaal u wilt bevestigen en waarop het wordt verlijmd. Alleen de naam van de lijm is niet voldoende om te bepalen of een volledige gevelopbouw geschikt is.</p>
 
       <h2>Welke plaat en welke ondergrond?</h2>
@@ -25,7 +25,7 @@ module.exports = {
       <p>Nijtec beschrijft toepassingen van Quickbond zonder primer of paneltape. Dat betekent niet dat de voorbereiding kan worden overgeslagen of dat iedere willekeurige ondergrond geschikt is. Vraag vóór de uitvoering om de actuele verwerkingsinstructie voor uw materiaalcombinatie. Neem daarbij ook de voorschriften van de plaatleverancier mee.</p>
 
       <h2>Aanvangskleefkracht is geen uithardingstijd</h2>
-      <p>De hoge aanvangskleefkracht is een kenmerk van Quickbond. Daaruit volgt niet na hoeveel tijd een verbinding volledig mag worden belast. Voor de verwerkingstijd, doorharding, hoeveelheid lijm en eventuele tijdelijke voorzieningen is de actuele technische informatie voor uw toepassing leidend. Gebruik hiervoor geen droogtijden van een ander product dat toevallig ook Quickbond heet.</p>
+      <p>De extreem hoge aanvangskleefkracht is een kenmerk van Quickbond. Daaruit volgt niet na hoeveel tijd een verbinding volledig mag worden belast. Voor de verwerkingstijd, doorharding, hoeveelheid lijm en eventuele tijdelijke voorzieningen is de actuele technische informatie voor uw toepassing leidend.</p>
 
       <h2>Dit helpt bij een gericht productadvies</h2>
       <p>Met de volgende informatie kan Nijtec uw vraag concreet bespreken:</p>
